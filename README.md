@@ -7,4 +7,4 @@
 
 ♪ Enjoy reading! <br />
 
-![Hundreds of multi-colored excerpts of various Pit chat messages, such as "Bounty!", "Sweet!", "Uberstreak!", and "Lucky Shot!" float above a dark blue background.](https://pit.wiki/images/emphasis.png)
+<img src="https://pit.wiki/images/banner_smaller.png" width="200">
