@@ -1,9 +1,10 @@
-# pitwiki
-The unofficial Hypixel Pit wiki, created by BrookeAFK and adjective_n0un
+# The Hypixel Pit Wiki
+— The unofficial Hypixel Pit wiki, created by [BrookeAFK](https://brookeafk.com) and [adjective_n0un](https://github.com/adjectiven0un) — <br />
 
-♪ Hey! adj here. This is our attempt at creating a wiki for the Hypixel Pit, an endeavor that has been attempted multiple times but never come to fruition.   
+♪ Hi there! This is our attempt at creating a wiki for The Hypixel Pit, an endeavor that has been attempted multiple times but never come to fruition.  <br />
 
-♪ Hopefully this project allows more players to become familiar with the Pit.  
+♪ Hopefully, this project allows more players to become familiar with The Pit.  <br />
 
-♪ Enjoy reading!  
+♪ Enjoy reading! <br />
 
+![Hundreds of multi-colored excerpts of various Pit chat messages, such as "Bounty!", "Sweet!", "Uberstreak!", and "Lucky Shot!" float above a dark blue background.](https://pit.wiki/images/emphasis.png)
