@@ -44,10 +44,10 @@ $(function(){
         <td>Name</td><td>Cost</td><td>Reqs.</td><td>Description</td>
     </tr>
     <tr id="SecondGapple" name="SecondGapple">
-        <td>Second Gapple</td><td><span class="m6">1,500g</span></td><td>Every <span class="md">3</span> kills / [<span class="m9">10</span>]</td><td>Receive +5 XP, 5g, and a Golden Apple.</td>
+        <td>Second Gapple</td><td><span class="m6">1,500g</span></td><td>Every <span class="md">3</span> kills / [<span class="m9">10</span>]</td><td>Receive +5 <a href="XP"><span class="mb">XP</span></a>, 5g, and a Golden Apple.</td>
     </tr>
     <tr id="Explicious" name="Explicious">
-      <td>Explicious</td><td><span class="m6">3,000g</span></td><td>Every <span class="md">3</span> kills / [<span class="m3">20</span>]</td><td>Receive +12 XP.</td>
+      <td>Explicious</td><td><span class="m6">3,000g</span></td><td>Every <span class="md">3</span> kills / [<span class="m3">20</span>]</td><td>Receive +12 <a href="XP"><span class="mb">XP</span></a>.</td>
   </tr>
   <tr id="Arquebusier" name="Arquebusier">
     <td>Arquebusier</td><td><span class="m6">5,000g</span></td><td>Every <span class="md">3</span> kills / [<span class="me">50</span>]</td><td>Receive +7g, 16 arrows, and Speed I (0:10).</td>
@@ -98,7 +98,7 @@ $(function(){
   <td>Aura of Protection</td><td><span class="m9">Hermit Bundle</span> (<span class="m9">IV</span>, <span class="me">20 Renown</span>)</td><td><span class="m6">8,000g</span></td><td>Every <span class="md">10</span> kills / [<span class="me">50</span>]</td><td>Gain an Aura of Protection spell item granting Resistance II (0:04) and True Damage immunity for 15 seconds.</td>
 </tr>
 <tr id="IceCube" name="IceCube">
-  <td>Ice Cube</td><td><span class="m9">Hermit Bundle</span> (<span class="m9">IV</span>, <span class="me">20 Renown</span>)</td><td><span class="m6">9,000g</span></td><td>Every <span class="md">10</span> kills / [<span class="m6"><strong>60</strong></span>]</td><td>Gain an Ice Cube item. The Ice Cube is single-use on a melee strike, dealing 1&hearts; of true damage to enemies. Applies Slowness I (0:10). Gain 40 XP on use.</td>
+  <td>Ice Cube</td><td><span class="m9">Hermit Bundle</span> (<span class="m9">IV</span>, <span class="me">20 Renown</span>)</td><td><span class="m6">9,000g</span></td><td>Every <span class="md">10</span> kills / [<span class="m6"><strong>60</strong></span>]</td><td>Gain an Ice Cube item. The Ice Cube is single-use on a melee strike, dealing 1&hearts; of true damage to enemies. Applies Slowness I (0:10). Gain 40 <a href="XP"><span class="mb">XP</span></a> on use.</td>
 </tr>
 <tr id="Hermit" name="Hermit">
   <td>Hermit</td><td><span class="m9">Hermit Bundle</span> (<span class="m9">IV</span>, <span class="me">20 Renown</span>)</td><td><span class="m6">20,000g</span></td><td>Triggers on <span class="md">50</span> kills / [<span class="me">50</span>]</td><td>Main article: <a href="Hermit">Hermit</a></td>
@@ -128,13 +128,13 @@ $(function(){
   <td>Magnum Opus</td><td><span class="mc">Magnum Opus Bundle</span> (<span class="m6">X</span>, <span class="me">60 Renown</span>)</td><td><span class="m6">40,000g</span></td><td>Triggers on <span class="md">50</span> kills / [<span class="mc"><strong>70</strong></span>]</td><td>Main article: <a href="Magnum_Opus">Magnum Opus</a></td>
 </tr>
 <tr id="SuperStreaker" name="SuperStreaker">
-  <td>Super Streaker</td><td><span class="mb">To The Moon Bundle</span> (<span class="m6">XIV</span>, <span class="me">150 Renown</span>)</td><td><span class="m6">20,000g</span></td><td>Every <span class="md">10</span> kills / [<span class="m4"><strong>80</strong></span>]</td><td>Gain 50 XP and stack a buff of +5% XP from kills. Maximum of +50%.</td>
+  <td>Super Streaker</td><td><span class="mb">To The Moon Bundle</span> (<span class="m6">XIV</span>, <span class="me">150 Renown</span>)</td><td><span class="m6">20,000g</span></td><td>Every <span class="md">10</span> kills / [<span class="m4"><strong>80</strong></span>]</td><td>Gain 50 <a href="XP"><span class="mb">XP</span></a> and stack a buff of +5% <a href="XP"><span class="mb">XP</span></a> from kills. Maximum of +50%.</td>
 </tr>
 <tr id="GoldStack" name="GoldStack">
   <td>Gold Stack</td><td><span class="mb">To The Moon Bundle</span> (<span class="m6">XIV</span>, <span class="me">150 Renown</span>)</td><td><span class="m6">25,000g</span></td><td>Every <span class="md">10</span> kills / [<span class="m5"><strong>90</strong></span>]</td><td>Permanently gain +0.1g per kill. This perk maxes out at 0.5g with an additional maximum of 0.1g per prestige. The gold bonus applies even when the killstreak is not active.</td>
 </tr>
 <tr id="XPStack" name="XPStack">
-  <td>XP Stack</td><td><span class="mb">To The Moon Bundle</span> (<span class="m6">XIV</span>, <span class="me">150 Renown</span>)</td><td><span class="m6">25,000g</span></td><td>Every <span class="md">10</span> kills / [<span class="m5"><strong>90</strong></span>]</td><td>Permanently gain +0.05 XP per kill. This perk maxes out at 1 XP with an additional maximum of 0.2 XP per prestige. The XP bonus applies even when the killstreak is not active.</td>
+  <td>XP Stack</td><td><span class="mb">To The Moon Bundle</span> (<span class="m6">XIV</span>, <span class="me">150 Renown</span>)</td><td><span class="m6">25,000g</span></td><td>Every <span class="md">10</span> kills / [<span class="m5"><strong>90</strong></span>]</td><td>Permanently gain +0.05 <a href="XP"><span class="mb">XP</span></a> per kill. Resets on prestige. This perk maxes out at 1 <a href="XP"><span class="mb">XP</span></a> with an additional maximum of 0.2 <a href="XP"><span class="mb">XP</span></a> per prestige. The <a href="XP"><span class="mb">XP</span></a> bonus applies even when the killstreak is not active.</td>
 </tr>
 <tr id="ToTheMoon" name="ToTheMoon">
   <td>To The Moon</td><td><span class="mb">To The Moon Bundle</span> (<span class="m6">XIV</span>, <span class="me">150 Renown</span>)</td><td><span class="m6">50,000g</span></td><td>Triggers on <span class="md">100</span> kills / [<span class="m4"><strong>80</strong></span>]</td><td>Main article: <a href="To_the_Moon">To the Moon</a></td>
