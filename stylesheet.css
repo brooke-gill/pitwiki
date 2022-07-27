@@ -72,6 +72,11 @@ body {
   padding: 5px;
 }
 
+.highlighted {
+  border:2px solid #CC0000;
+  background: #880000;
+}
+
 .invisible_fill {
   background-color: #361a1d;
 }
@@ -190,9 +195,10 @@ a:active {
   --mcf: #fff;
 }
 
-.anchor {
-  position: absolute;
-  transform: translateY(-50vh);
-}
+
 td img {display: block;   margin-left: auto; margin-right: auto;}
 
+.anchor {
+  position: absolute;
+  transform: translateY(-50px);
+}
