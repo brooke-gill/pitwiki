@@ -18,14 +18,14 @@ var replace = {' ':'_', "'":""}
 var numberofvisibleitems = 0
 var numberofhiddenitemsbecauseof5itemlimit = 0
 
-for(var i = 0; i < window.pages.length; i += 1) {
+for(var i = 0; i < window.searchpages.length; i += 1) {
     console.log("doing thing")
     var fulllist = document.getElementById('aUL')
     var list = document.createElement("li")
       var ahref = document.createElement("a");
-      ahref.textContent = window.pages[i];
+      ahref.textContent = window.searchpages[i][0];
       ahref.id = ("link_" + i);
-      ahref.setAttribute('href', window.pages[i].replace(/[ ']/g, m => replace[m]));
+      ahref.setAttribute('href', window.searchpages[i][1]);
       list.appendChild(ahref);
       fulllist.appendChild(list);
       console.log(list)
