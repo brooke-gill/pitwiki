@@ -62,8 +62,8 @@ $(function(){
 <tr id="FeastHeader">
   <td><span class="anchor" id="Feast"></span>Feast</td><td><a href="Gold"><span class="m6">4,000g</span></a></td><td>Every <span class="md">7</span> kills / [<span class="m2">30</span>]</td><td>Obtain an AAA-Rated Steak (raw mutton). Steaks are eaten instantly, granting a 20% damage boost, Speed I and Resistance I (0:10).</td>
 </tr>
-<tr id="Counter-StrikeHeader">
-  <td>Counter-Strike</td><td><a href="Gold"><span class="m6">5,000g</span></a></td><td>Every <span class="md">7</span> kills / [<span class="ma">40</span>]</td><td>Deal +15% damage and block 1&hearts; per hit for 8 seconds.</td>
+<tr id="CounterStrikeHeader">
+  <td><span class="anchor" id="CounterStrike"></span>Counter-Strike</td><td><a href="Gold"><span class="m6">5,000g</span></a></td><td>Every <span class="md">7</span> kills / [<span class="ma">40</span>]</td><td>Deal +15% damage and block 1&hearts; per hit for 8 seconds.</td>
 </tr>
 <tr id="SpongesteveHeader">
   <td><span class="anchor" id="Spongesteve"></span>Spongesteve</td><td><a href="Gold"><span class="m6">12,000g</span></a></td><td>Every <span class="md">25</span> kills / [<span class="mc"><strong>70</strong></span>]</td><td>Gain <span class="me">15&hearts;</span> of Absorption.</td>
@@ -167,6 +167,9 @@ $(function(){
 </body>
 <script>
     function ChangeHighlight() {
+        Array.from(document.querySelectorAll('.highlighted')).forEach(function(el) { 
+        el.classList.remove('highlighted');
+        });
         var hash = location.hash.substr(1);
         console.log(hash)
         if(hash.length > 0) {

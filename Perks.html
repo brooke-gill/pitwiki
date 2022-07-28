@@ -143,6 +143,9 @@ $(function(){
 </body>
 <script>
     function ChangeHighlight() {
+    Array.from(document.querySelectorAll('.highlighted')).forEach(function(el) { 
+    el.classList.remove('highlighted');
+    });
         var hash = location.hash.substr(1);
         console.log(hash)
         if(hash.length > 0) {
