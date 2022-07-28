@@ -81,6 +81,17 @@ body {
   background-color: #361a1d;
 }
 
+.headerbox {
+  background-color: #361a1d;
+  width: 80%;
+  padding: 20px 50px 20px;
+  margin: 0px;
+  margin-left: auto;
+  margin-right: auto;
+  line-height: 1.75;
+  border-radius: 15px;
+  }
+
   .box {
   background-color: #361a1d;
   width: 80%;
@@ -90,6 +101,8 @@ body {
   margin-right: auto;
   line-height: 1.75;
   border-radius: 15px;
+  position:relative;
+  top: 50px;
   }
 
 .m0 {
