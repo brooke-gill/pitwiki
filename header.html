@@ -3,13 +3,13 @@
 <div class="box">
 <span class="body" style="text-align:center"><a href="./" style="color: white">The Hypixel Pit Wiki</a></span>
 
-<span id="search" class="body" style="float:right; cursor: pointer;" onmouseover="mouseOver()" onmouseout="mouseOut()" onclick="Search()"><span>Search </span><span style="font-family: Material;">search</span></span>
+<input type="text" id="myInput" onkeyup="Filter()" style="display: none; float: right; text-align: left;" placeholder="Search for articles...">
+<span id="search" class="body" style="float:right; cursor: pointer;" onmouseover="mouseOver()" onmouseout="mouseOut()" onclick="Search()"><span>Search </span><span style="font-family: Material;">search&Tab;</span></span>
 <br>
 </div>
 
 <span id="partofsearch" style="display: none">
-<input type="text" id="myInput" onkeyup="Filter()" style="display: none; float:right; margin: 0px 100px 0px 0px;" placeholder="Search for articles..."><br><br>
-<ul id="aUL" style="display: none; list-style-type: square; background-color:#4a2328; border-radius: 15px; padding: 20px 50px 20px 50px; margin: 0px 100px 0px 0px; position:absolute; right: 0px"></ul>
+<ul id="aUL" style="display: none; list-style-type: square; background-color:#4a2328; border-radius: 15px; padding: 20px 50px 20px 50px; margin: 0px 100px 0px 0px; position:absolute; right: 0px; width: 200px"></ul>
 </span>
 <script>
 var searchclicked = 0;
@@ -80,7 +80,8 @@ input.addEventListener("keypress", function(event) {
     console.log("click")
     event.preventDefault();
     document.getElementById('link_' + topitem).click();
-  }
+    ChangeHighlight()
+ }
 });
 
 
@@ -105,7 +106,9 @@ function Search() {
 <style>
 input[type="text"]
 {
-    font-size:15px;
+    font-size:16px;
     font-family: Roboto;
-    color: rebeccapurple
+    text-align:center;
+    background-color: rgb(74, 35, 40);
+    color: white;
 }
