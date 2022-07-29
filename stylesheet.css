@@ -153,6 +153,9 @@ body {
 .mf {
     color: #fff
 }
+.td{
+    color: #caa
+}
 
 a:link {
   color: #5abbb7;
@@ -206,6 +209,7 @@ a:active {
   --mcd: #f5f;
   --mce: #ff5;
   --mcf: #fff;
+  --td: #caa;
 }
 
 td img {display: block;   margin-left: auto; margin-right: auto;}
