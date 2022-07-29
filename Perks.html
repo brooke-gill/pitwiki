@@ -143,19 +143,15 @@ $(function(){
 </body>
 <script>
     function ChangeHighlight() {
-    Array.from(document.querySelectorAll('.highlighted')).forEach(function(el) { 
-    el.classList.remove('highlighted');
-    });
-        var hash = location.hash.substr(1);
-        console.log(hash)
-        if(hash.length > 0) {
-        document.getElementById(hash + "Header").classList.add('highlighted')
-    }
-    }
-    var hash = location.hash.substr(1);
-        console.log(hash)
-        if(hash.length > 0) {
-        document.getElementById(hash + "Header").classList.add('highlighted')
-    }
-</script>
+      Array.from(document.querySelectorAll('.highlighted')).forEach(function(el) { 
+      el.classList.remove('highlighted');
+      });
+      var hash = location.hash.substring(1);
+      console.log(hash)
+      if(hash.length > 0) {
+      document.getElementById(hash + "Header").classList.add('highlighted')
+      }
+  }
+  ChangeHighlight()
+  </script>
 </html>
