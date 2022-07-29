@@ -32,7 +32,7 @@ body {
   .small {
     font-size: 12px;
     font-style: italic;
-    color: #aaa
+    color: #aaa;
   }
 
   .center {
@@ -214,3 +214,9 @@ td img {display: block;   margin-left: auto; margin-right: auto;}
   position: absolute;
   transform: translateY(-100px);
 }
+
+html{
+  -moz-text-size-adjust: none;
+  -webkit-text-size-adjust: none;
+  text-size-adjust: none;
+  }
