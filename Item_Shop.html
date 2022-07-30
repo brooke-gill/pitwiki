@@ -1,0 +1,138 @@
+<!DOCTYPE html>
+<html>
+<head>
+<link rel="stylesheet" href="stylesheet.css">
+<title>Item Shop - The Hypixel Pit Wiki</title>
+<meta name="description" content="">
+<meta name="author" content="adjective_n0un">
+<meta name="keywords" content="Hypixel Pit Wiki, Hypixel Pit Item Shop, Hypixel, Hypixel Item Shop, The Pit Item Shop, Item Shop">
+<link rel="apple-touch-icon" sizes="180x180" href="./favicon/apple-touch-icon.png">
+<link rel="icon" type="image/png" sizes="32x32" href="./favicon/favicon-32x32.png">
+<link rel="icon" type="image/png" sizes="16x16" href="./favicon/favicon-16x16.png">
+<link rel="manifest" href="./favicon/site.webmanifest">
+<script src="https://code.jquery.com/jquery-3.6.0.js" integrity="sha256-H+K7U5CnXl1h5ywQfKtSj8PCmoN9aaq30gDh27Xc0jk=" crossorigin="anonymous"></script>
+<script> 
+
+$(function(){
+  $("#header").load("header.html"); 
+  $("#footer").load("footer.html"); 
+});
+</script>
+</head>
+<body>
+<div id="header"></div>
+<div class="box">
+<span class="body">
+  <table class="item body">
+    <tr>
+        <td class="tableheader">Item Shop</td>
+      </tr>
+    <tr>
+      <td style="text-align: center"><img src="./images/item_shop.gif" width="50%"></td>
+    </tr>
+    <tr>
+      <td class="small center m7">The item shop GUI.</td>
+    </tr>
+</table>
+<span class="header">Item Shop</span><br>
+<span class="subheader">From the <a href="./">Hypixel Pit Wiki</a></span>
+<hr>
+<p>The <strong>Item Shop</strong> is an NPC in the spawn area of the pit. Various upgrades and helpful items can be purchased from the item shop, however, most of them are lost on death.</p>
+
+<p>By default, the following items can be purchased from the Renown Shop:</p>
+<table class="body">
+
+    <tr style="font-weight: bold; position: sticky; top: 0" class="invisible_fill">
+
+      <td>Name</td><td>Gold Cost</td><td>Description</td>
+
+    </tr>
+    <tbody id="Diamond_SwordHeader"><tr>
+      <td><span class="anchor" id="Diamond_Sword"></span>Diamond Sword</td><td><a href = "Gold"><span class = m6>150g</span></a></td<td>A diamond sword. Deals +20% damage to players who have a bounty.</td>
+    </tr>
+   </tbody>
+  <tbody id="ObsidianHeader"><tr>
+    <td><span class="anchor" id="Obsidian"></span>Obsidian</td><td><a href = "Gold"><span class = m6>40g</span></a></td><td>A stack of 8 obsidian. </td>
+    </tr>
+   </tbody>
+  <tbody id="Diamond_ChestplateHeader"><tr>
+    <td><span class="anchor" id="Diamond_Chestplate"></span>Diamond Chestplate</td><td><a href = "Gold"><span class = m6>500g</span></a></td><td>A diamond chestplate.</td>
+    </tr>
+   </tbody>
+  <tbody id="Diamond_BootsHeader"><tr>
+    <td><span class="anchor" id="Diamond_Boots"></span>Diamond Boots</td><td><a href = "Gold"><span class = m6>300g</span></a></td><td>A pair of diamond boots.</td>
+    </tr>
+   </tbody>
+  <tbody id="Golden_PickaxeHeader"><tr>
+    <td><span class="anchor" id="Golden_Pickaxe"></span>Golden Pickaxe</td><td><a href = "Gold"><span class = m6>500g</span></a></td><td>A golden pickaxe. When clicking an obsidian block twice with it, destroy it and up to four connected obsidian blocks above it.</td>
+    </tr>
+   </tbody>
+  </table><br>
+  <span>In addition to the default items, nine items can be added to the Item Shop by unlocking them in the <a href = "Renown">Renown Shop</a>.</span><br>
+  <table class="body">
+
+    <tr style="font-weight: bold; position: sticky; top: 0" class="invisible_fill">
+
+      <td>Name</td><td>Prestige Required</td><td>Renown Cost</td><td>Gold Cost</td><td>Description</td>
+      
+   <tbody id="Iron_PackHeader"><tr>
+     <td><span class="anchor" id="Iron_Pack"></span>Iron Pack</td><td>Prestige <span class = m9>I</span></td><td><a href = "Renown"><span class = me>5 renown</span></a></td><td><a href = "Gold"><span class = m6>100g</span></a></td><td>An iron chestplate, leggings, and boots.</td>
+    </tr>
+   </tbody>
+   <tbody id="Obsidian_StackHeader"><tr>
+    <td><span class="anchor" id="Obsidian_Stack"></span>Obsidian Stack</td><td>Prestige <span class = m9>II</span></td><td><a href = "Renown"><span class = me>5 renown</span></a></td><td><a href = "Gold"><span class = m6>240g</span></a></td><td>A stack of 64 obsidian. 25% cheaper than the original.</td>
+    </tr>
+   </tbody>
+   <tbody id="Combat_SpadeHeader"><tr>
+    <td><span class="anchor" id="Combat_Spade"></span>Combat Spade</td><td>Prestige <span class = m9>III</span></td><td><a href = "Renown"><span class = me>10 renown</span></a></td><td><a href = "Gold"><span class = m6>750g</span></a></td><td>A diamond shovel modified to deal the same damage as a diamond sword. Deals <span class = mc>+0.5♥</span> damage per diamond armor piece the target is wearing.</td>
+    </tr>
+   </tbody>
+   <tbody id="Diamond_LeggingsHeader"><tr>
+    <td><span class="anchor" id="Diamond_Leggings"></span>Diamond Leggings</td><td>Prestige <span class = m9>III</span></td><td><a href = "Renown"><span class = me>20 renown</span></a></td><td><a href = "Gold"><span class = m6>1200g</span></a></td><td>A pair of diamond leggings.</td>
+    </tr>
+   </tbody>
+   <tbody id="FirstAid_EggHeader"><tr>
+    <td><span class="anchor" id="FirstAid_Egg"></span>First-Aid Egg</td><td>Prestige <span class = me>V</span></td><td><a href = "Renown"><span class = me>15 renown</span></a></td><td><a href = "Gold"><span class = m6>200g</span></a></td><td>A mooshroom egg. When right-clicked, heal 2.5♥ but lose the Speed effect if you have it. 30 second cooldown, minus 5 for every player killed during the cooldown. While on cooldown, appears as a skeleton egg.</td>
+    </tr>
+   </tbody>
+   <tbody id="Bounty_SolventHeader"><tr>
+    <td><span class="anchor" id="Bounty_Solvent"></span>Bounty Solvent</td><td>Prestige <span class = me>VI</span></td><td><a href = "Renown"><span class = me>10 renown</span></a></td><td><a href = "Gold"><span class = m6>575g</span></a></td><td>A potion. When drank, grants the Bounty Solvent effect (1:00). Effect time remaining can be viewed in the scoreboard. While you have the effect, take <span class = m9>30%</span> less damage from players with a 1000g bounty, and earn <a href = "Gold"><span class = m6>+50% gold</span></a> from claimed bounties.</td>
+    </tr>
+   </tbody>
+   <tbody id="Jump_Boost_IVHeader"><tr>
+    <td><span class="anchor" id="Jump_Boost_IV"></span>Jump Boost IV</td><td>Prestige <span class = me>VII</span></td><td><a href = "Renown"><span class = me>20 renown</span></a></td><td><a href = "Gold"><span class = m6>150g</span></a></td><td>A potion. When drank, grants Jump Boost IV (0:30).</td>
+    </tr>
+   </tbody>
+   <tbody id="Tactical_InsertionHeader"><tr>
+    <td><span class="anchor" id="Tactical_Insertion"></span>Tactical Insertion</td><td>Prestige <span class = me>VIII</span></td><td><a href = "Renown"><span class = me>20 renown</span></a></td><td><a href = "Gold"><span class = m6>100g</span></a></td><td>A blaze rod. When right-clicked, the spawn point for your next death only is set to your current location. 60 second cooldown.</td>
+    </tr>
+   </tbody>
+   <tbody id="Pants_BundleHeader"><tr>
+    <td><span class="anchor" id="Pants_Bundle"></span>Pants Bundle</td><td>Prestige <span class = m6>XII</span></td><td><a href = "Renown"><span class = me>20 renown</span></a></td><td><a href = "Gold"><span class = m6>50g</span></a></td><td>A minecart. When right-clicked, stores the first 10 <a href = "Fresh_Pants"> in your inventory inside it.</td>
+    </tr>
+   </tbody>
+    
+    
+  </table><br>
+
+  <span>This page isn't complete yet. Come back later! -Pit Wiki team</span>
+</span></div>
+  
+  
+<div id="footer"></div>
+
+</body>
+<script>
+  function ChangeHighlight() {
+    Array.from(document.querySelectorAll('.highlighted')).forEach(function(el) { 
+    el.classList.remove('highlighted');
+    });
+    var hash = location.hash.substring(1);
+    console.log(hash)
+    if(hash.length > 0) {
+    document.getElementById(hash + "Header").classList.add('highlighted')
+    }
+}
+ChangeHighlight()
+</script>
+</html>
