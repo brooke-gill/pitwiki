@@ -58,7 +58,6 @@ body {
   float: right;
   margin: 10px;
   border:1px solid white;
-
 }
 
   .tableheader {
@@ -91,6 +90,11 @@ body {
   line-height: 1.75;
   border-radius: 15px;
   }
+
+.smallbreak {
+  height: 0px;
+  visibility: hidden;
+}
 
   .box {
   background-color: #361a1a;
