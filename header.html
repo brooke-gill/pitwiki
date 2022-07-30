@@ -3,7 +3,7 @@
 <div class="headerbox" style="position:fixed; left: 50%; transform: translate(-50%, 0); z-index:3; background-size: 100%; outline: 2px solid #783a41; top:-10px">
 <span class="body" style="text-align:center"><a href="./" style="color: white" id="thehypixelpitwiki">The Hypixel Pit Wiki</a></span>
 
-<input type="text" id="myInput" onkeyup="Filter()" style="display: none; float: right; text-align: left;" placeholder="&#x1F50E;&#xFE0E; Search for articles...">
+<input type="text" autocomplete="off" id="myInput" onkeyup="Filter()" style="display: none; float: right; text-align: left;" placeholder="&#x1F50E;&#xFE0E; Search for articles...">
 </div>
 
 <span id="partofsearch" style="display: none">
@@ -56,6 +56,7 @@ input.addEventListener("keypress", function(event) {
     document.getElementById('link_' + topitem).click();
     ChangeHighlight()
     document.getElementById("myInput").value = "";
+    document.getElementById('aUL').style.display = "none"
  }
 });
 
