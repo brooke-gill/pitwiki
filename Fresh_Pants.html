@@ -50,7 +50,7 @@ $(function(){
   <span>Enchanting Fresh Pants gives them a random number of lives that increases on every tier and removes their Kept on Death status. Lives decrease by 1 on death, or by 3 if you log out while in combat. Depleting all lives on a mystic item "breaks" it, destroying it forever.</span>
   <span>When enchanted, standard Fresh Pants gain random enchantments with varying effects. Upon upgrading to tier I, they gain 1–2 "tokens" – total tiers – of a low-grade enchantment. When upgrading to tier II, they gain 1–2 more tokens of any enchantment, and at tier III, they gain 1–4 more tokens – up to 8 total.</span>
   <br><br>
-  <span>The list of enchantments that can be obtained at tier I is as follows:</span><br><br>
+  <span>The list of enchantments that can be obtained at tier I or higher is as follows:</span><br><br>
   <table class="body">
 
     <tr style="font-weight: bold; position: sticky; top: 0" class="invisible_fill">
@@ -211,9 +211,90 @@ $(function(){
     <tr>
       <td><span class = "md">90%</span> higher chance to find mystic items on kill.</td>
     </tr></tbody>
-  </table>
+    
+  </table><br><br>
   
+<span>The list of enchantments that additionally can be obtained at tier II or higher is as follows. Enchants marked as <span class = "md">RARE!</span> have a much lower occurence rate than other enchants.</span><br>
+  <table class="body">
 
+    <tr style="font-weight: bold; position: sticky; top: 0" class="invisible_fill">
+
+        <td>Name</td><td>Description</td>
+
+    </tr>
+    <tbody id="BooBooHeader"><tr>
+      <td rowspan="3"><span class="anchor" id="BooBoo"></span>Boo-Boo</td><td><span class="m9">I</span>: Passively heal 1♥ every 5 seconds.</td>
+    </tr>
+    <tr>
+        <td><span class="m9">II</span>: Passively heal 1♥ every 4 seconds.</td>
+    </tr>
+    <tr>
+        <td><span class="m9">III</span>: Passively heal 1♥ every 3 seconds.</td>
+    </tr></tbody>
+     <tbody id="CounterOffensiveHeader"><tr>
+      <td rowspan="3"><span class="anchor" id="CounterOffensive"></span>Counter-Offensive</td><td><span class="m9">I</span>: Gain Speed II (0:03) when hit four times.</td>
+    </tr>
+    <tr>
+        <td><span class="m9">II</span>: Gain Speed II (0:05) when hit three times.</td>
+    </tr>
+    <tr>
+        <td><span class="m9">III</span>: Gain Speed II (0:07) when hit two times.</td>
+    </tr></tbody>
+    <tbody id="CreativeHeader"><tr>
+      <td rowspan="3"><span class="anchor" id="Creative"></span>Creative</td><td><span class="m9">I</span>: Spawn with 16 placeable oak planks. By default, planks disappear 30 seconds after placement. Gain 6 planks on kill. Max 64 planks.</td>
+    </tr>
+    <tr>
+        <td><span class="m9">II</span>: Spawn with 32 placeable oak planks. By default, planks disappear 30 seconds after placement. Gain 12 planks on kill. Max 64 planks.</td>
+    </tr>
+    <tr>
+        <td><span class="m9">III</span>: Spawn with 48 placeable oak planks. By default, planks disappear 30 seconds after placement. Gain 18 planks on kill. Max 64 planks.</td>
+    </tr></tbody>
+    <tbody id="Critically_FunkyHeader"><tr>
+      <td rowspan="3"><span class="anchor" id="Critically_Funky"></span>Critically Funky</td><td><span class="m9">I</span>: Take -20% damage from critical hits.</td>
+    </tr>
+    <tr>
+        <td><span class="m9">II</span>: Take -40% damage from critical hits. Taking a critical hit increases your next strike's damage by 14%.</td>
+    </tr>
+    <tr>
+        <td><span class="m9">III</span>: Take -50% damage from critical hits. Taking a critical hit increases your next strike's damage by 30%.</td>
+    </tr></tbody>
+    <tbody id="Danger_CloseHeader"><tr>
+      <td rowspan="3"><span class="anchor" id="Danger_Close"></span>Danger Close</td><td><span class="m9">I</span>: Gain Speed III (0:03) when reaching 3♥ left</td>
+    </tr>
+    <tr>
+        <td><span class="m9">II</span>: Gain Speed III (0:06) when reaching 4♥ left</td>
+    </tr>
+    <tr>
+        <td><span class="m9">III</span>: Gain Speed III (0:09) when reaching 4♥ left</td>
+    </tr></tbody>
+    <tbody id="EggsHeader"><tr>
+      <td rowspan="3"><span class="anchor" id="Eggs"></span>Eggs</td><td><span class="m9">I</span>: Spawn with 8 eggs. Gain 4 on kill. Max 16.</td>
+    </tr>
+    <tr>
+        <td><span class="m9">II</span>: Spawn with 8 eggs. Gain 8 on kill. Max 16.</td>
+    </tr>
+    <tr>
+        <td><span class="m9">III</span>: Spawn with 16 eggs. Gain 16 on kill. Max 16.</td>
+    </tr></tbody>
+    <tbody id="ElectrolytesHeader"><tr>
+      <td rowspan="3"><span class="anchor" id="Electrolytes"></span>Electrolytes</td><td><span class="m9">I</span>: If you have Speed I on kill, add 2 seconds to it. If you have Speed II or higher, add 1 second instead.</td>
+    </tr>
+    <tr>
+        <td><span class="m9">II</span>: If you have Speed I on kill, add 4 seconds to it. If you have Speed II or higher, add 2 seconds instead.</td>
+    </tr>
+    <tr>
+        <td><span class="m9">III</span>: If you have Speed I on kill, add 6 seconds to it. If you have Speed II or higher, add 3 seconds instead.</td>
+    </tr></tbody>
+    <tbody id="ExcessHeader"><tr>
+      <td rowspan="3"><span class="anchor" id="Excess"></span>Excess</td><td><span class="m9">I</span>: +1 max healing items. Applies after <a href = "Perks#Overheal">Overheal</a>.</td>
+    </tr>
+    <tr>
+        <td><span class="m9">II</span>: +2 max healing items. Applies after <a href = "Perks#Overheal">Overheal</a>.</td>
+    </tr>
+    <tr>
+        <td><span class="m9">III</span>: +3 max healing items. Applies after <a href = "Perks#Overheal">Overheal</a>.</td>
+    </tr></tbody>
+  </table><br><br>
 <span>To save inventory space, ten pairs of fresh pants of any color can be merged into one inventory slot using an empty Pants Bundle (typically abbreviated as "pb" when full).<br>Empty Pants Bundles are a shop item that can be unlocked in the Renown shop at prestige <span class="m6">XII</span> for <a href="Renown"><span class="me">20 renown</span></a>. Once unlocked, they can be purchased at the "Items" NPC for 50 <a href="Gold"><span class="m6">gold</span></a>.</span><br>
    
 </span></div>
