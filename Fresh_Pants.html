@@ -223,13 +223,13 @@ $(function(){
 
     </tr>
     <tbody id="BooBooHeader"><tr>
-      <td rowspan="3"><span class="anchor" id="BooBoo"></span>Boo-Boo</td><td><span class="m9">I</span>: Passively heal 1♥ every 5 seconds.</td>
+      <td rowspan="3"><span class="anchor" id="BooBoo"></span>Boo-Boo</td><td><span class="m9">I</span>: Passively heal <span class = mc>1♥</span> every 5 seconds.</td>
     </tr>
     <tr>
-        <td><span class="m9">II</span>: Passively heal 1♥ every 4 seconds.</td>
+      <td><span class="m9">II</span>: Passively heal <span class = mc>1♥</span> every 4 seconds.</td>
     </tr>
     <tr>
-        <td><span class="m9">III</span>: Passively heal 1♥ every 3 seconds.</td>
+      <td><span class="m9">III</span>: Passively heal <span class = mc>1♥</span> every 3 seconds.</td>
     </tr></tbody>
      <tbody id="CounterOffensiveHeader"><tr>
       <td rowspan="3"><span class="anchor" id="CounterOffensive"></span>Counter-Offensive</td><td><span class="m9">I</span>: Gain Speed II (0:03) when hit four times.</td>
@@ -250,22 +250,22 @@ $(function(){
         <td><span class="m9">III</span>: Spawn with 48 placeable oak planks. By default, planks disappear 30 seconds after placement. Gain 18 planks on kill. Max 64 planks.</td>
     </tr></tbody>
     <tbody id="Critically_FunkyHeader"><tr>
-      <td rowspan="3"><span class="anchor" id="Critically_Funky"></span>Critically Funky</td><td><span class="m9">I</span>: Take -20% damage from critical hits.</td>
+      <td rowspan="3"><span class="anchor" id="Critically_Funky"></span>Critically Funky</td><td><span class="m9">I</span>: Take <span class = m9>-20%</span> damage from critical hits.</td>
     </tr>
     <tr>
-        <td><span class="m9">II</span>: Take -40% damage from critical hits. Taking a critical hit increases your next strike's damage by 14%.</td>
+      <td><span class="m9">II</span>: Take <span class = m9>-40%</span> damage from critical hits. Taking a critical hit increases your next strike's damage by <span class = mc>14%</span>.</td>
     </tr>
     <tr>
-        <td><span class="m9">III</span>: Take -50% damage from critical hits. Taking a critical hit increases your next strike's damage by 30%.</td>
+      <td><span class="m9">III</span>: Take <span class = m9>-50%</span> damage from critical hits. Taking a critical hit increases your next strike's damage by <span class = mc>30%</span>.</td>
     </tr></tbody>
     <tbody id="Danger_CloseHeader"><tr>
-      <td rowspan="3"><span class="anchor" id="Danger_Close"></span>Danger Close</td><td><span class="m9">I</span>: Gain Speed III (0:03) when reaching 3♥ left</td>
+      <td rowspan="3"><span class="anchor" id="Danger_Close"></span>Danger Close</td><td><span class="m9">I</span>: Gain Speed III (0:03) when reaching <span class = mc>3♥</span> left</td>
     </tr>
     <tr>
-        <td><span class="m9">II</span>: Gain Speed III (0:06) when reaching 4♥ left</td>
+        <td><span class="m9">II</span>: Gain Speed III (0:06) when reaching <span class = mc>4♥</span> left</td>
     </tr>
     <tr>
-        <td><span class="m9">III</span>: Gain Speed III (0:09) when reaching 4♥ left</td>
+        <td><span class="m9">III</span>: Gain Speed III (0:09) when reaching <span class = mc>4♥</span> left</td>
     </tr></tbody>
     <tbody id="EggsHeader"><tr>
       <td rowspan="3"><span class="anchor" id="Eggs"></span>Eggs</td><td><span class="m9">I</span>: Spawn with 8 eggs. Gain 4 on kill. Max 16.</td>
@@ -293,6 +293,51 @@ $(function(){
     </tr>
     <tr>
         <td><span class="m9">III</span>: +3 max healing items. Applies after <a href = "Perks#Overheal">Overheal</a>.</td>
+    </tr></tbody>
+    <tbody id="Golden_HeartHeader"><tr>
+      <td rowspan="3"><span class="anchor" id="Golden_Heart"></span>Golden Heart</td><td><span class="m9">I</span>: Gain <span class = me>0.5♥</span> Absorption on kill. Max <span class = me>4♥</span>.</td>
+    </tr>
+    <tr>
+      <td><span class="m9">II</span>: Gain <span class = me>1♥</span> Absorption on kill. Max <span class = me>5♥</span>.</td>
+    </tr>
+    <tr>
+      <td><span class="m9">III</span>: Gain <span class = me>2♥</span> Absorption on kill. Max <span class = me>6♥</span>.</td>
+    </tr></tbody>
+    <tbody id="Gotta_go_fastHeader"><tr>
+      <td rowspan="3"><span class="anchor" id="Gotta_go_fast"></span>Gotta go fast</td><td><span class="m9">I</span>: Move 4% faster. A white particle trail appears as you run.</td>
+    </tr>
+    <tr>
+        <td><span class="m9">II</span>: Move 10% faster. A white particle trail appears as you run.</td>
+    </tr>
+    <tr>
+        <td><span class="m9">III</span>: Move 20% faster. A white particle trail appears as you run.</td>
+    </tr></tbody>
+    <tbody id="HeartsHeader"><tr>
+      <td rowspan="3"><span class="anchor" id="Hearts"></span>Hearts</td><td><span class="m9">I</span>: Gain <span class = mc>0.25♥</span> max HP.</td>
+    </tr>
+    <tr>
+      <td><span class="m9">II</span>: Gain <span class = mc>0.5♥</span> max HP.</td>
+    </tr>
+    <tr>
+      <td><span class="m9">III</span>: Gain <span class = mc>1♥</span> max HP.</td>
+    </tr></tbody>
+    <tbody id="Hunt_the_HunterHeader"><tr>
+      <td rowspan="3"><span class="anchor" id="Hunt_the_Hunter"></span>Hunt the Hunter</td><td><span class="m9">I</span>: Players using the <a href = "Perks#Bounty_Hunter">Bounty Hunter</a> perk deal only half of their bonus damage to you. This mystic is disabled when using the <a href = "Highlander">Highlander</a> megastreak.</td>
+    </tr>
+    <tr>
+        <td><span class="m9">II</span>: Players using the <a href = "Perks#Bounty_Hunter">Bounty Hunter</a> perk do not deal bonus damage to you. This mystic is disabled when using the <a href = "Highlander">Highlander</a> megastreak.</td>
+    </tr>
+    <tr>
+        <td><span class="m9">III</span>: Players using the <a href = "Perks#Bounty_Hunter">Bounty Hunter</a> perk do not deal bonus damage to you and deal overall <span class = "m9">-20%</span> damage to you. This mystic is disabled when using the <a href = "Highlander">Highlander</a> megastreak.</td>
+    </tr></tbody>
+    <tbody id="Last_StandHeader"><tr>
+      <td rowspan="3"><span class="anchor" id="Last_Stand"></span>Last Stand</td><td><span class="m9">I</span>: Gain Resistance I (0:03) when reaching 3♥ left. 10 second cooldown.</td>
+    </tr>
+    <tr>
+        <td><span class="m9">II</span>: Gain Resistance II (0:04) when reaching 3♥ left. 10 second cooldown.</td>
+    </tr>
+    <tr>
+        <td><span class="m9">III</span>: Gain Resistance III (0:04) when reaching 3♥ left. 10 second cooldown.</td>
     </tr></tbody>
   </table><br><br>
 <span>To save inventory space, ten pairs of fresh pants of any color can be merged into one inventory slot using an empty Pants Bundle (typically abbreviated as "pb" when full).<br>Empty Pants Bundles are a shop item that can be unlocked in the Renown shop at prestige <span class="m6">XII</span> for <a href="Renown"><span class="me">20 renown</span></a>. Once unlocked, they can be purchased at the "Items" NPC for 50 <a href="Gold"><span class="m6">gold</span></a>.</span><br>
