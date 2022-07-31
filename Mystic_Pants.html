@@ -260,13 +260,13 @@ $(function(){
       <td><span class="m9">III</span>: Take <span class = m9>-50%</span> damage from critical hits. Taking a critical hit increases your next strike's damage by <span class = mc>30%</span>.</td>
     </tr></tbody>
     <tbody id="Danger_CloseHeader"><tr>
-      <td rowspan="3"><span class="anchor" id="Danger_Close"></span>Danger Close</td><td><span class="m9">I</span>: Gain Speed III (0:03) when reaching <span class = mc>3♥</span> left</td>
+      <td rowspan="3"><span class="anchor" id="Danger_Close"></span>Danger Close</td><td><span class="m9">I</span>: Gain Speed III (0:03) when reaching <span class = mc>3♥</span> left. 10 second cooldown.</td>
     </tr>
     <tr>
-        <td><span class="m9">II</span>: Gain Speed III (0:06) when reaching <span class = mc>4♥</span> left</td>
+        <td><span class="m9">II</span>: Gain Speed III (0:06) when reaching <span class = mc>4♥</span> left. 10 second cooldown.</td>
     </tr>
     <tr>
-        <td><span class="m9">III</span>: Gain Speed III (0:09) when reaching <span class = mc>4♥</span> left</td>
+        <td><span class="m9">III</span>: Gain Speed III (0:09) when reaching <span class = mc>4♥</span> left. 10 second cooldown.</td>
     </tr></tbody>
     <tbody id="EggsHeader"><tr>
       <td rowspan="3"><span class="anchor" id="Eggs"></span>Eggs</td><td><span class="m9">I</span>: Spawn with 8 eggs. Gain 4 on kill. Max 16.</td>
@@ -332,15 +332,89 @@ $(function(){
         <td><span class="m9">III</span>: Players using the <a href = "Perks#Bounty_Hunter">Bounty Hunter</a> perk do not deal bonus damage to you and deal overall <span class = "m9">-20%</span> damage to you. This mystic is disabled when using the <a href = "Highlander">Highlander</a> megastreak.</td>
     </tr></tbody>
     <tbody id="Last_StandHeader"><tr>
-      <td rowspan="3"><span class="anchor" id="Last_Stand"></span>Last Stand</td><td><span class="m9">I</span>: Gain Resistance I (0:03) when reaching 3♥ left. 10 second cooldown.</td>
+      <td rowspan="3"><span class="anchor" id="Last_Stand"></span>Last Stand</td><td><span class="m9">I</span>: Gain Resistance I (0:03) when reaching <span class = mc>3♥</span> left. 10 second cooldown.</td>
     </tr>
     <tr>
-        <td><span class="m9">II</span>: Gain Resistance II (0:04) when reaching 3♥ left. 10 second cooldown.</td>
+        <td><span class="m9">II</span>: Gain Resistance II (0:04) when reaching <span class = mc>3♥</span> left. 10 second cooldown.</td>
     </tr>
     <tr>
-        <td><span class="m9">III</span>: Gain Resistance III (0:04) when reaching 3♥ left. 10 second cooldown.</td>
+        <td><span class="m9">III</span>: Gain Resistance III (0:04) when reaching <span class = mc>3♥</span> left. 10 second cooldown.</td>
+    </tr></tbody>
+    <tbody id="MirrorHeader"><tr>
+      <td rowspan="3"><span class="anchor" id="Mirror"></span>Mirror</td><td><span class="m9">I</span>: You are immune to <span class = td>true damage</span>.</td>
+    </tr>
+    <tr>
+      <td><span class="m9">II</span>: You are immune to <span class = td>true damage</span> and reflect 25% of it taken to the attacker.</td>
+    </tr>
+    <tr>
+      <td><span class="m9">III</span>: You are immune to <span class = td>true damage</span> and reflect 50% of it taken to the attacker.</td>
     </tr></tbody>
   </table>
+  <tbody id="PeroxideHeader"><tr>
+      <td rowspan="3"><span class="anchor" id="Peroxide"></span>Peroxide</td><td><span class="m9">I</span>: Heal <span class = mc>0.5♥</span> when hit. 1.5s cooldown.</td>
+    </tr>
+    <tr>
+      <td><span class="m9">II</span>: Heal <span class = mc>0.7♥</span> when hit. 1.5s cooldown.</td>
+    </tr>
+    <tr>
+      <td><span class="m9">III</span>: Heal <span class = mc>1♥</span> when hit. 1.5s cooldown.</td>
+    </tr></tbody>
+  <tbody id="PrickHeader"><tr>
+      <td rowspan="3"><span class="anchor" id="Prick"></span>Prick</td><td><span class="m9">I</span>: When attacked, deal <span class = td>0.25♥</span> of true damage to your attacker.</td>
+    </tr>
+    <tr>
+      <td><span class="m9">II</span>: When attacked, deal <span class = td>0.375♥</span> of true damage to your attacker.</td>
+    </tr>
+    <tr>
+      <td><span class="m9">III</span>: When attacked, deal <span class = td>0.5♥</span> of true damage to your attacker.</td>
+    </tr></tbody>
+  <tbody id="Respawn_AbsorptionHeader"><tr>
+      <td rowspan="3"><span class="anchor" id="Respawn_Absorption"></span>Respawn: Absorption</td><td><span class="m9">I</span>: Respawn with <span class = me>5♥</span> of absorption.</td>
+    </tr>
+    <tr>
+      <td><span class="m9">II</span>: Respawn with <span class = me>10♥</span> of absorption.</td>
+    </tr>
+    <tr>
+      <td><span class="m9">III</span>: Respawn with <span class = me>15♥</span> of absorption.</td>
+    </tr></tbody>
+  <tbody id="Respawn_ResistanceHeader"><tr>
+      <td rowspan="3"><span class="anchor" id="Respawn_Resistance"></span>Respawn: Resistance</td><td><span class="m9">I</span>: When leaving spawn, gain Resistance I (0:20).</td>
+    </tr>
+    <tr>
+      <td><span class="m9">II</span>: When leaving spawn, gain Resistance I (0:30).</td>
+    </tr>
+    <tr>
+      <td><span class="m9">III</span>: When leaving spawn, gain Resistance II (0:40).</td>
+    </tr></tbody>
+  <tbody id="RevitalizeHeader"><tr>
+      <td rowspan="3"><span class="anchor" id="Revitalize"></span>Revitalize</td><td><span class="m9">I</span>: Gain Speed I (0:05) and Regeneration II (0:03) when you have <span class = mc>3♥</span> left. 45 second cooldown.</td>
+    </tr>
+    <tr>
+      <td><span class="m9">II</span>: Gain Speed II (0:05) and Regeneration III (0:03) when you have <span class = mc>3♥</span> left. 45 second cooldown.</td>
+    </tr>
+    <tr>
+      <td><span class="m9">III</span>: Gain Speed II (0:07) and Regeneration III (0:05) when you have <span class = mc>3♥</span> left. 45 second cooldown.</td>
+    </tr></tbody>
+  <tbody id="SteaksHeader"><tr>
+      <td rowspan="3"><span class="anchor" id="Steaks"></span>Steaks</td><td><span class="m9">I</span>: Gain Tasty Steak on kill instead of golden apples. Grants <span class = me>2♥</span> absorption, Regeneration III (0:04), and <span class = mc>4%</span> damage (stacking) for 50 seconds. Can hold up to 8 steaks.</td>
+    </tr>
+    <tr>
+      <td><span class="m9">II</span>: Gain Tasty Steak on kill instead of golden apples. Grants <span class = me>2♥</span> absorption, Regeneration III (0:04), and <span class = mc>4%</span> damage (stacking) for 50 seconds. Can hold up to 10 steaks.</td>
+    </tr>
+    <tr>
+      <td><span class="m9">III</span>: Gain Tasty Steak on kill instead of golden apples. Grants <span class = me>2♥</span> absorption, Regeneration III (0:04), and <span class = mc>4%</span> damage (stacking) for 50 seconds. Can hold up to 12 steak.</td>
+    </tr></tbody>
+  </table>
+  <tbody id="TNTHeader"><tr>
+      <td rowspan="3"><span class="anchor" id="TNT"></span>TNT</td><td><span class="m9">I</span>: Spawn with 1 TNT. Gain 1 TNT on kill. TNT explodes 1.5 seconds after placement, dealing <span class = td>1♥</span> of true damage to all players in the explosion. Max 7 held.</td>
+    </tr>
+    <tr>
+      <td><span class="m9">II</span>: Spawn with 2 TNT. Gain 1 TNT on kill. TNT explodes 1.5 seconds after placement, dealing <span class=td>1.5♥</span> of true damage to all players in the explosion. Max 7 held.</td>
+    </tr>
+    <tr>
+      <td><span class="m9">III</span>: Spawn with 3 TNT. Gain 1 TNT on kill. TNT explodes 1.5 seconds after placement, dealing <span class = td>2♥</span> of true damage to all players in the explosion. Max 7 held.</td>
+    </tr></tbody>
+  </table><br>
 <p>To save inventory space, ten pairs of fresh pants of any color can be merged into one inventory slot using an empty Pants Bundle (typically abbreviated as "pb" when full).<br>Empty Pants Bundles are a shop item that can be unlocked in the <a href="Renown"><span class="me">renown</span></a> shop at prestige <span class="m6">XII</span> for <a href="Renown"><span class="me">20 renown</span></a>. Once unlocked, they can be purchased at the "Items" NPC for 50 <a href="Gold"><span class="m6">gold</span></a>.</p>
    
 </span></div>
