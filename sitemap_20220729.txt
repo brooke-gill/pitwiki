@@ -17,7 +17,6 @@ https://pit.wiki/Everyone_Gets_a_Bounty.html
 https://pit.wiki/Factions.html
 https://pit.wiki/favicon.ico
 https://pit.wiki/footer.html
-https://pit.wiki/Fresh_Pants.html
 https://pit.wiki/Genesis.html
 https://pit.wiki/Giant_Cake.html
 https://pit.wiki/Gold.html
@@ -36,6 +35,7 @@ https://pit.wiki/Mini_Cake.html
 https://pit.wiki/Minor_Event.html
 https://pit.wiki/Mystic_Bow.html
 https://pit.wiki/Mystic_Sword.html
+https://pit.wiki/Mystic_Pants.html
 https://pit.wiki/Mystic_Well.html
 https://pit.wiki/Overdrive.html
 https://pit.wiki/pages.js
