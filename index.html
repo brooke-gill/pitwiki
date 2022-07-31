@@ -31,7 +31,7 @@ $(function(){
 </center>
 <ul style="list-style-type: square; column-count: 4;" class="body" id="listofarticles">
 </ul>
-<p class="body center"><b class="me">NOTE!</b> The wiki's currently in beta!<br>If you find any mistakes, please send either adjective_noun#3215 or Brooke#0843 a DM on Discord and we'd be happy to take a look (and credit you).</p>
+<p class="body center"><b class="me">NOTE!</b> The wiki's currently in beta!<br>If you find a content error, please send either adjective_noun#3215 or Brooke#0843 a DM on Discord and we'd be happy to take a look (and credit you).</p>
 <br>
 </div>
 <div id="footer"></div>
@@ -54,7 +54,10 @@ for(var i = 0; i < window.pages.length; i += 1) {
       document.getElementById('articles').innerText = i + 1
 
   }
+
+  if(document.body.clientWidth < 500) {
+    document.getElementById('listofarticles').style.columnCount = 2;
+  }
 </script>
 </body>
-
 </html>
