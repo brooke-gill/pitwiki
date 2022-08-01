@@ -235,7 +235,7 @@ ul {
 /* thank you to Rahul for showing me the power of CSS Masonry: https://w3bits.com/css-masonry/ */
 .homepagecontainer {
   margin: 1.5em auto;
-  max-width: 768px;
+  max-width: 1068px;
   column-gap: 1.5em;
 }
 
@@ -246,7 +246,13 @@ ul {
   break-inside: avoid-column;
 }
 
-@media only screen and (min-width: 768px) {
+@media only screen and (min-width: 1024px) {
+  .homepagecontainer {
+    column-count: 4;
+  }
+}
+
+@media only screen and (max-width: 1023px) and (min-width: 768px) {
   .homepagecontainer {
     column-count: 3;
   }
