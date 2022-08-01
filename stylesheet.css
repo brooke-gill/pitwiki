@@ -1,5 +1,4 @@
 body {
-    background-color: #543c3c;
     font-family: Roboto, Manrope, sans-serif;
     background-attachment: fixed;
     
@@ -228,3 +227,33 @@ html{
   -webkit-text-size-adjust: none;
   text-size-adjust: none;
   }
+
+ul {
+  list-style-type: square;
+}
+
+/* thank you to Rahul for showing me the power of CSS Masonry: https://w3bits.com/css-masonry/ */
+.homepagecontainer {
+  margin: 1.5em auto;
+  max-width: 768px;
+  column-gap: 1.5em;
+}
+
+.homepageitem {
+  background: #4a2323;
+  padding: 1em;
+  margin: 0 0 1.5em;
+  break-inside: avoid-column;
+}
+
+@media only screen and (min-width: 768px) {
+  .homepagecontainer {
+    column-count: 3;
+  }
+}
+
+@media only screen and (max-width: 767px) and (min-width: 540px) {
+  .homepagecontainer {
+    column-count: 2;
+  }
+}
