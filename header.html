@@ -18,18 +18,19 @@ var numberofvisibleitems = 0
 var numberofhiddenitemsbecauseof8itemlimit = 0
 var arrowcount = 1;
 var oldlength = 0;
+var visibleIDs = []
 
 document.getElementById('myInput').focus();
 document.getElementById('myInput').select();
 
-for(var i = 0; i < window.searchpages.length; i += 1) {
-    console.log("doing thing")
+for(var i = 0; i < window.searchpages.length * 2; i += 1) {
+    //console.log("doing thing")
     var fulllist = document.getElementById('aUL')
     var list = document.createElement("li")
       var ahref = document.createElement("a");
-      ahref.textContent = window.searchpages[i][0];
+      ahref.textContent = (window.searchpages[i % searchpages.length][0]);
       ahref.id = ("link_" + i);
-      ahref.setAttribute('href', window.searchpages[i][1]);
+      ahref.setAttribute('href', window.searchpages[i  % searchpages.length][1]);
       list.appendChild(ahref);
       fulllist.appendChild(list);
       console.log(list)
@@ -83,11 +84,16 @@ input.addEventListener("keydown", function(event) {
  }
 });
 
+var replace = {' ':'', "'":"", }
+function MakeBasic(string_to_become_basic) { //strips all punctuation and fun from the string
+  //remove everything that's not A-Z, a-z, 0-9
+  return string_to_become_basic
+}
 
 function Filter() {
 numberofvisibleitems = 0;
 numberofhiddenitemsbecauseof8itemlimit = 0;
-
+visibleIDs = [];
   // Declare variables
   var input, filter, ul, li, a, i, txtValue;
   input = document.getElementById('myInput');
@@ -104,24 +110,43 @@ numberofhiddenitemsbecauseof8itemlimit = 0;
     console.log(filter.length + " does not equal " + oldlength);
   }
   oldlength = filter.length
-  // Loop through all list items, and hide those who don't match the search query
+  // Loop through all list items and hide those who don't match the search query
   for (i = 0; i < li.length; i++) {
+    if(i < window.searchpages.length * 2) {
+      li[i].style.display = "none"; 
+    }
     document.getElementById('link_' + i).style.color = ""
     a = li[i].getElementsByTagName("a")[0];
     txtValue = a.textContent || a.innerText;
-    if (txtValue.toUpperCase().indexOf(filter) > -1) {
+
+    if (MakeBasic(txtValue.toUpperCase()).startsWith(MakeBasic(filter)) && i < window.searchpages.length) {
+      //console.log(txtValue.toUpperCase() + " is a possible word.") 
+      li[i].style.display = "";
+      li[i + window.searchpages.length].style.display = "none";
+      //console.log("showing item " + i)
+      numberofvisibleitems += 1;
+      visibleIDs.push(i + window.searchpages.length)
+      if(numberofvisibleitems == arrowcount) {
+        topitem = i;
+        document.getElementById('link_' + i).style.color = "#FFFF99"
+        console.log("Arrow is at position " + i)
+      }
+    } else if (i < window.searchpages.length) {
+    li[i].style.display = "none";
+    }
+
+    if (MakeBasic(txtValue.toUpperCase()).indexOf(MakeBasic(filter)) > -1 && i >= window.searchpages.length && !visibleIDs.includes(i)) {
       li[i].style.display = "";
       numberofvisibleitems += 1;
       if(numberofvisibleitems == arrowcount) {
         topitem = i;
         document.getElementById('link_' + i).style.color = "#FFFF99"
+        console.log("Arrow is at position " + i)
       }
-    } else {
-      li[i].style.display = "none";
     }
 
     if (numberofvisibleitems > 8) {
-        console.log("Item hidden due to limit.")
+        //console.log("Item hidden due to limit.")
         li[i].style.display = "none";
         numberofhiddenitemsbecauseof8itemlimit += 1;
     }
