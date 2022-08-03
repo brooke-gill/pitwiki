@@ -10,11 +10,14 @@ https://pit.wiki/Beast
 https://pit.wiki/Beastmode
 https://pit.wiki/Blockhead
 https://pit.wiki/Care_Package
+https://pit.wiki/Castle
 https://pit.wiki/Chunk_of_Vile
 https://pit.wiki/Dark_Pants
 https://pit.wiki/Dragon_Egg
+https://pit.wiki/Elements
 https://pit.wiki/Everyone_Gets_a_Bounty
 https://pit.wiki/Factions
+https://pit.wiki/Four_Seasons
 https://pit.wiki/Genesis
 https://pit.wiki/Giant_Cake
 https://pit.wiki/Gold
@@ -57,3 +60,4 @@ https://pit.wiki/Team_Deathmatch
 https://pit.wiki/To_the_Moon
 https://pit.wiki/Uberstreak
 https://pit.wiki/XP
+https://pit.wiki/favicon.ico
