@@ -86,8 +86,7 @@ input.addEventListener("keydown", function(event) {
 
 var replace = {' ':'', "'":"", }
 function MakeBasic(string_to_become_basic) { //strips all punctuation and fun from the string
-  //remove everything that's not A-Z, a-z, 0-9
-  return string_to_become_basic
+  return string_to_become_basic.replace(/[^A-Za-z0-9]/g, '')
 }
 
 function Filter() {
@@ -170,6 +169,18 @@ function Search() {
 }
 
 Search()
+
+function ChangeHighlight() {
+    Array.from(document.querySelectorAll('.highlighted')).forEach(function(el) { 
+    el.classList.remove('highlighted');
+    });
+    var hash = location.hash.substring(1);
+    console.log(hash)
+    if(hash.length > 0) {
+    document.getElementById(hash + "Header").classList.add('highlighted')
+    }
+}
+ChangeHighlight()
 </script>
 
 <style>
