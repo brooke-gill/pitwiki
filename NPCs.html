@@ -1,0 +1,121 @@
+<!DOCTYPE html>
+<html>
+<head>
+<link rel="stylesheet" href="stylesheet.css">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>NPCs - The Hypixel Pit Wiki</title>
+<meta name="description" content="">
+<meta name="author" content="adjective_n0un">
+<meta name="keywords" content="Hypixel Pit Wiki, Hypixel Pit Mystic Bow, Hypixel, Hypixel Mystic Bow, The Pit Mystic Bow, Mystic Bow">
+<link rel="apple-touch-icon" sizes="180x180" href="./favicon/apple-touch-icon.png">
+<link rel="icon" type="image/png" sizes="32x32" href="./favicon/favicon-32x32.png">
+<link rel="icon" type="image/png" sizes="16x16" href="./favicon/favicon-16x16.png">
+<link rel="manifest" href="./favicon/site.webmanifest">
+<script src="https://code.jquery.com/jquery-3.6.0.js" integrity="sha256-H+K7U5CnXl1h5ywQfKtSj8PCmoN9aaq30gDh27Xc0jk=" crossorigin="anonymous"></script>
+<script> 
+
+$(function(){
+  $("#header").load("header.html"); 
+  $("#footer").load("footer.html"); 
+});
+</script>
+</head>
+<body>
+<div id="header"></div>
+<div class="box">
+<span class="body">
+  <table class="item body">
+    <tr>
+        <td class="tableheader">NPCs</td>
+      </tr>
+    <tr>
+      <td style="text-align: center"><img src="./images/trashpandagui.png" width="50%"></td>
+    </tr>
+    <tr>
+      <td class="small center m7">The NPC menus as they appear in the Trash Panda GUI.</td>
+    </tr>
+</table>
+<span class="header">NPCs</span><br>
+<span class="subheader">From the <a href="./">Hypixel Pit Wiki</a></span>
+<hr>
+<p><strong>NPCs</strong> are characters scattered around the Pit that serve assorted purposes.</p>
+<p>Most NPCs offer trades and upgrades, but some have more miscellaneous purposes.</p>
+<p>The list of NPCs is as follows:</p>
+<table class="body">
+
+    <tr style="font-weight: bold; position: sticky; top: 0" class="invisible_fill">
+
+        <td>Location</td><td>Name</td><td>Description</td>
+
+    </tr>
+    <tbody id="SpawnHeader"><tr>
+      <td rowspan="6"><span class="anchor" id="Spawn"></span>Spawn</td><td>Items (Non-Permanent)</td><td>Allows the player to access the <a href = "Item_Shop">Item Shop</a>.</td>
+    </tr>
+    <tr>
+        <td>Upgrades (Permanent)</td><td>Allows the player to access the <a href = "Upgrades">Upgrades Shop</a>.</td>
+    </tr>
+    <tr>
+        <td>Quest Master</td><td>Allows the player to access <a href = "Quests">Quests</a> and <a href = "Contracts">Contracts</a>.</td>
+    </tr>
+    <tr>
+        <td>Stats</td><td>Allows the player to view their <a href = "Statistics">Statistics</a>.</td>
+    </tr>
+    <tr>
+        <td>Prestige</td><td>Allows the player to <a href = "Prestige">Prestige</a> and access the <a href = "Renown">Renown Shop</a>.</td>
+    </tr>
+    <tr>
+        <td>The Keeper</td><td>Allows the player return to the Hypixel Main Lobby without using commands.</td>
+    </tr>
+</tbody>
+  <tbody id="CastleHeader"><tr>
+      <td rowspan="6"><span class="anchor" id="Castle"></span><a href = Castle>Castle Map</a> exclusive</td><td>The King</td><td>Allows the player to start and complete the <a href = "Kings_Quest">King's Quest</a>.</td>
+    </tr>
+    <tr>
+        <td>The Baker</td><td>Allows the player to turn in materials to receive a <a href = "Mini_Cake">Mini_Cake</a>.</td>
+    </tr>
+    <tr>
+        <td>Sewerfish</td><td>Accepts 64 <a href = "Castle#Sewer_Rubbish">Sewer Rubbish</a> in exchange for <a href = "Sewer_Pants">Fresh Sewer Pants</a>.</td>
+    </tr>
+    <tr>
+        <td>Hay (salesman)</td><td>Removes all <a href = "Castle#Packaged_Bale">Packaged Bale</a> from your inventory, giving <a href = "Gold"><span class = m6>16 gold</span></a> per bale removed.</td>
+    </tr>
+    <tr>
+        <td>Bread (salesman)</td><td>Removes all <a href = "Castle#Yummy_Bread">Yummy Bread</a> from your inventory, giving <a href = "Gold"><span class = m6>24 gold</span></a> per loaf removed.</td>
+    </tr>
+    <tr>
+        <td>Fish (salesman)</td><td>Removes all <a href = "Fishing">types of fish</a> from your inventory, giving <a href = "Gold"><span class = m6>1 gold</span></a> per fish removed.</td>
+    </tr>
+    </tbody>
+    <tbody id="GenesisHeader"><tr>
+        <td rowspan="6"><span class="anchor" id="Castle"></span><a href = "Genesis">Genesis</a> Map exclusive</td><td>Angel</td><td>Allows the player to access the  <a href = "Factions">Angel faction menu</a>.</td>
+      </tr>
+      <tr>
+          <td>Demon</td><td>Allows the player to access the <a href = "Factions">Demon faction menu</a>.</td>
+      </tr>
+      
+      </tbody>
+    
+    </table><br>
+<br>
+  <span>Spawn NPC menus can also be accessed through the use of the <a href = "Sewer_Pants">Trash Panda</a> enchantment.</span>
+</span></div>
+  
+  
+<div id="footer"></div>
+
+</body>
+<script>
+  function ChangeHighlight() {
+    Array.from(document.querySelectorAll('.highlighted')).forEach(function(el) { 
+    el.classList.remove('highlighted');
+    });
+    var hash = location.hash.substring(1);
+    console.log(hash)
+    if(hash.length > 0) {
+    document.getElementById(hash + "Header").classList.add('highlighted')
+    }
+}
+ChangeHighlight()
+</script>
+</html>
