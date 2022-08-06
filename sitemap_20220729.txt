@@ -12,12 +12,14 @@ https://pit.wiki/Blockhead
 https://pit.wiki/Care_Package
 https://pit.wiki/Castle
 https://pit.wiki/Chunk_of_Vile
+https://pit.wiki/Credits
 https://pit.wiki/Commands
 https://pit.wiki/Dark_Pants
 https://pit.wiki/Dragon_Egg
 https://pit.wiki/Elements
 https://pit.wiki/Everyone_Gets_a_Bounty
 https://pit.wiki/Factions
+https://pit.wiki/Fishing
 https://pit.wiki/Four_Seasons
 https://pit.wiki/Genesis
 https://pit.wiki/Giant_Cake
@@ -40,6 +42,7 @@ https://pit.wiki/Mystic_Sword
 https://pit.wiki/Mystic_Pants
 https://pit.wiki/Mystic_Well
 https://pit.wiki/Overdrive
+https://pit.wiki/Passives
 https://pit.wiki/Perks
 https://pit.wiki/Philosophers_Cactus
 https://pit.wiki/Pit_Supporter
