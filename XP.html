@@ -67,11 +67,12 @@ $(function(){
   <li>The <a href = "Killstreaks#XP_Stack">XP Stack</a> killstreak increases <span class="mb">XP</span> earned on kill by a varying amount for your current prestige.</li>
   <li>Killing players with a higher level than yourself earns bonus <span class="mb">XP</span>. This bonus <span class="mb">XP</span> is <span class="mb">+1 XP</span> for every 5 levels higher the victim is. Killing a "noob", or someone level <span class="m6"><b>60</b></span> or lower, grants <span class="mb">&minus;3 XP</span>.</li>
   <li>Killing players while on a <a href="Killstreak">killstreak</a> increases the base <span class="mb">XP</span> earned on kill depending on how high the player's streak is. Starting at <span class="mb">+3 XP</span> for a killstreak of 3, this increases to <span class="mb">+5</span> at a killstreak of 5, <span class="mb">+6</span> for a killstreak of 20, and increases by <span class="mb">+3 XP</span> for every 10 kills afterward. This bonus maxes out at 100 kills (<span class="mb">+30 XP</span>), but maxes at a killstreak of 200 (<span class="mb">+60 XP</span>) with the <a href="Renown#Experienceindustrial_Complex">Experience-industrial Complex</a> renown upgrade.</li>
+  <li>Killing players in a party gives <span class="mb">10%</span> XP.</li>
   <li>The <a href = "Perks#Streaker">Streaker</a> perk triples the killstreak bonus.</li>
   <li>The <a href = "Mystic_Well#Sweaty">Sweaty</a> mystic increases the killstreak bonus <span class="mb">XP</span> by up to <span class="mb">+60%</span> and increases the maximum <span class="mb">XP</span> on kill by up to <span class="mb">100</span>. Sweaty can be found on <a href="Mystic_Sword">mystic swords</a>, <a href="Mystic_Bow">bows</a>, standard colors of <a href="Mystic_Pants">pants</a>, and <a href = "Rage_Pants">Rage Pants</a>.</li>
   </ul>
   
-  <p>The XP earned is then multiplied by all of the following that are applicable:</p>
+  <p>The XP earned is then increased by all of the following that are applicable:</p>
   <ul style="list-style-type: square;" class="body">
   <li><a href="2x_Rewards">2x Rewards</a>, <a href="King_of_the_Ladder">King of the Ladder</a>, and <a href = "Team_Deathmatch">Team Deathmatch</a> increases <span class="mb">XP</span> earned from killing players by <span class="mb">+100%</span>. The <a href = "King_of_the_Hill">King of the Hill</a> event adds <span class="mb">+300%</span>.</li>
   <li>The <a href = "Factions">Angel Faction</a>'s tier VII reward permanently increases <span class="mb">XP</span> earned by <span class="mb">+1% XP</span> for every time they have been claimed, up to <span class="mb">+15% XP</span>.</li>
@@ -84,9 +85,10 @@ $(function(){
   <li>The <a href = "Perks#Coop_Cat">Co-op Cat</a> perk gives <span class="mb">+50% XP</span> on assists.
   <li>Certain megastreaks also give XP multipliers. <a href="Beastmode">Beastmode</a> gives <span class="mb">+50% XP</span> and <a href="Hermit">Hermit</a> gives <span class="mb">+5% XP</span> for every 10 kills, with a maximum of 200 kills (<span class="mb">+75% XP</span>).</li>
   <li>The <a href="To_the_Moon">To the Moon</a> megastreak gives a <span class="mb">+20% XP</span> multiplier and increases the maximum kill <span class="mb">XP</span> by <span class="mb">+100</span>. Additionally, the amount of <span class="mb">XP</span> earned while on a To the Moon streak is copied. On death, the player will earn this amount of <span class="mb">XP</span> again multiplied by <span class="mb">0.005×</span> per kill over 100, maxing at a 300 streak (<span class="mb">1×</span>).</li>
-    <li>If it is <a href = "Pit_Day">Pit Day</a>, players earn 2&times; XP from all sources.</li>
-
+  <li>Killing a player that is on a <a href="Killstreaks">killstreak</a> (referred to as a "streak shutdown") rewards bonus <span class="mb">XP</span></li>
+  <li>If it is <a href = "Pit_Day">Pit Day</a>, players earn <span class="mb">2× XP</span> from all sources.</li>
 </ul>
+<p>If more than one multiplier applies, they are added together before being multiplied to the base <span class="mb">XP</span>.</p>
 
 
 <p>In order to prestige, a player needs to have reached level 120. The amount of <span class="mb">XP</span> to reach level 120 depends on the prestige.</p>
