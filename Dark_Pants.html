@@ -39,25 +39,95 @@ $(function(){
 <span class="subheader">From the <a href="./">Hypixel Pit Wiki</a></span>
 <hr>
 <span><strong>Dark Pants</strong> are special types of <a href="Mystic_Pants">mystic pants</a> designed to counter <a href="Renown#Mysticism">Mysticism</a>. Fresh dark pants can be crafted for 5 <a href = "Chunk_of_Vile">Chunks of Vile</a> and 2 <a href="Renown"><span class="me">renown</span></a> <strong>at night</strong> if the user has at least one tier of the Prestige <span class="me">VI</span> <a href="Renown"><span class="me">renown</span></a> upgrade Heresy. Every extra tier of Heresy the player has reduces the vile cost of Dark Pants by 1 Chunk of Vile. Dark pants are as strong as leather pants.</span><br>
-<span>Dark pants function differently from fresh pants. Upgrading dark pants to tier I requires 10,000 <a href="Gold"><span class="m6">gold</span></a> and Heresy I, but unlike typical mystic pants, it does not require Mysticism IX. Tier I Dark Pants will always be enchanted with Somber and have 5–20 lives. To upgrade to tier II, the player must have Mysticism IX, Heresy III, and <a href="Gold"><span class="m6">60,000g</span></a>, at which point the pants will be enchanted with a random dark enchant.</span><br>
+<span>Dark pants function differently from fresh pants. Upgrading dark pants to tier I requires <a href="Gold"><span class="m6">10,000g</span></a> and Heresy I, but unlike typical mystic pants, it does not require Mysticism IX. Tier I Dark Pants will always be enchanted with Somber and have 5–20 lives. </span><br>
+  <table class="body">
+
+    <tr style="font-weight: bold; position: sticky; top: 0" class="invisible_fill">
+
+        <td>Name</td><td>Description</td>
+
+    </tr>
+    <tbody id="SomberHeader">
+      <tr>
+        <span class="anchor" id="Somber"></span><td>Somber</td><td>You are unaffected by mystical enchantments. You cannot use mystical enchantments.</td>
+      </tr>
+    </tbody>
+  </table>
+  <span>To upgrade to tier II, the player must have Mysticism IX, Heresy III, and <a href="Gold"><span class="m6">60,000g</span></a>, at which point the pants will be enchanted with a random dark enchant.</span><br>
 <span>Dark pants enchantments typically are very strong, but have a negative effect to the user to compensate.  
-<span>The list of Dark enchants is as follows:</span><br>
-<ul style="list-style-type: square;" class="body">
-    <li>Somber: You are immune to mystic enchantments. You cannot use mystic enchantments while wearing these pants.</li>
-    <li>Hedge Fund: Gain <a href="Gold"><span class="m6">+6g</span></a> per kill. If the victim was wearing Tier I+ mystic pants, gain <a href="Gold"><span class="m6">+66g</span></a> instead. Lose <a href="Gold"><span class="m6">50g</span></a> on death.</li>
-    <li>Needless Suffering: Respawn with <span class="me">30♥</span> of Absorption. Cannot heal by any method. Must die once while wearing these pants to gain Absorption.</li>
-    <li>Sanguisuge: Heal <span class="mc">0.5♥</span> upon hitting a player with leather armor (2s cooldown). Heal <span class="mc">1♥</span> instead if the Vampire perk is equipped. The Regeneration effect has no effect on the user.</li>
-    <li>Lycanthropy: At nighttime, gain +10% <a href="XP"><span class="mb">XP</span></a> and <a href="Gold"><span class="m6">gold</span></a> on kill, permanent Speed I and Regeneration II. Lose these effects with day breaks. You cannot gain Speed for the day after wearing these pants.</li>
-    <li>Grim Reaper: If a player dies within 10 blocks, deal <span class="mc">2♥</span> to them and earn that damage as an assist on the player's death. Earn -80% <a href="Gold"><span class="m6">gold</span></a> and <a href="XP"><span class="mb">XP</span></a>.</li>
-    <li>Misery: If your target is wearing leather armor, deal <span class="td">+0.5♥</span> of true damage to them on all your hits. Take <span class="td">0.3♥</span> true damage on all hits received.</li>
-    <li>Spite: If your target is wearing leather armor, deal <span class="mc">+20%</span> damage to them. Take <span class="mc">5%</span> more damage from players wearing leather armor.
-    <li>Mind Assault: Deal <span class="m5">-60%</span> damage. Every player within 12 blocks wearing leather armor increases your damage by <span class="mc">0.75♥</span>. Max of <span class="mc">8♥</span>.
-    <li><span class = "md">RARE!</span> Combo: Venom: Every third hit poisons the target for 12 seconds and yourself for 24 seconds. While poisoned, players receive the Somber effect.</li>
-    <li><span class = "md">RARE!</span> Golden Handcuffs: After claiming a bounty, 4&times; the bounty is shared between all players on the server. Requires 30 players in the server to activate.</li>
-    <li><span class = "md">RARE!</span> Nostalgia: Take <span class="m9">-10%</span> damage. Diamond armor glows as if enchanted.</li>
-    <li><span class = "md">RARE!</span> Heartripper: Every life removed from a mystic through killing while wearing these pants grants these pants +1 bloodshard. Earning 27 bloodshards grants 1 pair of <a href="Mystic_Pants">fresh <span class="mc">p</span><span class="m6">a</span><span class="me">n</span><span class="ma">t</span><span class="m9">s</span></a>. Consume 2 lives of this item when generating fresh pants. When dark pants gain this enchant on upgrade, their max lives do not increase.</li>
-</ul>
-<p>If Dark Pants have 100 lives or more, their prefix changes to Evil Pants.</p><br>
+  <span>The list of Dark enchants is as follows. Enchants marked as <span class = md>RARE!</span> have a much lower occurence rate than others.</span><br>
+  
+  <table class="body">
+
+    <tr style="font-weight: bold; position: sticky; top: 0" class="invisible_fill">
+
+        <td>Name</td><<td>Description</td>
+
+    </tr>
+    <tbody id="Grim_ReaperHeader">
+      <tr>
+        <span class="anchor" id="Grim_Reaper"></span><td>Grim Reaper</td><td>If a player dies within 10 blocks, deal <span class="mc">2♥</span> to them and earn that damage as an assist on their death. Earn -80% <a href="Gold"><span class="m6">gold</span></a> and <a href="XP"><span class="mb">XP</span></a> from kills and assists.</td>
+      </tr>
+    </tbody>
+    <tbody id="Hedge_FundHeader">
+      <tr>
+        <span class="anchor" id="Hedge_Fund"></span><td>Hedge Fund</td><td>Earn <a href = "Gold"><span class = m6>+6g</span></a> from kills. Earn <a href = "Gold"><span class = m6>+66g</span></a> instead if the target was wearing enchanted <a href = "Mystic_Pants">mystic pants</a> of any type. Lose <a href = "Gold"><span class = m6>50g</span></a> when dying.</td>
+      </tr>
+    </tbody>
+    <tbody id="LycanthropyHeader">
+      <tr>
+        <span class="anchor" id="Lycanthropy"></span><td>Lycanthropy</td><td>At nighttime, gain permanent Speed I, Regeneration II and earn <a href = "Gold"><span class = m6>+10% gold</span></a> and <a href = "XP"><span class = mb>+10% XP</span></a>. The day after you wear these pants, you cannot gain the Speed effect.</td>
+      </tr>
+    </tbody>
+  <tbody id="Mind_AssaultHeader">
+      <tr>
+        <span class="anchor" id="Mind_Assault"></span><td>Mind Assault</td><td>Deal <span class = m5>-60%</span> damage. After this decrease is applied, deal <span class="mc">+0.75♥</span> more damage per player wearing leather armor within 12 blocks. Max of <span class="mc">+8♥</span>.</td>
+      </tr>
+    </tbody>
+  <tbody id="MiseryHeader">
+      <tr>
+        <span class="anchor" id="Misery"></span><td>Misery</td><td>If your target is wearing leather armor, deal <span class="td">+0.5♥</span> of true damage to them on all your hits. Take <span class="td">0.3♥</span> true damage on all hits received.</td>
+      </tr>
+    </tbody>
+  <tbody id="Needless_SufferingHeader">
+      <tr>
+        <span class="anchor" id="Needless_Suffering"></span><td>Needless Suffering</td><td>Respawn with <span class="me">30♥</span> of Absorption. Cannot heal by any method. Must die once while wearing these pants to gain Absorption.</td>
+      </tr>
+    </tbody>
+  </table>
+  <tbody id="SanguisugeHeader">
+      <tr>
+        <span class="anchor" id="Sanguisuge"></span><td>Sanguisuge</td><td>Heal <span class="mc">0.5♥</span> when hitting a player who is wearing leather armor (2s cooldown). Heal <span class="mc">1♥</span> instead if the Vampire perk is equipped. The Regeneration effect has no effect on the user.</td>
+      </tr>
+    </tbody>
+  <tbody id="SpiteHeader">
+      <tr>
+        <span class="anchor" id="Spite"></span><td>Spite</td><td>Deal <span class = mc>+20%</span> damage to players wearing leather armor but take <span class = mc>+5%</span> damage from them.</td>
+      </tr>
+    </tbody>
+  <tbody id="Combo_VenomHeader">
+      <tr>
+        <span class="anchor" id="Combo_Venom"></span><td><span class = md>RARE!</span> Combo: Venom</td><td>Every third hit poisons the target for 12 seconds and yourself for 24 seconds. Poison does not deal damage. While poisoned, players receive the Somber effect.</td>
+      </tr>
+    </tbody>
+  <tbody id="Golden_HandcuffsHeader">
+      <tr>
+        <span class="anchor" id="Golden_Handcuffs"></span><td><span class = md>RARE!</span> Golden Handcuffs</td><td>When the user claims a bounty, 4&times; the bounty is shared between all players on the server. Requires 30 players in the server to activate.</td>
+      </tr>
+    </tbody>
+  <tbody id="HeartripperHeader">
+      <tr>
+        <span class="anchor" id="Heartripper"></span><td><span class = md>RARE!</span> Heartripper</td><td>Every life removed from a mystic through killing while wearing these pants grants these pants +1 bloodshard. Earning 27 bloodshards grants 1 pair of <a href="Mystic_Pants">fresh <span class="mc">p</span><span class="m6">a</span><span class="me">n</span><span class="ma">t</span><span class="m9">s</span></a>. Consume 2 lives of this item when generating fresh pants. When dark pants gain this enchant on upgrade, their max lives do not increase.</td>
+      </tr>
+    </tbody>
+  <tbody id="NostalgiaHeader">
+      <tr>
+        <span class="anchor" id="Nostalgia"></span><td><span class = md>RARE!</span> Nostalgia</td><td>Take <span class="m9">-10%</span> damage. Diamond armor glows as if enchanted.</td>
+      </tr>
+    </tbody>
+  </table>
+  
+<p>If Dark Pants have 100 lives or more, their name changes to Evil Pants.</p><br>
 <p class="section">Trivia</p>
 <span>Dark Pants used to be as strong as chainmail pants. This was changed to leather in early 2020.</span><br>
 <span>The time period the Nostalgia enchantment refers to is the time before the <a href = "https://hypixel.net/threads/the-pit-0-3-5-second-map-and-mystic-well.1729768/" target="_blank" rel="noopener noreferrer">0.3.5</a> update, when Protection I diamond armor could be found in <a href=Care_Package">Care Packages</a>.</span></span></div>
