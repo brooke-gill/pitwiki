@@ -36,7 +36,7 @@ $(function(){
 <span class="header">NPCs</span><br>
 <span class="subheader">From the <a href="./">Hypixel Pit Wiki</a></span>
 <hr>
-<p><strong>NPCs</strong> are characters scattered around the Pit that serve assorted purposes.</p>
+<p><strong>NPCs</strong>, short for "non-player characters", are characters scattered around the Pit that serve assorted purposes.</p>
 <p>Most NPCs offer trades and upgrades, but some have more miscellaneous purposes.</p>
 <p>The list of NPCs is as follows:</p>
 <table class="body">
@@ -46,55 +46,52 @@ $(function(){
         <td>Location</td><td>Name</td><td>Description</td>
 
     </tr>
-    <tbody id="SpawnHeader"><tr>
-      <td rowspan="7"><span class="anchor" id="Spawn"></span>Spawn</td><td>Items (Non-Permanent)</td><td>Allows the player to access the <a href = "Item_Shop">Item Shop</a>.</td>
+    <tr id="ItemsHeader">
+      <td rowspan="7" class="donothighlight">Spawn</td><td><span class="anchor" id="Items"></span>Items (Non-Permanent)</td><td>Allows the player to access the <a href = "Item_Shop">Item Shop</a>.</td>
     </tr>
-    <tr>
-        <td>Upgrades (Permanent)</td><td>Allows the player to access the <a href = "Upgrades">Upgrades Shop</a>.</td>
+    <tr id="UpgradesHeader">
+        <td><span class="anchor" id="Upgrades"></span>Upgrades (Permanent)</td><td>Allows the player to access the <a href = "Upgrades">Upgrades Shop</a>.</td>
     </tr>
-    <tr>
-        <td>Quest Master</td><td>Allows the player to access <a href = "Quests">quests</a> and <a href = "Contracts">contracts</a>.</td>
+    <tr id="Quest_MasterHeader">
+        <td><span class="anchor" id="Quest_Master"></span>Quest Master</td><td>Allows the player to access <a href = "Quests">quests</a> and <a href = "Contracts">contracts</a>.</td>
     </tr>
-    <tr>
-        <td>Stats</td><td>Allows the player to view their <a href = "Statistics">statistics</a>.</td>
+    <tr id="StatsHeader"> 
+        <td><span class="anchor" id="Stats"></span>Stats</td><td>Allows the player to view their <a href = "Statistics">statistics</a>.</td>
     </tr>
-    <tr>
-        <td>Prestige</td><td>Allows the player to <a href = "Prestige">prestige</a> and access the <a href = "Renown">renown shop</a>.</td>
+    <tr id="PrestigeHeader">
+        <td><span class="anchor" id="Prestige"></span>Prestige</td><td>Allows the player to <a href = "Prestige">prestige</a> and access the <a href = "Renown">renown shop</a>.</td>
     </tr>
-    <tr>
-        <td>The Keeper</td><td>Allows the player return to the Hypixel Main Lobby without using commands.</td>
+    <tr id="The_KeeperHeader">
+        <td><span class="anchor" id="The_Keeper"></span>The Keeper</td><td>Allows the player return to the Hypixel Main Lobby without using commands.</td>
     </tr>
-    <tr>
-        <td>Leaderboard Picker (rabbit)</td><td>Allows the player to change the currently displayed leaderboard.</td>
+    <tr id="Leaderboard_PickerHeader">
+        <td><span class="anchor" id="Leaderboard_Picker"></span>Leaderboard Picker (rabbit)</td><td>Allows the player to change the currently displayed leaderboard.</td>
     </tr>
-</tbody>
-  <tbody id="CastleHeader"><tr>
-      <td rowspan="6"><span class="anchor" id="Castle"></span><a href = Castle>Castle</a> map exclusive</td><td>The King</td><td>Allows the player to start and complete the <a href = "Kings_Quest">King's Quest</a>.</td>
+    <tr id="The_KingHeader">
+      <td rowspan="6" class="donothighlight"><a href = Castle>Castle</a> map exclusive</td><td><span class="anchor" id="The_King"></span>The King</td><td>Allows the player to start and complete the <a href = "Kings_Quest">King's Quest</a>.</td>
     </tr>
-    <tr>
-        <td>The Baker</td><td>Allows the player to turn in materials to receive a <a href = "Mini_Cake">Mini Cake</a>.</td>
+    <tr id="BakerHeader">
+        <td><span class="anchor" id="Baker"></span>Baker</td><td>Allows the player to turn in materials to receive a <a href = "Mini_Cake">Mini Cake</a>.</td>
     </tr>
-    <tr>
-        <td>Sewerfish</td><td>Accepts 64 <a href = "Castle#Sewer_Rubbish">Sewer Rubbish</a> in exchange for <a href = "Sewer_Pants">Fresh Sewer Pants</a>.</td>
+    <tr id="SewerfishHeader">
+        <td><span class="anchor" id="Sewerfish"></span>Sewerfish</td><td>Accepts 64 <a href = "Castle#Sewer_Rubbish">Sewer Rubbish</a> in exchange for <a href = "Sewer_Pants">Fresh Sewer Pants</a>.</td>
     </tr>
-    <tr>
-        <td>Hay (salesman)</td><td>Removes all <a href = "Castle#Packaged_Bale">Packaged Bale</a> from your inventory, giving <a href = "Gold"><span class = m6>16 gold</span></a> per bale removed.</td>
+    <tr id="Hay_salesmanHeader">
+        <td><span class="anchor" id="Hay_salesman"></span>Hay (salesman)</td><td>Removes all <a href = "Castle#Packaged_Bale">Packaged Bale</a> from your inventory, giving <a href = "Gold"><span class = m6>16 gold</span></a> per bale removed.</td>
     </tr>
-    <tr>
-        <td>Bread (salesman)</td><td>Removes all <a href = "Castle#Yummy_Bread">Yummy Bread</a> from your inventory, giving <a href = "Gold"><span class = m6>24 gold</span></a> per loaf removed.</td>
+    <tr id="Bread_salesmanHeader">
+        <td><span class="anchor" id="Bread_salesman"></span>Bread (salesman)</td><td>Removes all <a href = "Castle#Yummy_Bread">Yummy Bread</a> from your inventory, giving <a href = "Gold"><span class = m6>24 gold</span></a> per loaf removed.</td>
     </tr>
-    <tr>
-        <td>Fish (salesman)</td><td>Removes all <a href = "Fishing">types of fish</a> from your inventory, giving <a href = "Gold"><span class = m6>1 gold</span></a> per fish removed.</td>
+    <tr id="Fish_salesmanHeader">
+        <td><span class="anchor" id="Fish_salesman"></span>Fish (salesman)</td><td>Removes all types of <a href = "Fishing">fish</a> from your inventory, giving <a href = "Gold"><span class = m6>1 gold</span></a> per fish removed.</td>
     </tr>
-    </tbody>
-    <tbody id="GenesisHeader"><tr>
-        <td rowspan="6"><span class="anchor" id="Castle"></span><a href = "Genesis">Genesis</a> map exclusive</td><td>Angel</td><td>Allows the player to access the  <a href = "Factions">Angel faction menu</a>.</td>
+    <tr id="AngelHeader">
+        <td rowspan="6" class="donothighlight"><span class="anchor" id="Angel"></span><a href = "Genesis">Genesis</a> map exclusive</td><td><span class="anchor" id="Angel"></span>Angel</td><td>Allows the player to access the <a href = "Factions">Angel faction menu</a>.</td>
       </tr>
-      <tr>
-          <td>Demon</td><td>Allows the player to access the <a href = "Factions">Demon faction menu</a>.</td>
+      <tr id="DemonHeader">
+          <td><span class="anchor" id="Demon"></span>Demon</td><td>Allows the player to access the <a href = "Factions">Demon faction menu</a>.</td>
       </tr>
       
-      </tbody>
     
     </table><br>
 <br>
@@ -116,6 +113,13 @@ $(function(){
     document.getElementById(hash + "Header").classList.add('highlighted')
     }
 }
+
 ChangeHighlight()
+
+var thingstonothighlight = document.getElementsByClassName('donothighlight')
+for (const things of thingstonothighlight) {
+  things.style.backgroundColor = "var(--bg)"
+  console.log("stopped highlighting things")
+}
 </script>
 </html>
