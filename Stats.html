@@ -1,95 +1,283 @@
 <!DOCTYPE html>
 <html>
+
 <head>
-<link rel="stylesheet" href="stylesheet.css">
-<meta name="viewport" content="width=device-width, initial-scale=1">
-<title>Stats - The Hypixel Pit Wiki</title>
-<meta name="description" content="">
-<meta name="author" content="BrookeAFK">
-<meta name="keywords" content="Hypixel Pit Wiki, Hypixel Pit Stats, Hypixel, Hypixel Stats, The Pit Stats">
-<link rel="apple-touch-icon" sizes="180x180" href="./favicon/apple-touch-icon.png">
-<link rel="icon" type="image/png" sizes="32x32" href="./favicon/favicon-32x32.png">
-<link rel="icon" type="image/png" sizes="16x16" href="./favicon/favicon-16x16.png">
-<link rel="manifest" href="./favicon/site.webmanifest">
-<script src="https://code.jquery.com/jquery-3.6.0.js" integrity="sha256-H+K7U5CnXl1h5ywQfKtSj8PCmoN9aaq30gDh27Xc0jk=" crossorigin="anonymous"></script>
-<script> 
+  <link rel="stylesheet" href="stylesheet.css">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Stats - The Hypixel Pit Wiki</title>
+  <meta name="description" content="">
+  <meta name="author" content="BrookeAFK">
+  <meta name="keywords" content="Hypixel Pit Wiki, Hypixel Pit Stats, Hypixel, Hypixel Stats, The Pit Stats">
+  <link rel="apple-touch-icon" sizes="180x180" href="./favicon/apple-touch-icon.png">
+  <link rel="icon" type="image/png" sizes="32x32" href="./favicon/favicon-32x32.png">
+  <link rel="icon" type="image/png" sizes="16x16" href="./favicon/favicon-16x16.png">
+  <link rel="manifest" href="./favicon/site.webmanifest">
+  <script src="https://code.jquery.com/jquery-3.6.0.js" integrity="sha256-H+K7U5CnXl1h5ywQfKtSj8PCmoN9aaq30gDh27Xc0jk="
+    crossorigin="anonymous"></script>
+  <script>
 
-$(function(){
-  $("#header").load("header.html"); 
-  $("#footer").load("footer.html"); 
-});
-</script>
+    $(function () {
+      $("#header").load("header.html");
+      $("#footer").load("footer.html");
+    });
+  </script>
 </head>
+
 <body>
-<div id="header"></div>
-<div class="box">
-<span class="body">
-  <table class="item body">
-    <tr>
-      <td style="text-align: center"><img src="./images/banner_smaller.png" width="100%"></td>
-    </tr>
-    <tr>
-      <td class="small center m7">The Stats NPC.</td>
-    </tr>
-</table>
-<span class="header">Stats</span><br>
-<span class="subheader">From the <a href="./">Hypixel Pit Wiki</a></span>
-<hr>
-<p>COMING SOON! we're still not done with this page<br><strong>Stats</strong>, short for "statistics", are numeric values players can view both in-game and online, through the <a href="NPCs#Stats">Stats NPC</a> and various websites.</p>
-<p>Rage pants function differently from standard mystic pants. When enchanted to tier I, they will always have 4 or 9 lives and 1–2 tiers of a special Rage enchant. Once enchanted to tier I, rage pants become functionally identical to Tier I standard <a href = "Mystic_Pants">mystic pants.</a></span></p>
-<p>The list of Rage enchants is as follows:</p>
+  <div id="header"></div>
+  <div class="box">
+    <span class="body">
+      <table class="item body">
+        <tr>
+          <td style="text-align: center"><img src="./images/banner_smaller.png" width="100%"></td>
+        </tr>
+        <tr>
+          <td class="small center m7">The Stats NPC.</td>
+        </tr>
+      </table>
+      <span class="header">Stats</span><br>
+      <span class="subheader">From the <a href="./">Hypixel Pit Wiki</a></span>
+      <hr>
+      <p><strong>Stats</strong>, short for "statistics", are numeric
+        values players can view both in-game and online, through the <a href="NPCs#Stats">Stats NPC</a> and various
+        websites.</p>
+      <p>Rage pants function differently from standard mystic pants. When enchanted to tier I, they will always have 4
+        or 9 lives and 1–2 tiers of a special Rage enchant. Once enchanted to tier I, rage pants become functionally
+        identical to Tier I standard <a href="Mystic_Pants">mystic pants.</a>
+    </span></p>
+    <p>The list of Rage enchants is as follows:</p>
 
-<table>
-<tr style="font-weight: bold; position: sticky; top: 0" class="invisible_fill">
+    <table>
+      <tr style="font-weight: bold; position: sticky; top: 0" class="invisible_fill">
 
-  <td>Name</td><td>Location</td><td>Description</td>
+        <td>Location</td>
+        <td>Name</td>
+        <td>Description</td>
 
-</tr>
-<tbody id="KillsHeader"><tr>
-<td><span class="anchor" id="Kills"></span>Kills</td><td>Stats NPC<br>Offensive Stats</td><td>Number of kills. A "kill" is awarded if the player dealt the killing blow on a victim.</td>
-</tr></tbody>
-<tbody id="AssistsHeader"><tr>
-    <td><span class="anchor" id="Assists"></span>Assists</td><td>Stats NPC<br>Offensive Stats</td><td>Number of assists. An "assist" is awarded if the player dealt a non-fatal blow to a victim fewer than 15 seconds before the victim died.</td>
-    </tr></tbody>
-</table>
+      </tr>
+      <tr id="KillsHeader">
+        <td rowspan="8" class="donothighlight">Stats NPC<br>Offensive Stats</td>
+        <td><span class="anchor" id="Kills"></span>Kills</td>
+        <td>Number of kills. A "kill" is awarded if the player dealt the killing blow on a victim.</td>
+      </tr>
 
-<p>If there is a level III Rage enchant on the pants, they gain the Malding prefix. If the pants have 8 total <a href="Mystic_Well#Tokens">tokens</a>, they gain the Manic prefix.</p><br>
-<p class="section">Trivia</p>
-<p>On release, a <span class = "md">RARE!</span> rage enchant called Deal with the Devil was also released. It disabled the Devil Chicks enchant in an entire lobby and increased damage in Rage Pit. The enchantment was made unobtainable almost immediately.</p>
-<table class="body">
+      <tr id="AssistsHeader">
+        <td><span class="anchor" id="Assists"></span>Assists</td>
 
-  <tr style="font-weight: bold; position: sticky; top: 0" class="invisible_fill">
+        <td>Number of assists. An "assist" is awarded if the player dealt a non-fatal blow to a victim fewer than 15
+          seconds before the victim died.</td>
+      </tr>
 
-      <td>Name</td><td>Description</td>
+      <tr id="Sword_HitsHeader">
+        <td><span class="anchor" id="Sword_Hits"></span>Sword Hits</td>
 
-  </tr>
-  <tbody id="Deal_with_the_DevilHeader"><tr>
-    <td rowspan="3"><span class="anchor" id="Deal_with_the_Devil"></span><span class = md>RARE!</span> Deal with the Devil</td><td><span class="m9">I</span>: The <a href = "Mystic_Bow#Devil_Chicks">Devil Chicks</a> enchantment is disabled in the entire lobby while worn.</td>
-  </tr>
-  <tr>
-      <td><span class="m9">II</span>: The <a href = "Mystic_Bow#Devil_Chicks">Devil Chicks</a> enchantment is disabled in the entire lobby while worn. User deals <span class = mc>+5%</span> damage in <a href = "Rage_Pit">Rage Pit</a>.</td>
-  </tr>
-  <tr>
-      <td><span class="m9">III</span>: The <a href = "Mystic_Bow#Devil_Chicks">Devil Chicks</a> enchantment is disabled in the entire lobby while worn. User deals <span class = mc>+10%</span> damage in <a href = "Rage_Pit">Rage Pit</a>.</td>
-  </tr>
-  </tbody>
-  </table><br>
-<p>Deal with the Devil is disabled and reads "This is an artifact from the past..."</p>
-<p>If a pair of Rage Pants are upgraded to Malding or Manic, it is announced to the entire lobby.</p></span></div>
-<div id="footer"></div>
+        <td>Number of times the player hit others with a sword.</td>
+      </tr>
+
+      <tr id="Arrows_ShotHeader">
+        <td><span class="anchor" id="Arrows_Shot"></span>Arrows Shot</td>
+
+        <td>Number of arrows shot from a bow.</td>
+      </tr>
+
+      <tr id="Damage_DealtHeader">
+        <td><span class="anchor" id="Damage_Dealt"></span>Damage Dealt</td>
+
+        <td>Amount of damage dealt to other players. 1 damage is equivalent to <span class="mc">0.5&hearts;</span>.</td>
+      </tr>
+
+      <tr id="Melee_Damage_DealtHeader">
+        <td><span class="anchor" id="Melee_Damage_Dealt"></span>Melee Damage Dealt</td>
+
+        <td>Amount of damage dealt with melee (non-bow & fist) weapons to other players. 1 damage is equivalent to <span
+            class="mc">0.5&hearts;</span>.</td>
+      </tr>
+
+      <tr id="Bow_Damage_DealtHeader">
+        <td><span class="anchor" id="Bow_Damage_Dealt"></span>Bow Damage Dealt</td>
+
+        <td>Amount of damage dealt with bows to other players. 1 damage is equivalent to <span
+            class="mc">0.5&hearts;</span>.</td>
+      </tr>
+
+      <tr id="Highest_StreakHeader">
+        <td><span class="anchor" id="Highest_Streak"></span>Highest Streak</td>
+
+        <td>The player's highest <a href="Killstreak">killstreak</a>.</td>
+      </tr>
+
+      <tr id="DeathsHeader">
+        <td rowspan="4" class="donothighlight">Stats NPC<br>Offensive Stats</td>
+
+        <td><span class="anchor" id="Deaths"></span>Deaths</td>
+
+        <td>Number of times the player died.</td>
+      </tr>
+
+      <tr id="Damage_TakenHeader">
+        <td><span class="anchor" id="Damage_Taken"></span>Damage Taken</td>
+
+        <td>Amount of damage taken from other players. Environmental damage, such as from lava or the void, is not
+          included. 1 damage is equivalent to <span class="mc">0.5&hearts;</span>.</td>
+      </tr>
+
+      <tr id="Melee_Damage_TakenHeader">
+        <td><span class="anchor" id="Melee_Damage_Taken"></span>Melee Damage Taken</td>
+
+        <td>Amount of damage taken from other players using melee (non-bow & fist) weapons. 1 damage is equivalent to
+          <span class="mc">0.5&hearts;</span>.</td>
+      </tr>
+
+      <tr id="Bow_Damage_TakenHeader">
+        <td><span class="anchor" id="Bow_Damage_Taken"></span>Bow Damage Taken</td>
+
+        <td>Amount of damage taken from other players using bows. 1 damage is equivalent to <span
+            class="mc">0.5&hearts;</span>.</td>
+      </tr>
+
+      <tr id="XPHeader">
+        <td rowspan="7" class="donothighlight">Stats NPC<br>Performance Stats</td>
+
+        <td><span class="anchor" id="XP"></span>XP</td>
+
+        <td>The player's lifetime <a href="XP"><span class="mb">XP</span></a>.</td>
+      </tr>
+
+      <tr id="KDHeader">
+        <td><span class="anchor" id="KD"></span>K/D</td>
+
+        <td>The player's kill/death ratio, calculated by dividing the player's number of kills by their number of
+          deaths.</td>
+      </tr>
+
+      <tr id="KADHeader">
+        <td><span class="anchor" id="KAD"></span>K+A/D</td>
+
+        <td>The player's kill + assist/death ratio, calculated by dividing the player's number of kills and assists by
+          their number of deaths.</td>
+      </tr>
+
+      <tr id="Damage_dealttakenHeader">
+        <td><span class="anchor" id="Damage_dealt_taken"></span>Damage dealt/taken</td>
+
+        <td>The player's damage dealt divided by their amount of damage taken.</td>
+      </tr>
+
+      <tr id="Hours_playedHeader">
+        <td><span class="anchor" id="Hours_played"></span>Hours played</td>
+
+        <td>The number of hours the player has spent in The Pit. Time spent idle counts for this statistic.</td>
+      </tr>
+
+      <tr id="GoldhourHeader">
+        <td><span class="anchor" id="Goldhour"></span>Gold/hour</td>
+
+        <td>The player's lifetime gold, divided by their number of hours played.</td>
+      </tr>
+
+      <tr id="KAhourHeader">
+        <td><span class="anchor" id="KAhour"></span>K+A/hour</td>
+
+        <td>The player's kills and assists, divided by their number of hours played</td>
+      </tr>
+
+      <tr id="Left_ClicksHeader">
+        <td rowspan="11" class="donothighlight">Stats NPC<br>Miscellaneous Stats</td>
+
+        <td><span class="anchor" id="Left_Clicks"></span>Left Clicks</td>
+
+        <td>The player's left click count. Left clicks are only counted if the player clicks a player outside of spawn
+          or any block.</td>
+      </tr>
+
+      <tr id="Gold_EarnedHeader">
+        <td><span class="anchor" id="Gold_Earned"></span>Gold Earned</td>
+
+        <td>Lifetime <a href="Gold"><span class="m6">gold</span></a> earned from all sources except <a
+            href="Commands#trade">trading</a>.</td>
+      </tr>
+
+      <tr id="Diamond_Items_PurchasedHeader">
+        <td><span class="anchor" id="Diamond_Items_Purchased"></span>Diamond Items Purchased</td>
+
+        <td>Total number of <a href="Item_Shop">shop items</a> purchased. Items do not have to be diamond to count.</td>
+      </tr>
+
+      <tr id="Chat_MessagesHeader">
+        <td><span class="anchor" id="Chat_Messages"></span>Chat Messages</td>
+
+        <td>Number of times the player has sent a visible chat message. Answering <a href="Quick_Maths">Quick Maths</a>
+          questions and using <a href="Commands#show">/show</a> do not add to this statistic.</td>
+      </tr>
+
+      <tr id="Blocks_PlacedHeader">
+        <td><span class="anchor" id="Blocks_Placed"></span>Blocks Placed</td>
+
+        <td>Number of blocks the player has placed.</td>
+      </tr>
+
+      <tr id="Blocks_BrokenHeader">
+        <td><span class="anchor" id="Blocks_Broken"></span>Blocks Broken</td>
+
+        <td>Number of blocks the player has broken. Blocks broken with the <a href="Item_Shop#Golden_Pickaxe">Golden
+            Pickaxe</a> do not increase this statistic.</td>
+      </tr>
+      <tr id="Jumps_into_PitHeader">
+        <td><span class="anchor" id="Jumps_into_Pit"></span>Jumps into Pit</td>
+
+        <td>Number of times the player has jumped into the center pit.</td>
+      </tr>
+      <tr id="Launcher_LaunchesHeader">
+        <td><span class="anchor" id="Launcher_Launches"></span>Launcher Launches</td>
+
+        <td>Number of times the player has used the slime launchers in the corners of the spawn.</td>
+      </tr>
+      <tr id="Golden_Apples_EatenHeader">
+        <td><span class="anchor" id="Golden_Apples_Eaten"></span>Golden Apples Eaten</td>
+
+        <td>Number of golden apples the player has eaten.</td>
+      </tr>
+      <tr id="Golden_Heads_EatenHeader">
+        <td><span class="anchor" id="Golden_Heads_Eaten"></span>Golden Heads Eaten</td>
+
+        <td>Number of <a href="Perks#Golden_Heads">golden heads</a> the player has eaten.</td>
+      </tr>
+      <tr id="Lava_Buckets_EmptiedHeader">
+        <td><span class="anchor" id="Lava_Buckets_Emptied"></span>Lava Buckets Emptied</td>
+
+        <td>Number of times the player has emptied a <a href="Perks#Lava_Bucket">lava bucket</a>.</td>
+      </tr>
+      <tr id="Fishing_Rods_LaunchedHeader">
+        <td><span class="anchor" id="Fishing_Rods_Launched"></span>Fishing Rods Launched</td>
+
+        <td>Number of times the player has launched a bobber on a <a href="Perks#Fishing_Rod">fishing rod</a>.</td>
+      </tr>
+      <tr id="Contracts_CompletedHeader">
+        <td><span class="anchor" id="Contracts_Completed"></span>Contracts Completed</td>
+        <td>Number of <a href="Contracts">contracts</a> the player has completed.</td>
+      </tr>
+      <tr id="Wheat_FarmedHeader">
+        <td><span class="anchor" id="Wheat_Farmed"></span>Wheat Farmed</td>
+        <td></td>
+      </tr>
+
+    </table>
+  </div>
+  <div id="footer"></div>
 
 </body>
 <script>
   function ChangeHighlight() {
-    Array.from(document.querySelectorAll('.highlighted')).forEach(function(el) { 
-    el.classList.remove('highlighted');
+    Array.from(document.querySelectorAll('.highlighted')).forEach(function (el) {
+      el.classList.remove('highlighted');
     });
     var hash = location.hash.substring(1);
     console.log(hash)
-    if(hash.length > 0) {
-    document.getElementById(hash + "Header").classList.add('highlighted')
+    if (hash.length > 0) {
+      document.getElementById(hash + "Header").classList.add('highlighted')
     }
-}
-ChangeHighlight()
+  }
+  ChangeHighlight()
 </script>
+
 </html>
