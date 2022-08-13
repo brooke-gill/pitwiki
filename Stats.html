@@ -365,6 +365,8 @@
         <tr id="outgoing_offersHeader">
           <td><span class="anchor" id="outgoing_offers"></span>profile.outgoing_offers</td>
           <td>???</td>
+          <td><pre><code>"outgoing_offers": [
+]</code></pre></td>
         </tr>
         <tr id="last_saveHeader">
           <td><span class="anchor" id="last_save"></span>profile.last_save</td>
@@ -393,6 +395,8 @@
         <tr id="trade_timestampsHeader">
           <td><span class="anchor" id="trade_timestamps"></span>profile.trade_timestamps</td>
           <td>???</td>
+          <td><pre><code>"trade_timestamps": [
+],</code></pre></td>
         </tr>
         <tr id="inv_enderchestHeader">
           <td><span class="anchor" id="inv_enderchest"></span>profile.inv_enderchest</td>
@@ -492,7 +496,36 @@
         </tr>
         <tr id="contractHeader">
           <td><span class="anchor" id="contract"></span>profile.contract</td>
-          <td>???</td>
+          <td>The player's currently in-progress <a href="Contracts">contract</a>. The object contains several keys:
+            <ul>
+              <li><code>difficulty</code>: either <code>EASY</code> or <code>HARD</code>, representing a Novice or Big
+                Time contract respectively.</li>
+              <li><code>gold_reward</code>: Amount of gold the player earned from completing the contract.
+              </li>
+              <li><code>requirements</code>: Object. Contains a key representing the objective the player
+                needs to complete for the contract.</li>
+              <li><code>progress</code>: Object. Contains a key representing the progress the player has already made in the contract.</li>
+              <li><code>chunk_of_viles_reward</code>: The number of <a href="Chunk_of_Vile">Chunks of
+                  Vile</a> the player will receive if they complete the contract.</li>
+              <li><code>completion_date</code>: Always zero.</li>
+              <li><code>remaining_ticks</code>: How many ticks are left in the contract's 5-minute timer. One tick is equal to 0.05 seconds.</li>
+              <li><code>key</code>: Description of the contract's objective.</li>
+            </ul>
+          </td>
+          <td><pre><code>"contract": {
+  "difficulty":"EASY",
+  "gold_reward":600,
+  "requirements": {
+    "ingots":10
+  },
+  "progress": {
+    "ingots":2
+  },
+  "chunk_of_viles_reward":0,
+  "completion_date":0,
+  "remaining_ticks":1560,
+  "key":"collect_ingots"
+},</code></pre></td>
         </tr>
         <tr id="last_contractHeader">
           <td><span class="anchor" id="last_contract"></span>profile.last_contract</td>
@@ -526,6 +559,12 @@
         <tr id="inv_contentsHeader">
           <td><span class="anchor" id="inv_contents"></span>profile.inv_contents</td>
           <td>The player's inventory contents. Stored as a byte array.</td>
+          <td><pre><code>"inv_contents": {
+  "type":0,
+  "data": [
+    31,-117,8,0,0,0,0,0,0,0,-107,-111,-65,-78, <span class="mc">...</span>
+  ]
+}</code><pre></td>
         </tr>
         <tr id="items_last_buyHeader">
           <td><span class="anchor" id="items_last_buy"></span>profile.items_last_buy</td>
@@ -565,11 +604,24 @@
           <td><span class="anchor" id="spire_stash_inv"></span>profile.spire_stash_inv</td>
           <td>Byte array of the player's Spire stash inventory, containing the player's items that will be given back to them once the <a
               href="Spire">Spire</a> event concludes.</td>
+          <td><pre><code>"spire_stash_inv": {
+  "type":0,
+  "data": [
+    31,-117,8,0,0,0,0,0,0,0,-29,98,96,-32, <span class="mc">...</span>
+  ]
+}</code><pre></td>
+
         </tr>
         <tr id="spire_stash_armorHeader">
           <td><span class="anchor" id="spire_stash_armor"></span>profile.spire_stash_armor</td>
           <td>Byte array of the player's Spire stash armor, containing the armor that will be given back to them once
             the <a href="Spire">Spire</a> event concludes.</td>
+            <td><pre><code>"spire_stash_armor": {
+  "type":0,
+  "data": [
+    31,-117,8,0,0,0,0,0,0,0,-29,98,96,-32, <span class="mc">...</span>
+  ]
+}</code><pre></td>
         </tr>
         <tr id="cheap_milkHeader">
           <td><span class="anchor" id="cheap_milk"></span>profile.cheap_milk</td>
@@ -587,6 +639,28 @@
           <td>Contains several objects, each corresponding to a renown unlock. Each one has a <code>tier</code> (0 for
             upgradeless unlocks), an <code>acquireDate</code> &ndash; a
             Unix timestamp of the unlock, and a <code>key</code> &ndash; the name of the unlock.</td>
+            <td><pre><code>"renown_unlocks": [
+  {
+    "tier":0,
+    "acquireDate":1520443821179,
+    "key":"tenacity"
+  },
+  {
+    "tier":0,
+    "acquireDate":1530839182606,
+    "key":"mysticism"
+  },
+  {
+    "tier":1,
+    "acquireDate":1530839194727,
+    "key":"mysticism"
+  },
+  {
+    "tier":0,
+    "acquireDate":1548694066717,
+    "key":"unlock_perk_dirty"
+  }
+],</code></pre></td>
         </tr>
         <tr id="last_midfight_disconnectHeader">
           <td><span class="anchor" id="last_midfight_disconnect"></span>profile.last_midfight_disconnect</td>
@@ -596,10 +670,22 @@
         <tr id="inv_armorHeader">
           <td><span class="anchor" id="inv_armor"></span>profile.inv_armor</td>
           <td>Byte array of the player's armor.</td>
+          <td><pre><code>"inv_armor": {
+  "type":0,
+  "data": [
+    31,-117,8,0,0,0,0,0,0,0,-29,98,96,-32, <span class="mc">...</span>
+  ]
+}</code></pre></td>
         </tr>
         <tr id="item_stashHeader">
           <td><span class="anchor" id="item_stash"></span>profile.item_stash</td>
           <td>Byte array of the player's item stash.</td>
+          <td><pre><code>"item_stash": {
+  "type":0,
+  "data": [
+    31,-117,8,0,0,0,0,0,0,0,-29,98,96,-32, <span class="mc">...</span>
+  ]
+}</code></pre></td>
         </tr>
         <tr id="genesis_allegiance_timeHeader">
           <td><span class="anchor" id="genesis_allegiance_time"></span>profile.genesis_allegiance_time</td>
@@ -609,6 +695,8 @@
         <tr id="login_messagesHeader">
           <td><span class="anchor" id="login_messages"></span>profile.login_messages</td>
           <td>???</td>
+          <td><pre><code>"login_messages": [ 
+],</pre></code></td>
         </tr>
         <tr id="hotbar_favoritesHeader">
           <td><span class="anchor" id="hotbar_favorites"></span>profile.hotbar_favorites</td>
@@ -621,7 +709,7 @@
         </tr>
         <tr id="ended_contractsHeader">
           <td><span class="anchor" id="ended_contracts"></span>profile.ended_contracts</td>
-          <td>List of recently-completed <a href="Contracts">contracts</a>. Each object contains several keys:
+          <td>Array of recently-completed <a href="Contracts">contracts</a>. Each object contains several keys:
             <ul>
               <li><code>difficulty</code>: either <code>EASY</code> or <code>HARD</code>, representing a Novice or Big
                 Time contract respectively.</li>
@@ -639,6 +727,22 @@
               <li><code>key</code>: Description of the contract's objective.</li>
             </ul>
           </td>
+          <td><pre><code>"ended_contracts": [
+  {
+    "difficulty":"HARD",
+    "gold_reward":2200,
+    "requirements": {
+      "shots":100
+    },
+    "progress": {
+      "shots":100
+    },
+    "chunk_of_viles_reward":2,
+    "completion_date":1659028048305,
+    "remaining_ticks":4360,
+    "key":"land_arrow_shots"
+  }
+]</code></pre></td>
         </tr>
         <tr id="bountiesHeader">
           <td><span class="anchor" id="bounties"></span>profile.bounties</td>
@@ -647,6 +751,18 @@
             Unix timestamp of when the player received the bounty. <code>remainingTicks</code> is never used (either set
             to the integer limit or 365 days and does not
             decrease).</td>
+            <td><pre><code>"bounties": [
+  {
+    "amount":100,
+    "remainingTicks":9223372036854775807,
+    "timestamp":1654985283520
+  },
+  {
+    "amount":100,
+    "remainingTicks":9223372036854775807,
+    "timestamp":1654993623724
+  }
+],</code></pre></td>
         </tr>
         <tr id="chat_optionHeader">
           <td><span class="anchor" id="chat_option"></span>profile.chat_option_[value]</td>
@@ -672,8 +788,8 @@
               <li><code>claim_item_demon</code>: <span class="mc">Demon</span> tier VI</li>
               <li><code>perma_gold</code>: <span class="mc">Demon</span> tier VII</li>
             </ul>
-
           </td>
+          <td><pre><code>"genesis_weekly_perks_perma_gold":1658010704820,</code></pre>
         </tr>
         <tr id="night_quests_enabledHeader">
           <td><span class="anchor" id="night_quests_enabled"></span>profile.night_quests_enabled</td>
@@ -719,6 +835,24 @@
             the number of items that were sold on that date.<br>The purpose of the <code>Hay</code>, <code>Bread</code>,
             and <code>Fish</code> objects is currently unknown.
           </td>
+          <td><pre><code>"shops_throttle": {
+  "Hay": {
+    "lastEpochDay":19211,
+    "count":0
+  },
+  "buyer_Fish": {
+    "lastEpochDay":19137,
+    "count":1
+  },
+  "Fish": {
+    "lastEpochDay":19137,
+    "count":0
+  },
+  "buyer_Hay": {
+    "lastEpochDay":19211,
+    "count":25
+  }
+},</code></pre></td>
         </tr>
         <tr id="autobuy_itemsHeader">
           <td><span class="anchor" id="autobuy_items"></span>profile.autobuy_items</td>
@@ -731,7 +865,7 @@
         </tr>
         <tr id="contract_choicesHeader">
           <td><span class="anchor" id="contract_choices"></span>profile.contract_choices</td>
-          <td>List of <a href="Contracts">contracts</a> the player can select. Returns <code>null</code> if
+          <td>List of the three <a href="Contracts">contracts</a> the player can select. Returns <code>null</code> if
             the player has no contracts to select. Each object contains several keys:
             <ul>
               <li><code>difficulty</code>: either <code>EASY</code> or <code>HARD</code>, representing a Novice or Big
@@ -750,10 +884,61 @@
               <li><code>key</code>: Description of the contract's objective.</li>
             </ul>
           </td>
+          <td><pre><code>"contract_choices": [
+  {
+    "difficulty":"HARD",
+    "gold_reward":2400,
+    "requirements": {
+      "kills":4
+    },
+    "progress": {
+      "kills":0
+    },
+    "chunk_of_viles_reward":0,
+    "completion_date":0,
+    "remaining_ticks":6000,
+    "key":"kills_no_armor"
+  },
+  {
+    "difficulty":"HARD",
+    "gold_reward":2000,
+    "requirements": {
+      "kills":10
+    },
+    "progress": {
+      "kills":0
+    },
+    "chunk_of_viles_reward":1,
+    "completion_date":0,
+    "remaining_ticks":6000,
+    "key":"shoot_then_talk"
+  },
+  {
+    "difficulty":"HARD",
+    "gold_reward":2200,
+    "requirements": { 
+      "kills":10
+    },
+    "progress": {
+      "kills":0
+    },
+    "chunk_of_viles_reward":0,
+    "completion_date":0,
+    "remaining_ticks":6000,
+    "key":"kills_no_perk"
+  }
+],</td>
         <tr id="mystic_well_itemHeader">
           <td><span class="anchor" id="mystic_well_item"></span>profile.mystic_well_item</td>
           <td>Object with two keys. <code>type</code> is always 0. <code>data</code> is a byte
             array of the item that the player has in their <a href="Mystic_Well">Mystic Well</a>.</td>
+            <td><pre><code>"mystic_well_item": {
+  "type":0,
+  "data": [
+    31,-117,8,0,0,0,0,0,0,0,77,81,75,78 <span class="mc">...</span>
+  ]
+}</pre></code></td>
+
         </tr>
         <tr id="selected_megastreak_except_uberHeader">
           <td><span class="anchor" id="selected_megastreak_except_uber"></span>profile.selected_megastreak_except_uber
@@ -829,10 +1014,17 @@
           <td>Whether the player refunded 10 renown from the Golden Pickaxe being removed from the renown shop in <a
               href="https://hypixel.net/threads/the-pit-1-0-5-tryhard-patch.4667681/" target="_blank"
               rel="noopener noreferrer">The Pit 1.0.5</a>. Boolean.</td>
+              <td><pre><code>"refunded_golden_pickaxe":true,</pre></code></td>
         </tr>
         <tr id="mystic_well_pantsHeader">
           <td><span class="anchor" id="mystic_well_pants"></span>profile.mystic_well_pants</td>
-          <td>???</td>
+          <td>Byte array of the item in the "sacrifice" slot of the <a href="Mystic_Well">Mystic Well.</a></td>
+          <td><pre><code>"mystic_well_pants": {
+  "type":0,
+  "data": [
+    31,-117,8,0,0,0,0,0,0,0,61,-111,-51,78, <span class="mc">...</span>
+  ]
+}</code></pre>
         </tr>
         <tr id="reconessence_dayHeader">
           <td><span class="anchor" id="reconessence_day"></span>profile.reconessence_day</td>
@@ -849,6 +1041,7 @@
         <tr id="uber_paid_upHeader">
           <td><span class="anchor" id="uber_paid_up"></span>profile.uber_paid_up</td>
           <td>???</td>
+          <td><pre><code>"uber_paid_up":1659324617298,</code></pre></td>
         </tr>
         <tr id="gold_stack_streakHeader">
           <td><span class="anchor" id="gold_stack_streak"></span>profile.gold_stack_streak_[number]</td>
@@ -876,7 +1069,68 @@
         <tr id="contract_offersHeader">
           <td><span class="anchor" id="contract_offers"></span>profile.contract_offers</td>
           <td>???</td>
+          <td><pre><code>"contract_offers": {
+    "contracts": [
+      {
+        "meta": {
+          "kills":1,
+          "reward":1250
+        },
+        "key":"diamond_sword_kill"
+      },
+      {
+        "meta": {
+          "kills":20,
+          "reward":1250
+        },
+        "key":"kill_players"
+      },
+      {
+        "meta":
+        {
+          "reward":500
+        },
+        "key":"kill_player_with_bow"
+      }
+    ],
+    "timestamp":1521192100119
+  },</code></pre>
         </tr>
+
+        <tr id="packagesHeader">
+          <td><span class="anchor" id="packages"></span>packages</td>
+          <td>The player's purchased Pit items. Currently, this only contains <a href="Pit_Supporter">Pit Supporter</a>.</td>
+          <td><pre><code>"packages": [
+  "supporter"
+]</code></pre></td>
+          </tr>
+
+          <tr id="restored_inv_backup_1Header">
+            <td><span class="anchor" id="restored_inv_backup_1"></span>restored_inv_backup_1</td>
+            <td>The Unix timestamp of when the player's inventory was rolled back due to a <a href="https://hypixel.net/threads/regarding-lost-inventories.2040200/" target="_blank" rel="noopener noreferrer">bug</a> in May 2019.</td>
+            <td><pre><code>"restored_inv_backup_1":1557829680516</code></pre></td>
+            </tr>
+
+            <tr id="stats_move_1Header">
+              <td><span class="anchor" id="stats_move_1"></span>stats_move_1</td>
+              <td>???</td>
+              <td><pre><code>"stats_move_1":1630383951685</code></pre></td>
+              </tr>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
       </table>
 
