@@ -80,11 +80,11 @@ body {
 }
 
 .invisible_fill {
-  background-color: #361a1a;
+  background-color: var(--bg);
 }
 
 .headerbox {
-  background-color: #361a1a;
+  background-color: var(--bg);
   width: 80%;
   padding: 20px 50px 20px;
   margin: 0px;
@@ -100,7 +100,7 @@ body {
 }
 
 .box {
-  background-color: #361a1a;
+  background-color: var(--bg);
   width: 80%;
   padding: 20px 50px 20px;
   margin: 20px;
@@ -167,7 +167,7 @@ body {
 code {
   font-family: 'Roboto Mono','Consolas','Courier New',monospace;
   color: #cac;
-  background-color: #4f2626;
+  background-color: #383838;
   padding: 2px;
 }
 
@@ -228,7 +228,7 @@ a:active {
   --mce: #ff5;
   --mcf: #fff;
   --td: #caa;
-  --bg: #361a1a;
+  --bg: #252525;
 }
 
 td img {display: block;   margin-left: auto; margin-right: auto;}
@@ -256,7 +256,7 @@ ul {
 }
 
 .homepageitem {
-  background: #4a2323;
+background: #363636;
   padding: 1em;
   margin: 0 0 1.5em;
   break-inside: avoid-column;
@@ -283,6 +283,6 @@ ul {
 @media only screen and (max-width: 500px) {
   body {
     background-image: none;
-    background-color: #361a1a;
+    background-color: #252525;
 }
 }

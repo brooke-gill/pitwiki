@@ -221,7 +221,7 @@
         <tr id="GoldhourHeader">
           <td><span class="anchor" id="Goldhour"></span>Gold/hour</td>
 
-          <td>The player's lifetime gold, divided by their number of hours played.</td>
+          <td>The player's lifetime <a href="Gold"><span class="m6">gold</span></a>, divided by their number of hours played.</td>
         </tr>
 
         <tr id="KAhourHeader">
@@ -457,7 +457,7 @@
               <li><code>Pit_kotl_time</code>: Highest number of milliseconds spent on one <a
                   href="King_of_the_Ladder">King of the
                   Ladder</a> event.</li>
-              <li><code>Pit_kotl_gold</code>: Highest amount of gold earned in one <a href="King_of_the_Ladder">King of
+              <li><code>Pit_kotl_gold</code>: Highest amount of <a href="Gold"><span class="m6">gold</span></a> earned in one <a href="King_of_the_Ladder">King of
                   the
                   Ladder</a> event.</li>
               <li><code>Pit_rage_pit_damage</code>: Maximum damage dealt in one <a href="Rage_Pit">Rage
@@ -500,7 +500,7 @@
             <ul>
               <li><code>difficulty</code>: either <code>EASY</code> or <code>HARD</code>, representing a Novice or Big
                 Time contract respectively.</li>
-              <li><code>gold_reward</code>: Amount of gold the player earned from completing the contract.
+              <li><code>gold_reward</code>: Amount of <a href="Gold"><span class="m6">gold</span></a> the player earned from completing the contract.
               </li>
               <li><code>requirements</code>: Object. Contains a key representing the objective the player
                 needs to complete for the contract.</li>
@@ -535,7 +535,7 @@
         <tr id="gold_transactionsHeader">
           <td><span class="anchor" id="gold_transactions"></span>profile.gold_transactions</td>
           <td>The player's most recently completed <a href="Commands#trade">trades</a>. Trades are stored as arrays,
-            with <code>amount</code> being the gold amount of the trade and <code>timestamp</code> being the Unix
+            with <code>amount</code> being the <a href="Gold"><span class="m6">gold</span></a> amount of the trade and <code>timestamp</code> being the Unix
             timestamp of the trade's
             completion.</td>
           <td><pre><code>"gold_transactions": [
@@ -547,7 +547,7 @@
         </tr>
         <tr id="cash_during_prestige_nHeader">
           <td><span class="anchor" id="cash_during_prestige_n"></span>profile.cash_during_prestige_[number]</td>
-          <td>The amount of gold the player obtained during a <a href="Prestige">prestige</a>.</td>
+          <td>The amount of <a href="Gold"><span class="m6">gold</span></a> the player obtained during a <a href="Prestige">prestige</a>.</td>
           <td><pre><code>"cash_during_prestige_7":1210325.8938003636,</code></pre></td>
         </tr>
         <tr id="genesis_allegianceHeader">
@@ -713,7 +713,7 @@
             <ul>
               <li><code>difficulty</code>: either <code>EASY</code> or <code>HARD</code>, representing a Novice or Big
                 Time contract respectively.</li>
-              <li><code>gold_reward</code>: Amount of gold the player earned from completing the contract.
+              <li><code>gold_reward</code>: Amount of <a href="Gold"><span class="m6">gold</span></a> the player earned from completing the contract.
               </li>
               <li><code>requirements</code>: Object. Contains a key representing the objective the player
                 completed for the contract.</li>
@@ -870,7 +870,7 @@
             <ul>
               <li><code>difficulty</code>: either <code>EASY</code> or <code>HARD</code>, representing a Novice or Big
                 Time contract respectively.</li>
-              <li><code>gold_reward</code>: Amount of gold the player will earn from completing this
+              <li><code>gold_reward</code>: Amount of <a href="Gold"><span class="m6">gold</span></a> the player will earn from completing this
                 contract.
               </li>
               <li><code>requirements</code>: Object. Contains a key representing the objective the player
@@ -1068,7 +1068,7 @@
         </tr>
         <tr id="contract_offersHeader">
           <td><span class="anchor" id="contract_offers"></span>profile.contract_offers</td>
-          <td>???</td>
+          <td>Deprecated. Used by admins to test the <a href="Contracts">contracts</a> feature.</td>
           <td><pre><code>"contract_offers": {
     "contracts": [
       {
@@ -1099,7 +1099,7 @@
 
         <tr id="packagesHeader">
           <td><span class="anchor" id="packages"></span>packages</td>
-          <td>The player's purchased Pit items. Currently, this only contains <a href="Pit_Supporter">Pit Supporter</a>.</td>
+          <td>An array of the player's purchased Pit packages. Currently, this only contains <a href="Pit_Supporter">Pit Supporter</a>.</td>
           <td><pre><code>"packages": [
   "supporter"
 ]</code></pre></td>
