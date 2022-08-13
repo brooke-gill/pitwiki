@@ -99,7 +99,7 @@ body {
   visibility: hidden;
 }
 
-  .box {
+.box {
   background-color: #361a1a;
   width: 80%;
   padding: 20px 50px 20px;
@@ -162,6 +162,17 @@ body {
 }
 .td{
     color: #caa
+}
+
+code {
+  font-family: 'Roboto Mono','Consolas','Courier New',monospace;
+  color: #cac;
+  background-color: #4f2626;
+  padding: 2px;
+}
+
+pre>code {
+  background-color: transparent;
 }
 
 a:link {
@@ -267,4 +278,11 @@ ul {
   .homepagecontainer {
     column-count: 2;
   }
+}
+
+@media only screen and (max-width: 500px) {
+  body {
+    background-image: none;
+    background-color: #361a1a;
+}
 }

@@ -20,9 +20,10 @@ var arrowcount = 1;
 var oldlength = 0;
 var visibleIDs = []
 
+if(screen.width > 500) {
 document.getElementById('myInput').focus();
 document.getElementById('myInput').select();
-
+}
 for(var i = 0; i < window.searchpages.length * 2; i += 1) {
     //console.log("doing thing")
     var fulllist = document.getElementById('aUL')
@@ -157,8 +158,10 @@ function Search() {
     document.getElementById('myInput').style.display = "block"
     document.getElementById('partofsearch').style.display = "block"
     searchclicked = 1;
+    if(screen.width > 500) {
     document.getElementById('myInput').focus();
     document.getElementById('myInput').select();
+    }
     Filter()
     } else {
     document.getElementById('partofsearch').style.display = "none"
