@@ -40,12 +40,55 @@
       <hr>
       <p><strong>Stats</strong>, short for "statistics", are numeric
         values players can view both in-game and online, through the <a href="NPCs#Stats">Stats NPC</a> and various
-        websites.</p>
-      <p>Rage pants function differently from standard mystic pants. When enchanted to tier I, they will always have 4
-        or 9 lives and 1–2 tiers of a special Rage enchant. Once enchanted to tier I, rage pants become functionally
-        identical to Tier I standard <a href="Mystic_Pants">mystic pants.</a>
-    </span></p>
-    <p>The list of Rage enchants is as follows:</p>
+        websites. Players unlock the Stats NPC permanently at <a href="Level">level</a> 50.</p>
+
+        <p>The list of statistics players can see that are not in the Stats NPC are as follows:</p>
+
+    <table>
+      <tr style="font-weight: bold; position: sticky; top: 0" class="invisible_fill">
+
+        <td>Location</td>
+        <td>Name</td>
+        <td>Description</td>
+
+      </tr>
+      <tr id="PrestigeHeader">
+        <td rowspan="5" class="donothighlight">Sidebar</td>
+        <td><span class="anchor" id="Prestige"></span>Prestige</td>
+        <td>The player's current <a href="Prestige">prestige</a>. Only visible if the player is prestige <span class="m9">I</span> or higher.</td>
+      </tr>
+      <tr id="LevelHeader">
+        <td><span class="anchor" id="Prestige"></span>Level</td>
+        <td>The player's current <a href="Prestige">level</a>.</td>
+      </tr>
+      <tr id="Needed_XPHeader">
+        <td><span class="anchor" id="Needed_XP"></span>Needed XP</td>
+        <td>The amount of <a href="XP"><span class="mb">XP</span></a> the player needs to reach the next level.</td>
+      </tr>
+      <tr id="GoldHeader">
+        <td><span class="anchor" id="Gold"></span>Gold</td>
+        <td>The amount of <a href="Gold"><span class="m6">gold</span></a> the player has.</td>
+      </tr>
+      <tr id="StatusHeader">
+        <td><span class="anchor" id="Status"></span>Status</td>
+        <td>The player's status. This status can display a variety of messages:
+        <ul>
+          <li><span class="ma">Idling</span>, when the player is not in combat;</li>
+          <li><span class="mc">Fighting</span>, when the player is fighting;</li>
+          <li><span class="mc">Bountied</span>, when the player has a <a href="Bounty">bounty</a>;</li>
+          <li><span class="m6">Event</span>, when a <a href="Major_Event">major event</a> is ongoing.</ul>
+          </ul>
+        </td>
+      </tr>
+      <tr id="RenownHeader">
+        <td rowspan="1" class="donothighlight"><a href="NPCs#Renown">Renown NPC</a></td>
+        <td><span class="anchor" id="Renown"></span>Renown</td>
+        <td>The player's current amount of <a href="Renown"><span class="me">renown</span></a>.<div class=""></div></td>
+      </tr>
+    </table>
+
+
+    <p>The list of statistics players can see is as follows:</p>
 
     <table>
       <tr style="font-weight: bold; position: sticky; top: 0" class="invisible_fill">
@@ -89,7 +132,7 @@
       <tr id="Melee_Damage_DealtHeader">
         <td><span class="anchor" id="Melee_Damage_Dealt"></span>Melee Damage Dealt</td>
 
-        <td>Amount of damage dealt with melee (non-bow & fist) weapons to other players. 1 damage is equivalent to <span
+        <td>Amount of damage dealt with melee (non-bow or fist) weapons to other players. 1 damage is equivalent to <span
             class="mc">0.5&hearts;</span>.</td>
       </tr>
 
@@ -124,7 +167,7 @@
       <tr id="Melee_Damage_TakenHeader">
         <td><span class="anchor" id="Melee_Damage_Taken"></span>Melee Damage Taken</td>
 
-        <td>Amount of damage taken from other players using melee (non-bow & fist) weapons. 1 damage is equivalent to
+        <td>Amount of damage taken from other players using melee (non-bow or fist) weapons. 1 damage is equivalent to
           <span class="mc">0.5&hearts;</span>.</td>
       </tr>
 
@@ -178,11 +221,11 @@
       <tr id="KAhourHeader">
         <td><span class="anchor" id="KAhour"></span>K+A/hour</td>
 
-        <td>The player's kills and assists, divided by their number of hours played</td>
+        <td>The player's kills and assists, divided by their number of hours played.</td>
       </tr>
 
       <tr id="Left_ClicksHeader">
-        <td rowspan="11" class="donothighlight">Stats NPC<br>Miscellaneous Stats</td>
+        <td rowspan="21" class="donothighlight">Stats NPC<br>Miscellaneous Stats</td>
 
         <td><span class="anchor" id="Left_Clicks"></span>Left Clicks</td>
 
@@ -245,7 +288,7 @@
       <tr id="Lava_Buckets_EmptiedHeader">
         <td><span class="anchor" id="Lava_Buckets_Emptied"></span>Lava Buckets Emptied</td>
 
-        <td>Number of times the player has emptied a <a href="Perks#Lava_Bucket">lava bucket</a>.</td>
+        <td>Number of times the player has placed lava from a <a href="Perks#Lava_Bucket">lava bucket</a>.</td>
       </tr>
       <tr id="Fishing_Rods_LaunchedHeader">
         <td><span class="anchor" id="Fishing_Rods_Launched"></span>Fishing Rods Launched</td>
@@ -258,10 +301,137 @@
       </tr>
       <tr id="Wheat_FarmedHeader">
         <td><span class="anchor" id="Wheat_Farmed"></span>Wheat Farmed</td>
-        <td></td>
+        <td>Number of <a href="Castle#Wheat">wheat</a> farmed in the <a href="Castle">Castle</a> map.</td>
+      </tr>
+      <tr id="Gold_from_FarmingHeader">
+        <td><span class="anchor" id="Gold_from_Farming"></span>Gold from Farming</td>
+        <td>Amount of <a href="Gold"><span class="m6">gold</span></a> earned from selling <a href="Castle#Packaged_Bale">Packaged Bales</a> and <a href="Castle#Yummy_Bread">Yummy Bread</a> to <a href="NPCs#Hay_salesman">salesman NPCs</a>.</td>
+      </tr>
+      <tr id="Gold_from_Selling_FishHeader">
+        <td><span class="anchor" id="Gold_from_Selling_Fish"></span>Gold from Selling Fish</td>
+        <td>Amount of <a href="Gold"><span class="m6">gold</span></a> earned from selling <a href="Fishing">fish</a> to <a href="NPCs#Hay_salesman">salesman NPCs</a>.</td>
+      </tr>
+      <tr id="Kings_Quest_CompletedHeader">
+        <td><span class="anchor" id="Kings_Quest_Completed"></span>King's Quest Completed</td>
+        <td>Number of times the player has completed the <a href="Kings_Quest">King's Quest</a>.</td>
+      </tr>
+      <tr id="Sewer_Treasures_FoundHeader">
+        <td><span class="anchor" id="Sewer_Treasures_Found"></span>Sewer Treasures Found</td>
+        <td>Number of <a href="Sewers">sewer treasures</a> the player has opened.</td>
+      </tr>
+      <tr id="Night_Quest_CompletedHeader">
+        <td><span class="anchor" id="Night_Quest_Completed"></span>Night Quest Completed</td>
+        <td>Number of <a href="Night_Quests">night quests</a> the player has completed.</td>
+      </tr>
+      <tr id="Fished_AnythingHeader">
+        <td><span class="anchor" id="Fished_Anything"></span>Fished Anything</td>
+        <td>Number of items the player has <a href="Fishing">fished</a>.</td>
+      </tr>
+      <tr id="Fished_FishHeader">
+        <td><span class="anchor" id="Fished_Fish"></span>Fished Fish</td>
+        <td>Number of fish the player has <a href="Fishing">fished</a>.</td>
       </tr>
 
     </table>
+
+    <p>Additionally, certain stats are impossible to see in-game and cannot be seen without usage of the <a href="https://api.hypixel.net/" target="_blank" rel="noopener noreferrer">Hypixel API</a> or external websites.</p>
+    
+    <p><span class="mc">🤓 FOR NERDS ONLY!</span> The following information on this page contains terms that may be incomprehensible to those unfamiliar with APIs.</p>
+    
+    <p>These stats are as follows:</p>
+
+    <table>
+      <tr style="font-weight: bold; position: sticky; top: 0" class="invisible_fill">
+
+        <td>Name</td>
+        <td>Description</td>
+
+      </tr>
+      <tr id="outgoing_offersHeader">
+        <td><span class="anchor" id="outgoing_offers"></span>profile.outgoing_offers</td>
+        <td>???</td>
+        </tr>
+        <tr id="last_saveHeader">
+          <td><span class="anchor" id="last_save"></span>profile.last_save</td>
+          <td>???</td>
+          </tr>
+        <tr id="king_questHeader">
+          <td><span class="anchor" id="king_quest"></span>profile.king_quest</td>
+          <td>Stats for the most recent <a href="Kings_Quest">King's Quest</a> the player started. Contains four values. "kills" and "renown" are the kills and renown needed to complete the quest, and "last_completed" and "last_accepted" are unix timestamps.</td>
+          </tr>
+      <tr id="last_passive_xpHeader">
+        <td><span class="anchor" id="last_passive_xp"></span>profile.last_passive_xp</td>
+        <td>Unix timestamp of when the player last received participation XP.</td>
+      </tr>
+      <tr id="trade_timestampsHeader">
+        <td><span class="anchor" id="trade_timestamps"></span>profile.trade_timestamps</td>
+        <td>???</td>
+        </tr>
+        <tr id="inv_enderchestHeader">
+          <td><span class="anchor" id="inv_enderchest"></span>profile.inv_enderchest</td>
+          <td>Byte array of the contents of the player's ender chest.</td>
+          </tr>
+          <tr id="death_recapsHeader">
+            <td><span class="anchor" id="death_recaps"></span>profile.death_recaps</td>
+            <td>Byte arrays of the player's four most recent death recaps. Formatting codes are included in the array.</td>
+            </tr>
+      <tr id="unlocks_nHeader">
+        <td><span class="anchor" id="unlocks_n"></span>profile.unlocks_[number]</td>
+        <td>List of upgrades (<a href="Perks">perks</a>, <a href="Passives">passives</a>, and <a href="Killstreaks">killstreaks</a>) that the player unlocked at each prestige. Each unlock contains a "tier" (set to 0 if the upgrade has no tier), unix timestamp, and a key.</td>
+        </tr>
+          <tr id="genesis_spawn_in_baseHeader">
+            <td><span class="anchor" id="genesis_spawn_in_base"></span>profile.genesis_spawn_in_base</td>
+            <td>Whether the player has selected to spawn in their <a href="Factions">faction's</a> base.</td>
+            </tr>
+            <tr id="leaderboard_statsHeader">
+              <td><span class="anchor" id="leaderboard_stats"></span>profile.leaderboard_stats</td>
+              <td>The player's statistics for the in-game Pit leaderboards. Applicable leaderboards are the following:
+                <ul>
+                  <li>Pit_blockhead_blocks: Highest number of blocks in one <a href="Blockhead">Blockhead</a> event.</li>
+                  <li>Pit_tdm_red_kills: Highest number of kills and assists on red team members in one <a href="Team_Deathmatch">Team Deathmatch</a> event.</li>
+                  <li>Pit_tdm_blue_kills: Highest number of kills and assists on blue team members in one <a href="Team_Deathmatch">Team Deathmatch</a> event.</li>
+                  <li>Pit_kotl_time: Highest number of milliseconds spent on one <a href="King_of_the_Ladder">King of the Ladder</a> event.</li>
+                  <li>Pit_kotl_gold: Highest amount of gold earned in one <a href="King_of_the_Ladder">King of the Ladder</a> event.</li>
+                  <li>Pit_rage_pit_damage: Maximum damage dealt in one <a href="Rage_Pit">Rage Pit</a> event.</li>
+                  <li>Pit_kills_as_beast: Highest number of kills as a beast during a <a href="Beast">Beast</a> event.</li>
+                  <li>Pit_raffle_tickets: Highest number of raffle tickets inserted into the box during one <a href="Raffle">Raffle</a> event.</li>
+                  <li>Pit_raffle_jackpot: Highest jackpot earned during a <a href="Raffle">Raffle</a> event.</li>
+                  <li>Pit_auction_bid: Highest bid during an <a href="Auction">Auction</a> event. The player does not need to win the item for this statistic to be counted.</li>
+                  <li>Pit_cake_eaten: Highest amount of cake eaten during a <a href="Giant_Cake">Giant Cake</a> event. Cake parts count as 1, and eating the last slice of the cake, Chocolate Chip, or a Cherry counts as 5.</li>
+                </ul>
+                profile.leaderboard_stats does not contain information about leaderboards from <a href="Spire">Spire</a>, <a href="Squads">Squads</a>, <a href="Dragon_Egg">Dragon Egg</a>, <a href="2x_Rewards">2x Rewards</a>, <a href="King_of_the_Hill">KOTH</a>, <a href="Pizza">Pizza</a>, or <a href="Robbery">Robbery</a>.
+              </td>
+              </tr>
+              <tr id="selected_perk_nHeader">
+                <td><span class="anchor" id="selected_perk_n"></span>profile.selected_perk_[number]</td>
+                <td>The player's selected <a href="Perks">perks</a>. Indexing starts at 0.</td>
+                </tr>
+                <tr id="contractHeader">
+                  <td><span class="anchor" id="contract"></span>profile.contract</td>
+                  <td>???</td>
+                  </tr>
+                  <tr id="last_contractHeader">
+                    <td><span class="anchor" id="last_contract"></span>profile.last_contract</td>
+                    <td>Unix timestamp of the player's last completed contract.</td>
+                    </tr>
+                    <tr id="gold_transactionsHeader">
+                      <td><span class="anchor" id="gold_transactions"></span>profile.gold_transactions</td>
+                      <td>The player's most recently completed <a href="Commands#trade">trades</a>. Trades are stored as arrays, with "amount" being the gold amount of the trade and "timestamp" being the unix timestamp of the trade's completion.</td>
+                      </tr>
+                      <tr id="cash_during_prestige_nHeader">
+                        <td><span class="anchor" id="cash_during_prestige_n"></span>profile.cash_during_prestige_[number]</td>
+                        <td>The amount of gold the player obtained during a <a href="Prestige">prestige</a>.</td>
+                        </tr>
+                        <tr id="genesis_allegianceHeader">
+                          <td><span class="anchor" id="genesis_allegiance"></span>profile.genesis_allegiance</td>
+                          <td>The player's most recently-chosen <a href="Factions">faction</a> on the <a href="Genesis">Genesis</a> map.</td>
+                          </tr>
+                          <tr id="inv_contentsHeader">
+                            <td><span class="anchor" id="inv_contents"></span>profile.inv_contents</td>
+                            <td>The player's inventory contents. Stored as a byte array.</td>
+                            </tr>
+            </table>
+
   </div>
   <div id="footer"></div>
 
