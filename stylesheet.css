@@ -65,6 +65,10 @@ body {
     text-align: center;
   }
 
+  .mono {
+    font-family: 'Roboto Mono', monospace;
+  }
+
   table,th,td {
   border:1px solid white;
   padding: 5px;
