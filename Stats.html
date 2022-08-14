@@ -39,8 +39,8 @@
       <span class="subheader">From the <a href="./">Hypixel Pit Wiki</a></span>
       <hr>
       <p><strong>Stats</strong>, short for "statistics", are numeric
-        values players can view both in-game and online, through the <a href="NPCs#Stats">Stats NPC</a> and various
-        websites. Players unlock the Stats NPC permanently at <a href="Level">level</a> 50.</p>
+        values players can view both in-game and online, through the <a href="NPCs#Stats">Stats NPC</a>, various
+        websites, and the Hypixel API. Players unlock the Stats NPC permanently at <a href="Level">level</a> 50.</p>
 
       <p>The list of statistics players can see that are not in the Stats NPC are as follows:</p>
 
@@ -91,7 +91,7 @@
       </table>
 
 
-      <p>The list of statistics players can see is as follows:</p>
+      <p>The list of statistics that are located in the Statistics NPC is as follows:</p>
 
       <table>
         <tr style="font-weight: bold; position: sticky; top: 0" class="invisible_fill">
@@ -625,7 +625,7 @@
         <tr id="prestigesHeader">
           <td><span class="anchor" id="prestiges"></span>profile.prestiges</td>
           <td>Array of prestiges. Each object contains three keys; <code>index</code> is the prestige
-            number, <code>xp_on_prestige</code> is the player's XP immediately before they prestiged, and
+            number, <code>xp_on_prestige</code> is the player's <a href="XP"><span class="mb">XP</span></a> immediately before they prestiged, and
             <code>timestamp</code> is a Unix timestamp.
           </td>
           <td>
@@ -1152,7 +1152,7 @@
         </tr>
         <tr id="gold_stack_streakHeader">
           <td><span class="anchor" id="gold_stack_streak"></span>profile.gold_stack_streak_[number]</td>
-          <td>The number of times the player gained a gold buff from the <a href="Killstreaks#Gold_Stack">Gold Stack</a>
+          <td>The number of times the player gained a <a href="Gold"><span class="m6">gold</span></a> buff from the <a href="Killstreaks#Gold_Stack">Gold Stack</a>
             killstreak during that <a href="Prestige">prestige</a>.</td>
           <td>
             <pre><code>"gold_stack_streak_40":46,</pre></code>
@@ -1160,7 +1160,7 @@
         </tr>
         <tr id="xp_stack_streakHeader">
           <td><span class="anchor" id="xp_stack_streak"></span>profile.xp_stack_streak_[number]</td>
-          <td>The number of times the player gained an XP buff from the <a href="Killstreaks#XP_Stack">XP Stack</a>
+          <td>The number of times the player gained an <a href="XP"><span class="mb">XP</span></a> buff from the <a href="Killstreaks#XP_Stack">XP Stack</a>
             killstreak during that <a href="Prestige">prestige</a>.</td>
           <td>
             <pre><code>"xp_stack_streak_30":155,</pre></code>
@@ -1514,7 +1514,7 @@
 
         <tr id="ingots_cashHeader">
           <td><span class="anchor" id="ingots_cash"></span>pit_stats_ptl.ingots_cash</td>
-          <td>Gold earned from picking up ingots.</td>
+          <td><a href="Gold"><span class="m6">Gold</span></a> earned from picking up ingots.</td>
           <td>
             <pre><code>"ingots_cash":35674</code></pre>
           </td>
@@ -1605,7 +1605,7 @@
 
         <tr id="extra_from_trickle_downHeader">
           <td><span class="anchor" id="extra_from_trickle_down"></span>pit_stats_ptl.extra_from_trickle_down</td>
-          <td>Amount of gold earned from the <a href="Perks#Trickle_Down">Trickle Down</a> perk.</td>
+          <td>Amount of <a href="Gold"><span class="m6">gold</span></a> earned from the <a href="Perks#Trickle_Down">Trickle Down</a> perk.</td>
           <td><pre><code>"extra_from_trickle_down":19510,</code></pre></td>
         </tr>
 
