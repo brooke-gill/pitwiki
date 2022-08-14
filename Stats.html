@@ -39,8 +39,8 @@
       <span class="subheader">From the <a href="./">Hypixel Pit Wiki</a></span>
       <hr>
       <p><strong>Stats</strong>, short for "statistics", are numeric
-        values players can view both in-game and online, through the <a href="NPCs#Stats">Stats NPC</a> and various
-        websites. Players unlock the Stats NPC permanently at <a href="Level">level</a> 50.</p>
+        values players can view both in-game and online, through the <a href="NPCs#Stats">Stats NPC</a>, various
+        websites, and the Hypixel API. Players unlock the Stats NPC permanently at <a href="Level">level</a> 50.</p>
 
       <p>The list of statistics players can see that are not in the Stats NPC are as follows:</p>
 
@@ -91,7 +91,7 @@
       </table>
 
 
-      <p>The list of statistics players can see is as follows:</p>
+      <p>The list of statistics that are located in the Statistics NPC is as follows:</p>
 
       <table>
         <tr style="font-weight: bold; position: sticky; top: 0" class="invisible_fill">
@@ -221,7 +221,8 @@
         <tr id="GoldhourHeader">
           <td><span class="anchor" id="Goldhour"></span>Gold/hour</td>
 
-          <td>The player's lifetime <a href="Gold"><span class="m6">gold</span></a>, divided by their number of hours played.</td>
+          <td>The player's lifetime <a href="Gold"><span class="m6">gold</span></a>, divided by their number of hours
+            played.</td>
         </tr>
 
         <tr id="KAhourHeader">
@@ -315,7 +316,7 @@
           <td><span class="anchor" id="Gold_from_Farming"></span>Gold from Farming</td>
           <td>Amount of <a href="Gold"><span class="m6">gold</span></a> earned from selling <a
               href="Castle#Packaged_Bale">Packaged Bales</a> and <a href="Castle#Yummy_Bread">Yummy Bread</a> to <a
-              href="NPCs#Hay_salesman">salesman NPCs</a>.</td>
+              href="NPCs#Hay_salesman">salesman NPCs</a>. While this stat seems to loosely correlate to the number of items sold, no consistent information can be obtained from it.</td>
         </tr>
         <tr id="Gold_from_Selling_FishHeader">
           <td><span class="anchor" id="Gold_from_Selling_Fish"></span>Gold from Selling Fish</td>
@@ -365,13 +366,17 @@
         <tr id="outgoing_offersHeader">
           <td><span class="anchor" id="outgoing_offers"></span>profile.outgoing_offers</td>
           <td>???</td>
-          <td><pre><code>"outgoing_offers": [
-]</code></pre></td>
+          <td>
+            <pre><code>"outgoing_offers": [
+]</code></pre>
+          </td>
         </tr>
         <tr id="last_saveHeader">
           <td><span class="anchor" id="last_save"></span>profile.last_save</td>
           <td>???</td>
-          <td><pre><code>"last_save":1660269893057,</code></pre></td>
+          <td>
+            <pre><code>"last_save":1660269893057,</code></pre>
+          </td>
         </tr>
         <tr id="king_questHeader">
           <td><span class="anchor" id="king_quest"></span>profile.king_quest</td>
@@ -380,7 +385,8 @@
                 class="me">renown</span></a> needed to complete the quest, and <code>last_completed</code> and
             <code>last_accepted</code> are Unix timestamps.
           </td>
-<td><pre><code>"king_quest": {
+          <td>
+            <pre><code>"king_quest": {
   "kills":1445,
   "renown":32,
   "last_completed":1659820677356,
@@ -390,19 +396,23 @@
         <tr id="last_passive_xpHeader">
           <td><span class="anchor" id="last_passive_xp"></span>profile.last_passive_xp</td>
           <td>Unix timestamp of when the player last received participation XP.</td>
-          <td><pre><code>"last_passive_xp":1660335371199,</code></pre></td>
+          <td>
+            <pre><code>"last_passive_xp":1660335371199,</code></pre>
+          </td>
         </tr>
         <tr id="trade_timestampsHeader">
           <td><span class="anchor" id="trade_timestamps"></span>profile.trade_timestamps</td>
           <td>???</td>
-          <td><pre><code>"trade_timestamps": [
-],</code></pre></td>
+          <td>
+            <pre><code>"trade_timestamps": [
+],</code></pre>
+          </td>
         </tr>
         <tr id="inv_enderchestHeader">
           <td><span class="anchor" id="inv_enderchest"></span>profile.inv_enderchest</td>
           <td>Byte array of the contents of the player's ender chest.</td>
           <td>
-<pre><code>"inv_enderchest": {
+            <pre><code>"inv_enderchest": {
   "type":0",
   "data": [
     31,-117,8,0,0,0,0,0,0,0,-19,92,75,108, <span class="mc">...</span>
@@ -413,12 +423,14 @@
           <td><span class="anchor" id="death_recaps"></span>profile.death_recaps</td>
           <td>Byte arrays of the player's four most recent death recaps. Formatting codes are included in the array.
           </td>
-<td><pre><code>"death_recaps": {
+          <td>
+            <pre><code>"death_recaps": {
   "type":0",
   "data": [
     31,-117,8,0,0,0,0,0,0,0,-19,89,93,79, <span class="mc">...</span>
   ]
-},</code></pre></td>
+},</code></pre>
+          </td>
         </tr>
         <tr id="unlocks_nHeader">
           <td><span class="anchor" id="unlocks_n"></span>profile.unlocks_[number]</td>
@@ -426,7 +438,8 @@
               href="Killstreaks">killstreaks</a>) that the player unlocked at each prestige. Each unlock contains a
             "tier" (set to 0 if the upgrade has no tier), Unix timestamp, and a key. The player's first prestige is
             stored as <code>unlocks</code>, not <code>unlocks_0</code>.</td>
-<td><pre><code>"unlocks_4": [
+          <td>
+            <pre><code>"unlocks_4": [
   {
     "tier":0,
     "acquireDate":1583762641743,
@@ -437,12 +450,15 @@
     "acquireDate":1583762914045,
     "key":"xp_boost"
   }
-],</code></pre></td>
+],</code></pre>
+          </td>
         </tr>
         <tr id="genesis_spawn_in_baseHeader">
           <td><span class="anchor" id="genesis_spawn_in_base"></span>profile.genesis_spawn_in_base</td>
           <td>Whether the player has selected to spawn in their <a href="Factions">faction's</a> base.</td>
-          <td><pre><code>"genesis_spawn_in_base":false,</code></pre></td>
+          <td>
+            <pre><code>"genesis_spawn_in_base":false,</code></pre>
+          </td>
         </tr>
         <tr id="leaderboard_statsHeader">
           <td><span class="anchor" id="leaderboard_stats"></span>profile.leaderboard_stats</td>
@@ -457,7 +473,8 @@
               <li><code>Pit_kotl_time</code>: Highest number of milliseconds spent on one <a
                   href="King_of_the_Ladder">King of the
                   Ladder</a> event.</li>
-              <li><code>Pit_kotl_gold</code>: Highest amount of <a href="Gold"><span class="m6">gold</span></a> earned in one <a href="King_of_the_Ladder">King of
+              <li><code>Pit_kotl_gold</code>: Highest amount of <a href="Gold"><span class="m6">gold</span></a> earned
+                in one <a href="King_of_the_Ladder">King of
                   the
                   Ladder</a> event.</li>
               <li><code>Pit_rage_pit_damage</code>: Maximum damage dealt in one <a href="Rage_Pit">Rage
@@ -479,7 +496,8 @@
               href="Squads">Squads</a>, <a href="Dragon_Egg">Dragon Egg</a>, <a href="2x_Rewards">2x Rewards</a>, <a
               href="King_of_the_Hill">KOTH</a>, <a href="Pizza">Pizza</a>, or <a href="Robbery">Robbery</a>.
           </td>
-          <td><pre><code>"leaderboard_stats": {
+          <td>
+            <pre><code>"leaderboard_stats": {
   "Pit_raffle_jackpot_2021_fall":11232,
   "Pit_raffle_jackpot_2022_summer":19440,
   "Pit_kotl_time_2019_winter":22000,
@@ -487,12 +505,15 @@
   "Pit_tdm_blue_kills_2021_fall":241,
   "Pit_blockhead_blocks_2022_summer":2054,
   "Pit_tdm_blue_kills_2022_summer":231,
-},</code></pre></td>
+},</code></pre>
+          </td>
         </tr>
         <tr id="selected_perk_nHeader">
           <td><span class="anchor" id="selected_perk_n"></span>profile.selected_perk_[number]</td>
           <td>The player's selected <a href="Perks">perks</a>. Indexing starts at 0.</td>
-          <td><pre><code>"selected_perk_2":"dirty",</code></pre></td>
+          <td>
+            <pre><code>"selected_perk_2":"dirty",</code></pre>
+          </td>
         </tr>
         <tr id="contractHeader">
           <td><span class="anchor" id="contract"></span>profile.contract</td>
@@ -500,19 +521,23 @@
             <ul>
               <li><code>difficulty</code>: either <code>EASY</code> or <code>HARD</code>, representing a Novice or Big
                 Time contract respectively.</li>
-              <li><code>gold_reward</code>: Amount of <a href="Gold"><span class="m6">gold</span></a> the player earned from completing the contract.
+              <li><code>gold_reward</code>: Amount of <a href="Gold"><span class="m6">gold</span></a> the player earned
+                from completing the contract.
               </li>
               <li><code>requirements</code>: Object. Contains a key representing the objective the player
                 needs to complete for the contract.</li>
-              <li><code>progress</code>: Object. Contains a key representing the progress the player has already made in the contract.</li>
+              <li><code>progress</code>: Object. Contains a key representing the progress the player has already made in
+                the contract.</li>
               <li><code>chunk_of_viles_reward</code>: The number of <a href="Chunk_of_Vile">Chunks of
                   Vile</a> the player will receive if they complete the contract.</li>
               <li><code>completion_date</code>: Always zero.</li>
-              <li><code>remaining_ticks</code>: How many ticks are left in the contract's 5-minute timer. One tick is equal to 0.05 seconds.</li>
+              <li><code>remaining_ticks</code>: How many ticks are left in the contract's 5-minute timer. One tick is
+                equal to 0.05 seconds.</li>
               <li><code>key</code>: Description of the contract's objective.</li>
             </ul>
           </td>
-          <td><pre><code>"contract": {
+          <td>
+            <pre><code>"contract": {
   "difficulty":"EASY",
   "gold_reward":600,
   "requirements": {
@@ -525,41 +550,54 @@
   "completion_date":0,
   "remaining_ticks":1560,
   "key":"collect_ingots"
-},</code></pre></td>
+},</code></pre>
+          </td>
         </tr>
         <tr id="last_contractHeader">
           <td><span class="anchor" id="last_contract"></span>profile.last_contract</td>
           <td>Unix timestamp of the player's last completed contract.</td>
-          <td><pre><code>"last_contract":1660027463833,</code></pre></td>
+          <td>
+            <pre><code>"last_contract":1660027463833,</code></pre>
+          </td>
         </tr>
         <tr id="gold_transactionsHeader">
           <td><span class="anchor" id="gold_transactions"></span>profile.gold_transactions</td>
           <td>The player's most recently completed <a href="Commands#trade">trades</a>. Trades are stored as arrays,
-            with <code>amount</code> being the <a href="Gold"><span class="m6">gold</span></a> amount of the trade and <code>timestamp</code> being the Unix
+            with <code>amount</code> being the <a href="Gold"><span class="m6">gold</span></a> amount of the trade and
+            <code>timestamp</code> being the Unix
             timestamp of the trade's
-            completion.</td>
-          <td><pre><code>"gold_transactions": [
+            completion.
+          </td>
+          <td>
+            <pre><code>"gold_transactions": [
   {
     "amount":0,
     "timestamp":1660168818653
   }
-],</code></pre></td>
+],</code></pre>
+          </td>
         </tr>
         <tr id="cash_during_prestige_nHeader">
           <td><span class="anchor" id="cash_during_prestige_n"></span>profile.cash_during_prestige_[number]</td>
-          <td>The amount of <a href="Gold"><span class="m6">gold</span></a> the player obtained during a <a href="Prestige">prestige</a>.</td>
-          <td><pre><code>"cash_during_prestige_7":1210325.8938003636,</code></pre></td>
+          <td>The amount of <a href="Gold"><span class="m6">gold</span></a> the player obtained during a <a
+              href="Prestige">prestige</a>.</td>
+          <td>
+            <pre><code>"cash_during_prestige_7":1210325.8938003636,</code></pre>
+          </td>
         </tr>
         <tr id="genesis_allegianceHeader">
           <td><span class="anchor" id="genesis_allegiance"></span>profile.genesis_allegiance</td>
           <td>The player's most recently-chosen <a href="Factions">faction</a> on the <a href="Genesis">Genesis</a> map.
           </td>
-          <td><pre><code>"genesis_allegiance":"ANGEL",</code></pre></td>
+          <td>
+            <pre><code>"genesis_allegiance":"ANGEL",</code></pre>
+          </td>
         </tr>
         <tr id="inv_contentsHeader">
           <td><span class="anchor" id="inv_contents"></span>profile.inv_contents</td>
           <td>The player's inventory contents. Stored as a byte array.</td>
-          <td><pre><code>"inv_contents": {
+          <td>
+            <pre><code>"inv_contents": {
   "type":0,
   "data": [
     31,-117,8,0,0,0,0,0,0,0,-107,-111,-65,-78, <span class="mc">...</span>
@@ -573,21 +611,25 @@
   "obsidian":1659195724854,
   "combat_spade":1660156490858,
   "new_golden_pickaxe":1659735669850,
-},</code></pre></td>
+},</code></pre>
+          </td>
         </tr>
         <tr id="genesis_pointsHeader">
           <td><span class="anchor" id="genesis_points"></span>profile.genesis_points</td>
           <td><a href="Factions">Faction points</a> earned on the most recent iteration of the <a
               href="Genesis">Genesis</a> map.</td>
-          <td><pre><code>"genesis_points":7311,</code></pre></td>
+          <td>
+            <pre><code>"genesis_points":7311,</code></pre>
+          </td>
         </tr>
         <tr id="prestigesHeader">
           <td><span class="anchor" id="prestiges"></span>profile.prestiges</td>
           <td>Array of prestiges. Each object contains three keys; <code>index</code> is the prestige
-            number, <code>xp_on_prestige</code> is the player's XP immediately before they prestiged, and
+            number, <code>xp_on_prestige</code> is the player's <a href="XP"><span class="mb">XP</span></a> immediately before they prestiged, and
             <code>timestamp</code> is a Unix timestamp.
           </td>
-          <td><pre><code>"prestiges": [
+          <td>
+            <pre><code>"prestiges": [
   {
     "index":1,
     "xp_on_prestige":65950,
@@ -598,13 +640,15 @@
     "xp_on_prestige":138510,
     "timestamp":1581622341538
   }
-],</code></pre></td>
+],</code></pre>
+          </td>
         </tr>
         <tr id="spire_stash_invHeader">
           <td><span class="anchor" id="spire_stash_inv"></span>profile.spire_stash_inv</td>
-          <td>Byte array of the player's Spire stash inventory, containing the player's items that will be given back to them once the <a
-              href="Spire">Spire</a> event concludes.</td>
-          <td><pre><code>"spire_stash_inv": {
+          <td>Byte array of the player's Spire stash inventory, containing the player's items that will be given back to
+            them once the <a href="Spire">Spire</a> event concludes.</td>
+          <td>
+            <pre><code>"spire_stash_inv": {
   "type":0,
   "data": [
     31,-117,8,0,0,0,0,0,0,0,-29,98,96,-32, <span class="mc">...</span>
@@ -626,20 +670,24 @@
         <tr id="cheap_milkHeader">
           <td><span class="anchor" id="cheap_milk"></span>profile.cheap_milk</td>
           <td>???</td>
-          <td><pre><code>"cheap_milk":false,</code></pre></td>
+          <td><pre><code>"cheap_milk":false,</code></pre>
+          </td>
         </tr>
         <tr id="zero_point_three_gold_transferHeader">
           <td><span class="anchor" id="zero_point_three_gold_transfer"></span>profile.zero_point_three_gold_transfer
           </td>
           <td>???</td>
-          <td><pre><code>"zero_point_three_gold_transfer":true,</code></pre></td>
+          <td>
+            <pre><code>"zero_point_three_gold_transfer":true,</code></pre>
+          </td>
         </tr>
         <tr id="renown_unlocksHeader">
           <td><span class="anchor" id="renown_unlocks"></span>profile.renown_unlocks</td>
           <td>Contains several objects, each corresponding to a renown unlock. Each one has a <code>tier</code> (0 for
             upgradeless unlocks), an <code>acquireDate</code> &ndash; a
             Unix timestamp of the unlock, and a <code>key</code> &ndash; the name of the unlock.</td>
-            <td><pre><code>"renown_unlocks": [
+          <td>
+            <pre><code>"renown_unlocks": [
   {
     "tier":0,
     "acquireDate":1520443821179,
@@ -660,52 +708,63 @@
     "acquireDate":1548694066717,
     "key":"unlock_perk_dirty"
   }
-],</code></pre></td>
+],</code></pre>
+          </td>
         </tr>
         <tr id="last_midfight_disconnectHeader">
           <td><span class="anchor" id="last_midfight_disconnect"></span>profile.last_midfight_disconnect</td>
           <td>Unix timestamp of the last time the player disconnected while in combat.</td>
-          <td><pre><code>"last_midfight_disconnect":1660338422410,</td></pre></code>
+          <td>
+            <pre><code>"last_midfight_disconnect":1660338422410,</td></pre></code>
         </tr>
         <tr id="inv_armorHeader">
           <td><span class="anchor" id="inv_armor"></span>profile.inv_armor</td>
           <td>Byte array of the player's armor.</td>
-          <td><pre><code>"inv_armor": {
+          <td>
+            <pre><code>"inv_armor": {
   "type":0,
   "data": [
     31,-117,8,0,0,0,0,0,0,0,-29,98,96,-32, <span class="mc">...</span>
   ]
-}</code></pre></td>
+}</code></pre>
+          </td>
         </tr>
         <tr id="item_stashHeader">
           <td><span class="anchor" id="item_stash"></span>profile.item_stash</td>
           <td>Byte array of the player's item stash.</td>
-          <td><pre><code>"item_stash": {
+          <td>
+            <pre><code>"item_stash": {
   "type":0,
   "data": [
     31,-117,8,0,0,0,0,0,0,0,-29,98,96,-32, <span class="mc">...</span>
   ]
-}</code></pre></td>
+}</code></pre>
+          </td>
         </tr>
         <tr id="genesis_allegiance_timeHeader">
           <td><span class="anchor" id="genesis_allegiance_time"></span>profile.genesis_allegiance_time</td>
           <td>Unix timestamp of when the player last selected a <a href="Factions">faction</a> to join.</td>
-          <td><pre><code>"genesis_allegiance_time":1657603385208,</td></pre></code>
+          <td>
+            <pre><code>"genesis_allegiance_time":1657603385208,</td></pre></code>
         </tr>
         <tr id="login_messagesHeader">
           <td><span class="anchor" id="login_messages"></span>profile.login_messages</td>
           <td>???</td>
-          <td><pre><code>"login_messages": [ 
-],</pre></code></td>
+          <td>
+            <pre><code>"login_messages": [ 
+],</pre></code>
+          </td>
         </tr>
         <tr id="hotbar_favoritesHeader">
           <td><span class="anchor" id="hotbar_favorites"></span>profile.hotbar_favorites</td>
           <td>Array of Minecraft <a href="https://minecraft-ids.grahamedgecombe.com/" target="_blank"
               rel="noopener noreferrer">Item IDs</a> corresponding to inventory slots. Slots represent the locations
             items respawn in when the player dies.</td>
-          <td><pre><code>"hotbar_favorites": [
+          <td>
+            <pre><code>"hotbar_favorites": [
   276,261,383,261,0,0,0,0,49
-]</code></pre></td>
+]</code></pre>
+          </td>
         </tr>
         <tr id="ended_contractsHeader">
           <td><span class="anchor" id="ended_contracts"></span>profile.ended_contracts</td>
@@ -713,7 +772,8 @@
             <ul>
               <li><code>difficulty</code>: either <code>EASY</code> or <code>HARD</code>, representing a Novice or Big
                 Time contract respectively.</li>
-              <li><code>gold_reward</code>: Amount of <a href="Gold"><span class="m6">gold</span></a> the player earned from completing the contract.
+              <li><code>gold_reward</code>: Amount of <a href="Gold"><span class="m6">gold</span></a> the player earned
+                from completing the contract.
               </li>
               <li><code>requirements</code>: Object. Contains a key representing the objective the player
                 completed for the contract.</li>
@@ -727,7 +787,8 @@
               <li><code>key</code>: Description of the contract's objective.</li>
             </ul>
           </td>
-          <td><pre><code>"ended_contracts": [
+          <td>
+            <pre><code>"ended_contracts": [
   {
     "difficulty":"HARD",
     "gold_reward":2200,
@@ -742,7 +803,8 @@
     "remaining_ticks":4360,
     "key":"land_arrow_shots"
   }
-]</code></pre></td>
+]</code></pre>
+          </td>
         </tr>
         <tr id="bountiesHeader">
           <td><span class="anchor" id="bounties"></span>profile.bounties</td>
@@ -751,7 +813,8 @@
             Unix timestamp of when the player received the bounty. <code>remainingTicks</code> is never used (either set
             to the integer limit or 365 days and does not
             decrease).</td>
-            <td><pre><code>"bounties": [
+          <td>
+            <pre><code>"bounties": [
   {
     "amount":100,
     "remainingTicks":9223372036854775807,
@@ -762,7 +825,8 @@
     "remainingTicks":9223372036854775807,
     "timestamp":1654993623724
   }
-],</code></pre></td>
+],</code></pre>
+          </td>
         </tr>
         <tr id="chat_optionHeader">
           <td><span class="anchor" id="chat_option"></span>profile.chat_option_[value]</td>
@@ -776,11 +840,14 @@
               <li><code>bounties</code></li>
               <li><code>misc</code></li>
           </td>
-          <td><pre><code>"chat_option_bounties":true,</code></pre></td>
+          <td>
+            <pre><code>"chat_option_bounties":true,</code></pre>
+          </td>
         </tr>
         <tr id="genesis_weekly_perksHeader">
           <td><span class="anchor" id="genesis_weekly_perks"></span>profile.genesis_weekly_perks_[value]</td>
-          <td>Unix timestamps of when the player last claimed various <a href="Factions">faction</a> items and perks. <code>value</code> can be one of several keys:
+          <td>Unix timestamps of when the player last claimed various <a href="Factions">faction</a> items and perks.
+            <code>value</code> can be one of several keys:
 
             <ul>
               <li><code>claim_item_angel</code>: <span class="mb">Angel</span> tier VI</li>
@@ -789,24 +856,31 @@
               <li><code>perma_gold</code>: <span class="mc">Demon</span> tier VII</li>
             </ul>
           </td>
-          <td><pre><code>"genesis_weekly_perks_perma_gold":1658010704820,</code></pre>
+          <td>
+            <pre><code>"genesis_weekly_perks_perma_gold":1658010704820,</code></pre>
         </tr>
         <tr id="night_quests_enabledHeader">
           <td><span class="anchor" id="night_quests_enabled"></span>profile.night_quests_enabled</td>
           <td>Whether the player chooses to receive <a href="Night_Quests">Night Quests</a>. Boolean.</td>
-          <td><pre><code>"night_quests_enabled":false,</code></pre></td>
+          <td>
+            <pre><code>"night_quests_enabled":false,</code></pre>
+          </td>
 
         </tr>
         <tr id="selected_leaderboardHeader">
           <td><span class="anchor" id="selected_leaderboard"></span>profile.selected_leaderboard</td>
           <td>The leaderboard that displays for the player in spawn.</td>
-          <td><pre><code>"selected_leaderboard":"top_xp",</td></pre></code>
+          <td>
+            <pre><code>"selected_leaderboard":"top_xp",</td></pre></code>
         </tr>
         <tr id="genesis_permaHeader">
-          <td><span class="anchor" id="genesis_perma"></span>profile.genesis_perma_angel<br>profile.genesis_perma_demon</td>
+          <td><span class="anchor" id="genesis_perma"></span>profile.genesis_perma_angel<br>profile.genesis_perma_demon
+          </td>
           <td>The number of times the player has claimed the Tier VII reward of the respective <a
               href="Factions">faction</a>.</td>
-          <td><pre><code>"genesis_perma_angel":1,</code></pre></td>
+          <td>
+            <pre><code>"genesis_perma_angel":1,</code></pre>
+          </td>
         </tr>
         <tr id="selected_killstreakHeader">
           <td><span class="anchor" id="selected_killstreak"></span>profile.selected_killstreak_[number]</td>
@@ -814,17 +888,21 @@
             <code>selected_killstreak_0</code> is the player's selected <a href="Megastreaks">megastreak</a>.
             Returns <code>null</code> if the megastreak is <a href="Overdrive">Overdrive</a>.
           </td>
-          <td><pre><code>"selected_killstreak_3":"khanate",</td></pre></code>
+          <td>
+            <pre><code>"selected_killstreak_3":"khanate",</td></pre></code>
         </tr>
         <tr id="supporter_star_enabledHeader">
           <td><span class="anchor" id="supporter_star_enabled"></span>profile.supporter_star_enabled</td>
           <td>Whether the player is choosing to display their <a href="Pit_Supporter">Pit Supporter</a> star.</td>
-          <td><pre><code>"supporter_star_enabled":true,</td></pre></code>
+          <td>
+            <pre><code>"supporter_star_enabled":true,</td></pre></code>
         </tr>
         <tr id="disable_spawn_itemsHeader">
           <td><span class="anchor" id="disable_spawn_items"></span>profile.disable_spawn_items</td>
           <td>Whether the player chose to disable the default sword and bow from their inventory when they spawn.</td>
-          <td><pre><code>"disable_spawn_items":true,</code></pre></td>
+          <td>
+            <pre><code>"disable_spawn_items":true,</code></pre>
+          </td>
         </tr>
         <tr id="shops_throttleHeader">
           <td><span class="anchor" id="shops_throttle"></span>profile.shops_throttle</td>
@@ -835,7 +913,8 @@
             the number of items that were sold on that date.<br>The purpose of the <code>Hay</code>, <code>Bread</code>,
             and <code>Fish</code> objects is currently unknown.
           </td>
-          <td><pre><code>"shops_throttle": {
+          <td>
+            <pre><code>"shops_throttle": {
   "Hay": {
     "lastEpochDay":19211,
     "count":0
@@ -852,16 +931,19 @@
     "lastEpochDay":19211,
     "count":25
   }
-},</code></pre></td>
+},</code></pre>
+          </td>
         </tr>
         <tr id="autobuy_itemsHeader">
           <td><span class="anchor" id="autobuy_items"></span>profile.autobuy_items</td>
           <td>Array of items that the player has <a href="Renown#Autobuy">Autobuy</a> enabled on.</td>
-          <td><pre><code>"autobuy_items": [
+          <td>
+            <pre><code>"autobuy_items": [
   "combat_spade",
   "diamond_chestplate",
   "diamond_boots",
-],</code></pre></td>
+],</code></pre>
+          </td>
         </tr>
         <tr id="contract_choicesHeader">
           <td><span class="anchor" id="contract_choices"></span>profile.contract_choices</td>
@@ -870,7 +952,8 @@
             <ul>
               <li><code>difficulty</code>: either <code>EASY</code> or <code>HARD</code>, representing a Novice or Big
                 Time contract respectively.</li>
-              <li><code>gold_reward</code>: Amount of <a href="Gold"><span class="m6">gold</span></a> the player will earn from completing this
+              <li><code>gold_reward</code>: Amount of <a href="Gold"><span class="m6">gold</span></a> the player will
+                earn from completing this
                 contract.
               </li>
               <li><code>requirements</code>: Object. Contains a key representing the objective the player
@@ -884,7 +967,8 @@
               <li><code>key</code>: Description of the contract's objective.</li>
             </ul>
           </td>
-          <td><pre><code>"contract_choices": [
+          <td>
+            <pre><code>"contract_choices": [
   {
     "difficulty":"HARD",
     "gold_reward":2400,
@@ -937,7 +1021,8 @@
   "data": [
     31,-117,8,0,0,0,0,0,0,0,77,81,75,78 <span class="mc">...</span>
   ]
-}</pre></code></td>
+}</pre></code>
+          </td>
 
         </tr>
         <tr id="selected_megastreak_except_uberHeader">
@@ -946,38 +1031,48 @@
           <td>The player's selected <a href="Megastreak">megastreak</a>. If they have <a
               href="Uberstreak">Uberstreak</a> selected, this key returns the player's previously-selected megastreak
             instead.</td>
-          <td><pre><code>"selected_megastreak_except_uber":"grand_finale",</pre></code></td>
+          <td>
+            <pre><code>"selected_megastreak_except_uber":"grand_finale",</pre></code>
+          </td>
         </tr>
         <tr id="recent_uberstreaksHeader">
           <td><span class="anchor" id="recent_uberstreaks"></span>profile.recent_uberstreaks</td>
           <td>Unix timestamps of the player's recent <a href="Uberstreak">Uberstreak</a> completions.</td>
-          <td><pre><code>"recent_uberstreaks": [
+          <td>
+            <pre><code>"recent_uberstreaks": [
   1638660771872,
   1638661785710,
   1652008336044,
   1652009634649,
   1652009844318
-],</code></pre></td>
+],</code></pre>
+          </td>
         </tr>
         <tr id="hat_glint_enabledHeader">
           <td><span class="anchor" id="hat_glint_enabled"></span>profile.hat_glint_enabled</td>
           <td>Whether the player's <a href="Fancy_Hat">Fancy Hat</a> has an enchanted glint from <a
               href="Pit_Supporter">Pit Supporter</a>.</td>
-            <td><pre><code>"hat_glint_enabled":false,</code></pre></td>
+          <td>
+            <pre><code>"hat_glint_enabled":false,</code></pre>
+          </td>
 
         </tr>
-        
+
         <tr id="apollo_enabledHeader">
           <td><span class="anchor" id="apollo_enabled"></span>profile.apollo_enabled</td>
           <td>Whether the player has the renown perk <a href="Renown#Apollo">Apollo</a> enabled. Boolean.</td>
-          <td><pre><code>"apollo_enabled":true,</code></pre></td>
+          <td>
+            <pre><code>"apollo_enabled":true,</code></pre>
+          </td>
         </tr>
         <tr id="event_contest_claimsHeader">
           <td><span class="anchor" id="event_contest_claims"></span>profile.event_contest_claims</td>
           <td>Array of events the player helped create in <a
               href="https://hypixel.net/threads/the-pit-update-0-4-events-extravaganza.2018236/" target="_blank"
-              rel="noopener noreferrer">The Pit 0.4</a>. Events only appear if the player clicked the "Collect reward" button in the <a href="NPCs#Prestige">Prestige NPC</a> before The Pit 1.0.0.</td>
-          <td><pre><code>"event_contest_claims": [
+              rel="noopener noreferrer">The Pit 0.4</a>. Events only appear if the player clicked the "Collect reward"
+            button in the <a href="NPCs#Prestige">Prestige NPC</a> before The Pit 1.0.0.</td>
+          <td>
+            <pre><code>"event_contest_claims": [
   "robbery"
 ],</td>
         </tr>
@@ -992,7 +1087,8 @@
         <tr id="zero_point_two_xpHeader">
           <td><span class="anchor" id="zero_point_two_xp"></span>profile.zero_point_two_xp</td>
           <td>???</td>
-          <td><pre><code>"zero_point_two_xp":75875</td>
+          <td>
+            <pre><code>"zero_point_two_xp":75875</td>
         </tr>
         <tr id="hat_enabledHeader">
           <td><span class="anchor" id="hat_enabled"></span>profile.hat_enabled</td>
@@ -1002,24 +1098,29 @@
         <tr id="impatient_enabledHeader">
           <td><span class="anchor" id="impatient_enabled"></span>profile.impatient_enabled</td>
           <td>Whether the player has the <a href="Renown#Impatient">Impatient</a> renown upgrade enabled.</td>
-          <td><pre><code>"impatient_enabled":true,</td></pre></code>
+          <td>
+            <pre><code>"impatient_enabled":true,</td></pre></code>
         </tr>
         <tr id="selected_launch_trailHeader">
           <td><span class="anchor" id="selected_launch_trail"></span>profile.selected_launch_trail</td>
           <td>The player's selected launch trail from the renown shop.</td>
-          <td><pre><code>"selected_launch_trail":"superb",</td></pre></code>
+          <td>
+            <pre><code>"selected_launch_trail":"superb",</td></pre></code>
         </tr>
         <tr id="refunded_golden_pickaxeHeader">
           <td><span class="anchor" id="refunded_golden_pickaxe"></span>profile.refunded_golden_pickaxe</td>
           <td>Whether the player refunded 10 renown from the Golden Pickaxe being removed from the renown shop in <a
               href="https://hypixel.net/threads/the-pit-1-0-5-tryhard-patch.4667681/" target="_blank"
               rel="noopener noreferrer">The Pit 1.0.5</a>. Boolean.</td>
-              <td><pre><code>"refunded_golden_pickaxe":true,</pre></code></td>
+          <td>
+            <pre><code>"refunded_golden_pickaxe":true,</pre></code>
+          </td>
         </tr>
         <tr id="mystic_well_pantsHeader">
           <td><span class="anchor" id="mystic_well_pants"></span>profile.mystic_well_pants</td>
           <td>Byte array of the item in the "sacrifice" slot of the <a href="Mystic_Well">Mystic Well.</a></td>
-          <td><pre><code>"mystic_well_pants": {
+          <td>
+            <pre><code>"mystic_well_pants": {
   "type":0,
   "data": [
     31,-117,8,0,0,0,0,0,0,0,61,-111,-51,78, <span class="mc">...</span>
@@ -1030,46 +1131,61 @@
           <td><span class="anchor" id="reconessence_day"></span>profile.reconessence_day</td>
           <td>The Unix time of the player's last use of a <a href="Mark_of_Recon_Essence">Mark of Recon Essence</a>.
           </td>
-          <td><pre><code>"reconessence_day":1657360250159,</code></pre></td>
+          <td>
+            <pre><code>"reconessence_day":1657360250159,</code></pre>
+          </td>
         </tr>
         <tr id="last_lycanthropyHeader">
           <td><span class="anchor" id="last_lycanthropy"></span>profile.last_lycanthropy</td>
           <td>The Unix time of when the player last wore <a href="Dark_Pants">dark pants</a> with the <a
               href="Dark_Pants#Lycanthropy">Lycanthropy</a> enchantment.</td>
-          <td><pre><code>"last_lycanthropy":1645744002412,</code></pre></td>
+          <td>
+            <pre><code>"last_lycanthropy":1645744002412,</code></pre>
+          </td>
         </tr>
         <tr id="uber_paid_upHeader">
           <td><span class="anchor" id="uber_paid_up"></span>profile.uber_paid_up</td>
           <td>???</td>
-          <td><pre><code>"uber_paid_up":1659324617298,</code></pre></td>
+          <td>
+            <pre><code>"uber_paid_up":1659324617298,</code></pre>
+          </td>
         </tr>
         <tr id="gold_stack_streakHeader">
           <td><span class="anchor" id="gold_stack_streak"></span>profile.gold_stack_streak_[number]</td>
-          <td>The number of times the player gained a gold buff from the <a href="Killstreaks#Gold_Stack">Gold Stack</a>
+          <td>The number of times the player gained a <a href="Gold"><span class="m6">gold</span></a> buff from the <a href="Killstreaks#Gold_Stack">Gold Stack</a>
             killstreak during that <a href="Prestige">prestige</a>.</td>
-          <td><pre><code>"gold_stack_streak_40":46,</pre></code></td>
+          <td>
+            <pre><code>"gold_stack_streak_40":46,</pre></code>
+          </td>
         </tr>
         <tr id="xp_stack_streakHeader">
           <td><span class="anchor" id="xp_stack_streak"></span>profile.xp_stack_streak_[number]</td>
-          <td>The number of times the player gained an XP buff from the <a href="Killstreaks#XP_Stack">XP Stack</a>
+          <td>The number of times the player gained an <a href="XP"><span class="mb">XP</span></a> buff from the <a href="Killstreaks#XP_Stack">XP Stack</a>
             killstreak during that <a href="Prestige">prestige</a>.</td>
-            <td><pre><code>"xp_stack_streak_30":155,</pre></code></td>
+          <td>
+            <pre><code>"xp_stack_streak_30":155,</pre></code>
+          </td>
         </tr>
         <tr id="uberdrop_mystic_stacksHeader">
           <td><span class="anchor" id="uberdrop_mystic_stacks"></span>profile.uberdrop_mystic_stacks</td>
           <td>???</td>
-          <td><pre><code>"uberdrop_mystic_stacks":5,</code></pre></td>
+          <td>
+            <pre><code>"uberdrop_mystic_stacks":5,</code></pre>
+          </td>
         </tr>
         <tr id="raw_numbers_enabledHeader">
           <td><span class="anchor" id="raw_numbers_enabled"></span>profile.raw_numbers_enabled</td>
           <td>Whether the player has the renown upgrade <a href="Renown#Raw_Numbers">Raw Numbers</a> enabled. Boolean.
           </td>
-          <td><pre><code>"raw_numbers_enabled":true,</code></pre></td>
+          <td>
+            <pre><code>"raw_numbers_enabled":true,</code></pre>
+          </td>
         </tr>
         <tr id="contract_offersHeader">
           <td><span class="anchor" id="contract_offers"></span>profile.contract_offers</td>
           <td>Deprecated. Used by admins to test the <a href="Contracts">contracts</a> feature.</td>
-          <td><pre><code>"contract_offers": {
+          <td>
+            <pre><code>"contract_offers": {
     "contracts": [
       {
         "meta": {
@@ -1099,38 +1215,465 @@
 
         <tr id="packagesHeader">
           <td><span class="anchor" id="packages"></span>packages</td>
-          <td>An array of the player's purchased Pit packages. Currently, this only contains <a href="Pit_Supporter">Pit Supporter</a>.</td>
-          <td><pre><code>"packages": [
+          <td>An array of the player's purchased Pit packages. Currently, this only contains <a href="Pit_Supporter">Pit
+              Supporter</a>.</td>
+          <td>
+            <pre><code>"packages": [
   "supporter"
-]</code></pre></td>
-          </tr>
+]</code></pre>
+          </td>
+        </tr>
 
-          <tr id="restored_inv_backup_1Header">
-            <td><span class="anchor" id="restored_inv_backup_1"></span>restored_inv_backup_1</td>
-            <td>The Unix timestamp of when the player's inventory was rolled back due to a <a href="https://hypixel.net/threads/regarding-lost-inventories.2040200/" target="_blank" rel="noopener noreferrer">bug</a> in May 2019.</td>
-            <td><pre><code>"restored_inv_backup_1":1557829680516</code></pre></td>
-            </tr>
+        <tr id="restored_inv_backup_1Header">
+          <td><span class="anchor" id="restored_inv_backup_1"></span>restored_inv_backup_1</td>
+          <td>The Unix timestamp of when the player's inventory was rolled back due to a <a
+              href="https://hypixel.net/threads/regarding-lost-inventories.2040200/" target="_blank"
+              rel="noopener noreferrer">bug</a> in May 2019.</td>
+          <td>
+            <pre><code>"restored_inv_backup_1":1557829680516</code></pre>
+          </td>
+        </tr>
 
-            <tr id="stats_move_1Header">
-              <td><span class="anchor" id="stats_move_1"></span>stats_move_1</td>
-              <td>???</td>
-              <td><pre><code>"stats_move_1":1630383951685</code></pre></td>
-              </tr>
-
-
-
-
-
-
-
-
-
+        <tr id="stats_move_1Header">
+          <td><span class="anchor" id="stats_move_1"></span>stats_move_1</td>
+          <td>???</td>
+          <td>
+            <pre><code>"stats_move_1":1630383951685</code></pre>
+          </td>
+        </tr>
 
 
+        <tr id="assistsHeader">
+          <td><span class="anchor" id="assists"></span>pit_stats_ptl.assists</td>
+          <td>Corresponds to <a href="#Assists">Assists</a> in the Stats NPC.</td>
+          <td>
+            <pre><code>"assists":8,</code></pre>
+          </td>
+        </tr>
+
+        <tr id="cash_earnedHeader">
+          <td><span class="anchor" id="cash_earned"></span>pit_stats_ptl.cash_earned</td>
+          <td>Corresponds to <a href="#Gold_Earned">Gold Earned</a> in the Stats NPC.</td>
+          <td>
+            <pre><code>"cash_earned":150,</code></pre>
+          </td>
+        </tr>
+
+        <tr id="damage_dealtHeader">
+          <td><span class="anchor" id="damage_dealt"></span>pit_stats_ptl.damage_dealt</td>
+          <td>Corresponds to <a href=#Damage_Dealt">Damage Dealt</a> in the Stats NPC.</td>
+          <td>
+            <pre><code>"damage_dealt":213,</code></pre>
+          </td>
+        </tr>
+
+        <tr id="damage_receivedHeader">
+          <td><span class="anchor" id="damage_received"></span>pit_stats_ptl.damage_received</td>
+          <td>Corresponds to <a href=#Damage_Received">Damaged Received</a> in the Stats NPC.</td>
+          <td>
+            <pre><code>"damage_received":604,</code></pre>
+          </td>
+        </tr>
+
+        <tr id="deathsHeader">
+          <td><span class="anchor" id="deaths"></span>pit_stats_ptl.deaths</td>
+          <td>Corresponds to <a href=#Deaths">Deaths</a> in the Stats NPC.</td>
+          <td>
+            <pre><code>"deaths":27,</code></pre>
+          </td>
+        </tr>
+
+        <tr id="gapple_eatenHeader">
+          <td><span class="anchor" id="gapple_eaten"></span>pit_stats_ptl.gapple_eaten</td>
+          <td>Corresponds to <a href=#Golden_Apples_Eaten">Golden Apples Eaten</a> in the Stats NPC.</td>
+          <td>
+            <pre><code>"gapple_eaten":2,</code></pre>
+          </td>
+        </tr>
+
+        <tr id="joinsHeader">
+          <td><span class="anchor" id="joins"></span>pit_stats_ptl.joins</td>
+          <td>Number of times the player joined The Pit or swapped lobbies.</td>
+          <td>
+            <pre><code>"joins":2,</code></pre>
+          </td>
+        </tr>
+        <tr id="jumped_into_pitHeader">
+          <td><span class="anchor" id="jumped_into_pit"></span>pit_stats_ptl.jumped_into_pit</td>
+          <td>Corresponds with <a href="#Jumps_into_Pit">Jumps into Pit</a> in the Stats NPC.</td>
+          <td>
+            <pre><code>"jumped_into_pit":1,</code></pre>
+          </td>
+        </tr>
+        <tr id="killsHeader">
+          <td><span class="anchor" id="kills"></span>pit_stats_ptl.kills</td>
+          <td>Corresponds with <a href="#Kills">Kills</a> in the Stats NPC.</td>
+          <td>
+            <pre><code>"kills":3,</code></pre>
+          </td>
+        </tr>
+
+        <tr id="left_clicksHeader">
+          <td><span class="anchor" id="left_clicks"></span>pit_stats_ptl.left_clicks</td>
+          <td>Corresponds with <a href="#Left_Clicks">Left Clicks</a> in the Stats NPC.</td>
+          <td>
+            <pre><code>"left_clicks":1098</code></pre>
+          </td>
+        </tr>
+
+        <tr id="max_streakHeader">
+          <td><span class="anchor" id="max_streak"></span>pit_stats_ptl.max_streak</td>
+          <td>Corresponds with <a href="#Highest_Streak">Highest Streak</a> in the Stats NPC.</td>
+          <td>
+            <pre><code>"max_streak":1,</code></pre>
+          </td>
+        </tr>
+
+        <tr id="melee_damage_dealtHeader">
+          <td><span class="anchor" id="melee_damage_dealt"></span>pit_stats_ptl.melee_damage_dealt</td>
+          <td>Corresponds with <a href="#Melee_Damage_Dealt">Melee Damage Dealt</a> in the Stats NPC.</td>
+          <td>
+            <pre><code>"melee_damage_dealt":178,</code></pre>
+          </td>
+        </tr>
+
+        <tr id="melee_damage_receivedHeader">
+          <td><span class="anchor" id="melee_damage_received"></span>pit_stats_ptl.melee_damage_received</td>
+          <td>Corresponds with <a href="#Melee_Damage_Received">Melee Damage Received</a> in the Stats NPC.</td>
+          <td>
+            <pre><code>"melee_damage_received":559,</code></pre>
+          </td>
+        </tr>
+
+        <tr id="playtime_minutesHeader">
+          <td><span class="anchor" id="playtime_minutes"></span>pit_stats_ptl.playtime_minutes</td>
+          <td>Number of minutes played. Corresponds with <a href="#Hours_Played">Hours Played</a> in the Stats NPC.</td>
+          <td>
+            <pre><code>"playtime_minutes":15,</code></pre>
+          </td>
+        </tr>
+
+        <tr id="sword_hitsHeader">
+          <td><span class="anchor" id="sword_hits"></span>pit_stats_ptl.sword_hits</td>
+          <td>Corresponds with <a href="#Sword_Hits">Sword Hits</a> in the Stats NPC.</td>
+          <td>
+            <pre><code>"sword_hits":51,</code></pre>
+          </td>
+        </tr>
+
+        <tr id="arrow_hitsHeader">
+          <td><span class="anchor" id="arrow_hits"></span>pit_stats_ptl.arrow_hits</td>
+          <td>Corresponds with <a href="#Arrow_Hits">Arrow Hits</a> in the Stats NPC.</td>
+          <td>
+            <pre><code>"arrow_hits":9,</code></pre>
+          </td>
+        </tr>
+
+        <tr id="arrows_firedHeader">
+          <td><span class="anchor" id="arrows_fired"></span>pit_stats_ptl.arrows_fired</td>
+          <td>Corresponds with <a href="#Arrows_Shot">Arrows Shot</a> in the Stats NPC.</td>
+          <td>
+            <pre><code>"arrows_fired":39,</code></pre>
+          </td>
+        </tr>
+
+        <tr id="bow_damage_dealtHeader">
+          <td><span class="anchor" id="bow_damage_dealt"></span>pit_stats_ptl.bow_damage_dealt</td>
+          <td>Corresponds with <a href="#Bow_Damage_Dealt">Bow Damage Dealt</a> in the Stats NPC.</td>
+          <td>
+            <pre><code>"bow_damage_dealt":35,</code></pre>
+          </td>
+        </tr>
+
+        <tr id="bow_damage_receivedHeader">
+          <td><span class="anchor" id="bow_damage_received"></span>pit_stats_ptl.bow_damage_received</td>
+          <td>Corresponds with <a href="#Bow_Damage_Received">Bow Damage Received</a> in the Stats NPC.</td>
+          <td>
+            <pre><code>"bow_damage_received":43,</code></pre>
+          </td>
+        </tr>
+
+        <tr id="ghead_eatenHeader">
+          <td><span class="anchor" id="ghead_eaten"></span>pit_stats_ptl.ghead_eaten</td>
+          <td>Corresponds with <a href="#Golden_Heads_Eaten">Golden Heads Eaten</a> in the Stats NPC.</td>
+          <td>
+            <pre><code>"ghead_eaten":1000,</code></pre>
+          </td>
+        </tr>
+
+        <tr id="launched_by_launchersHeader">
+          <td><span class="anchor" id="launched_by_launchers"></span>pit_stats_ptl.launched_by_launchers</td>
+          <td>Corresponds with <a href="#Launcher_Launches">Launcher Launches</a> in the Stats NPC.</td>
+          <td>
+            <pre><code>"launched_by_launchers":27,</code></pre>
+          </td>
+        </tr>
+
+        <tr id="contracts_completedHeader">
+          <td><span class="anchor" id="contracts_completed"></span>pit_stats_ptl.contracts_completed</td>
+          <td>Corresponds with <a href="#Contracts_Completed">Contracts Completed</a> in the Stats NPC.</td>
+          <td>
+            <pre><code>"contracts_completed":319,</code></pre>
+          </td>
+        </tr>
+
+        <tr id="contracts_startedHeader">
+          <td><span class="anchor" id="contracts_started"></span>pit_stats_ptl.contracts_started</td>
+          <td>The number of <a href="Contracts">contracts</a> the player has started.</td>
+          <td>
+            <pre><code>"contracts_started":977,</code></pre>
+          </td>
+        </tr>
+
+        <tr id="fishing_rod_launchedHeader">
+          <td><span class="anchor" id="fishing_rod_launched"></span>pit_stats_ptl.fishing_rod_launched</td>
+          <td>Corresponds with <a href="#Fishing_Rods_Launched">Fishing Rods Launched</a> in the Stats NPC.</td>
+          <td>
+            <pre><code>"fishing_rod_launched":163,</code></pre>
+          </td>
+        </tr>
+
+        <tr id="chat_messagesHeader">
+          <td><span class="anchor" id="chat_messages"></span>pit_stats_ptl.chat_messages</td>
+          <td>Corresponds with <a href="#Chat_Messages">Chat Messages</a> in the Stats NPC.</td>
+          <td>
+            <pre><code>"chat_messages":5173,</code></pre>
+          </td>
+        </tr>
+
+        <tr id="diamond_items_purchasedHeader">
+          <td><span class="anchor" id="diamond_items_purchased"></span>pit_stats_ptl.diamond_items_purchased</td>
+          <td>Corresponds with <a href="#Diamond_Items_Purchased">Diamond Items Purchased</a> in the Stats NPC.</td>
+          <td>
+            <pre><code>"diamond_items_purchased":1663,</code></pre>
+          </td>
+        </tr>
+
+        <tr id="enderchest_openedHeader">
+          <td><span class="anchor" id="enderchest_opened"></span>pit_stats_ptl.enderchest_opened</td>
+          <td>The number of times the player has opened their <a href="Ender_Chest">Ender Chest</a>.</td>
+          <td>
+            <pre><code>"enderchest_opened":1806,</code></pre>
+          </td>
+        </tr>
+
+        <tr id="fished_anythingHeader">
+          <td><span class="anchor" id="fished_anything"></span>pit_stats_ptl.fished_anything</td>
+          <td>Corresponds with <a href="#Fished_Anything">Fished Anything</a> in the Stats NPC.</td>
+          <td>
+            <pre><code>"fished_anything":122,</code></pre>
+          </td>
+        </tr>
+
+        <tr id="wheat_farmedHeader">
+          <td><span class="anchor" id="wheat_farmed"></span>pit_stats_ptl.wheat_farmed</td>
+          <td>Corresponds with <a href="Wheat_Farmed">Wheat Farmed</a> in the Stats NPC.</td>
+          <td>
+            <pre><code>"wheat_farmed":390,</code></pre>
+          </td>
+        </tr>
+
+        <tr id="sewer_treasures_foundHeader">
+          <td><span class="anchor" id="sewer_treasures_found"></span>pit_stats_ptl.sewer_treasures_found</td>
+          <td>Corresponds with <a href="Sewer_Treasures_Found">Sewer Treasures Found</a> in the Stats NPC.</td>
+          <td>
+            <pre><code>"sewer_treasures_found":30,</code></pre>
+          </td>
+        </tr>
+        <tr id="blocks_placedHeader">
+          <td><span class="anchor" id="blocks_placed"></span>pit_stats_ptl.blocks_placed</td>
+          <td>Corresponds with <a href="#Blocks_Placed">Blocks Placed</a> in the Stats NPC.</td>
+          <td>
+            <pre><code>"blocks_placed":28956,</code></pre>
+          </td>
+        </tr>
+
+        <tr id="blocks_brokenHeader">
+          <td><span class="anchor" id="blocks_broken"></span>pit_stats_ptl.blocks_broken</td>
+          <td>Corresponds with <a href="#Blocks_Broken">Blocks Broken</a> in the Stats NPC.</td>
+          <td>
+            <pre><code>"blocks_broken":102,</code></pre>
+          </td>
+        </tr>
+
+        <tr id="king_quest_completionHeader">
+          <td><span class="anchor" id="king_quest_completion"></span>pit_stats_ptl.king_quest_completion</td>
+          <td>Corresponds with <a href="#Kings_Quest_Completed">King's Quest Completed</a> in the Stats NPC.</td>
+          <td>
+            <pre><code>"king_quest_completion":8,</code></pre>
+          </td>
+        </tr>
+
+        <tr id="lava_bucket_emptiedHeader">
+          <td><span class="anchor" id="lava_bucket_emptied"></span>pit_stats_ptl.lava_bucket_emptied</td>
+          <td>Corresponds with <a href="#Lava_Buckets_Emptied">Lava Buckets Emptied</a> in the Stats NPC.</td>
+          <td>
+            <pre><code>"lava_bucket_emptied":107,</code></pre>
+          </td>
+        </tr>
+
+        <tr id="ingots_cashHeader">
+          <td><span class="anchor" id="ingots_cash"></span>pit_stats_ptl.ingots_cash</td>
+          <td><a href="Gold"><span class="m6">Gold</span></a> earned from picking up ingots.</td>
+          <td>
+            <pre><code>"ingots_cash":35674</code></pre>
+          </td>
+        </tr>
 
 
+        <tr id="ingots_picked_upHeader">
+          <td><span class="anchor" id="ingots_picked_up"></span>pit_stats_ptl.ingots_picked_up</td>
+          <td>Total number of gold ingots picked up.</td>
+          <td>
+            <pre><code>"ingots_picked_up":7884,</code></pre>
+          </td>
+        </tr>
 
+        <tr id="vampire_healed_hpHeader">
+          <td><span class="anchor" id="vampire_healed_hp"></span>pit_stats_ptl.vampire_healed_hp</td>
+          <td>Total amount of HP healed with the <a href="Perks#Vampire">Vampire</a> perk.</td>
+          <td>
+            <pre><code>"vampire_healed_hp":1195416,</code></pre>
+          </td>
+        </tr>
 
+        <tr id="rage_potatoes_eatenHeader">
+          <td><span class="anchor" id="rage_potatoes_eaten"></span>pit_stats_ptl.rage_potatoes_eaten</td>
+          <td>Total number of Rage Potatoes eaten from the <a href="Rage_Pit">Rage Pit</a> event.</td>
+          <td>
+            <pre><code>"rage_potatoes_eaten":101,</code></pre>
+          </td>
+        </tr>
+
+        <tr id="enchanted_tier1Header">
+          <td><span class="anchor" id="enchanted_tier1"></span>pit_stats_ptl.enchanted_tier1</td>
+          <td>Number of <a href="Mystic_Well">mystic items</a> enchanted to tier <span class="ma">I</span>.</td>
+          <td>
+            <pre><code>"enchanted_tier1":20,</code></pre>
+          </td>
+        </tr>
+
+        <tr id="enchanted_tier2Header">
+          <td><span class="anchor" id="enchanted_tier2"></span>pit_stats_ptl.enchanted_tier2</td>
+          <td>Number of <a href="Mystic_Well">mystic items</a> enchanted to tier <span class="me">II</span>.</td>
+          <td>
+            <pre><code>"enchanted_tier2":2,</code></pre>
+          </td>
+        </tr>
+
+        <tr id="enchanted_tier3Header">
+          <td><span class="anchor" id="enchanted_tier3"></span>pit_stats_ptl.enchanted_tier3</td>
+          <td>Number of <a href="Mystic_Well">mystic items</a> enchanted to tier <span class="mc">III</span>.</td>
+          <td>
+            <pre><code>"enchanted_tier3":1621,</code></pre>
+          </td>
+        </tr>
+
+        <tr id="soups_drankHeader">
+          <td><span class="anchor" id="soups_drank"></span>pit_stats_ptl.soups_drank</td>
+          <td>Number of <a href="Perks#Soup">soups</a> drank.</td>
+          <td>
+            <pre><code>"soups_drank":4,</code></pre>
+          </td>
+        </tr>
+
+        <tr id="night_quests_completedHeader">
+          <td><span class="anchor" id="night_quests_completed"></span>pit_stats_ptl.night_quests_completed</td>
+          <td>Corresponds with <a href="#Night_Quest_Completed">Night Quest Completed</a> in the Stats NPC.</td>
+          <td>
+            <pre><code>"night_quests_completed":379,</code></pre>
+          </td>
+        </tr>
+
+        <tr id="obsidian_brokenHeader">
+          <td><span class="anchor" id="obsidian_broken"></span>pit_stats_ptl.obsidian_broken</td>
+          <td>Amount of <a href="Item_Shop#Obsidian">Obsidian</a> broken. Blocks broken with the <a href="Item_Shop#Golden_Pickaxe">Golden Pickaxe</a> do not increase this statistic.</td>
+          <td><pre><code>"obsidian_broken":102,</code></pre></td>
+        </tr>
+
+        <tr id="lucky_diamond_piecesHeader">
+          <td><span class="anchor" id="lucky_diamond_pieces"></span>pit_stats_ptl.lucky_diamond_pieces</td>
+          <td>Number of diamond armor pieces obtained from the <a href="Perks#Lucky_Diamond">Lucky Diamond</a> perk.</td>
+          <td><pre><code>"lucky_diamond_pieces":5</code></pre></td>
+        </tr>
+
+        <tr id="endless_quiver_arrowsHeader">
+          <td><span class="anchor" id="endless_quiver_arrows"></span>pit_stats_ptl.endless_quiver_arrows</td>
+          <td>Number of arrows earned from the <a href="Perks#Spammer">Spammer</a> perk.</td>
+          <td><pre><code>"endless_quiver_arrows":2460,</code></pre></td>
+        </tr>
+
+        <tr id="extra_from_trickle_downHeader">
+          <td><span class="anchor" id="extra_from_trickle_down"></span>pit_stats_ptl.extra_from_trickle_down</td>
+          <td>Amount of <a href="Gold"><span class="m6">gold</span></a> earned from the <a href="Perks#Trickle_Down">Trickle Down</a> perk.</td>
+          <td><pre><code>"extra_from_trickle_down":19510,</code></pre></td>
+        </tr>
+
+        <tr id="bounties_of_500g_with_bhHeader">
+          <td><span class="anchor" id="bounties_of_500g_with_bh"></span>pit_stats_ptl.bounties_of_500g_with_bh</td>
+          <td>Number of <a href="Bounty">bounties</a> worth 500g or greater claimed with the <a href="Perks#Bounty_Hunter">Bounty Hunter</a> perk.</td>
+          <td><pre><code>"bounties_of_500g_with_bh":6,</code></pre></td>
+        </tr>
+
+        <tr id="fishes_fishedHeader">
+          <td><span class="anchor" id="fishes_fished"></span>pit_stats_ptl.fishes_fished</td>
+          <td>Corresponds with <a href="#Fished_Fish">Fished Fish</a> in the Stats NPC.</td>
+          <td><pre><code>"fishes_fished":14,</code></pre></td>
+        </tr>
+
+        <tr id="rambo_killsHeader">
+          <td><span class="anchor" id="rambo_kills"></span>pit_stats_ptl.rambo_kills</td>
+          <td>???</td>
+          <td><pre><code>"rambo_kills":29</code></pre></td>
+        </tr>
+
+        <tr id="launched_by_angel_spawnHeader">
+          <td><span class="anchor" id="launched_by_angel_spawn"></span>pit_stats_ptl.launched_by_angel_spawn</td>
+          <td>Number of launcher launches from the Angel <a href="Factions">faction</a> spawn.</td>
+          <td><pre><code>"launched_by_angel_spawn":14,</code></pre></td>
+        </tr>
+
+        <tr id="launched_by_demon_spawnHeader">
+          <td><span class="anchor" id="launched_by_demon_spawn"></span>pit_stats_ptl.launched_by_demon_spawn</td>
+          <td>Number of launcher launches from the Demon <a href="Factions">faction</a> spawn.</td>
+          <td><pre><code>"launched_by_demon_spawn":18,</code></pre></td>
+        </tr>
+
+        <tr id="rage_pants_craftedHeader">
+          <td><span class="anchor" id="rage_pants_crafted"></span>pit_stats_ptl.rage_pants_crafted</td>
+          <td>Number of <a href="Rage_Pants">Rage Pants</a> created.</td>
+          <td><pre><code>"launched_by_demon_spawn":18,</code></pre></td>
+        </tr>
+
+        <tr id="gold_from_farmingHeader">
+          <td><span class="anchor" id="gold_from_farming"></span>pit_stats_ptl.gold_from_farming</td>
+          <td>Corresponds with <a href="#Gold_from_Farming">Gold from Farming</a> in the Stats NPC.</td>
+          <td><pre><code>"gold_from_farming":2</code></pre></td>
+        </tr>
+
+        <tr id="dark_pants_cratedHeader">
+          <td><span class="anchor" id="dark_pants_crated"></span>pit_stats_ptl.dark_pants_crated<br><span class="small"><a href="https://en.wikipedia.org/wiki/Sic" target="_blank" rel="noopener noreferrer">[sic]</a></span></td>
+          <td>Number of <a href="Dark_Pants">Dark Pants</a> created.</td>
+          <td><pre><code>"dark_pants_crated":22,</code></pre></td>
+        </tr>
+
+        <tr id="dark_pants_t2Header">
+          <td><span class="anchor" id="dark_pants_t2"></span>pit_stats_ptl.dark_pants_t2</td>
+          <td>Number of <a href="Dark_Pants">Dark Pants</a> upgraded to tier <span class="m5">II</span>.</td>
+          <td><pre><code>"dark_pants_t2":613,</code></pre></td>
+        </tr>
+
+        <tr id="hidden_jewel_triggersHeader">
+          <td><span class="anchor" id="hidden_jewel_triggers"></span>pit_stats_ptl.hidden_jewel_triggers</td>
+          <td>Number of items enchanted with <a href="Sewer_Pants#Hidden_Jewel">Hidden Jewel</a> recycled into pants and swords.</td>
+          <td><pre><code>"hidden_jewel_triggers":31,</code></pre></td>
+        </tr>
+
+        <tr id="gold_from_selling_fishHeader">
+          <td><span class="anchor" id="gold_from_selling_fish"></span>pit_stats_ptl.gold_from_selling_fish</td>
+          <td>Corresponds with <a href="#Gold_from_Selling_Fish">Gold from Selling Fish</a> in the Stats NPC.</td>
+          <td><pre><code>"gold_from_selling_fish":1,</code></pre></td>
+        </tr>
 
       </table>
 
