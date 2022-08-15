@@ -59,13 +59,13 @@ $(function(){
 
     </tr>
     <tbody id="BillyHeader"><tr>
-      <td rowspan="3"><span class="anchor" id="Billy"></span>Billy</td><td><span class="m9">I</span>: Receive <span class="m9">-2%</span> damage per <a href="Gold"><span class="m6">1,000g</span></a> in your bounty.</td>
+      <td rowspan="3"><span class="anchor" id="Billy"></span>Billy</td><td><span class="m9">I</span>: Receive <span class="m9">-2%</span> damage per <a href="Bounty"><span class="m6">1,000g</span></a> in your bounty. Capped at <span class = m9>-10%</span> (<span class = m6>5000g</span> bounty).</td>
     </tr>
     <tr>
-        <td><span class="m9">II</span>: Receive <span class="m9">-3%</span> damage per <a href="Gold"><span class="m6">1,000g</span></a> in your bounty.</td>
+        <td><span class="m9">II</span>: Receive <span class="m9">-3%</span> damage per <a href="Bounty"><span class="m6">1,000g</span></a> in your bounty. Capped at <span class = m9>-15%</span> (<span class = m6>5000g</span> bounty).</td>
     </tr>
     <tr>
-        <td><span class="m9">III</span>: Receive <span class="m9">-4%</span> damage per <a href="Gold"><span class="m6">1,000g</span></a> in your bounty.</td>
+        <td><span class="m9">III</span>: Receive <span class="m9">-4%</span> damage per <a href="Bounty"><span class="m6">1,000g</span></a> in your bounty. Capped at <span class = m9>-20%</span> (<span class = m6>5000g</span> bounty).</td>
     </tr></tbody>
     <tbody id="CricketHeader"><tr>
       <td rowspan="3"><span class="anchor" id="Cricket"></span>Cricket</td><td><span class="m9">I</span>: Receive <span class="m9">-5%</span> damage while you or your attacker is standing on grass. Permanent Regeneration I on grass.</td>
@@ -158,13 +158,13 @@ $(function(){
       <td><span class="m9">III</span>: Earn <a href="XP"><span class="mb">+6 XP</span></a> on kill and a reduced amount on assist.</td>
     </tr></tbody>
   <tbody id="Gold_BoostHeader"><tr>
-    <td rowspan="3"><span class="anchor" id="Gold_Boost"></span>Gold Boost</td><td><span class="m9">I</span>: Earn <span class = "m6"><a href="Gold"><span class="m6">+15% gold</span></a></span>.</td>
+    <td rowspan="3"><span class="anchor" id="Gold_Boost"></span>Gold Boost</td><td><span class="m9">I</span>: Earn <span class = "m6"><a href="Gold"><span class="m6">+15% gold</span></a></span> from kills and assists.</td>
     </tr>
     <tr>
-      <td><span class="m9">II</span>: Earn <span class = "m6"><a href="Gold"><span class="m6">+30% gold</span></a></span>.</td>
+      <td><span class="m9">II</span>: Earn <span class = "m6"><a href="Gold"><span class="m6">+30% gold</span></a></span> from kills and assists.</td>
     </tr>
     <tr>
-      <td><span class="m9">III</span>: Earn <span class = "m6"><a href="Gold"><span class="m6">+45% gold</span></a></span>.</td>
+      <td><span class="m9">III</span>: Earn <span class = "m6"><a href="Gold"><span class="m6">+45% gold</span></a></span> from kills and assists.</td>
     </tr></tbody>
   <tbody id="Gold_BumpHeader"><tr>
     <td rowspan="3"><span class="anchor" id="Gold_Bump"></span>Gold Bump</td><td><span class="m9">I</span>: Earn <span class = "m6"><a href="Gold"><span class="m6">+4 gold</span></a></span> on kill and a reduced amount on assist.</td>
@@ -349,7 +349,7 @@ $(function(){
       <td><span class="m9">III</span>: Gain <span class = me>2♥</span> Absorption on kill. Max <span class = me>6♥</span>.</td>
     </tr></tbody>
     <tbody id="Gotta_go_fastHeader"><tr>
-      <td rowspan="3"><span class="anchor" id="Gotta_go_fast"></span>Gotta go fast</td><td><span class="m9">I</span>: Move 4% faster. A white particle trail appears as you run.</td>
+      <td rowspan="3"><span class="anchor" id="Gotta_go_fast"></span>Gotta go fast</td><td><span class="m9">I</span>: Move 5% faster. A white particle trail appears as you run.</td> <!--Not a typo. Movement speed is actually inreased by 5%. -->
     </tr>
     <tr>
         <td><span class="m9">II</span>: Move 10% faster. A white particle trail appears as you run.</td>
@@ -458,13 +458,13 @@ $(function(){
     </tr></tbody>
 
   <tbody id="AssassinHeader"><tr>
-    <td rowspan="3"><span class="anchor" id="Assassin"></span><span class = md>RARE!</span> Assassin</td><td><span class="m9">I</span>: If shot while sneaking, teleport to the attacker. 10 second cooldown.</td>
+    <td rowspan="3"><span class="anchor" id="Assassin"></span><span class = md>RARE!</span> Assassin</td><td><span class="m9">I</span>: If shot while sneaking, teleport directly behind the attacker. 10 second cooldown. If this enchant would teleport you to into a block, teleport to the attacker instead.</td>
     </tr>
     <tr>
-      <td><span class="m9">II</span>: If attacked while sneaking, teleport to the attacker. 5 second cooldown.</td>
+      <td><span class="m9">II</span>: If attacked while sneaking, teleport directly behind the attacker. 5 second cooldown. If this enchant would teleport you to into a block, teleport to the attacker instead.</td>
     </tr>
     <tr>
-      <td><span class="m9">III</span>: If attacked while sneaking, teleport to the attacker. 3 second cooldown.</td>
+      <td><span class="m9">III</span>: If attacked while sneaking, teleport directly behind the attacker. 3 second cooldown. If this enchant would teleport you to into a block, teleport to the attacker instead.</td>
     </tr></tbody>
 
   <tbody id="Divine_MiracleHeader"><tr>
