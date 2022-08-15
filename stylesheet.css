@@ -1,81 +1,76 @@
 body {
-    font-family: Roboto, Manrope, sans-serif;
-    background-attachment: fixed;
-    
-  background-image: url('images/background.png');
-  }
-  
-
-  .header {
-    font-size: 30px;
-    color: wheat;
-  }
-
-  .subheader {
-    font-size: 16px;
-    color: white;
-    font-style: italic;
-  }
-
-  .body {
-    font-size: 16px;
-    color: #fff;
-  }
-
-  .section {
-    font-size: 24px;
-    font-weight: bold;
-  }
-
-
-  .small {
-    font-size: 12px;
-    font-style: italic;
-    color: #aaa;
-  }
-
-  .center {
-    text-align: center;
-  }
-
-  .italic {
-    font-style: italic;
-  }
-
-  .item { 
-    outline: 1px solid white;
-    width: 200px;
-    float: right;
-    margin: 10px;
-    border:1px solid white;
-
+  font-family: Roboto, Manrope, sans-serif;
+  background-attachment: fixed;
+  background-image: url("images/background.png");
 }
 
-.item30 { /* 1.5x larger than item */
+.header {
+  font-size: 30px;
+  color: wheat;
+}
+
+.subheader {
+  font-size: 16px;
+  color: white;
+  font-style: italic;
+}
+
+.body {
+  font-size: 16px;
+  color: #fff;
+}
+
+.section {
+  font-size: 24px;
+  font-weight: bold;
+}
+
+.small {
+  font-size: 12px;
+  font-style: italic;
+  color: #aaa;
+}
+
+.center {
+  text-align: center;
+}
+
+.italic {
+  font-style: italic;
+}
+
+.item {
+  outline: 1px solid white;
+  width: 200px;
+  float: right;
+  margin: 10px;
+  border: 1px solid white;
+}
+
+.item30 {
+  /* 1.5x larger than item */
   outline: 1px solid white;
   width: 300px;
   float: right;
   margin: 10px;
-  border:1px solid white;
+  border: 1px solid white;
 }
 
-  .tableheader {
-    font-size: 25px;
-    font-weight: bold;
-    text-align: center;
-  }
+.tableheader {
+  font-size: 25px;
+  font-weight: bold;
+  text-align: center;
+}
 
-  .mono {
-    font-family: 'Roboto Mono', monospace;
-  }
-
-  table,th,td {
-  border:1px solid white;
+table,
+th,
+td {
+  border: 1px solid white;
   padding: 5px;
 }
 
 .highlighted {
-  border:2px solid #CC0000;
+  border: 2px solid #cc0000;
   background: #880000;
 }
 
@@ -92,7 +87,7 @@ body {
   margin-right: auto;
   line-height: 1.75;
   border-radius: 15px;
-  }
+}
 
 .smallbreak {
   height: 0px;
@@ -108,70 +103,71 @@ body {
   margin-right: auto;
   line-height: 1.75;
   border-radius: 15px;
-  position:relative;
+  position: relative;
   top: 50px;
-  }
+}
 
 .m0 {
-    color: #000
+  color: #000;
 }
 .m1 {
-    color: #00a
+  color: #00a;
 }
 .m2 {
-    color: #0a0
+  color: #0a0;
 }
 .m3 {
-    color: #0aa
+  color: #0aa;
 }
 .m4 {
-    color: #a00
+  color: #a00;
 }
 .m5 {
-    color: #a0a
+  color: #a0a;
 }
 .m6 {
-    color: #fa0
+  color: #fa0;
 }
 .m7 {
-    color: #aaa
+  color: #aaa;
 }
 .m8 {
-    color: #555
+  color: #555;
 }
 .m9 {
-    color: #55f
+  color: #55f;
 }
 .ma {
-    color: #5f5
+  color: #5f5;
 }
 .mb {
-    color: #5ff
+  color: #5ff;
 }
 .mc {
-    color: #f55
+  color: #f55;
 }
 .md {
-    color: #f5f
+  color: #f5f;
 }
 .me {
-    color: #ff5
+  color: #ff5;
 }
 .mf {
-    color: #fff
+  color: #fff;
 }
-.td{
-    color: #caa
+.td {
+  color: #caa;
 }
 
 code {
-  font-family: 'Roboto Mono','Consolas','Courier New',monospace;
+  font-family: "Roboto Mono", ui-monospace, Menlo, "Cascadia Mono",
+    "Segoe UI Mono", "Fira Mono", "Droid Sans Mono", monospace;
   color: #cac;
   background-color: #383838;
   padding: 2px;
 }
 
-pre>code {
+pre > code {
   background-color: transparent;
 }
 
@@ -201,14 +197,13 @@ a:active {
 
 @font-face {
   font-family: Roboto;
-  src: url('./font/Roboto-Regular.ttf');
+  src: url("./font/Roboto-Regular.ttf");
 }
 
 @font-face {
   font-family: Material;
-  src: url('./font/Material.ttf');
+  src: url("./font/Material.ttf");
 }
-
 
 :root {
   --mc0: #000;
@@ -231,18 +226,22 @@ a:active {
   --bg: #252525;
 }
 
-td img {display: block;   margin-left: auto; margin-right: auto;}
+td img {
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+}
 
 .anchor {
   position: absolute;
   transform: translateY(-100px);
 }
 
-html{
+html {
   -moz-text-size-adjust: none;
   -webkit-text-size-adjust: none;
   text-size-adjust: none;
-  }
+}
 
 ul {
   list-style-type: square;
@@ -256,7 +255,7 @@ ul {
 }
 
 .homepageitem {
-background: #363636;
+  background: #363636;
   padding: 1em;
   margin: 0 0 1.5em;
   break-inside: avoid-column;
@@ -284,6 +283,6 @@ background: #363636;
   body {
     background-image: none;
     background-color: #252525;
-}
+  }
 }
 /* stylesheet not updating? */
