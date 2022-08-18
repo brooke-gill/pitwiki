@@ -58,6 +58,28 @@ $(function(){
 
 </body>
 <script>
+  function getSeconds(time) {
+    var checkthisout = Math.floor(time % 60000 / 1000)
+    if(checkthisout == 1) {
+      return(checkthisout + " second")
+    } else if(checkthisout == 0) {
+      return("0 seconds")
+    } else {
+      return(checkthisout + " seconds")
+    }
+  }
+
+  function getMinutes(time) {
+    var checkthisout = Math.floor(time / 60000)
+    if(checkthisout == 1) {
+      return(checkthisout + " minute and ")
+    } else if(checkthisout == 0) {
+      return("")
+    } else {
+      return(checkthisout + " minutes and ")
+    }
+  }
+
   document.getElementById("nextnightquest").innerText = "Loading...";
   var samplenightquest = 1660849190000;
   function changeTime(){
@@ -66,22 +88,21 @@ $(function(){
     var timetonext = 2160000 - difference % 2160000;
     if (Math.floor(timetonext / 60000) < 24){
       document.getElementById("nqstatus").innerText = "The next night quest will be in ";
-      if (Math.floor(timetonext) / 60000 == 1){
-        document.getElementById("nextnightquest").innerText = Math.floor(timetonext / 60000) + " minute and " + Math.floor((timetonext % 60000) / 1000) + " seconds";
-      } else {
-        document.getElementById("nextnightquest").innerText = Math.floor(timetonext / 60000) + " minutes and " + Math.floor((timetonext % 60000) / 1000) + " seconds";
-      }
-      document.getElemetnById("existentialcrisis").innerText = "";
+      document.getElementById("nextnightquest").innerText = getMinutes(timetonext) + getSeconds(timetonext)
+      document.getElementById("existentialcrisis").innerText = ".";
       //The time isn't actually 24m. it's 23m45s. i hate this. i'll fix that later. have to go now.
     }
     else {
       
       if (Math.floor (timetonext / 60000) - 24.0 == 1){
         document.getElementById("nqstatus").innerText = "There is currently a night quest active. There is ";
-        document.getElementById("nextnightquest").innerText = (Math.floor(timetonext / 60000) - 24.0) + " minute and " + Math.floor((timetonext % 60000) / 1000) + " seconds";
+        document.getElementById("nextnightquest").innerText = (Math.floor(timetonext / 60000) - 24.0) + " minute and " + getSeconds(timetonext);
+      } else if ((Math.floor (timetonext / 60000) - 24.0 == 0)) {
+        document.getElementById("nqstatus").innerText = "There is currently a night quest active. There are ";
+        document.getElementById("nextnightquest").innerText = getSeconds(timetonext);
       } else {
         document.getElementById("nqstatus").innerText = "There is currently a night quest active. There are ";
-        document.getElementById("nextnightquest").innerText = (Math.floor(timetonext / 60000) - 24.0) + " minutes and " + Math.floor((timetonext % 60000) / 1000) + " seconds";
+        document.getElementById("nextnightquest").innerText = (Math.floor(timetonext / 60000) - 24.0) + " minutes and " +getSeconds(timetonext);
       }
       document.getElementById("existentialcrisis").innerText = " left to complete it.";
       //brooke please add a thing for seconds grammar i am losing my mind here
