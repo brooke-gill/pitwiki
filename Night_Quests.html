@@ -36,14 +36,15 @@ $(function(){
 <span class="subheader">From the <a href="./">Hypixel Pit Wiki</a></span>
 <hr>
 <p><strong>Night Quests</strong> are special tasks in the Hypixel Pit. They occur every 36 minutes at nightfall while the user has the <a href = "Renown#Heresy">Heresy</a> <a href="Renown"><span class="me">renown</span></a> upgrade, unlocked at <a href="Prestige">prestige</a> <span class="me">VI</span>.</p>
+<span id = "nqstatus"></span><span id = "nextnightquest" class = me></span><span id = "existentialcrisis"></span>
 
 <p>When a night quest occurs, a chat message appears with the task to complete. The list of possible tasks is as follows:</p>
 
 <ul style="list-style-type: square;" class="body">
   <li>Kill 20/25/30/40/50 players.</li>
   <li>Kill 7/12/15 players without using <a href="Mystic_Well">mystic items</a>.</li>
-  <li>Get 16/24 kills without dying or returning to spawn.</li>
-  <li>Get 10/16/20 kills without mystic items, dying or returning to spawn.</li>
+  <li>Get 10/16/24 kills without dying or returning to spawn.</li>
+  <li>Get 10/16/20/24 kills without mystic items, dying or returning to spawn.</li>
 </ul>
 
   <p>Upon completion, night quests add one <a href = "Chunk_of_Vile">Chunk of Vile</a> to the player's inventory and grant <a href = "XP"><span class = mb>200 XP</span></a> plus an additional <a href = "XP"><span class = mb>25 XP</span></a> per prestige the player has.</p><hr class="smallbreak"><hr class="smallbreak">
@@ -51,10 +52,41 @@ $(function(){
 <span class="section">Trivia</span>
 
     <p>Night quests can be disabled in the <a href = "Heresy">Heresy</a> menu.</p>
-    <p>All players on the same server receive the same task for their night quest.</p>
+    <p>All players on the same server receive the same task for their night quest. You cannot complete a night quest in any server other than the one you received it in.</p>
     <p>The "Poet" <a href = "Achievements">achievement</a> is rewarded for completing a night quest.</p></div>
 <div id="footer"></div>
 
 </body>
-
+<script>
+  document.getElementById("nextnightquest").innerText = "Loading...";
+  var samplenightquest = 1660849190000;
+  function changeTime(){
+    var now = Date.now();
+    var difference = now - samplenightquest;
+    var timetonext = 2160000 - difference % 2160000;
+    if (Math.floor(timetonext / 60000) < 24){
+      document.getElementById("nqstatus").innerText = "The next night quest will be in ";
+      if (Math.floor(timetonext) / 60000 == 1){
+        document.getElementById("nextnightquest").innerText = Math.floor(timetonext / 60000) + " minute and " + Math.floor((timetonext % 60000) / 1000) + " seconds";
+      } else {
+        document.getElementById("nextnightquest").innerText = Math.floor(timetonext / 60000) + " minutes and " + Math.floor((timetonext % 60000) / 1000) + " seconds";
+      }
+      document.getElemetnById("existentialcrisis").innerText = "";
+      //The time isn't actually 24m. it's 23m15s. i hate this. i'll fix that later. have to go now.
+    }
+    else {
+      
+      if (Math.floor (timetonext / 60000) - 24.0 == 1){
+        document.getElementById("nqstatus").innerText = "There is currently a night quest active. There is ";
+        document.getElementById("nextnightquest").innerText = (Math.floor(timetonext / 60000) - 24.0) + " minute and " + Math.floor((timetonext % 60000) / 1000) + " seconds";
+      } else {
+        document.getElementById("nqstatus").innerText = "There is currently a night quest active. There are ";
+        document.getElementById("nextnightquest").innerText = (Math.floor(timetonext / 60000) - 24.0) + " minutes and " + Math.floor((timetonext % 60000) / 1000) + " seconds";
+      }
+      document.getElementById("existentialcrisis").innerText = " left to complete it.";
+      //brooke please add a thing for seconds grammar i am losing my mind here
+    }
+  }
+  setInterval(changeTime, 50);
+</script>
 </html>
