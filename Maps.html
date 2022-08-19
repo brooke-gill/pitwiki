@@ -46,7 +46,8 @@ $(function(){
 <hr>
 <noscript><p>NOTE! Since JavaScript is disabled in your browser, certain functions on this page may not work for you.</p></noscript>
 <p><strong>Maps</strong> are customized worlds that gameplay occurs on. Only one map is playable at a time. It changes every week on Tuesday evening.</p>
-  <p>The next map is <span id="nextmap" class="me"></span> in <span id="maptime" class="me"></span>.</p>
+  <p>The current map is <span id = "currentmap" class = "me"></span>.</p>
+  <p>The next map will be <span id="nextmap" class="me"></span> in <span id="maptime" class="me"></span>.</p>
   <p>The following is a list of maps, in the order of rotation:</p>
 
   <ul>
@@ -63,9 +64,89 @@ $(function(){
 
 </body>
 <script>
-  document.getElementById('nextmap').innerText = "If you're seeing this text, the script is not working."
+  document.getElementById("currentmap").innerText = "Loading..."
+  document.getElementById('nextmap').innerText = "Loading..."
   document.getElementById('maptime').innerText = ""
   
+  function getSeconds(time) {
+    var timeleft = Math.floor(time % 60);
+    if(timeleft == 1) {
+      return("and " + timeleft + " second")
+    } else if(timeleft == 0) {
+      return("")
+    } else {
+      return("and " + timeleft + " seconds")
+    }
+  }
+  function getMinutes(time) {
+    var timeleft = Math.floor((time % 3600) / 60);
+    if(timeleft == 1) {
+      return(timeleft + " minute ")
+    } else if(timeleft == 0) {
+      return("")
+    } else {
+      return(timeleft + " minutes ")
+    }
+  }
+
+  function getHours(time) {
+    var timeleft = Math.floor((time % 86400) / 3600);
+    if(timeleft == 1) {
+      return(timeleft + " hour, ")
+    } else if (time % 3600 == 0){
+      return(timeleft + " hours")
+    } else if(timeleft == 0) {
+      return("")
+    } else {
+      return(timeleft + " hours, ")
+    }
+  }
+  function getDays(time) {
+    var timeleft = Math.floor(time / 86400);
+    if(timeleft == 1) {
+      return(timeleft + " day, ") 
+    } else if (time % 86400 == 0){
+      return(timeleft + " days")
+    } else if(timeleft == 0) {
+      return("")
+    } else {
+      return(timeleft + " days, ")
+    }
+  }
+
+  document.getElementById("currentmap").innerText = "Loading...";
+  var samplemaprotation = 1661140800; 
+  function changeTime(){
+    var now = Date.now() / 1000;
+    var difference = now - samplemaprotation;
+    var timetonext = 3024000 - difference % 3024000;
+    var mapnow = Math.floor((timetonext / 604800) % 5);
+    if (mapnow == 0){
+      document.getElementById("currentmap").innerText = "Genesis";
+      document.getElementById("nextmap").innerText = "Four Seasons";
+    }
+    else if (mapnow == 1){
+      document.getElementById("currentmap").innerText = "Four Seasons";
+      document.getElementById("nextmap").innerText = "Elements";
+    }
+    else if (mapnow == 2){
+      document.getElementById("currentmap").innerText = "Elements";
+      document.getElementById("nextmap").innerText = "Castle";
+    }
+    else if (mapnow == 3){
+      document.getElementById("currentmap").innerText = "Castle";
+      document.getElementById("nextmap").innerText = "Abyss";
+    }
+    else if (mapnow == 4){
+      document.getElementById("currentmap").innerText = "Abyss";
+      document.getElementById("nextmap").innerText = "Genesis";
+    }
+    timetonext = timetonext % 604800;
+    
+    document.getElementById("maptime").innerText = getDays(timetonext) + getHours(timetonext) + getMinutes(timetonext) + getSeconds(timetonext);
+    
+  }
+  setInterval(changeTime, 50);
 
 
 </script>
