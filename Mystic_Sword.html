@@ -160,6 +160,15 @@ $(function(){
     <tr>
       <td><span class="m9">III</span>: Deal <span class = mc>12%</span> more damage.</td>
     </tr></tbody>
+    <tbody id="Combo_XPHeader"><tr>
+      <td rowspan="3"><span class="anchor" id="Combo_XP"></span>Combo: XP</td><td><span class="m9">I</span>: Every fifth hit, gain <a href="XP"><span class="mb">+20 XP</span></a>.</td>
+      </tr>
+      <tr>
+        <td><span class="m9">II</span>: Every fifth hit, gain <a href="XP"><span class="mb">+28 XP</span></a>.</td>
+      </tr>
+      <tr>
+        <td><span class="m9">III</span>: Every fifth hit, gain <a href="XP"><span class="mb">+36 XP</span></a>.</td>
+      </tr></tbody>
    <tbody id="SweatyHeader"><tr>
      <td rowspan="3"><span class="anchor" id="Sweaty"></span>Sweaty</td><td><span class="m9">I</span>: Increase the streak XP bonus by <span class = "mb">20%</span>.</td>
     </tr>
@@ -187,15 +196,17 @@ $(function(){
     <tr>
       <td><span class="m9">III</span>: Earn <a href="XP"><span class="mb">+6 XP</span></a> on kill and a reduced amount on assist.</td>
     </tr></tbody>
-  <tbody id="Combo_XPHeader"><tr>
-    <td rowspan="3"><span class="anchor" id="Combo_XP"></span>Combo: XP</td><td><span class="m9">I</span>: Every fifth hit, gain <a href="XP"><span class="mb">+20 XP</span></a>.</td>
-    </tr>
-    <tr>
-      <td><span class="m9">II</span>: Every fifth hit, gain <a href="XP"><span class="mb">+28 XP</span></a>.</td>
-    </tr>
-    <tr>
-      <td><span class="m9">III</span>: Every fifth hit, gain <a href="XP"><span class="mb">+36 XP</span></a>.</td>
-    </tr></tbody>
+  
+    <tbody id="Critically_RichHeader"><tr>
+      <td rowspan="3"><span class="anchor" id="Critically_Rich"></span>Critically Rich</td><td><span class="m9">I</span>: Earn <span class = "m6"><a href="Gold"><span class="m6">+2 gold</span></a></span> every critical hit.</td>
+      </tr>
+      <tr>
+        <td><span class="m9">II</span>: Earn <span class = "m6"><a href="Gold"><span class="m6">+4 gold</span></a></span> every critical hit.</td>
+      </tr>
+      <tr>
+        <td><span class="m9">III</span>: Earn <span class = "m6"><a href="Gold"><span class="m6">+6 gold</span></a></span> every critical hit.</td>
+      </tr></tbody>
+  <!--triggers on all hits that are not non-critical, like mob hits-->
   <tbody id="Gold_BoostHeader"><tr>
     <td rowspan="3"><span class="anchor" id="Gold_Boost"></span>Gold Boost</td><td><span class="m9">I</span>: Earn <span class = "m6">+15% <a href="Gold"><span class="m6">gold</span></a></span> from kills and assists.</td>
     </tr>
@@ -223,15 +234,7 @@ $(function(){
     <tr>
       <td><span class="m9">III</span>: Earn <span class = "m6"><a href="Gold"><span class="m6">+18 gold</span></a></span> on kills.</td>
     </tr></tbody>
-  <tbody id="Strike_GoldHeader"><tr>
-    <td rowspan="3"><span class="anchor" id="Strike_Gold"></span>Strike Gold</td><td><span class="m9">I</span>: Earn <span class = "m6"><a href="Gold"><span class="m6">+1 gold</span></a></span> on hit. 1 second cooldown.</td>
-    </tr>
-    <tr>
-      <td><span class="m9">II</span>: Earn <span class = "m6"><a href="Gold"><span class="m6">+2 gold</span></a></span> on hit. 1 second cooldown.</td>
-    </tr>
-    <tr>
-      <td><span class="m9">III</span>: Earn <span class = "m6"><a href="Gold"><span class="m6">+3 gold</span></a></span> on hit. 1 second cooldown.</td>
-    </tr></tbody>
+  
   <tbody id="PitpocketHeader"><tr>
     <td rowspan="3"><span class="anchor" id="Pitpocket"></span>Pitpocket</td><td><span class="m9">I</span>: Steal <span class = "m6"><a href="Gold"><span class="m6">15g</span></a></span> from the target on hit. 25 second cooldown.</td>
     </tr>
@@ -250,16 +253,15 @@ $(function(){
     <tr>
       <td><span class="m9">III</span>: Earn <span class = "m6">+90 <a href="Gold"><span class="m6">gold</span></a></span> on kill per diamond piece the victim was wearing.</td>
     </tr></tbody>
-    <tbody id="Critically_RichHeader"><tr>
-      <td rowspan="3"><span class="anchor" id="Critically_Rich"></span>Critically Rich</td><td><span class="m9">I</span>: Earn <span class = "m6"><a href="Gold"><span class="m6">+2 gold</span></a></span> every critical hit.</td>
+    <tbody id="Strike_GoldHeader"><tr>
+      <td rowspan="3"><span class="anchor" id="Strike_Gold"></span>Strike Gold</td><td><span class="m9">I</span>: Earn <span class = "m6"><a href="Gold"><span class="m6">+1 gold</span></a></span> on hit. 1 second cooldown.</td>
       </tr>
       <tr>
-        <td><span class="m9">II</span>: Earn <span class = "m6"><a href="Gold"><span class="m6">+4 gold</span></a></span> every critical hit.</td>
+        <td><span class="m9">II</span>: Earn <span class = "m6"><a href="Gold"><span class="m6">+2 gold</span></a></span> on hit. 1 second cooldown.</td>
       </tr>
       <tr>
-        <td><span class="m9">III</span>: Earn <span class = "m6"><a href="Gold"><span class="m6">+6 gold</span></a></span> every critical hit.</td>
+        <td><span class="m9">III</span>: Earn <span class = "m6"><a href="Gold"><span class="m6">+3 gold</span></a></span> on hit. 1 second cooldown.</td>
       </tr></tbody>
-  <!--triggers on all hits that are not non-critical, like mob hits-->
    <tbody id="Pants_RadarHeader"><tr>
      <td rowspan="3"><span class="anchor" id="Pants_Radar"></span>Pants Radar</td><td><span class="m9">I</span>: <span class = "md">30%</span> higher chance to find mystic items on kill.</td>
     </tr>
