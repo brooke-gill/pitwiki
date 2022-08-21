@@ -100,7 +100,7 @@ visibleIDs = [];
   filter = input.value.toUpperCase();
   ul = document.getElementById("aUL");
   li = ul.getElementsByTagName('li');
-  if(filter.length > 0) {
+  if(MakeBasic(filter).length > 0) {
     document.getElementById('aUL').style.display = "block"
   } else {
     document.getElementById('aUL').style.display = "none"
