@@ -31,12 +31,32 @@ body {
   color: #aaa;
 }
 
+.little {
+  font-size: 14px;
+  font-style: italic;
+  color: #aaa;
+}
+
+.justsmall {
+  font-size: 12px;
+}
+
+.justlittle {
+  font-size: 14px;
+}
+
 .center {
   text-align: center;
 }
 
 .italic {
   font-style: italic;
+}
+
+.note {
+  vertical-align: super;
+  font-style: italic;
+  font-size: 13px;
 }
 
 .item {
