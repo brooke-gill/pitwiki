@@ -12,6 +12,8 @@
 <link rel="icon" type="image/png" sizes="32x32" href="./favicon/favicon-32x32.png">
 <link rel="icon" type="image/png" sizes="16x16" href="./favicon/favicon-16x16.png">
 <link rel="manifest" href="./favicon/site.webmanifest">
+<script src="https://brookeafk.com/emergency.js?v=21"></script>
+<script src="https://brookeafk.com/control.js?v=0"></script>
 <script src="https://code.jquery.com/jquery-3.6.0.js" integrity="sha256-H+K7U5CnXl1h5ywQfKtSj8PCmoN9aaq30gDh27Xc0jk=" crossorigin="anonymous"></script>
 <script>
 $(function(){
@@ -38,7 +40,10 @@ $(function(){
     <span>Current <a href="Maps"><span style="color: inherit">map</a>: <noscript>JavaScript is disabled.</noscript><b id="currentmap"></b></span><br>
     <span><b id="nextmap"></b> in<br><span class="me" id="whenmap"></span></span><br>
     <br>
-    <span><b id="dayornight"></b> for <span class="me" id="whenday"></span></span> 
+    <span><b id="dayornight"></b> for <span class="me" id="whenday"></span></span>
+    <br><br>
+    <span id="events"><a href="https://brookeafk.com" target="_blank" rel="noreferrer noopener">Next event</a>: <span id="nextevent">Connecting to brookeafk.com...</span><br><br></span>
+    <span>The last Pit update was <span id="lastupdate" class="m6">a while</span> ago.</span>
   </div>
 
 
@@ -154,6 +159,7 @@ $(function(){
 
     var samplenight = 1660849185;
     var sampleday = 1660849925;
+    var lastupdate = 1645754417;
     var samplemaprotation = 1661227200;
     var secondsuntilday = 0
     var secondsuntilnight = 0
@@ -164,7 +170,9 @@ $(function(){
     var nmapbg = ["./images/map_genesis_night.png","./images/map_abyss_night.png","./images/map_castle_night.png","./images/map_elements_night.png","./images/map_seasons_night.png","./images/map_genesis_night.png"]
 
     function TimestampIt(sec = 0) {
-      if(sec > 86400 /*1 day*/) {
+      if(sec > 31536000) {
+        return Math.floor(sec / 31536000) + "y " + Math.floor((sec % 31536000) / 86400) + "d " + Math.floor((sec % 86400) / 3600) + "h " + Math.floor((sec % 3600) / 60) + "m " + Math.floor(sec % 60) + "s"
+      } else if(sec > 86400 /*1 day*/) {
         return Math.floor(sec / 86400) + "d " + Math.floor((sec % 86400) / 3600) + "h " + Math.floor((sec % 3600) / 60) + "m " + Math.floor(sec % 60) + "s"
       } else if(sec > 3600) {
         return Math.floor((sec % 86400) / 3600) + "h " + Math.floor((sec % 3600) / 60) + "m " + Math.floor(sec % 60) + "s"
@@ -174,6 +182,8 @@ $(function(){
         return Math.floor(sec % 60) + "s"
       }
     }
+
+
     var time = ""
     function Update() {
       now = (Date.now() / 1000);
@@ -196,6 +206,8 @@ $(function(){
     
       document.getElementById('nextmap').innerText = maps[mod(mapid - 1, 5)]
 
+      document.getElementById('lastupdate').innerText = TimestampIt(now - lastupdate);
+
       secondsuntilnextmap = mod((samplemaprotation - now), 604800)
       document.getElementById('whenmap').innerText = TimestampIt(secondsuntilnextmap)
 
@@ -207,6 +219,90 @@ $(function(){
     }
   
     setInterval(Update, 50)
+
+  // brookeafk.com code below.
+
+  var HiddenEventCount = 0;
+  var DoesStuffExist = false;
+  var offset = 0;
+  var speed = 0; // Only exists on minimum. Used to determine how fast the function should be called.
+  var counter = 0;
+  
+  function MakeFunTimestamps(convertible) {
+  let currentTime = (Date.now() + offset);
+  if (convertible - currentTime <= 0) {
+    convertible = "Passed!"
+  }
+  if (convertible - currentTime <= 60000) {
+      convertible = (((Math.floor(((convertible - currentTime)*100))/100000).toFixed(2)) + "s");
+  } else if (convertible - currentTime <= 3600000) {
+      convertible = ((Math.floor(((convertible - currentTime))/60000) + "m " + (Math.floor(((convertible - currentTime))/1000) % 60) + "s"));
+  } else if (convertible - currentTime > 1) {
+      convertible = ((Math.floor(((convertible - currentTime))/3600000) + "h " + (Math.floor(((convertible - currentTime))/60000) % 60) + "m"));
+  }
+  return convertible;
+  }
+
+  function TimeOfDay(s) {
+  var offset = (new Date().getTimezoneOffset())*-60000;
+  return new Date(s + offset).toISOString().slice(-13, -8);
+  }
+
+  var pp_url = ""
+  if(emergency == false) {
+    pp_url = ('https://events.mcpqndq.dev'); //stands for "Pit Panda"
+  }
+  data_backup = MakeAPIAndHTML();
+  setInterval(getPitPanda,40);
+  
+  async function MakeAPIAndHTML() { //Calls the API exactly once (thanks McPqndq for pointing out that i do not have to call apis more than once)
+    if(emergency == true) {
+    window.localStorage.clear(); //attempts to clear the local storage to allow reloading to work
+    localStorage.clear();
+    window.data = await window.emergency_data;
+    }
+    if(emergency == false) {
+    const response = await fetch(pp_url);
+    window.data = await response.json();
+    }
+    window.data_backup = window.data;
+    window.EventsToLoad = Object.keys(window.data).length;
+    DoesStuffExist = true;
+  }
+  
+  function RapidFirst(transformation) {
+  let currentTime = (Date.now() + offset);
+  if (DoesStuffExist == true) {
+    HasStuffLoaded = true;
+    document.getElementById('nextevent').innerHTML = (`<span><b>` + transformation[HiddenEventCount].event + `</b> in <span class="me">` + MakeFunTimestamps(transformation[HiddenEventCount].timestamp) + `</span>  (` + TimeOfDay(transformation[HiddenEventCount].timestamp) + " local time)</span>");
+    if(((transformation[HiddenEventCount].timestamp - currentTime) < 0)) {
+        speed = 999;
+    } else if((transformation[HiddenEventCount].timestamp - currentTime) > 60000) {
+        speed = 0;
+    } else {
+        speed = 1;
+    }
+    if(MakeFunTimestamps(transformation[HiddenEventCount].timestamp) == "Passed!" && !!document.getElementById('nextevent') == true) {
+      window.HiddenEventCount = window.HiddenEventCount + 1; 
+    }}}
+  
+  function getPitPanda() {
+    if(speed == 0) {
+        counter += 1;
+        if(counter == 5) {
+            counter = 0;
+            RapidFirst(window.data);
+        }
+    } else if(speed == 1) {
+        RapidFirst(window.data);
+    } else if(speed == 999) {
+       for(i = 0; i < 10; i++) {
+        RapidFirst(window.data);
+       } 
+    }
+  }
+
+
 </script>
 </body>
 </html>
