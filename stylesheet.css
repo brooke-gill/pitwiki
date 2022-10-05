@@ -221,6 +221,12 @@ a:active {
 }
 
 @font-face {
+  font-family: Roboto;
+  src: url("./font/Roboto-Bold.ttf");
+  font-weight: bold;
+}
+
+@font-face {
   font-family: Material;
   src: url("./font/Material.ttf");
 }
