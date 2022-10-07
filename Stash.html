@@ -50,16 +50,19 @@ $(function(){
 <hr>
 <p>The <strong>stash</strong> is an emergency storage feature bound to every individual player.</p>
 
-<p>In most events where a player would normally lose an item through a forced means, the item will be sent to the player's stash. Upon changing lobbies, players will be reminded if there are items in their stash. Players may recover items from their stash using the /pickupstash <a href = "Commands">command</a>, or by clicking the reminder message, which will return as many of the earliest stashed items as their inventory will allow.</p>
+<p>In most events where a player would normally lose an item through a forced means, the item will be sent to the player's stash. Upon changing lobbies, players will be reminded if there are items in their stash. Players may recover items from their stash using the <a href="Commands#pickupstash"><span class="me">/pickupstash</span> command</a>, or by clicking the reminder message, which will return as many of the earliest stashed items as their inventory will allow.</p>
 <p>Items may be sent to the stash under the following conditions:</p>
 <ul>
-<li>A trade is cancelled but the player does not have enough inventory space to receive all their items back.</li>
+<li>A <a href="Commands#trade">trade</a> is cancelled but the player does not have enough inventory space to receive all their items back.</li>
  <li>A player enters the <a href = "Spire">Spire</a> event, which sends their entire inventory to their stash. /pickupstash is automatically run at the end of the event.</li>
 <li>The server attempts to give the player an item, such as a <a href = "Chunk_of_Vile">Chunk of Vile</a>, but the player's inventory is full.</li>
 </ul>
 
-<p>The stash is assumed to be able to store as many items as can fit in an integer limit byte array (2,147,483,647 bytes). Perk items and enchant items cannot be added to the stash.</p>
+<p>The stash is assumed to be able to store as many items as can fit in an integer limit byte array (2,147,483,647 bytes). <a href="Perks">Perk</a> items and items received through <a href="Mystic_Well">enchantments</a>, such as <a href="Mystic_Pants#Snowablls">snowballs</a>, cannot be added to the stash. Instead of entering the stash, these types of items are deleted permanently.</p>
 <p>Mystic items that are in the stash still lose lives on the player's death, and are cleared from the stash if they break.</p>
+
+<hr class="smallbreak">
+
   <p class = "section">Trivia</p>
   <p>Due to the limited inventory space present in the Pit, some players use the stash to store excess items.</p>
 </body>
