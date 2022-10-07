@@ -54,9 +54,10 @@ $(function(){
 <p>Items may be sent to the stash under the following conditions:</p>
 <ul>
 <li>A <a href="Commands#trade">trade</a> is cancelled but the player does not have enough inventory space to receive all their items back.</li>
- <li>A player enters the <a href = "Spire">Spire</a> event, which sends their entire inventory to their stash. /pickupstash is automatically run at the end of the event.</li>
 <li>The server attempts to give the player an item, such as a <a href = "Chunk_of_Vile">Chunk of Vile</a>, but the player's inventory is full.</li>
 </ul>
+  
+<p>Additionally, a special stash is created if the player enters the <a href = "Spire">Spire</a> event. This stash records the location of each item in the player's inventory and the armor they were wearing, which will be returned to their respective slots instead of the first available slots in the player's inventory when the event ends. If the player is not present in the server at the event's end, all items in the Spire stash will be sent to the player's normal stash.</p>
 
 <p>The stash is assumed to be able to store as many items as can fit in an integer limit byte array (2,147,483,647 bytes). <a href="Perks">Perk</a> items cannot be added to the stash. Instead of entering the stash, these types of items are deleted permanently. Items from <a href = "Mystic_Well">mystic enchantments</a> such as <a href = "Mystic_Pants#Instaboom">Instaboom TNT</a> may be added to the stash, but will be deleted if the player attempts to pick them up without pants of the respective enchantment.</p>
 <p>Mystic items that are in the stash still lose lives on the player's death, and are cleared from the stash if they break.</p>
