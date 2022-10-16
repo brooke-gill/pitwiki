@@ -95,11 +95,11 @@ td {
 }
 
 .invisible_fill {
-  background-color: var(--bg);
+  background-color: var(--bgtp);
 }
 
 .headerbox {
-  background-color: var(--bg);
+  background-color: var(--bgtp);
   width: 80%;
   padding: 20px 50px 20px;
   margin: 0px;
@@ -115,7 +115,7 @@ td {
 }
 
 .box {
-  background-color: var(--bg);
+  background-color: var(--bgtp);
   width: 80%;
   padding: 20px 50px 20px;
   margin: 20px;
@@ -195,6 +195,10 @@ pre > code {
   background-color: transparent;
 }
 
+a {
+  transition-duration: 0.2s;
+}
+
 a:link {
   color: #5abbb7;
   background-color: transparent;
@@ -254,6 +258,7 @@ a:active {
   --mcf: #fff;
   --td: #caa;
   --bg: #252525;
+  --bgtp: rgba(37, 37, 37, 0.95);
 }
 
 td img {
@@ -285,7 +290,7 @@ ul {
 }
 
 .homepageitem {
-  background: #363636;
+  background: rgba(76, 76, 76, 0.25);
   padding: 1em;
   margin: 0 0 1.5em;
   break-inside: avoid-column;
