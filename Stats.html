@@ -77,8 +77,8 @@
               <li><span class="ma">Idling</span>, when the player is not in combat;</li>
               <li><span class="mc">Fighting</span>, when the player is fighting;</li>
               <li><span class="mc">Bountied</span>, when the player has a <a href="Bounty">bounty</a>;</li>
-              <li><span class="m6">Event</span>, when a <a href="Major_Event">major event</a> is ongoing.</li>
-              <li><span class="mc">Overdrive</span> / <span class="ma">Beastmode</span> / <span class="m9">Hermit</span> / <span class="me">Highlander</span> / <span class="mb">To the Moon</span> / <span class="md">Uberstreak</span>, when the player is on the status's respective <a href="Megastreak">megastreak</a>.</li>
+              <li><span class="m6">Event</span>, when a <a href="Major_Event">major event</a> is ongoing;</li>
+              <li><span class="mc">Overdrive</span> / <span class="ma">Beastmode</span> / <span class="m9">Hermit</span> / <span class="m6">Highlander</span> / <span class="mb">To the Moon</span> / <span class="md">Uberstreak</span>, when the player is on the status's respective <a href="Megastreak">megastreak</a>.</li>
             </ul>
             </ul>
           </td>
@@ -111,7 +111,7 @@
         <tr id="AssistsHeader">
           <td><span class="anchor" id="Assists"></span>Assists</td>
 
-          <td>Number of assists. An "assist" is awarded if the player dealt a non-fatal blow to a victim fewer than 15
+          <td>Number of assists. An "assist" is awarded if the player dealt a non-fatal blow to a victim less than 15
             seconds before the victim died.</td>
         </tr>
 
@@ -1111,7 +1111,7 @@
         </tr>
         <tr id="zero_point_two_xpHeader">
           <td><span class="anchor" id="zero_point_two_xp"></span>profile.zero_point_two_xp</td>
-          <td>???</td>
+          <td>The amount of <a href="XP"><span class="mb">XP</span></a> the player earned before <a href="The_Pit_0.2">The Pit 0.2</a>. Only displays if the player earned more than <a href="XP"><span class="mb">65,950 XP</span></a> before the update.</td>
           <td>
             <pre><code>"zero_point_two_xp":75875</td>
         </tr>
@@ -1128,13 +1128,13 @@
         </tr>
         <tr id="selected_launch_trailHeader">
           <td><span class="anchor" id="selected_launch_trail"></span>profile.selected_launch_trail</td>
-          <td>The player's selected launch trail from the renown shop.</td>
+          <td>The player's selected launch trail from the <a href="Renown"><span class="me">renown</span></a> shop.</td>
           <td>
             <pre><code>"selected_launch_trail":"superb",</td></pre></code>
         </tr>
         <tr id="refunded_golden_pickaxeHeader">
           <td><span class="anchor" id="refunded_golden_pickaxe"></span>profile.refunded_golden_pickaxe</td>
-          <td>Whether the player refunded 10 renown from the Golden Pickaxe being removed from the renown shop in <a
+          <td>Whether the player refunded 10 renown from the Golden Pickaxe being removed from the <a href="Renown"><span class="me">renown</span></a> shop in <a
               href="https://hypixel.net/threads/the-pit-1-0-5-tryhard-patch.4667681/" target="_blank"
               rel="noopener noreferrer">The Pit 1.0.5</a>. Boolean.</td>
           <td>
@@ -1227,8 +1227,7 @@
         "key":"kill_players"
       },
       {
-        "meta":
-        {
+        "meta": {
           "reward":500
         },
         "key":"kill_player_with_bow"

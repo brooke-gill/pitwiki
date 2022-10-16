@@ -179,6 +179,10 @@ td {
   color: #caa;
 }
 
+.shadowf {
+  text-shadow: 0px 0px 8px #fff;
+}
+
 code {
   font-family: "Roboto Mono", ui-monospace, Menlo, "Cascadia Mono",
     "Segoe UI Mono", "Fira Mono", "Droid Sans Mono", monospace;
