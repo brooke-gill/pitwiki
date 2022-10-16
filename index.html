@@ -26,7 +26,8 @@ $(function(){
 <div id="header"></div>
 <div class="box">
 <center>
-<p class="header">The Unofficial Hypixel Pit Wiki</p>
+  <br>
+<p class="header" style="line-height: 0.5em">The Unofficial Hypixel Pit Wiki</p>
 <p class="body" style="font-size: 20px"><b class="ma">WELCOME!</b> Thank you for visiting the Hypixel Pit Wiki!</p>
 <noscript><p class="body"><b class="mc">WARNING!</b> JavaScript is disabled in your browser! You will be unable to use the search, timers, header, or footer without <a href="https://www.enablejavascript.io/" target="_blank" rel="noopener noreferrer">enabling JavaScript</a>.</p></noscript>
 
@@ -123,8 +124,8 @@ $(function(){
   
 
 <div class="homepageitem body" style="background-color: #303030"><span style="background-color: #252525; outline: 10px solid #252525">&mdash; <b><a href="Maps"><span class="me">Maps</span></a></b> &mdash;</span><br><hr class="smallbreak">
-    <a href="Abyss">Abyss</a><br>
     <a href="Castle">Castle</a><br>
+    <a href="Corals">Corals</a><br>
     <a href="Elements">Elements</a><br>
     <a href="Four_Seasons">Four Seasons</a><br>
     <a href="Genesis">Genesis</a><br>
@@ -166,7 +167,7 @@ $(function(){
     var secondsuntilday = 0
     var secondsuntilnight = 0
     var secondsuntilnextmap = 0
-    var maps = ["Genesis","Abyss","Castle","Elements","Four Seasons"]
+    var maps = ["Genesis","Corals","Castle","Elements","Four Seasons"]
     var mapid = 0;
     var mapbg = ["./images/map_genesis_palace.png","./images/map_abyss.png","./images/map_castle_castle.png","./images/map_elements_sky.png","./images/map_seasons_spring.png","./images/map_genesis_palace.png"]
     var nmapbg = ["./images/map_genesis_night.png","./images/map_abyss_night.png","./images/map_castle_night.png","./images/map_elements_night.png","./images/map_seasons_night.png","./images/map_genesis_night.png"]
@@ -257,7 +258,7 @@ $(function(){
   data_backup = MakeAPIAndHTML();
   setInterval(getPitPanda,40);
   
-  async function MakeAPIAndHTML() { //Calls the API exactly once (thanks McPqndq for pointing out that i do not have to call apis more than once)
+  async function MakeAPIAndHTML() {
     if(emergency == true) {
     window.localStorage.clear(); //attempts to clear the local storage to allow reloading to work
     localStorage.clear();
