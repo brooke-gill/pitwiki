@@ -34,7 +34,7 @@ for(var i = 0; i < window.searchpages.length * 2; i += 1) {
       ahref.setAttribute('href', window.searchpages[i  % searchpages.length][1]);
       list.appendChild(ahref);
       fulllist.appendChild(list);
-      console.log(list)
+      //console.log(list)
   }
 
 function mouseOver() {
@@ -129,7 +129,7 @@ visibleIDs = [];
       if(numberofvisibleitems == arrowcount) {
         topitem = i;
         document.getElementById('link_' + i).style.color = "#FFFF99"
-        console.log("Arrow is at position " + i)
+        //console.log("Arrow is at position " + i)
       }
     } else if (i < window.searchpages.length) {
     li[i].style.display = "none";
@@ -141,7 +141,7 @@ visibleIDs = [];
       if(numberofvisibleitems == arrowcount) {
         topitem = i;
         document.getElementById('link_' + i).style.color = "#FFFF99"
-        console.log("Arrow is at position " + i)
+        //console.log("Arrow is at position " + i)
       }
     }
 
@@ -184,6 +184,13 @@ function ChangeHighlight() {
     }
 }
 ChangeHighlight()
+
+var favi = localStorage.getItem('favicon-palette');
+if(favi > 0) {
+  document.querySelector("link[type='image/x-icon']").href = "./favicon/special" + favi + ".ico";
+  console.log("wow, nice favicon!");
+}
+
 </script>
 
 <style>

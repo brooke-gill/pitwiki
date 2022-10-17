@@ -8,9 +8,9 @@
 <meta name="description" content="">
 <meta name="author" content="BrookeAFK">
 <meta name="keywords" content="Hypixel Pit Wiki, Hypixel Pit, Hypixel, The Unofficial Hypixel Pit Wiki">
+<link rel="icon" type="image/x-icon" href="./favicon/favicon.ico">
 <link rel="apple-touch-icon" sizes="180x180" href="./favicon/apple-touch-icon.png">
 <link rel="icon" type="image/png" sizes="32x32" href="./favicon/favicon-32x32.png">
-<link rel="icon" type="image/png" sizes="16x16" href="./favicon/favicon-16x16.png">
 <link rel="manifest" href="./favicon/site.webmanifest">
 <script src="https://brookeafk.com/emergency.js?v=21"></script>
 <script src="https://brookeafk.com/control.js?v=0"></script>
@@ -145,7 +145,24 @@ $(function(){
 </div>
 <br>
 <p class="body center">Can't find what you're looking for? Use the search bar or the <a href="Page_List">page list</a>.</p><br>
-<p class="body center"><b class="me">NOTE!</b> The wiki's currently in beta!<br>If you find a content error, please send either adjective_noun#3215 or Brooke#0843 a DM on Discord and we'd be happy to take a look (and credit you).</p>
+<p class="body center"><b class="me">NOTE!</b> The wiki's currently in beta!<br><span id="content-error">If you <span class="supersecret" onclick="showFavicon()">f</span>ind <span class="supersecret" onclick="showFavicon()">a</span> content error, please send either adjecti<span class="supersecret" onclick="showFavicon()">v</span>e_noun#3215 or Brooke#0843 a DM on D<span class="supersecret" onclick="showFavicon()">i</span>s<span class="supersecret" onclick="showFavicon()">c</span>ord and we'd be happy t<span class="supersecret" onclick="showFavicon()">o</span> take a look (a<span class="supersecret" onclick="showFavicon()">n</span>d credit you).</span></p>
+
+<span id="favicon-settings" style="display: none;">
+<p class="body center"><b>You've found the super-secret favicon settings.</b></p>
+
+<p class="body center">Click on an image to change the wiki's favicon to it!</p>
+
+<table class="invisible">
+  <tr class="body">
+    <td class="invisible clickme" onclick="favicon(0)"><img src="./favicon/favicon.ico"></td><td class="invisible clickme" onclick="favicon(1)"><img src="./favicon/special1.ico"></td><td class="invisible clickme" onclick="favicon(2)"><img src="./favicon/special2.ico"></td><td class="invisible clickme" onclick="favicon(3)"><img src="./favicon/special3.ico"></td><td class="invisible clickme" onclick="favicon(4)"><img src="./favicon/special4.ico"></td><td class="invisible clickme" onclick="favicon(5)"><img src="./favicon/special5.ico"></td><td class="invisible clickme" onclick="favicon(6)"><img src="./favicon/special6.ico"></td>
+  </tr>
+  <tr class="body center">
+    <td class="invisible italic clickme" onclick="favicon(0)">Classic</td><td class="invisible italic clickme" onclick="favicon(1)">Crimson</td><td class="invisible italic clickme" onclick="favicon(2)">Autumnal</td><td class="invisible italic clickme" onclick="favicon(3)">Lemonade</td><td class="invisible italic clickme" onclick="favicon(4)">Cobalt</td><td class="invisible italic clickme" onclick="favicon(5)">Lavender</td><td class="invisible italic clickme" onclick="favicon(6)">Koala</td>
+</table>
+
+<p class="body">*Note: May not work on old/mobile browsers.</p>
+</span>
+
 <br>
 </div>
 <div id="footer"></div>
@@ -305,6 +322,20 @@ $(function(){
     }
   }
 
+  function showFavicon() {
+    document.getElementById('favicon-settings').style.display = "inline";
+    document.getElementById('content-error').style.color = "#484848";
+  }
+
+  function favicon(n) { // changes the user's favicon
+  if(n == 0) {
+    document.querySelector("link[type='image/x-icon']").href = "./favicon/favicon.ico";
+  } else {
+    document.querySelector("link[type='image/x-icon']").href = "./favicon/special" + n + ".ico";
+  }
+
+  localStorage.setItem('favicon-palette', n);
+}
 
 </script>
 </body>

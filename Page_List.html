@@ -10,7 +10,7 @@
 <meta name="keywords" content="Hypixel Pit Wiki, Hypixel Pit, The Pit">
 <link rel="apple-touch-icon" sizes="180x180" href="./favicon/apple-touch-icon.png">
 <link rel="icon" type="image/png" sizes="32x32" href="./favicon/favicon-32x32.png">
-<link rel="icon" type="image/png" sizes="16x16" href="./favicon/favicon-16x16.png">
+<link rel="icon" type="image/x-icon" href="./favicon/favicon.ico">
 <link rel="manifest" href="./favicon/site.webmanifest">
 <script src="https://code.jquery.com/jquery-3.6.0.js" integrity="sha256-H+K7U5CnXl1h5ywQfKtSj8PCmoN9aaq30gDh27Xc0jk=" crossorigin="anonymous"></script>
 <script> 
@@ -51,7 +51,7 @@ $(function(){
     var replace = {' ':'_', "'":""}
     
     for(var i = 0; i < window.pages.length; i += 1) {
-        console.log("doing thing")
+        //console.log("doing thing")
         var fulllist = document.getElementById('listofarticles')
         var list = document.createElement("li")
           var ahref = document.createElement("a");
@@ -60,7 +60,7 @@ $(function(){
           ahref.setAttribute('href', window.pages[i].replace(/[ ']/g, m => replace[m]));
           list.appendChild(ahref);
           fulllist.appendChild(list);
-          console.log(list)
+          //console.log(list)
           document.getElementById('numberofpages').innerText = i + 1
     
       }
@@ -71,7 +71,7 @@ $(function(){
 
 
       for(var j = 1; j < window.searchpages.length; j += 1) {
-        console.log("doing thing")
+        //console.log("doing thing")
         var fulllist = document.getElementById('listofeverything')
         var list = document.createElement("li")
           var ahref = document.createElement("a");
@@ -80,7 +80,7 @@ $(function(){
           ahref.setAttribute('href', window.searchpages[j][1]);
           list.appendChild(ahref);
           fulllist.appendChild(list);
-          console.log(list)
+          //console.log(list)
           document.getElementById('numberofthings').innerText = j + 1
     
       }

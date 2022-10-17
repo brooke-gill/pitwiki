@@ -89,6 +89,10 @@ td {
   padding: 5px;
 }
 
+.invisible {
+  border: 0px;
+}
+
 .highlighted {
   border: 2px solid #cc0000;
   background: #880000;
@@ -112,6 +116,20 @@ td {
 .smallbreak {
   height: 0px;
   visibility: hidden;
+}
+
+.clickme {
+  cursor: pointer;
+}
+
+.supersecret {
+  cursor: pointer;
+  font-weight: bold;
+  color: #fdf;
+}
+
+#content-error {
+  transition-duration: 0.5s;
 }
 
 .box {
