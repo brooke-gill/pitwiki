@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html> 
+<head>
+<link rel="stylesheet" href="stylesheet.css">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Random Page - The Hypixel Pit Wiki</title>
+<meta name="description" content="">
+<meta name="author" content="BrookeAFK">
+<link rel="apple-touch-icon" sizes="180x180" href="./favicon/apple-touch-icon.png">
+<link rel="icon" type="image/png" sizes="32x32" href="./favicon/favicon-32x32.png">
+<link rel="icon" type="image/x-icon" href="./favicon/favicon.ico">
+<script src="pages.js"></script>
+</head>
+<body>
+
+<div id="header"></div>
+<div class="box">
+<span class="body">
+<span class="header">Random Page</span><br>
+<span class="subheader">From the <a href="./">Hypixel Pit Wiki</a></span>
+<hr>
+<p id="nojs">If you're reading this, you likely have JavaScript disabled!</p>
+</span></div>
+<div id="footer"></div>
+
+</body>
+
+</html>
+<script>
+  var replace = {' ':'_', "'":""}
+  var rawitem = (pages[Math.floor(Math.random() * pages.length)])
+  var luckyitem = rawitem.replace(/[ ']/g, m => replace[m]);
+  document.location = (luckyitem)
+
+
+
+ document.getElementById('nojs').innerHTML = `Click <a href="` + luckyitem + `">here</a> to visit your random page, ` + rawitem + `!`
+</script>
