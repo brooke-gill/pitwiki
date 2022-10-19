@@ -303,7 +303,7 @@ ul {
 .funky {
   background: linear-gradient(150deg, rgba(245,222,179,1) 0%, rgba(167,123,41,1) 100%); 
   background-clip: text;
-  color: transparent;
+  -webkit-background-clip: text;
   background-color: transparent;
 }
 
