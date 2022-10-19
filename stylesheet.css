@@ -301,9 +301,10 @@ ul {
 }
 
 .funky {
+  background-color: linear-gradient(150deg, rgba(245,222,179,1) 0%, rgba(167,123,41,1) 100%);
   background-clip: text;
   -webkit-background-clip: text;
-  color: linear-gradient(150deg, rgba(245,222,179,1) 0%, rgba(167,123,41,1) 100%);
+  color: transparent;
 }
 
 /* thank you to Rahul for showing me the power of CSS Masonry: https://w3bits.com/css-masonry/ */
