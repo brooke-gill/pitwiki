@@ -8,7 +8,7 @@
 </div>
 
 <span id="partofsearch" style="display: none">
-<ul id="aUL" style="display: none; list-style-type: square; background-color:#363636; border-radius: 15px; padding: 20px 20px 20px 50px; margin: 50px 100px 0px 0px;right: 0px; width: 250px; z-index: 4; position:fixed;"></ul>
+<ul id="aUL" class="mf" style="display: none; list-style-type: square; background-color:#363636; border-radius: 15px; padding: 20px 20px 20px 50px; margin: 50px 100px 0px 0px;right: 0px; width: 250px; z-index: 4; position:fixed;"></ul>
 </span>
 <script>
 var searchclicked = 0;
@@ -193,13 +193,27 @@ if(favi > 0) {
 
 </script>
 
-<style>
-input[type="text"]
-{
-    font-size:17px;
-    font-family: Roboto, sans-serif;
-    text-align:center;
-    background-color: #313131;
-    color: white;
+<!-- just here for redundancy -->
+<style> 
+  input[type="text"] {
+  font-size:17px;
+  font-family: Roboto, sans-serif;
+  text-align:center;
+  background-color: #313131;
+  color: white;
+  transition-duration: 0.5s;
+  position: relative;
+  width: 200px;
+right: 0px;
+border-radius: 5px;
+
+}
+
+input[type="text"]:focus {
+outline: none;
+box-shadow: 0 0 10px rgba(200, 200, 200, 0.2);
+position: relative;
+width: 250px;
+background-color: #31313a;
 }
 </style>
