@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html> 
+<head>
+<link rel="stylesheet" href="stylesheet.css">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Previewer - The Hypixel Pit Wiki</title>
+<meta name="description" content="">
+<meta name="author" content="BrookeAFK">
+<meta name="keywords" content="">
+<link rel="apple-touch-icon" sizes="180x180" href="./favicon/apple-touch-icon.png">
+<link rel="icon" type="image/png" sizes="32x32" href="./favicon/favicon-32x32.png">
+<link rel="icon" type="image/x-icon" href="./favicon/favicon.ico">
+<link rel="manifest" href="./favicon/site.webmanifest">
+
+<p style="text-align: center">
+<label for="textarea">paste text here; press any key anywhere to update</label><br>
+<textarea id="htmlraw" style="width: 90%; height: 300px; font-size: 16px"></textarea><br>
+</p>
+<p id="htmlpaste" style="width: 100%;">Press any key to update the HTML!</p>
+
+
+<script>
+
+
+document.onkeypress=function(e){
+
+console.log("j")
+htmlpaste.innerHTML = htmlraw.value;
+
+};
+</script>
