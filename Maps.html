@@ -64,51 +64,20 @@ $(function(){
   document.getElementById("currentmap").innerText = "Loading..."
   document.getElementById('nextmap').innerText = "Loading..."
   document.getElementById('maptime').innerText = ""
-  
-  function getSeconds(time) {
-    var timeleft = Math.floor(time % 60);
-    if(timeleft == 1) {
-      return("and " + timeleft + " second")
-    } else if(timeleft == 0) {
-      return("")
-    } else {
-      return("and " + timeleft + " seconds")
-    }
-  }
-  function getMinutes(time) {
-    var timeleft = Math.floor((time % 3600) / 60);
-    if(timeleft == 1) {
-      return(timeleft + " minute ")
-    } else if(timeleft == 0) {
-      return("")
-    } else {
-      return(timeleft + " minutes ")
-    }
-  }
 
-  function getHours(time) {
-    var timeleft = Math.floor((time % 86400) / 3600);
-    if(timeleft == 1) {
-      return(timeleft + " hour, ")
-    } else if (time % 3600 == 0){
-      return(timeleft + " hours")
-    } else if(timeleft == 0) {
-      return("")
-    } else {
-      return(timeleft + " hours, ")
-    }
-  }
-  function getDays(time) {
-    var timeleft = Math.floor(time / 86400);
-    if(timeleft == 1) {
-      return(timeleft + " day, ") 
-    } else if (time % 86400 == 0){
-      return(timeleft + " days")
-    } else if(timeleft == 0) {
-      return("")
-    } else {
-      return(timeleft + " days, ")
-    }
+  function TimestampIt(sec = 0) {
+      fullreturn = [];
+      values = [31536000, 86400, 3600, 60, 1]
+      secvalues = [,,,,]
+      times = ['day','hour','minute','second']
+      for(i = 1; i < (secvalues.length + 1); i++) secvalues[i - 1] = Math.floor((sec % values[i - 1]) / values[i])
+
+      for(j = 0; j < secvalues.length; j++) secvalues[j]>0?fullreturn.push(secvalues[j] + " " + times[j] + (secvalues[j]==1?"":"s")):null;
+
+      if(fullreturn.length > 1) fullreturn[fullreturn.length - 1] = "!and " + fullreturn[fullreturn.length - 1];
+
+      if(fullreturn.length == 2) return JSON.stringify(fullreturn).replace(/[\[\],"]/g, "").replace(/!/g, " ");
+      else return JSON.stringify(fullreturn).replace(/[\[\]!"]/g, "").replace(/,/g,", ");
   }
 
   document.getElementById("currentmap").innerText = "Loading...";
@@ -118,29 +87,12 @@ $(function(){
     var difference = now - samplemaprotation;
     var timetonext = 3024000 - difference % 3024000;
     var mapnow = Math.floor((timetonext / 604800) % 5);
-    if (mapnow == 0){
-      document.getElementById("currentmap").innerText = "Genesis";
-      document.getElementById("nextmap").innerText = "Four Seasons";
-    }
-    else if (mapnow == 1){
-      document.getElementById("currentmap").innerText = "Corals";
-      document.getElementById("nextmap").innerText = "Genesis";
-    }
-    else if (mapnow == 2){
-      document.getElementById("currentmap").innerText = "Castle";
-      document.getElementById("nextmap").innerText = "Corals";
-    }
-    else if (mapnow == 3){
-      document.getElementById("currentmap").innerText = "Elements";
-      document.getElementById("nextmap").innerText = "Castle";
-    }
-    else if (mapnow == 4){
-      document.getElementById("currentmap").innerText = "Four Seasons";
-      document.getElementById("nextmap").innerText = "Elements";
-    }
+    var maps = ["Genesis", "Corals", "Castle", "Elements", "Four Seasons"]
+    document.getElementById("currentmap").innerText = maps[mapnow];
+    document.getElementById("nextmap").innerText = maps[((((mapnow - 1) % 5) + 5) % 5)];
     timetonext = timetonext % 604800;
     
-    document.getElementById("maptime").innerText = getDays(timetonext) + getHours(timetonext) + getMinutes(timetonext) + getSeconds(timetonext);
+    document.getElementById("maptime").innerText = TimestampIt(timetonext);
     
   }
   setInterval(changeTime, 50);
