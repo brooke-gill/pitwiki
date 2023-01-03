@@ -125,7 +125,7 @@ author = (text.match(/author: .*/i))
 
 if(title !== undefined && title !== null) { // if title exists
     title = title[0].substring(7); // remove "title: "
-    keywords = "Hypixel Pit Wiki, Pit" + title + ", Hypixel, " + title + ", Hypixel Pit " + title;
+    keywords = "Hypixel Pit Wiki, Pit " + title + ", Hypixel, " + title + ", Hypixel Pit " + title;
 } 
 updateIntro();
 text = text.replace(/\[box\|(\d+?)\|(.+?)\|(\d+?)\|(.+?)\]/gi,`<table class="item body" style="width: calc($1 * 10px)"><tr><td style="text-align: center"><img src="./images/$2" width="$3%"></td></tr><tr><td style="text-align: center" class="small">$4</td></tr></table>`)
@@ -153,6 +153,8 @@ var html = intro + text + outro;
 htmloutput.value = html;
 htmlpaste.innerHTML = html;
 }
+
+format();
 
 document.onkeyup=function(e){
     format();
