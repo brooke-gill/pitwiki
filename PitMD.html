@@ -19,15 +19,31 @@
 <textarea id="htmloutput" style="width: 90%; height: 100px; font-size: 16px"></textarea><br>
 </p>
 <p id="htmlpaste" style="width: 100%;">Press any key to update the HTML!</p>
-
+<br><br>
 <p>quick styles:</p>
-<pre><code style="background-color: #252525;">XP: &lt;a href="XP"&gt;&lt;span class="mb"&gt;XP&lt;/span&gt;&lt;/a&gt;
-Gold: &lt;a href="Gold"&gt;&lt;span class="m6"&gt;gold&lt;/span&gt;&lt;/a&gt;
-Renown: &lt;a href="Renown"&gt;&lt;span class="me"&gt;renown&lt;/span&gt;&lt;/a&gt;
-<span class="m0">0</span> <span class="m1">1</span> <span class="m2">2</span> <span class="m3">3</span> <span class="m4">4</span> <span class="m5">5</span> <span class="m6">6</span> <span class="m7">7</span> <span class="m8">8</span> <span class="m9">9</span> <span class="ma">a</span> <span class="mb">b</span> <span class="mc">c</span> <span class="md">d</span> <span class="me">e</span> <span class="mf">f</span>
-♥&amp;#xFE0E;
-(&lt;span class="ma"&gt;<span class="ma">↑</span>&lt;/span>&gt;)
-(&lt;span class="mc"&gt;<span class="mc">↓</span>&lt;/span>&gt;)
+<pre><code style="background-color: #252525;">{a|<span style="color: #5f5">text</span>}
+
+title: My Title
+
+author: Me
+
+**bold**, *italics*
+
+`some code`
+
+[box|box_width_percent|image_link|image_width_percent|caption]
+
+|This|is|how|
+|---|---|---|
+|to|make|a|
+|table|with|[links\|gold]|
+|and|{55C1E8|custom}|{d|colors}|
+
+- list
+- of
+- things
+
+<span class="m0">0</span> <span class="m1">1</span> <span class="m2">2</span> <span class="m3">3</span> <span class="m4">4</span> <span class="m5">5</span> <span class="m6">6</span> <span class="m7">7</span> <span class="m8">8</span> <span class="m9">9</span> <span class="ma">a</span> <span class="mb">b</span> <span class="mc">c</span> <span class="md">d</span> <span class="me">e</span> <span class="mf">f</span></code></pre>
 <script>
 var title, author, keywords, intro;
 var topimage = "";
@@ -67,9 +83,41 @@ var outro = `</span></div>
 </body>
 </html>`
 
+var example = `title: Pit Wiki Markdown
 
-document.onkeyup=function(e){
-showdown.setOption('tables', 'true');
+author: BrookeAFK
+
+[box|30|banner_smaller.png|100|{f|Image boxes! How wonderful!}]
+
+**Welcome** to Pit Wiki editing in a modified version of [Markdown](https://en.wikipedia.org/wiki/Markdown)! We hope you find this easier than editing the raw HTML text.
+
+Here's some new features that PitMarkdown has that Markdown doesn't:
+- **Easy-to-add special links**, like [XP], [gold], and [renown]. [Prestiging](Prestige) requires [65,950 XP|xp]. The [Barbarian](Perks#Barbarian) axe deals 4{heart} of damage.
+- **Color codes** using curly brackets: { and \}. They follow the standard Minecraft order, starting at {0|black}. {1|Then,} {2|they} {3|move} {4|between} {5|every} {6|color} {7|code} {8|in} {9|between}, {a|sixteen} {b|in} {c|total}, {d|before} {e|reaching} {f|white}. Custom color codes can be added with a hex code, such as {F8B1F1|this}. True damage is {td|also here}.
+
+If you need to insert regular HTML tags, you can do that as well. <span class="subheader">**Markdown** still works inside them!</span> HTML entities, such as &uarr; and &star;, also work.
+[box|20|map_seasons_winter.png|100]
+
+Images can be easily made in a table on the right with [box]. The arguments are as follows:
+1. Width of box (roughly the % of the screen)
+2. Image location
+3. Width of image (typically \`100\` or \`50\`)
+4. Caption (optional&mdash;leave this out if you don't want one!)
+
+Tables are supported, too; they're just like regular Markdown.
+|Name|Description|Cost|
+|---|---|---|
+|Flameborn|Sets your sword ablaze, dealing {c|+50% damage} every hit.|[50 renown\|renown]|
+|Frosted Fury|Tips your arrows in ice, giving players Slowness II (0:04) on contact.|[5,000,000g\|gold]|
+|Duplication Glitch|Instantly gain [7 XP\|XP].|[6 XP\|XP]|
+
+
+The Pit Wiki Markdown Editing is based on Showdown. Read more [here](http://demo.showdownjs.com/).`
+
+document.getElementById('htmlraw').value = example;
+
+function format() {
+    showdown.setOption('tables', 'true');
 var converter = new showdown.Converter(); //converts MD to HTML
 var text = htmlraw.value; //gets markdown from input
 title = (text.match(/title: .*/i))
@@ -104,6 +152,10 @@ text = text.replace(/<p>author: .*<\/p>{0,1}/gi,'')
 var html = intro + text + outro;
 htmloutput.value = html;
 htmlpaste.innerHTML = html;
+}
+
+document.onkeyup=function(e){
+    format();
 };
 
 </script>
