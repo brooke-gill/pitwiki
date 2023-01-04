@@ -87,7 +87,7 @@ var example = `title: Pit Wiki Markdown
 
 author: BrookeAFK
 
-[box|30|banner_smaller.png|100|{f|Image boxes! How wonderful!}]
+[tbox|30|Look at tbox!|banner_smaller.png|100|{f|Image boxes! How wonderful!}]
 
 **Welcome** to Pit Wiki editing in a modified version of [Markdown](https://en.wikipedia.org/wiki/Markdown)! We hope you find this easier than editing the raw HTML text.
 
@@ -130,6 +130,8 @@ if(title !== undefined && title !== null) { // if title exists
 updateIntro();
 text = text.replace(/\[box\|(\d+?)\|(.+?)\|(\d+?)\|(.+?)\]/gi,`<table class="item body" style="width: calc($1 * 10px)"><tr><td style="text-align: center"><img src="./images/$2" width="$3%"></td></tr><tr><td style="text-align: center" class="small">$4</td></tr></table>`)
 text = text.replace(/\[box\|(\d+?)\|(.+?)\|(\d+?)\]/gi,`<table class="item body" style="width: calc($1 * 10px)"><tr><td style="text-align: center"><img src="./images/$2" width="$3%"></td></tr></table>`)
+text = text.replace(/\[tbox\|(\d+?)\|(.+?)\|(.+?)\|(\d+?)\]/gi,`<table class="item body" style="width: calc($1 * 10px)"><tr><td class="tableheader">$2</td></tr><tr><td style="text-align: center"><img src="./images/$3" width="$4%"></td></tr></table>`)
+text = text.replace(/\[tbox\|(\d+?)\|(.+?)\|(.+?)\|(\d+?)\|(.+?)\]/gi,`<table class="item body" style="width: calc($1 * 10px)"><tr><td class="tableheader">$2</td></tr><tr><td style="text-align: center"><img src="./images/$3" width="$4%"></td></tr><tr><td style="text-align: center" class="small">$5</td></tr></table>`)
 text = text.replace(/\[heart\]/gi,'♥&#xFE0E;')
 text = text.replace(/\{([0123456789ABCDEF])\|/gi,`<span class="m$1">`)
 text = text.replace(/\{td\|/gi,`<span class="td">`)
