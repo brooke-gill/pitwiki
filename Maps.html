@@ -87,7 +87,7 @@ $(function(){
     var difference = now - samplemaprotation;
     var timetonext = 3024000 - difference % 3024000;
     var mapnow = Math.floor((timetonext / 604800) % 5);
-    var maps = ["Genesis", "Corals", "Castle", "Elements", "Four Seasons"]
+    var maps = ["Corals", "Castle", "Elements", "Four Seasons", "Genesis"]
     document.getElementById("currentmap").innerText = maps[mapnow];
     document.getElementById("nextmap").innerText = maps[((((mapnow - 1) % 5) + 5) % 5)];
     timetonext = timetonext % 604800;
