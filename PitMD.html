@@ -13,8 +13,7 @@
 <link rel="manifest" href="./favicon/site.webmanifest">
 <script src="https://cdnjs.cloudflare.com/ajax/libs/showdown/1.9.0/showdown.min.js"></script>
 
-<p style="text-align: center">
-<label for="textarea">Hypixel Pit Markdown Editing</label><br>
+<p style="text-align: center"><b>Hypixel Pit Markdown Editing</b><br>v0.3.0<br><br>
 <textarea id="htmlraw" style="width: 90%; height: 300px; font-size: 16px"></textarea><br>
 <textarea id="htmloutput" style="width: 90%; height: 100px; font-size: 16px"></textarea><br>
 </p>
@@ -37,6 +36,8 @@ author: Me
 [<span style="font-weight:bold; color:#ff5">tbox</span>|box width percent|title|image link|image width percent]
 [<span style="font-weight:bold; color:#ff5">ubox</span>|title|update title|update link|image link|caption|release date|forums approval|forums author|previous update|previous update link|next update|next update link]
 [<span style="font-weight:bold; color:#ff5">ubox</span>|title|update title|update link|release date|forums approval|forums author|previous update|previous update link|next update|next update link]
+{<span style="font-weight:bold; color:#ff5">etable</span>|left column|right column{enchantment 1 name|enchantment 1 tier I|enchantment 1 tier II|enchantment 1 tier III}{enchantment 2 name|enchantment 2 tier I|enchantment 2 tier II|enchantment 2 tier III}{enchantment 3 name|enchantment 3 tier I|enchantment 3 tier II|enchantment 3 tier III}} ... <i>repeat as necessary</i>
+
 
 [link text](link)
 
@@ -104,7 +105,7 @@ author: BrookeAFK
 
 Here's some new features that PitMarkdown has that Markdown doesn't:
 - **Easy-to-add special links**, like [XP], [gold], and [renown]. [Prestiging](Prestige) requires [65,950 XP|xp]. The [Barbarian](Perks#Barbarian) axe deals 4[heart] of damage.
-- **Color codes** using curly brackets: { and \\}. They follow the standard Minecraft order, starting at {0|black}. {1|Then,} {2|they} {3|move} {4|between} {5|every} {6|color} {7|code} {8|in} {9|between}, {a|sixteen} {b|in} {c|total}, {d|before} {e|reaching} {f|white}. Custom color codes can be added with a hex code, such as {F8B1F1|this}. True damage is {td|also here}.
+- **Color codes** using curly brackets: { and \\}. They follow the standard Minecraft order, starting at {0|black}. {1|Then}, {2|they} {3|move} {4|between} {5|every} {6|color} {7|code} {8|in} {9|order}, {a|sixteen} {b|in} {c|total}, {d|before} {e|reaching} {f|white}. Custom color codes can be added with a hex code, such as {F8B1F1|this}. True damage is {td|also here}.
 
 If you need to insert regular HTML tags, you can do that as well. <span class="subheader">**Markdown** still works inside them!</span> HTML entities, such as &uarr; and &star;, also work.
 [box|20|map_seasons_winter.png|100]
@@ -118,10 +119,11 @@ Images can be easily made in a table on the right with [box]. The arguments are 
 Tables are supported, too; they're just like regular Markdown.
 |Name|Description|Cost|
 |---|---|---|
-|Flameborn|Sets your sword ablaze, dealing {c|+50% damage} every hit.|[50 renown\\|renown]|
-|Frosted Fury|Tips your arrows in ice, giving players Slowness II (0:04) on contact.|[5,000,000g\\|gold]|
-|Duplication Glitch|Instantly gain [7 XP\\|XP].|[6 XP\\|XP]|
+|Flameborn|Sets your sword ablaze, dealing {c|+50% damage} every hit.|[50 renown|renown]|
+|Frosted Fury|Tips your arrows in ice, giving players Slowness II (0:04) on contact.|[5,000,000g|gold]|
+|Duplication Glitch|Instantly gain [7 XP|XP].|[6 XP|XP]|
 
+{etable|Name|Description{Extremely Sharp Stick|Deal {c|+5%} damage.|Deal {c|+30%} damage.|Deal {c|+255%} damage. Summon [Gargamouth the Destroyer](Gargamouth).}{Gargamouth Destroyer|Kill Gargamouth. Gain [40 renown|renown] from his defeat.|Kill Gargamouth. Gain [200 gold|gold] and [100 renown|renown] from his defeat.|Kill Gargamouth. Gain [250 renown|renown] and become the [CEO of Pit](CEO).}}
 
 The Pit Wiki Markdown Editing is based on Showdown. Read more [here](http://demo.showdownjs.com/).`
 
@@ -129,6 +131,7 @@ document.getElementById('htmlraw').value = example;
 
 function format() {
     showdown.setOption('tables', 'true');
+    showdown.setOption('literalMidWordUnderscores', 'true')
 var converter = new showdown.Converter(); //converts MD to HTML
 var text = htmlraw.value; //gets markdown from input
 title = (text.match(/title: .*/i))
@@ -140,10 +143,20 @@ if(title !== undefined && title !== null) { // if title exists
 } 
 updateIntro();
 text = text.replace(/\[heart\]/gi,'♥&#xFE0E;')
-text = text.replace(/\{([0123456789ABCDEF])\|/gi,`<span class="m$1">`)
-text = text.replace(/\{td\|/gi,`<span class="td">`)
-text = text.replace(/\{([0123456789ABCDEF]{6})\|/gi,`<span style="color: #$1">`)
-text = text.replace(/([^\\])\}/g,`$1</span>`)
+text = text.replace(/{([0123456789ABCDEF])\|([^}]+?)}/gi,`<span class="m$1">$2</span>`)
+text = text.replace(/{td\|([^}]+?)}/gi,`<span class="td">$1</span>`)
+text = text.replace(/{([0123456789ABCDEF]{6})\|([^}]+?)}/gi,`<span style="color: #$1">$2</span>`)
+
+//text = text.replace(/\{td\|/gi,`<span class="td">`)
+//text = text.replace(/\{([0123456789ABCDEF]{6})\|/gi,`<span style="color: #$1">`)
+//text = text.replace(/([^\\])\}/g,`$1</span>`)
+
+text = text.replace(/\[XP\]/gi,`<a href="XP"><span class="mb">XP</span></a>`)
+text = text.replace(/\[gold\]/gi,`<a href="Gold"><span class="m6">gold</span></a>`)
+text = text.replace(/\[renown\]/gi,`<a href="Renown"><span class="me">renown</span></a>`)
+text = text.replace(/\[([^\[]+?)\|XP\]/gi,`<a href="XP"><span class="mb">$1</span></a>`)
+text = text.replace(/\[([^\[]+?)\|gold\]/gi,`<a href="Gold"><span class="m6">$1</span></a>`)
+text = text.replace(/\[([^\[]+?)\|renown\]/gi,`<a href="Renown"><span class="me">$1</span></a>`)
 
 text = text.replace(/\[box\|(\d+?)\|(.+?)\|(\d+?)\|(.+?)\]/gi,`<table class="item body" style="width: calc($1 * 10px)"><tr><td style="text-align: center"><img src="./images/$2" width="$3%"></td></tr><tr><td style="text-align: center" class="small">$4</td></tr></table>`)
 text = text.replace(/\[box\|(\d+?)\|(.+?)\|(\d+?)\]/gi,`<table class="item body" style="width: calc($1 * 10px)"><tr><td style="text-align: center"><img src="./images/$2" width="$3%"></td></tr></table>`)
@@ -152,14 +165,20 @@ text = text.replace(/\[ubox\|(.+?)\|(.+?)\|(.+?)\|(.+?)\|(.+?)\|(.+?)\|(.+?)\|(.
 text = text.replace(/\[tbox\|(\d+?)\|(.+?)\|(.+?)\|(\d+?)\]/gi,`<table class="item body" style="width: calc($1 * 10px)"><tr><td class="tableheader">$2</td></tr><tr><td style="text-align: center"><img src="./images/$3" width="$4%"></td></tr></table>`)
 text = text.replace(/\[tbox\|(\d+?)\|(.+?)\|(.+?)\|(\d+?)\|(.+?)\]/gi,`<table class="item body" style="width: calc($1 * 10px)"><tr><td class="tableheader">$2</td></tr><tr><td style="text-align: center"><img src="./images/$3" width="$4%"></td></tr><tr><td style="text-align: center" class="small">$5</td></tr></table>`)
 
-text = converter.makeHtml(text); // converts the MD to HTML
+text = text.replace(/(?<=\{etable.*)\{([^\|]*?)\|([^\|]*?)\|([^\|]*?)\|([^\|]*?)\}/gi, `<tbody id="$1Header"><tr><td rowspan="3"><span class="anchor" id="$1"></span>$1</td><td><span class="m9">I</span>: $2</td></tr><tr><td><span class="m9">II</span>: $3</td></tr><tr><td><span class="m9">III</span>: $4</td></tr></tbody>`)
 
-text = text.replace(/\[XP\]/gi,`<a href="XP"><span class="mb">XP</span></a>`)
-text = text.replace(/\[gold\]/gi,`<a href="Gold"><span class="m6">gold</span></a>`)
-text = text.replace(/\[renown\]/gi,`<a href="Renown"><span class="me">renown</span></a>`)
-text = text.replace(/\[(.+?)\|XP\]/gi,`<a href="XP"><span class="mb">$1</span></a>`)
-text = text.replace(/\[(.+?)\|gold\]/gi,`<a href="Gold"><span class="m6">$1</span></a>`)
-text = text.replace(/\[(.+?)\|renown\]/gi,`<a href="Renown"><span class="me">$1</span></a>`)
+text = text.replace (/(?<=\{etable.*)}(?!.)/gi, `</tbody></table>`)
+
+text = text.replace(/\{etable\|(.+?)\|([^\{]+)/gi, `<table class="body"><tr style="font-weight: bold; position: sticky; top: 0" class="invisible_fill"><td>$1</td><td>$2</td></tr>`)
+
+
+text = text.replaceAll("<","ᐸᐸ") // makes markdown not ignore stuff inside HTML tags (risky)
+text = text.replaceAll(">","ᐳᐳ")
+console.log(text)
+text = converter.makeHtml(text); // converts the MD to HTML
+text = text.replaceAll("ᐸᐸ","<")
+text = text.replaceAll("ᐳᐳ",">")
+
 text = text.replace(/<p>title: .*<\/p>{0,1}/gi,'')
 text = text.replace(/<p>author: .*<\/p>{0,1}/gi,'')
 
