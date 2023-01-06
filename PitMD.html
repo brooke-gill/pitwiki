@@ -13,7 +13,7 @@
 <link rel="manifest" href="./favicon/site.webmanifest">
 <script src="https://cdnjs.cloudflare.com/ajax/libs/showdown/1.9.0/showdown.min.js"></script>
 
-<p style="text-align: center"><b>Hypixel Pit Markdown Editing</b><br>v0.3.0<br><br>
+<p style="text-align: center"><b>Hypixel Pit Markdown Editing</b><br>v0.3.1<br><br>
 <textarea id="htmlraw" style="width: 90%; height: 300px; font-size: 16px"></textarea><br>
 <textarea id="htmloutput" style="width: 90%; height: 100px; font-size: 16px"></textarea><br>
 </p>
@@ -178,6 +178,9 @@ console.log(text)
 text = converter.makeHtml(text); // converts the MD to HTML
 text = text.replaceAll("ᐸᐸ","<")
 text = text.replaceAll("ᐳᐳ",">")
+
+text = text.replace(/<p><table/g,"<table")
+text = text.replace(/<\/table><\/p>/g,"</table>")
 
 text = text.replace(/<p>title: .*<\/p>{0,1}/gi,'')
 text = text.replace(/<p>author: .*<\/p>{0,1}/gi,'')
