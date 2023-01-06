@@ -31,7 +31,14 @@ author: Me
 
 `some code`
 
-[box|box_width_percent|image_link|image_width_percent|caption]
+[<span style="font-weight:bold; color:#ff5">box</span>|box width percent|image link|image_width percent|caption]
+[<span style="font-weight:bold; color:#ff5">box</span>|box width percent|image link|image_width percent]
+[<span style="font-weight:bold; color:#ff5">tbox</span>|box width percent|title|image link|image width percent|caption]
+[<span style="font-weight:bold; color:#ff5">tbox</span>|box width percent|title|image link|image width percent]
+[<span style="font-weight:bold; color:#ff5">ubox</span>|title|update title|update link|image link|caption|release date|forums approval|forums author|previous update|previous update link|next update|next update link]
+[<span style="font-weight:bold; color:#ff5">ubox</span>|title|update title|update link|release date|forums approval|forums author|previous update|previous update link|next update|next update link]
+
+
 
 |This|is|how|
 |---|---|---|
@@ -128,15 +135,18 @@ if(title !== undefined && title !== null) { // if title exists
     keywords = "Hypixel Pit Wiki, Pit " + title + ", Hypixel, " + title + ", Hypixel Pit " + title;
 } 
 updateIntro();
-text = text.replace(/\[box\|(\d+?)\|(.+?)\|(\d+?)\|(.+?)\]/gi,`<table class="item body" style="width: calc($1 * 10px)"><tr><td style="text-align: center"><img src="./images/$2" width="$3%"></td></tr><tr><td style="text-align: center" class="small">$4</td></tr></table>`)
-text = text.replace(/\[box\|(\d+?)\|(.+?)\|(\d+?)\]/gi,`<table class="item body" style="width: calc($1 * 10px)"><tr><td style="text-align: center"><img src="./images/$2" width="$3%"></td></tr></table>`)
-text = text.replace(/\[tbox\|(\d+?)\|(.+?)\|(.+?)\|(\d+?)\]/gi,`<table class="item body" style="width: calc($1 * 10px)"><tr><td class="tableheader">$2</td></tr><tr><td style="text-align: center"><img src="./images/$3" width="$4%"></td></tr></table>`)
-text = text.replace(/\[tbox\|(\d+?)\|(.+?)\|(.+?)\|(\d+?)\|(.+?)\]/gi,`<table class="item body" style="width: calc($1 * 10px)"><tr><td class="tableheader">$2</td></tr><tr><td style="text-align: center"><img src="./images/$3" width="$4%"></td></tr><tr><td style="text-align: center" class="small">$5</td></tr></table>`)
 text = text.replace(/\[heart\]/gi,'♥&#xFE0E;')
 text = text.replace(/\{([0123456789ABCDEF])\|/gi,`<span class="m$1">`)
 text = text.replace(/\{td\|/gi,`<span class="td">`)
 text = text.replace(/\{([0123456789ABCDEF]{6})\|/gi,`<span style="color: #$1">`)
 text = text.replace(/([^\\])\}/g,`$1</span>`)
+
+text = text.replace(/\[box\|(\d+?)\|(.+?)\|(\d+?)\|(.+?)\]/gi,`<table class="item body" style="width: calc($1 * 10px)"><tr><td style="text-align: center"><img src="./images/$2" width="$3%"></td></tr><tr><td style="text-align: center" class="small">$4</td></tr></table>`)
+text = text.replace(/\[box\|(\d+?)\|(.+?)\|(\d+?)\]/gi,`<table class="item body" style="width: calc($1 * 10px)"><tr><td style="text-align: center"><img src="./images/$2" width="$3%"></td></tr></table>`)
+text = text.replace(/\[ubox\|(.+?)\|(.+?)\|(.+?)\|(.+?)\|(.+?)\|(.+?)\|(.+?)\|(.+?)\|(.+?)\|(.+?)\|(.+?)\|(.+?)\]/gi,`<table class="item30 body"><tr><td class="tableheader" colspan="2">$1</td></tr><tr><td style="text-align: center" class="little" colspan="2"><i><a href="$3" target="_blank" rel="noopener noreferrer">$2</a></i></td></tr><tr><td style="text-align: center" colspan="2"><img src="$4" width="100%"></td></tr><tr><td style="text-align: center" class="small" colspan="2">$5</td></tr><tr><th class="little">Release Date</th><td style="text-align: center" class="justlittle">$6</td></tr><tr><th class="little">Forums Approval</th><td style="text-align: center" class="justlittle">$7</td></tr><tr><th class="little">Forums Author</th><td style="text-align: center" class="justlittle">$8</td></tr><tr><th class="justsmall" colspan="2">← <a href="$10">$9</a> &nbsp;&nbsp;&nbsp;—&nbsp;&nbsp;&nbsp; <a href="$12">$11</a> → </td></tr></table>`)
+text = text.replace(/\[ubox\|(.+?)\|(.+?)\|(.+?)\|(.+?)\|(.+?)\|(.+?)\|(.+?)\|(.+?)\|(.+?)\|(.+?)\]/gi,`<table class="item30 body"><tr><td class="tableheader" colspan="2">$1</td></tr><tr><td style="text-align: center" class="little" colspan="2"><i><a href="$3" target="_blank" rel="noopener noreferrer">$2</a></i></td></tr><tr><th class="little">Release Date</th><td style="text-align: center" class="justlittle">$4</td></tr><tr><th class="little">Forums Approval</th><td style="text-align: center" class="justlittle">$5</td></tr><tr><th class="little">Forums Author</th><td style="text-align: center" class="justlittle">$6</td></tr><tr><th class="justsmall" colspan="2">← <a href="$8">$7</a> &nbsp;&nbsp;&nbsp;—&nbsp;&nbsp;&nbsp; <a href="$10">$9</a> → </td></tr></table>`)
+text = text.replace(/\[tbox\|(\d+?)\|(.+?)\|(.+?)\|(\d+?)\]/gi,`<table class="item body" style="width: calc($1 * 10px)"><tr><td class="tableheader">$2</td></tr><tr><td style="text-align: center"><img src="./images/$3" width="$4%"></td></tr></table>`)
+text = text.replace(/\[tbox\|(\d+?)\|(.+?)\|(.+?)\|(\d+?)\|(.+?)\]/gi,`<table class="item body" style="width: calc($1 * 10px)"><tr><td class="tableheader">$2</td></tr><tr><td style="text-align: center"><img src="./images/$3" width="$4%"></td></tr><tr><td style="text-align: center" class="small">$5</td></tr></table>`)
 
 text = converter.makeHtml(text); // converts the MD to HTML
 
