@@ -1,7 +1,6 @@
 <!DOCTYPE html>
 <html>
 <head>
-<link rel="stylesheet" href="stylesheet.css">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <title>Page not found!</title>
 <meta name="description" content="Whoever put this link up did it wrong.">
@@ -30,14 +29,405 @@ $(function(){
       <td style="text-align: center"><img src="./images/howtogetback.png" width="100%"></td>
     </tr>
     <tr>
-      <td style="text-align: center" class="small">Approximate location of the search bar.</td>
+      <td style="text-align: center" class="small" id="text1">Approximate location of the search bar.</td>
     </tr>
 </table>
 </table>
-<span class="header">This page doesn't exist!</span><br>
+<span class="header" id="text2">This page doesn't exist!</span><br>
 <hr>
-<p>It seems you tried to go to a URL that doesn't exist on this site. You can return to the main page by clicking <a href = "index">here</a>, or use the search bar in the header to look for the page you were trying to find.</p>
+<p id="text3">It seems you tried to go to a URL that doesn't exist on this site. You can return to the main page by clicking <a href = "index">here</a>, or use the search bar in the header to look for the page you were trying to find.</p>
 <br><br><br><br><br>
 </body>
 
 </html>
+<script>
+  losturl = window.location.toString()
+  if (losturl.includes("pit.wiki/zh_tw/")) {
+    document.getElementById('text1').innerHTML = `Approximate location of the search bar.`;
+    document.getElementById('text2').innerHTML = `This page doesn't exist!`;
+    document.getElementById('text3').innerHTML = `It seems you tried to go to a URL that doesn't exist on this site. You can check to see if the English version exists by clicking <a href="" id="englishlink">here</a>, return to the main page by clicking <a href = "index">here</a>, or use the search bar in the header to look for the page you were trying to find.`
+    document.getElementById('englishlink').href = currentlink.replace('/zh_tw',''); 
+  } 
+  if (losturl.includes("pit.wiki/zh_cn/")) {
+    document.getElementById('text1').innerHTML = `Approximate location of the search bar.`;
+    document.getElementById('text2').innerHTML = `This page doesn't exist!`;
+    document.getElementById('text3').innerHTML = `It seems you tried to go to a URL that doesn't exist on this site. You can check to see if the English version exists by clicking <a href="" id="englishlink">here</a>, return to the main page by clicking <a href = "index">here</a>, or use the search bar in the header to look for the page you were trying to find.`
+    document.getElementById('englishlink').href = currentlink.replace('/zh_cn',''); 
+  } 
+</script>
+<style>
+  body {
+  font-family: Roboto, Manrope, sans-serif;
+  background-attachment: fixed;
+  background-image: url("images/background.png");
+}
+
+.header {
+  font-size: 30px;
+  color: wheat;
+}
+
+.subheader {
+  font-size: 16px;
+  color: white;
+  font-style: italic;
+}
+
+.body {
+  font-size: 16px;
+  color: #fff;
+}
+
+.section {
+  font-size: 24px;
+  font-weight: bold;
+}
+
+.small {
+  font-size: 12px;
+  font-style: italic;
+  color: #aaa;
+}
+
+.little {
+  font-size: 14px;
+  font-style: italic;
+  color: #aaa;
+}
+
+.justsmall {
+  font-size: 12px;
+}
+
+.justlittle {
+  font-size: 14px;
+}
+
+.center {
+  text-align: center;
+}
+
+.italic {
+  font-style: italic;
+}
+
+.note {
+  vertical-align: super;
+  font-style: italic;
+  font-size: 13px;
+}
+
+.item {
+  outline: 1px solid white;
+  width: 200px;
+  float: right;
+  margin: 10px;
+  border: 1px solid white;
+}
+
+.item30 {
+  /* 1.5× larger than item */
+  outline: 1px solid white;
+  width: 300px;
+  float: right;
+  margin: 10px;
+  border: 1px solid white;
+}
+
+.tableheader {
+  font-size: 25px;
+  font-weight: bold;
+  text-align: center;
+}
+
+table,
+th,
+td {
+  border: 1px solid white;
+  padding: 5px;
+}
+
+.invisible {
+  border: 0px;
+}
+
+.highlighted {
+  border: 2px solid #cc0000;
+  background: #880000;
+}
+
+.invisible_fill {
+  background-color: var(--bgtp);
+}
+
+.headerbox {
+  background-color: var(--bgtp);
+  width: 80%;
+  padding: 20px 50px 20px;
+  margin: 0px;
+  margin-left: auto;
+  margin-right: auto;
+  line-height: 1.75;
+  border-radius: 15px;
+}
+
+.smallbreak {
+  height: 0px;
+  visibility: hidden;
+}
+
+.clickme {
+  cursor: pointer;
+}
+
+.supersecret {
+  cursor: pointer;
+  font-weight: bold;
+  color: #fdf;
+}
+
+#content-error {
+  transition-duration: 0.5s;
+}
+
+.box {
+  background-color: var(--bgtp);
+  width: 80%;
+  padding: 20px 50px 20px;
+  margin: 20px;
+  margin-left: auto;
+  margin-right: auto;
+  line-height: 1.75;
+  border-radius: 15px;
+  position: relative;
+  top: 50px;
+}
+
+.m0 {
+  color: #000;
+}
+.m1 {
+  color: #00a;
+}
+.m2 {
+  color: #0a0;
+}
+.m3 {
+  color: #0aa;
+}
+.m4 {
+  color: #a00;
+}
+.m5 {
+  color: #a0a;
+}
+.m6 {
+  color: #fa0;
+}
+.m7 {
+  color: #aaa;
+}
+.m8 {
+  color: #555;
+}
+.m9 {
+  color: #55f;
+}
+.ma {
+  color: #5f5;
+}
+.mb {
+  color: #5ff;
+}
+.mc {
+  color: #f55;
+}
+.md {
+  color: #f5f;
+}
+.me {
+  color: #ff5;
+}
+.mf {
+  color: #fff;
+}
+.td {
+  color: #caa;
+}
+
+.shadowf {
+  text-shadow: 0px 0px 8px #fff;
+}
+
+.bold {
+  font-weight: bold;
+}
+
+code {
+  font-family: "Roboto Mono", ui-monospace, Menlo, "Cascadia Mono",
+    "Segoe UI Mono", "Fira Mono", "Droid Sans Mono", monospace;
+  color: #cac;
+  background-color: #383838;
+  padding: 2px;
+}
+
+pre > code {
+  background-color: transparent;
+}
+
+a {
+  transition-duration: 0.2s;
+}
+
+a:link {
+  color: #5abbb7;
+  background-color: transparent;
+  text-decoration: none;
+}
+
+a:visited {
+  color: #4b9b98;
+  background-color: transparent;
+  text-decoration: none;
+}
+
+a:hover {
+  color: #c2edee;
+  background-color: transparent;
+  text-decoration: underline;
+}
+
+a:active {
+  color: #ddf0f0;
+  background-color: transparent;
+  text-decoration: underline;
+}
+
+@font-face {
+  font-family: Roboto;
+  src: url("./font/Roboto-Regular.ttf");
+}
+
+@font-face {
+  font-family: Roboto;
+  src: url("./font/Roboto-Bold.ttf");
+  font-weight: bold;
+}
+
+@font-face {
+  font-family: Material;
+  src: url("./font/Material.ttf");
+}
+
+:root {
+  --mc0: #000;
+  --mc1: #00a;
+  --mc2: #0a0;
+  --mc3: #0aa;
+  --mc4: #a00;
+  --mc5: #a0a;
+  --mc6: #fa0;
+  --mc7: #aaa;
+  --mc8: #555;
+  --mc9: #55f;
+  --mca: #5f5;
+  --mcb: #5ff;
+  --mcc: #f55;
+  --mcd: #f5f;
+  --mce: #ff5;
+  --mcf: #fff;
+  --td: #caa;
+  --bg: #252525;
+  --bgtp: rgba(37, 37, 37, 0.95);
+}
+
+td img {
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.anchor {
+  position: absolute;
+  transform: translateY(-100px);
+}
+
+html {
+  -moz-text-size-adjust: none;
+  -webkit-text-size-adjust: none;
+  text-size-adjust: none;
+}
+
+ul {
+  list-style-type: square;
+}
+
+.funky {
+  background: linear-gradient(150deg, rgba(245,222,179,1) 0%, rgba(167,123,41,1) 100%);
+  background-clip: text;
+  -webkit-background-clip: text;
+  color: transparent;
+}
+
+input[type="text"] {
+  font-size:17px;
+  font-family: Roboto, sans-serif;
+  text-align:center;
+  background-color: #313131;
+  color: white;
+  transition-duration: 0.5s;
+  position: relative;
+  width: 200px;
+right: 0px;
+border-radius: 5px;
+
+}
+
+input[type="text"]:focus {
+outline: none;
+box-shadow: 0 0 10px rgba(200, 200, 200, 0.2);
+position: relative;
+width: 250px;
+background-color: #31313a;
+}
+
+/* thank you to Rahul for showing me the power of CSS Masonry: https://w3bits.com/css-masonry/ */
+.homepagecontainer {
+  margin: 1.5em auto;
+  max-width: 1068px;
+  column-gap: 1.5em;
+}
+
+.homepageitem {
+  background: rgba(76, 76, 76, 0.25);
+  padding: 1em;
+  margin: 0 0 1.5em;
+  break-inside: avoid-column;
+}
+
+@media only screen and (min-width: 1024px) {
+  .homepagecontainer {
+    column-count: 4;
+  }
+}
+
+@media only screen and (max-width: 1023px) and (min-width: 768px) {
+  .homepagecontainer {
+    column-count: 3;
+  }
+}
+
+@media only screen and (max-width: 767px) and (min-width: 540px) {
+  .homepagecontainer {
+    column-count: 2;
+  }
+}
+
+@media only screen and (max-width: 500px) {
+  body {
+    background-image: none;
+    background-color: #252525;
+  }
+}
+/* stylesheet not updating? */
+</style>
