@@ -1,0 +1,346 @@
+<!DOCTYPE html>
+<html> 
+<head>
+<link rel="stylesheet" href="stylesheet.css?v=4">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>The Hypixel Pit Wiki</title>
+<script src="pages.js"></script>
+<meta name="description" content="">
+<meta name="author" content="BrookeAFK">
+<meta name="keywords" content="Hypixel Pit Wiki, Hypixel Pit, Hypixel, The Unofficial Hypixel Pit Wiki">
+<link rel="icon" type="image/x-icon" href="./favicon/favicon.ico">
+<link rel="apple-touch-icon" sizes="180x180" href="./favicon/apple-touch-icon.png">
+<link rel="icon" type="image/png" sizes="32x32" href="./favicon/favicon-32x32.png">
+<link rel="manifest" href="./favicon/site.webmanifest">
+<script src="https://brookeafk.com/emergency.js?v=21"></script>
+<script src="https://brookeafk.com/control.js?v=0"></script>
+<script src="https://code.jquery.com/jquery-3.6.0.js" integrity="sha256-H+K7U5CnXl1h5ywQfKtSj8PCmoN9aaq30gDh27Xc0jk=" crossorigin="anonymous"></script>
+<script>
+$(function(){
+  $("#header").load("header.html"); 
+  $("#footer").load("footer.html"); 
+});
+</script>
+</head>
+<body>
+<div id="header"></div>
+<div class="box">
+<center>
+  <br>
+<p class="header funky" style="line-height: 1em"><b>The Unofficial Hypixel Pit Wiki</b></p>
+<p class="body" style="font-size: 20px"><b class="ma">WELCOME!</b> Thank you for visiting the Hypixel Pit Wiki!</p>
+<noscript><p class="body"><b class="mc">WARNING!</b> JavaScript is disabled in your browser! You will be unable to use the search, timers, header, or footer without <a href="https://www.enablejavascript.io/" target="_blank" rel="noopener noreferrer">enabling JavaScript</a>.</p></noscript>
+
+<div class="homepagecontainer">
+
+  <div class="homepageitem body">
+    <span><b>The Pit</b> is a persistent gamemode on the Hypixel network that heavily revolves around player-versus-player combat using unique <a href="Perks">perks</a>, <a href="Killstreaks">killstreaks</a>, <a href="Mystic_Pants">armor</a>, and <a href="Mystic_Sword">enchantments</a>. <br><br>Join and fight <span class="me" id="playercount"></span> players at <span class="me">mc.hypixel.net</span>!</span> 
+  </div>
+
+  <div class="homepageitem body" style="background-size:cover; background-position: center; background-image: linear-gradient(rgba(54,54,54,.8), rgba(54,54,54,.8)), url('./images/map_genesis_palace.png');" id="mapbg">
+    <span>The current <a href="Maps"><span style="color: inherit">map</a> is <noscript>probably here, but we can't show it to you since JavaScript is disabled.</noscript><b id="currentmap"></b>.</span><br><br>
+    <span><b id="nextmap"></b> in<br><span class="me" id="whenmap"></span></span><br>
+    <br>
+    <span><b id="dayornight"></b> for <span class="me" id="whenday"></span></span>
+    <br><br>
+    <span id="events"><a href="https://brookeafk.com" target="_blank" rel="noreferrer noopener">Next event</a>: <span id="nextevent">Connecting to brookeafk.com...</span><br><br></span>
+    <span>The <a href="The_Pit_1.0.6">last Pit update</a> was <span id="lastupdate" class="m6">a while</span> ago.</span>
+  </div>
+
+
+  <div class="homepageitem body" style="background-color: rgba(76, 76, 76, 0.25)"><span style="background-color: #252525; outline: 10px solid #252525">— <b><span class="m9">General</span></b> —</span><br><hr class="smallbreak">
+    <a href="The_Hypixel_Pit"><span style="color: #FF9">The Hypixel Pit</a><br>
+    <a href="Gold">Gold</a><br>
+      <a href="XP">XP</a><br>
+      <a href="Renown">Renown</a><br>
+      <a href="Prestige">Prestige</a><br>
+      <a href="Quests">Quests</a><br>
+      <a href="Contracts">Contracts</a><br>
+      <a href="Achievements">Achievements</a><br>
+      <a href="Stats">Stats</a><br>
+      <a href="Bounty">Bounty</a><br>
+      <a href="NPCs">NPCs</a><br>
+      <a href="Pit_Supporter">Pit Supporter</a><br>
+      <a href="Fishing">Fishing</a><br>
+      <a href="Commands">Commands</a><br>
+      <a href="Stash">Stash</a><br>
+
+  </div>
+
+  <div class="homepageitem body" style="background-color: rgba(76, 76, 76, 0.25)"><span style="background-color: #252525; outline: 10px solid #252525">— <b><span class="mc">Combat</span></b> —</span><br><hr class="smallbreak">
+    <a href="Killstreaks">Killstreaks</a><br>
+    <a href="Perks">Perks</a><br>
+    <a href="Passives">Passives</a><br>
+    <a href="Overdrive">Overdrive</a><br>
+    <a href="Beastmode">Beastmode</a><br>
+    <a href="Hermit">Hermit</a><br>
+    <a href="Highlander">Highlander</a><br>
+    <a href="Magnum_Opus">Magnum Opus</a><br>
+    <a href="To_the_Moon">To the Moon</a><br>
+    <a href="Uberstreak">Uberstreak</a><br>      
+  
+</div>
+
+<div class="homepageitem body" style="background-color: rgba(76, 76, 76, 0.25)"><span style="background-color: #252525; outline: 10px solid #252525">— <b><span class="md">Mystics</span></b> —</span><br><hr class="smallbreak">
+  <a href="Mystic_Well">Mystic Well</a><br>
+  <a href="Mystic_Sword">Mystic Sword</a><br>
+  <a href="Mystic_Bow">Mystic Bow</a><br>
+  <a href="Mystic_Pants">Mystic Pants</a><br>
+  <a href="Rage_Pants">Rage Pants</a><br>
+  <a href="Dark_Pants">Dark Pants</a><br>
+  <a href="Aqua_Pants">Aqua Pants</a><br>
+  <a href="Sewer_Pants">Sewer Pants</a><br>
+  <a href="Totally_Legit_Gem">Totally Legit Gem</a><br>
+  <a href="Golden_Helmet">Golden Helmet</a><br>
+  <a href="Archangel_Chestplate">Archangel Chestplate</a><br>
+  <a href="Armageddon_Boots">Armageddon Boots</a><br>
+  <a href="Philosophers_Cactus">Philosopher's Cactus</a><br>
+  <a href="Mystic_Repair_Kit">Mystic Repair Kit</a><br>
+</div>
+
+<div class="homepageitem body" style="background-color: rgba(76, 76, 76, 0.25)"><span style="background-color: #252525; outline: 10px solid #252525">— <b><a href="Minor_Event"><span class="md">Minor Events</span></a></b> —</span><br><hr class="smallbreak">
+<a href="Dragon_Egg">Dragon Egg</a><br>
+<a href="King_of_the_Hill">King of the Hill</a><br>
+<a href="King_of_the_Ladder">King of the Ladder</a><br>
+<a href="2x_Rewards">2x Rewards</a><br>
+<a href="Care_Package">Care Package</a><br>
+<a href="Auction">Auction</a><br>
+<a href="Quick_Maths">Quick Maths</a><br>
+<a href="Giant_Cake">Giant Cake</a><br>
+<a href="Everyone_Gets_a_Bounty">Everyone Gets a Bounty</a><br>
+</div>
+
+<div class="homepageitem body" style="background-color: rgba(76, 76, 76, 0.25)"><span style="background-color: #252525; outline: 10px solid #252525">— <b><a href="Major_Event"><span class="m5">Major Events</span></a></b> —</span><br><hr class="smallbreak">
+  <a href="Pizza">Pizza</a><br>
+  <a href="Raffle">Raffle</a><br>
+  <a href="Squads">Squads</a><br>
+  <a href="Blockhead">Blockhead</a><br>
+  <a href="Spire">Spire</a><br>
+  <a href="Robbery">Robbery</a><br>
+  <a href="Team_Deathmatch">Team Deathmatch</a><br>
+  <a href="Rage_Pit">Rage Pit</a><br>
+  <a href="Beast">Beast</a><br>
+  </div>
+  
+
+<div class="homepageitem body" style="background-color: rgba(76, 76, 76, 0.25)"><span style="background-color: #252525; outline: 10px solid #252525">— <b><a href="Maps"><span class="me">Maps</span></a></b> —</span><br><hr class="smallbreak">
+    <a href="Castle">Castle</a><br>
+    <a href="Corals">Corals</a><br>
+    <a href="Elements">Elements</a><br>
+    <a href="Four_Seasons">Four Seasons</a><br>
+    <a href="Genesis">Genesis</a><br>
+    <a href="Kings_Quest">The King's Quest</a><br>
+    <a href="Sewers">Sewers</a><br>
+    <a href="Factions">Factions</a><br>    
+  
+</div>
+
+<div class="homepageitem body" style="background-color: rgba(76, 76, 76, 0.25)"><span style="background-color: #252525; outline: 10px solid #252525">— <b><span class="mf">Items</span></b> —</span><br><hr class="smallbreak">  
+    <a href="Item_Shop">Item Shop</a><br>
+    <a href="Mini_Cake">Mini Cake</a><br>
+    <a href="Chunk_of_Vile">Chunk of Vile</a><br>
+    <a href="Funky_Feather">Funky Feather</a><br>
+    <a href="Mark_of_Recon_Essence">Mark of Recon Essence</a><br>
+  </div>
+
+  <div class="homepageitem body" style="background-color: rgba(76, 76, 76, 0.25); display: none;"><span style="background-color: #252525; outline: 10px solid #252525">— <b><span class="m7">Updates</span></b> —</span><br><hr class="smallbreak">  
+    <a href="The_Pit_0.1">0.1</a> • <a href="The_Pit_0.2">0.2</a> • <a href="The_Pit_0.3">0.3</a> • <a href="The_Pit_0.3.1">0.3.1</a> • <a href="The_Pit_0.3.5">0.3.5</a> • <a href="The_Pit_0.3.6">Fishing Club</a> • <a href="The_Pit_0.3.7">Pizza</a> • <a href="The_Pit_0.3.8">0.3.8</a> • <a href="The_Pit_0.3.9">0.3.9</a> • <a href="The_Pit_0.4">Events Extravaganza</a> • <a href="The_Pit_0.4.1">0.4.1</a> • <a href="The_Pit_0.4.2">0.4.2</a> • <a href="The_Pit_1.0">Release</a> • <a href="The_Pit_1.0.1">1.0.1</a> • <a href="The_Pit_1.0.3">No-Rage</a> • <a href="The_Pit_1.0.5">Tryhard</a> • <a href="The_Pit_1.0.6">Bonk</a>
+  </div>
+</div>
+<br>
+<p class="body center">Can't find what you're looking for? Use the search bar, the <a href="Page_List">page list</a>, or visit a <a href="Random_Page">random page</a>.</p><br>
+<p class="body center"><b class="me">NOTE!</b> The wiki's currently in beta!<br><span id="content-error">If you <span class="supersecret" onclick="showFavicon()">f</span>ind <span class="supersecret" onclick="showFavicon()">a</span> content error, please send either adjecti<span class="supersecret" onclick="showFavicon()">v</span>e_noun#3215 or Brooke#0843 a DM on D<span class="supersecret" onclick="showFavicon()">i</span>s<span class="supersecret" onclick="showFavicon()">c</span>ord and we'd be happy t<span class="supersecret" onclick="showFavicon()">o</span> take a look (a<span class="supersecret" onclick="showFavicon()">n</span>d credit you).</span></p>
+
+<span id="favicon-settings" style="display: none;">
+<p class="body center"><b>You've found the super-secret favicon settings.</b></p>
+
+<p class="body center">Click on an image to change the wiki's favicon to it!</p>
+
+<table class="invisible">
+  <tr class="body">
+    <td class="invisible clickme" onclick="favicon(0)"><img src="./favicon/favicon.ico"></td><td class="invisible clickme" onclick="favicon(1)"><img src="./favicon/special1.ico"></td><td class="invisible clickme" onclick="favicon(2)"><img src="./favicon/special2.ico"></td><td class="invisible clickme" onclick="favicon(3)"><img src="./favicon/special3.ico"></td><td class="invisible clickme" onclick="favicon(4)"><img src="./favicon/special4.ico"></td><td class="invisible clickme" onclick="favicon(5)"><img src="./favicon/special5.ico"></td><td class="invisible clickme" onclick="favicon(6)"><img src="./favicon/special6.ico"></td><td class="invisible clickme" onclick="favicon(7)"><img src="./favicon/special7.ico"></td>
+  </tr>
+  <tr class="body center">
+    <td class="invisible italic clickme" onclick="favicon(0)">Classic</td><td class="invisible italic clickme" onclick="favicon(1)">Crimson</td><td class="invisible italic clickme" onclick="favicon(2)">Autumnal</td><td class="invisible italic clickme" onclick="favicon(3)">Lemonade</td><td class="invisible italic clickme" onclick="favicon(4)">Cobalt</td><td class="invisible italic clickme" onclick="favicon(5)">Lavender</td><td class="invisible italic clickme" onclick="favicon(6)">Koala</td><td class="invisible italic clickme" onclick="favicon(7)">Artistic</td>
+</table>
+
+<p class="body">*Note: May not work on old/mobile browsers.</p>
+</span>
+
+<br>
+</div>
+<div id="footer"></div>
+
+<script>
+  $.getJSON(('https://api.slothpixel.me/api/counts'), function(data) {
+    let json5 = data;
+    document.getElementById('playercount').innerText = (json5.games.PIT.players)
+    });
+
+  function mod(n, m) {
+    return ((n % m) + m) % m;
+  }
+
+    var samplenight = 1660849185;
+    var sampleday = 1660849925;
+    var lastupdate = 1645754417;
+    var samplemaprotation = 1661832000;
+    var secondsuntilday = 0
+    var secondsuntilnight = 0
+    var secondsuntilnextmap = 0
+    var maps = ["Genesis","Corals","Castle","Elements","Four Seasons"]
+    var mapid = 0;
+    var mapbg = ["./images/map_genesis_palace.png","./images/map_abyss.png","./images/map_castle_castle.png","./images/map_elements_sky.png","./images/map_seasons_spring.png","./images/map_genesis_palace.png"]
+    var nmapbg = ["./images/map_genesis_night.png","./images/map_abyss_night.png","./images/map_castle_night.png","./images/map_elements_night.png","./images/map_seasons_night.png","./images/map_genesis_night.png"]
+
+    function TimestampIt(sec = 0) {
+      if(sec > 31536000) {
+        return Math.floor(sec / 31536000) + "y " + Math.floor((sec % 31536000) / 86400) + "d " + Math.floor((sec % 86400) / 3600) + "h " + Math.floor((sec % 3600) / 60) + "m " + Math.floor(sec % 60) + "s"
+      } else if(sec > 86400 /*1 day*/) {
+        return Math.floor(sec / 86400) + "d " + Math.floor((sec % 86400) / 3600) + "h " + Math.floor((sec % 3600) / 60) + "m " + Math.floor(sec % 60) + "s"
+      } else if(sec > 3600) {
+        return Math.floor((sec % 86400) / 3600) + "h " + Math.floor((sec % 3600) / 60) + "m " + Math.floor(sec % 60) + "s"
+      } else if(sec > 60) {
+        return Math.floor((sec % 3600) / 60) + "m " + Math.floor(sec % 60) + "s"
+      } else {
+        return Math.floor(sec % 60) + "s"
+      }
+    }
+
+
+    var time = ""
+    function Update() {
+      now = (Date.now() / 1000);
+      secondsuntilday = mod(((sampleday - now)), 2160)
+      secondsuntilnight = mod(((samplenight - now)), 2160)
+
+      if(secondsuntilday < secondsuntilnight) {
+        time = "night"
+        document.getElementById('dayornight').innerText = "Night";
+        document.getElementById('whenday').innerText = TimestampIt(secondsuntilday);
+      } else {
+        time = "day"
+        document.getElementById('dayornight').innerText = "Day";
+        document.getElementById('whenday').innerText = TimestampIt(secondsuntilnight);
+      }
+
+      mapid = Math.floor(mod((samplemaprotation - now), 3024000) / 604800)
+      
+      document.getElementById('currentmap').innerText = maps[mapid]
+    
+      document.getElementById('nextmap').innerText = maps[mod(mapid - 1, 5)]
+
+      document.getElementById('lastupdate').innerText = TimestampIt(now - lastupdate);
+
+      secondsuntilnextmap = mod((samplemaprotation - now), 604800)
+      document.getElementById('whenmap').innerText = TimestampIt(secondsuntilnextmap)
+
+      if(time == "day") {
+        document.getElementById('mapbg').style.backgroundImage = `linear-gradient(rgba(54,54,54,.7), rgba(54,54,54,.7)), url('` + mapbg[mapid] + `')`
+      } else {
+        document.getElementById('mapbg').style.backgroundImage = `linear-gradient(rgba(54,54,54,.5), rgba(54,54,54,.5)), url('` + nmapbg[mapid] + `')`
+      }
+    }
+  
+    setInterval(Update, 50)
+
+  // brookeafk.com code below.
+
+  var HiddenEventCount = 0;
+  var DoesStuffExist = false;
+  var offset = 0;
+  var speed = 0; // Only exists on minimum. Used to determine how fast the function should be called.
+  var counter = 0;
+  
+  function MakeFunTimestamps(convertible) {
+  let currentTime = (Date.now() + offset);
+  if (convertible - currentTime <= 0) {
+    convertible = "Passed!"
+  }
+  if (convertible - currentTime <= 60000) {
+      convertible = (((Math.floor(((convertible - currentTime)*100))/100000).toFixed(2)) + "s");
+  } else if (convertible - currentTime <= 3600000) {
+      convertible = ((Math.floor(((convertible - currentTime))/60000) + "m " + (Math.floor(((convertible - currentTime))/1000) % 60) + "s"));
+  } else if (convertible - currentTime > 1) {
+      convertible = ((Math.floor(((convertible - currentTime))/3600000) + "h " + (Math.floor(((convertible - currentTime))/60000) % 60) + "m"));
+  }
+  return convertible;
+  }
+
+  function TimeOfDay(s) {
+  var offset = (new Date().getTimezoneOffset())*-60000;
+  return new Date(s + offset).toISOString().slice(-13, -8);
+  }
+
+  var pp_url = ""
+  if(emergency == false) {
+    pp_url = ('https://events.mcpqndq.dev'); //stands for "Pit Panda"
+  }
+  data_backup = MakeAPIAndHTML();
+  setInterval(getPitPanda,40);
+  
+  async function MakeAPIAndHTML() {
+    if(emergency == true) {
+    window.localStorage.clear(); //attempts to clear the local storage to allow reloading to work
+    localStorage.clear();
+    window.data = await window.emergency_data;
+    }
+    if(emergency == false) {
+    const response = await fetch(pp_url);
+    window.data = await response.json();
+    }
+    window.data_backup = window.data;
+    window.EventsToLoad = Object.keys(window.data).length;
+    DoesStuffExist = true;
+  }
+  
+  function RapidFirst(transformation) {
+  let currentTime = (Date.now() + offset);
+  if (DoesStuffExist == true) {
+    HasStuffLoaded = true;
+    document.getElementById('nextevent').innerHTML = (`<span><b>` + transformation[HiddenEventCount].event + `</b> in <span class="me">` + MakeFunTimestamps(transformation[HiddenEventCount].timestamp) + `</span>  (` + TimeOfDay(transformation[HiddenEventCount].timestamp) + " local time)</span>");
+    if(((transformation[HiddenEventCount].timestamp - currentTime) < 0)) {
+        speed = 999;
+    } else if((transformation[HiddenEventCount].timestamp - currentTime) > 60000) {
+        speed = 0;
+    } else {
+        speed = 1;
+    }
+    if(MakeFunTimestamps(transformation[HiddenEventCount].timestamp) == "Passed!" && !!document.getElementById('nextevent') == true) {
+      window.HiddenEventCount = window.HiddenEventCount + 1; 
+    }}}
+  
+  function getPitPanda() {
+    if(speed == 0) {
+        counter += 1;
+        if(counter == 5) {
+            counter = 0;
+            RapidFirst(window.data);
+        }
+    } else if(speed == 1) {
+        RapidFirst(window.data);
+    } else if(speed == 999) {
+       for(i = 0; i < 10; i++) {
+        RapidFirst(window.data);
+       } 
+    }
+  }
+
+  function showFavicon() {
+    document.getElementById('favicon-settings').style.display = "inline";
+    document.getElementById('content-error').style.color = "#484848";
+  }
+
+  function favicon(n) { // changes the user's favicon
+  if(n == 0) {
+    document.querySelector("link[type='image/x-icon']").href = "./favicon/favicon.ico";
+  } else {
+    document.querySelector("link[type='image/x-icon']").href = "./favicon/special" + n + ".ico";
+  }
+
+  localStorage.setItem('favicon-palette', n);
+}
+
+</script>
+</body>
+</html>

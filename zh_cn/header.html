@@ -1,0 +1,219 @@
+<link rel="stylesheet" href="stylesheet.css">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<script src="pages.js"></script>
+<div class="headerbox" style="position:fixed; left: 50%; transform: translate(-50%, 0); z-index:3; background-size: 100%; outline: 2px solid #3f3f3f; top:-10px">
+<span class="body" style="text-align:center"><a href="./" style="color: white" id="thehypixelpitwiki">The Hypixel Pit Wiki &mdash; Chinese Simplified</a></span>
+
+<input type="text" autocomplete="off" id="myInput" onkeyup="Filter()" style="display: none; float: right; text-align: left;" placeholder="&#x1F50E;&#xFE0E; Search for articles...">
+</div>
+
+<span id="partofsearch" style="display: none">
+<ul id="aUL" class="mf" style="display: none; list-style-type: square; background-color:#363636; border-radius: 15px; padding: 20px 20px 20px 50px; margin: 50px 100px 0px 0px;right: 0px; width: 250px; z-index: 4; position:fixed;"></ul>
+</span>
+<script>
+var searchclicked = 0;
+var topitem = 0;
+var replace = {' ':'_', "'":""}
+var numberofvisibleitems = 0
+var numberofhiddenitemsbecauseof8itemlimit = 0
+var arrowcount = 1;
+var oldlength = 0;
+var visibleIDs = []
+
+if(screen.width > 500) {
+document.getElementById('myInput').focus();
+document.getElementById('myInput').select();
+}
+for(var i = 0; i < window.searchpages.length * 2; i += 1) {
+    //console.log("doing thing")
+    var fulllist = document.getElementById('aUL')
+    var list = document.createElement("li")
+      var ahref = document.createElement("a");
+      ahref.textContent = (window.searchpages[i % searchpages.length][0]);
+      ahref.id = ("link_" + i);
+      ahref.setAttribute('href', window.searchpages[i  % searchpages.length][1]);
+      list.appendChild(ahref);
+      fulllist.appendChild(list);
+      //console.log(list)
+  }
+
+function mouseOver() {
+  document.getElementById("search").style.color = "#a83994";
+}
+
+function mouseOut() {
+  document.getElementById("search").style.color = "#FFF";
+}
+
+var lol = Math.floor(Math.random() * 10000)
+if(lol == 0) {
+ document.getElementById('thehypixelpitwiki').innerHTML = `<b class="me">WOW!</b> 1 in <span class="ma">10,000</span> chance to see this message!`
+}
+
+
+var input = document.getElementById("myInput");
+input.addEventListener("keypress", function(event) {
+  if (event.key === "Enter") {
+    console.log("click")
+    event.preventDefault();
+    document.getElementById('link_' + topitem).click();
+    ChangeHighlight()
+    document.getElementById("myInput").value = "";
+    document.getElementById('aUL').style.display = "none"
+ }
+});
+
+var input = document.getElementById("myInput");
+input.addEventListener("keydown", function(event) {
+  if (event.key === "ArrowUp") {
+    console.log("up arrow")
+    if(arrowcount > 1) {
+      arrowcount = arrowcount - 1
+    }
+    event.preventDefault();
+ }
+});
+
+var input = document.getElementById("myInput");
+input.addEventListener("keydown", function(event) {
+  if (event.key === "ArrowDown") {
+    console.log("down arrow")
+    if(arrowcount < numberofvisibleitems && arrowcount < 8) {
+      arrowcount = arrowcount + 1
+    }
+    event.preventDefault();
+ }
+});
+
+var replace = {' ':'', "'":"", }
+function MakeBasic(string_to_become_basic) { //strips all punctuation and fun from the string
+  return string_to_become_basic.replace(/[^A-Za-z0-9]/g, '')
+}
+
+function Filter() {
+numberofvisibleitems = 0;
+numberofhiddenitemsbecauseof8itemlimit = 0;
+visibleIDs = [];
+  // Declare variables
+  var input, filter, ul, li, a, i, txtValue;
+  input = document.getElementById('myInput');
+  filter = input.value.toUpperCase();
+  ul = document.getElementById("aUL");
+  li = ul.getElementsByTagName('li');
+  if(MakeBasic(filter).length > 0) {
+    document.getElementById('aUL').style.display = "block"
+  } else {
+    document.getElementById('aUL').style.display = "none"
+  }
+  if(filter.length != oldlength) {
+    arrowcount = 1;
+    console.log(filter.length + " does not equal " + oldlength);
+  }
+  oldlength = filter.length
+  // Loop through all list items and hide those who don't match the search query
+  for (i = 0; i < li.length; i++) {
+    if(i < window.searchpages.length * 2) {
+      li[i].style.display = "none"; 
+    }
+    document.getElementById('link_' + i).style.color = ""
+    a = li[i].getElementsByTagName("a")[0];
+    txtValue = a.textContent || a.innerText;
+
+    if (MakeBasic(txtValue.toUpperCase()).startsWith(MakeBasic(filter)) && i < window.searchpages.length) {
+      //console.log(txtValue.toUpperCase() + " is a possible word.") 
+      li[i].style.display = "";
+      li[i + window.searchpages.length].style.display = "none";
+      //console.log("showing item " + i)
+      numberofvisibleitems += 1;
+      visibleIDs.push(i + window.searchpages.length)
+      if(numberofvisibleitems == arrowcount) {
+        topitem = i;
+        document.getElementById('link_' + i).style.color = "#FFFF99"
+        //console.log("Arrow is at position " + i)
+      }
+    } else if (i < window.searchpages.length) {
+    li[i].style.display = "none";
+    }
+
+    if (MakeBasic(txtValue.toUpperCase()).indexOf(MakeBasic(filter)) > -1 && i >= window.searchpages.length && !visibleIDs.includes(i)) {
+      li[i].style.display = "";
+      numberofvisibleitems += 1;
+      if(numberofvisibleitems == arrowcount) {
+        topitem = i;
+        document.getElementById('link_' + i).style.color = "#FFFF99"
+        //console.log("Arrow is at position " + i)
+      }
+    }
+
+    if (numberofvisibleitems > 8) {
+        //console.log("Item hidden due to limit.")
+        li[i].style.display = "none";
+        numberofhiddenitemsbecauseof8itemlimit += 1;
+    }
+  }
+}
+
+function Search() {
+    if(searchclicked == 0) {
+    document.getElementById('myInput').style.display = "block"
+    document.getElementById('partofsearch').style.display = "block"
+    searchclicked = 1;
+    if(screen.width > 500) {
+    document.getElementById('myInput').focus();
+    document.getElementById('myInput').select();
+    }
+    Filter()
+    } else {
+    document.getElementById('partofsearch').style.display = "none"
+    document.getElementById('myInput').style.display = "none"
+    document.getElementById('aUL').style.display = "none"
+    searchclicked = 0;
+    }
+}
+
+Search()
+
+function ChangeHighlight() {
+    Array.from(document.querySelectorAll('.highlighted')).forEach(function(el) { 
+    el.classList.remove('highlighted');
+    });
+    var hash = location.hash.substring(1);
+    console.log(hash)
+    if(hash.length > 0) {
+    document.getElementById(hash + "Header").classList.add('highlighted')
+    }
+}
+ChangeHighlight()
+
+var favi = localStorage.getItem('favicon-palette');
+if(favi > 0) {
+  document.querySelector("link[type='image/x-icon']").href = "./favicon/special" + favi + ".ico";
+  console.log("wow, nice favicon!");
+}
+
+</script>
+
+<!-- just here for redundancy -->
+<style> 
+  input[type="text"] {
+  font-size:17px;
+  font-family: Roboto, sans-serif;
+  text-align:center;
+  background-color: #313131;
+  color: white;
+  transition-duration: 0.5s;
+  position: relative;
+  width: 200px;
+right: 0px;
+border-radius: 5px;
+
+}
+
+input[type="text"]:focus {
+outline: none;
+box-shadow: 0 0 10px rgba(200, 200, 200, 0.2);
+position: relative;
+width: 250px;
+background-color: #31313a;
+}
+</style>

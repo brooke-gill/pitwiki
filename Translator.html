@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html> 
+<head>
+<link rel="stylesheet" href="stylesheet.css">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Previewer - The Hypixel Pit Wiki</title>
+<meta name="description" content="">
+<meta name="author" content="BrookeAFK">
+<meta name="keywords" content="">
+<link rel="apple-touch-icon" sizes="180x180" href="./favicon/apple-touch-icon.png">
+<link rel="icon" type="image/png" sizes="32x32" href="./favicon/favicon-32x32.png">
+<link rel="icon" type="image/x-icon" href="./favicon/favicon.ico">
+<link rel="manifest" href="./favicon/site.webmanifest">
+<script type="text/javascript" src="./jquery-3.6.3.min.js"></script>
+
+<p id="htmlpaste" style="width: 100%;">Press any key to update the HTML!</p>
+
+<div id="board" class="original" contenteditable="true"></div>
+<div id="dummy" class="original"></div>
+<br><br><br><br><br><br><br><br>
+<button onclick="convert()">Go!</button>
+
+<script>
+document.onkeyup=function(e){
+
+console.log("j")
+greytext = htmlraw.innerText;
+console.log("BEFORE: " + greytext);
+//greytext = greytext.replace(/(<[^>]*>?)/gm,'h$1h    ')
+
+console.log("AFTER: " + greytext)
+htmlraw.innerHTML = greytext;
+htmlpaste.innerHTML = htmlraw.innerText;
+
+};
+
+function convert() {
+
+}
+
+var regexFromMyArray = new RegExp('&lt;((?!&gt;).)*&gt;?', 'g');
+$('#board').keyup(function(event){
+ document.getElementById('dummy').innerHTML = $('#board').html().replace(regexFromMyArray,function(str){
+ return '<span class="high">'+str+'</span>'
+ })
+})
+var target = $("#dummy");
+  $("#board").scroll(function() {
+    target.prop("scrollTop", this.scrollTop)
+          .prop("scrollLeft", this.scrollLeft);
+  });
+
+</script>
+<style>
+.original {
+   position:absolute;
+    width: 80%;
+    margin: 0 auto;
+    padding: 1em;
+    background: #fff;
+    color: #000;
+    height: 500px;
+    margin: 2px;
+    border: 1px solid black;
+    color: #fff;
+    overflow: auto;
+}
+
+#dummy{
+  color:black;
+}
+#board{
+  z-index:11;
+  background:transparent;
+   color:transparent;
+    caret-color: black;
+}
+.original span.high {
+    color:#d9d;
+}
+</style>
