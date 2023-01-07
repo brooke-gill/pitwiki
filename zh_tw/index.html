@@ -1,14 +1,14 @@
 <!DOCTYPE html>
 <html> 
 <head>
-<link rel="stylesheet" href="../stylesheet.css">
+<link rel="stylesheet" href="/stylesheet.css">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <title>The Hypixel Pit Wiki</title>
 <script src="pages.js"></script>
 <meta name="description" content="">
 <meta name="author" content="BrookeAFK">
 <meta name="keywords" content="Hypixel Pit Wiki, Hypixel Pit, Hypixel, The Unofficial Hypixel Pit Wiki">
-<link rel="icon" type="image/x-icon" href="../favicon/favicon_zh_tw.ico">
+<link rel="icon" type="image/x-icon" href="/favicon/favicon_zh_tw.ico">
 <script src="https://brookeafk.com/emergency.js?v=21"></script>
 <script src="https://brookeafk.com/control.js?v=0"></script>
 <script src="https://code.jquery.com/jquery-3.6.0.js" integrity="sha256-H+K7U5CnXl1h5ywQfKtSj8PCmoN9aaq30gDh27Xc0jk=" crossorigin="anonymous"></script>
@@ -34,7 +34,7 @@ $(function(){
     <span><b>The Pit</b> is a persistent gamemode on the Hypixel network that heavily revolves around player-versus-player combat using unique <a href="Perks">perks</a>, <a href="Killstreaks">killstreaks</a>, <a href="Mystic_Pants">armor</a>, and <a href="Mystic_Sword">enchantments</a>. <br><br>Join and fight <span class="me" id="playercount"></span> players at <span class="me">mc.hypixel.net</span>!</span> 
   </div>
 
-  <div class="homepageitem body" style="background-size:cover; background-position: center; background-image: linear-gradient(rgba(54,54,54,.8), rgba(54,54,54,.8)), url('../images/map_genesis_palace.png');" id="mapbg">
+  <div class="homepageitem body" style="background-size:cover; background-position: center; background-image: linear-gradient(rgba(54,54,54,.8), rgba(54,54,54,.8)), url('/images/map_genesis_palace.png');" id="mapbg">
     <span>The current <a href="Maps"><span style="color: inherit">map</a> is <noscript>probably here, but we can't show it to you since JavaScript is disabled.</noscript><b id="currentmap"></b>.</span><br><br>
     <span><b id="nextmap"></b> in<br><span class="me" id="whenmap"></span></span><br>
     <br>
@@ -187,8 +187,8 @@ $(function(){
     var secondsuntilnextmap = 0
     var maps = ["Genesis","Corals","Castle","Elements","Four Seasons"]
     var mapid = 0;
-    var mapbg = ["../images/map_genesis_palace.png","../images/map_abyss.png","../images/map_castle_castle.png","../images/map_elements_sky.png","../images/map_seasons_spring.png","../images/map_genesis_palace.png"]
-    var nmapbg = ["../images/map_genesis_night.png","../images/map_abyss_night.png","../images/map_castle_night.png","../images/map_elements_night.png","../images/map_seasons_night.png","../images/map_genesis_night.png"]
+    var mapbg = ["/images/map_genesis_palace.png","/images/map_abyss.png","/images/map_castle_castle.png","/images/map_elements_sky.png","/images/map_seasons_spring.png","/images/map_genesis_palace.png"]
+    var nmapbg = ["/images/map_genesis_night.png","/images/map_abyss_night.png","/images/map_castle_night.png","/images/map_elements_night.png","/images/map_seasons_night.png","/images/map_genesis_night.png"]
 
     function TimestampIt(sec = 0) {
       if(sec > 31536000) {
