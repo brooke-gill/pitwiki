@@ -158,7 +158,7 @@ $(function(){
 
 <table class="invisible">
   <tr class="body">
-    <td class="invisible clickme" onclick="favicon(0)"><img src="./favicon/favicon.ico"></td><td class="invisible clickme" onclick="favicon(1)"><img src="./favicon/special1.ico"></td><td class="invisible clickme" onclick="favicon(2)"><img src="./favicon/special2.ico"></td><td class="invisible clickme" onclick="favicon(3)"><img src="./favicon/special3.ico"></td><td class="invisible clickme" onclick="favicon(4)"><img src="./favicon/special4.ico"></td><td class="invisible clickme" onclick="favicon(5)"><img src="./favicon/special5.ico"></td><td class="invisible clickme" onclick="favicon(6)"><img src="./favicon/special6.ico"></td><td class="invisible clickme" onclick="favicon(7)"><img src="./favicon/special7.ico"></td>
+    <td class="invisible clickme" onclick="favicon(0)"><img src="/favicon/favicon.ico"></td><td class="invisible clickme" onclick="favicon(1)"><img src="/favicon/special1.ico"></td><td class="invisible clickme" onclick="favicon(2)"><img src="/favicon/special2.ico"></td><td class="invisible clickme" onclick="favicon(3)"><img src="/favicon/special3.ico"></td><td class="invisible clickme" onclick="favicon(4)"><img src="/favicon/special4.ico"></td><td class="invisible clickme" onclick="favicon(5)"><img src="/favicon/special5.ico"></td><td class="invisible clickme" onclick="favicon(6)"><img src="/favicon/special6.ico"></td><td class="invisible clickme" onclick="favicon(7)"><img src="/favicon/special7.ico"></td>
   </tr>
   <tr class="body center">
     <td class="invisible italic clickme" onclick="favicon(0)">Classic</td><td class="invisible italic clickme" onclick="favicon(1)">Crimson</td><td class="invisible italic clickme" onclick="favicon(2)">Autumnal</td><td class="invisible italic clickme" onclick="favicon(3)">Lemonade</td><td class="invisible italic clickme" onclick="favicon(4)">Cobalt</td><td class="invisible italic clickme" onclick="favicon(5)">Lavender</td><td class="invisible italic clickme" onclick="favicon(6)">Koala</td><td class="invisible italic clickme" onclick="favicon(7)">Artistic</td>
@@ -333,9 +333,9 @@ $(function(){
 
   function favicon(n) { // changes the user's favicon
   if(n == 0) {
-    document.querySelector("link[type='image/x-icon']").href = "./favicon/favicon.ico";
+    document.querySelector("link[type='image/x-icon']").href = "/favicon/favicon.ico";
   } else {
-    document.querySelector("link[type='image/x-icon']").href = "./favicon/special" + n + ".ico";
+    document.querySelector("link[type='image/x-icon']").href = "/favicon/special" + n + ".ico";
   }
 
   localStorage.setItem('favicon-palette', n);

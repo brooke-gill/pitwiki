@@ -205,6 +205,16 @@ td {
   font-weight: bold;
 }
 
+.hoverimage {
+  opacity: 0.4;
+  transition-duration: 0.5s;
+}
+
+.hoverimage:hover {
+  opacity: 1;
+}
+
+
 code {
   font-family: "Roboto Mono", ui-monospace, Menlo, "Cascadia Mono",
     "Segoe UI Mono", "Fira Mono", "Droid Sans Mono", monospace;

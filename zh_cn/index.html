@@ -24,50 +24,50 @@ $(function(){
 <div class="box">
 <center>
   <br>
-<p class="header funky" style="line-height: 1em"><b>The Unofficial Hypixel Pit Wiki</b> &mdash; <b>Chinese Simplified</b></p>
-<p class="body" style="font-size: 20px"><b class="ma">WELCOME!</b> Thank you for visiting the Hypixel Pit Wiki!</p>
+<p class="header funky" style="line-height: 1em"><b>这里是非官方的 The Hypixel Pit Wiki</b></p>
+<p class="body" style="font-size: 20px">欢迎来访 <b class="ma">Pit Wiki！</b></p>
 <noscript><p class="body"><b class="mc">WARNING!</b> JavaScript is disabled in your browser! You will be unable to use the search, timers, header, or footer without <a href="https://www.enablejavascript.io/" target="_blank" rel="noopener noreferrer">enabling JavaScript</a>.</p></noscript>
 
 <div class="homepagecontainer">
 
   <div class="homepageitem body">
-    <span><b>The Pit</b> is a persistent gamemode on the Hypixel network that heavily revolves around player-versus-player combat using unique <a href="Perks">perks</a>, <a href="Killstreaks">killstreaks</a>, <a href="Mystic_Pants">armor</a>, and <a href="Mystic_Sword">enchantments</a>. <br><br>Join and fight <span class="me" id="playercount"></span> players at <span class="me">mc.hypixel.net</span>!</span> 
+    <span><b>The Pit</b> 是 Hypixel Network 上的一个基于 PVP，可以使用独特的<a href="Perks">增益效果</a>，<a href="Killstreaks">连杀效果</a>，装备和附魔来战斗的长期游戏。 <br><br>加入 <span class="me">mc.hypixel.net</span> 并与 <span class="me" id="playercount"></span> 名玩家战斗吧！</span> 
   </div>
 
   <div class="homepageitem body" style="background-size:cover; background-position: center; background-image: linear-gradient(rgba(54,54,54,.8), rgba(54,54,54,.8)), url('/images/map_genesis_palace.png');" id="mapbg">
-    <span>The current <a href="Maps"><span style="color: inherit">map</a> is <noscript>probably here, but we can't show it to you since JavaScript is disabled.</noscript><b id="currentmap"></b>.</span><br><br>
-    <span><b id="nextmap"></b> in<br><span class="me" id="whenmap"></span></span><br>
+    <span>当前地图 (<a href="Maps"><span style="color: inherit">map</a>)：<noscript>probably here, but we can't show it to you since JavaScript is disabled.</noscript><b id="currentmap"></b></span><br><br>
+    <span><b id="nextmap"></b> 在<br><span class="me" id="whenmap"></span></span><br>
     <br>
-    <span><b id="dayornight"></b> for <span class="me" id="whenday"></span></span>
+    <span><b id="dayornight"></b> 还剩 <span class="me" id="whenday"></span></span>
     <br><br>
-    <span id="events"><a href="https://brookeafk.com" target="_blank" rel="noreferrer noopener">Next event</a>: <span id="nextevent">Connecting to brookeafk.com...</span><br><br></span>
-    <span>The <a href="The_Pit_1.0.6">last Pit update</a> was <span id="lastupdate" class="m6">a while</span> ago.</span>
+    <span id="events"><a href="https://brookeafk.com" target="_blank" rel="noreferrer noopener">下个事件</a>：<span id="nextevent">Connecting to brookeafk.com...</span><br><br></span>
+    <span>距离<a href="The_Pit_1.0.6">上次 Pit 更新</a> <span id="lastupdate" class="m6">a while</span></span>
   </div>
 
 
-  <div class="homepageitem body" style="background-color: rgba(76, 76, 76, 0.25)"><span style="background-color: #252525; outline: 10px solid #252525">— <b><span class="m9">General</span></b> —</span><br><hr class="smallbreak">
-    <a href="The_Hypixel_Pit"><span style="color: #FF9">The Hypixel Pit</a><br>
-    <a href="Gold">Gold</a><br>
-      <a href="XP">XP</a><br>
-      <a href="Renown">Renown</a><br>
-      <a href="Prestige">Prestige</a><br>
-      <a href="Quests">Quests</a><br>
-      <a href="Contracts">Contracts</a><br>
-      <a href="Achievements">Achievements</a><br>
-      <a href="Stats">Stats</a><br>
-      <a href="Bounty">Bounty</a><br>
-      <a href="NPCs">NPCs</a><br>
+  <div class="homepageitem body" style="background-color: rgba(76, 76, 76, 0.25)"><span style="background-color: #252525; outline: 10px solid #252525">— <b><span class="m9">综合</span></b> —</span><br><hr class="smallbreak">
+    <a href="The_Hypixel_Pit"><span style="color: #FF9">Hypixel 天坑乱斗</a><br>
+    <a href="Gold">金币</a><br>
+      <a href="XP">经验</a><br>
+      <a href="Renown">声望</a><br>
+      <a href="Prestige">精通</a><br>
+      <a href="Quests">任务</a><br>
+      <a href="Contracts">契约任务</a><br>
+      <a href="Achievements">成就</a><br>
+      <a href="Stats">统计信息</a><br>
+      <a href="Bounty">赏金</a><br>
+      <a href="NPCs">NPC</a><br>
       <a href="Pit_Supporter">Pit Supporter</a><br>
-      <a href="Fishing">Fishing</a><br>
-      <a href="Commands">Commands</a><br>
-      <a href="Stash">Stash</a><br>
+      <a href="Fishing">钓鱼</a><br>
+      <a href="Commands">指令</a><br>
+      <a href="Stash">库存</a><br>
 
   </div>
 
-  <div class="homepageitem body" style="background-color: rgba(76, 76, 76, 0.25)"><span style="background-color: #252525; outline: 10px solid #252525">— <b><span class="mc">Combat</span></b> —</span><br><hr class="smallbreak">
-    <a href="Killstreaks">Killstreaks</a><br>
-    <a href="Perks">Perks</a><br>
-    <a href="Passives">Passives</a><br>
+  <div class="homepageitem body" style="background-color: rgba(76, 76, 76, 0.25)"><span style="background-color: #252525; outline: 10px solid #252525">— <b><span class="mc">战斗</span></b> —</span><br><hr class="smallbreak">
+    <a href="Killstreaks">连杀效果</a><br>
+    <a href="Perks">增益效果</a><br>
+    <a href="Passives">被动效果</a><br>
     <a href="Overdrive">Overdrive</a><br>
     <a href="Beastmode">Beastmode</a><br>
     <a href="Hermit">Hermit</a><br>
@@ -78,36 +78,36 @@ $(function(){
   
 </div>
 
-<div class="homepageitem body" style="background-color: rgba(76, 76, 76, 0.25)"><span style="background-color: #252525; outline: 10px solid #252525">— <b><span class="md">Mystics</span></b> —</span><br><hr class="smallbreak">
-  <a href="Mystic_Well">Mystic Well</a><br>
-  <a href="Mystic_Sword">Mystic Sword</a><br>
-  <a href="Mystic_Bow">Mystic Bow</a><br>
-  <a href="Mystic_Pants">Mystic Pants</a><br>
-  <a href="Rage_Pants">Rage Pants</a><br>
-  <a href="Dark_Pants">Dark Pants</a><br>
-  <a href="Aqua_Pants">Aqua Pants</a><br>
-  <a href="Sewer_Pants">Sewer Pants</a><br>
-  <a href="Totally_Legit_Gem">Totally Legit Gem</a><br>
-  <a href="Golden_Helmet">Golden Helmet</a><br>
-  <a href="Archangel_Chestplate">Archangel Chestplate</a><br>
-  <a href="Armageddon_Boots">Armageddon Boots</a><br>
-  <a href="Philosophers_Cactus">Philosopher's Cactus</a><br>
-  <a href="Mystic_Repair_Kit">Mystic Repair Kit</a><br>
+<div class="homepageitem body" style="background-color: rgba(76, 76, 76, 0.25)"><span style="background-color: #252525; outline: 10px solid #252525">— <b><span class="md">神秘物品</span></b> —</span><br><hr class="smallbreak">
+  <a href="Mystic_Well">神秘井</a><br>
+  <a href="Mystic_Sword">神秘之剑</a><br>
+  <a href="Mystic_Bow">神秘之弓</a><br>
+  <a href="Mystic_Pants">神秘之裤</a><br>
+  <a href="Rage_Pants">狂暴之裤</a><br>
+  <a href="Dark_Pants">暗黑之裤</a><br>
+  <a href="Aqua_Pants">天蓝色裤子</a><br>
+  <a href="Sewer_Pants">下水道裤子</a><br>
+  <a href="Totally_Legit_Gem">真技之石</a><br>
+  <a href="Golden_Helmet">金头盔</a><br>
+  <a href="Archangel_Chestplate">天使之甲</a><br>
+  <a href="Armageddon_Boots">末日靴子</a><br>
+  <a href="Philosophers_Cactus">哲学家的仙人掌</a><br>
+  <a href="Mystic_Repair_Kit">神秘修理包</a><br>
 </div>
 
-<div class="homepageitem body" style="background-color: rgba(76, 76, 76, 0.25)"><span style="background-color: #252525; outline: 10px solid #252525">— <b><a href="Minor_Event"><span class="md">Minor Events</span></a></b> —</span><br><hr class="smallbreak">
-<a href="Dragon_Egg">Dragon Egg</a><br>
-<a href="King_of_the_Hill">King of the Hill</a><br>
-<a href="King_of_the_Ladder">King of the Ladder</a><br>
-<a href="2x_Rewards">2x Rewards</a><br>
-<a href="Care_Package">Care Package</a><br>
-<a href="Auction">Auction</a><br>
-<a href="Quick_Maths">Quick Maths</a><br>
-<a href="Giant_Cake">Giant Cake</a><br>
-<a href="Everyone_Gets_a_Bounty">Everyone Gets a Bounty</a><br>
+<div class="homepageitem body" style="background-color: rgba(76, 76, 76, 0.25)"><span style="background-color: #252525; outline: 10px solid #252525">— <b><a href="Minor_Event"><span class="md">小型乱斗事件</span></a></b> —</span><br><hr class="smallbreak">
+<a href="Dragon_Egg">打击龙蛋</a><br>
+<a href="King_of_the_Hill">山丘之王</a><br>
+<a href="King_of_the_Ladder">高梯之王</a><br>
+<a href="2x_Rewards">双倍奖励</a><br>
+<a href="Care_Package">空投</a><br>
+<a href="Auction">拍卖</a><br>
+<a href="Quick_Maths">速算</a><br>
+<a href="Giant_Cake">蛋糕大胃王</a><br>
+<a href="Everyone_Gets_a_Bounty">所有人都获得了赏金</a><br>
 </div>
 
-<div class="homepageitem body" style="background-color: rgba(76, 76, 76, 0.25)"><span style="background-color: #252525; outline: 10px solid #252525">— <b><a href="Major_Event"><span class="m5">Major Events</span></a></b> —</span><br><hr class="smallbreak">
+<div class="homepageitem body" style="background-color: rgba(76, 76, 76, 0.25)"><span style="background-color: #252525; outline: 10px solid #252525">— <b><a href="Major_Event"><span class="m5">大型乱斗事件</span></a></b> —</span><br><hr class="smallbreak">
   <a href="Pizza">Pizza</a><br>
   <a href="Raffle">Raffle</a><br>
   <a href="Squads">Squads</a><br>
@@ -120,23 +120,23 @@ $(function(){
   </div>
   
 
-<div class="homepageitem body" style="background-color: rgba(76, 76, 76, 0.25)"><span style="background-color: #252525; outline: 10px solid #252525">— <b><a href="Maps"><span class="me">Maps</span></a></b> —</span><br><hr class="smallbreak">
+<div class="homepageitem body" style="background-color: rgba(76, 76, 76, 0.25)"><span style="background-color: #252525; outline: 10px solid #252525">— <b><a href="Maps"><span class="me">地图</span></a></b> —</span><br><hr class="smallbreak">
     <a href="Castle">Castle</a><br>
     <a href="Corals">Corals</a><br>
     <a href="Elements">Elements</a><br>
     <a href="Four_Seasons">Four Seasons</a><br>
     <a href="Genesis">Genesis</a><br>
-    <a href="Kings_Quest">The King's Quest</a><br>
-    <a href="Sewers">Sewers</a><br>
-    <a href="Factions">Factions</a><br>    
+    <a href="Kings_Quest">国王任务</a><br>
+    <a href="Sewers">下水道</a><br>
+    <a href="Factions">阵营基地</a><br>    
   
 </div>
 
-<div class="homepageitem body" style="background-color: rgba(76, 76, 76, 0.25)"><span style="background-color: #252525; outline: 10px solid #252525">— <b><span class="mf">Items</span></b> —</span><br><hr class="smallbreak">  
-    <a href="Item_Shop">Item Shop</a><br>
-    <a href="Mini_Cake">Mini Cake</a><br>
-    <a href="Chunk_of_Vile">Chunk of Vile</a><br>
-    <a href="Funky_Feather">Funky Feather</a><br>
+<div class="homepageitem body" style="background-color: rgba(76, 76, 76, 0.25)"><span style="background-color: #252525; outline: 10px solid #252525">— <b><span class="mf">物品</span></b> —</span><br><hr class="smallbreak">  
+    <a href="Item_Shop">物品商店</a><br>
+    <a href="Mini_Cake">迷你蛋糕</a><br>
+    <a href="Chunk_of_Vile">黑暗结晶</a><br>
+    <a href="Funky_Feather">恶臭羽毛</a><br>
     <a href="Mark_of_Recon_Essence">Mark of Recon Essence</a><br>
   </div>
 
@@ -145,8 +145,8 @@ $(function(){
   </div>
 </div>
 <br>
-<p class="body center">Can't find what you're looking for? Use the search bar, the <a href="Page_List">page list</a>, or visit a <a href="Random_Page">random page</a>.</p><br>
-<p class="body center"><b class="me">NOTE!</b> The wiki's currently in beta!<br><span id="content-error">If you <span class="supersecret" onclick="showFavicon()">f</span>ind <span class="supersecret" onclick="showFavicon()">a</span> content error, please send either adjecti<span class="supersecret" onclick="showFavicon()">v</span>e_noun#3215 or Brooke#0843 a DM on D<span class="supersecret" onclick="showFavicon()">i</span>s<span class="supersecret" onclick="showFavicon()">c</span>ord and we'd be happy t<span class="supersecret" onclick="showFavicon()">o</span> take a look (a<span class="supersecret" onclick="showFavicon()">n</span>d credit you).</span></p>
+<p class="body center">找不到你想看的？使用搜索栏，或者<a href="Page_List">列表页面</a>，亦或者随即页面。</p><br>
+<p class="body center"><b class="me">提示！</b>维基当前在测试版本中！<br><span id="content-error">如果你发现了内容错误，请在 Discord 上私信  <span class="supersecret" onclick="showFavicon()">adjective_noun#3215</span> 或者  <span class="supersecret" onclick="showFavicon()">Brooke#0843</span>。我们很乐意去查看你的反馈（还会在 credit 页面提及你）。</span></p>
 
 <span id="favicon-settings" style="display: none;">
 <p class="body center"><b>You've found the super-secret favicon settings.</b></p>
@@ -155,7 +155,7 @@ $(function(){
 
 <table class="invisible">
   <tr class="body">
-    <td class="invisible clickme" onclick="favicon(0)"><img src="./favicon/favicon.ico"></td><td class="invisible clickme" onclick="favicon(1)"><img src="./favicon/special1.ico"></td><td class="invisible clickme" onclick="favicon(2)"><img src="./favicon/special2.ico"></td><td class="invisible clickme" onclick="favicon(3)"><img src="./favicon/special3.ico"></td><td class="invisible clickme" onclick="favicon(4)"><img src="./favicon/special4.ico"></td><td class="invisible clickme" onclick="favicon(5)"><img src="./favicon/special5.ico"></td><td class="invisible clickme" onclick="favicon(6)"><img src="./favicon/special6.ico"></td><td class="invisible clickme" onclick="favicon(7)"><img src="./favicon/special7.ico"></td>
+    <td class="invisible clickme" onclick="favicon(0)"><img src="/favicon/favicon.ico"></td><td class="invisible clickme" onclick="favicon(1)"><img src="/favicon/special1.ico"></td><td class="invisible clickme" onclick="favicon(2)"><img src="/favicon/special2.ico"></td><td class="invisible clickme" onclick="favicon(3)"><img src="/favicon/special3.ico"></td><td class="invisible clickme" onclick="favicon(4)"><img src="/favicon/special4.ico"></td><td class="invisible clickme" onclick="favicon(5)"><img src="/favicon/special5.ico"></td><td class="invisible clickme" onclick="favicon(6)"><img src="/favicon/special6.ico"></td><td class="invisible clickme" onclick="favicon(7)"><img src="/favicon/special7.ico"></td>
   </tr>
   <tr class="body center">
     <td class="invisible italic clickme" onclick="favicon(0)">Classic</td><td class="invisible italic clickme" onclick="favicon(1)">Crimson</td><td class="invisible italic clickme" onclick="favicon(2)">Autumnal</td><td class="invisible italic clickme" onclick="favicon(3)">Lemonade</td><td class="invisible italic clickme" onclick="favicon(4)">Cobalt</td><td class="invisible italic clickme" onclick="favicon(5)">Lavender</td><td class="invisible italic clickme" onclick="favicon(6)">Koala</td><td class="invisible italic clickme" onclick="favicon(7)">Artistic</td>
@@ -295,7 +295,7 @@ $(function(){
   let currentTime = (Date.now() + offset);
   if (DoesStuffExist == true) {
     HasStuffLoaded = true;
-    document.getElementById('nextevent').innerHTML = (`<span><b>` + transformation[HiddenEventCount].event + `</b> in <span class="me">` + MakeFunTimestamps(transformation[HiddenEventCount].timestamp) + `</span>  (` + TimeOfDay(transformation[HiddenEventCount].timestamp) + " local time)</span>");
+    document.getElementById('nextevent').innerHTML = (`<span><b>` + transformation[HiddenEventCount].event + `</b>  在 <span class="me">` + MakeFunTimestamps(transformation[HiddenEventCount].timestamp) + `</span>  (` + TimeOfDay(transformation[HiddenEventCount].timestamp) + ")</span>");
     if(((transformation[HiddenEventCount].timestamp - currentTime) < 0)) {
         speed = 999;
     } else if((transformation[HiddenEventCount].timestamp - currentTime) > 60000) {
@@ -330,9 +330,9 @@ $(function(){
 
   function favicon(n) { // changes the user's favicon
   if(n == 0) {
-    document.querySelector("link[type='image/x-icon']").href = "./favicon/favicon.ico";
+    document.querySelector("link[type='image/x-icon']").href = "/favicon/favicon.ico";
   } else {
-    document.querySelector("link[type='image/x-icon']").href = "./favicon/special" + n + ".ico";
+    document.querySelector("link[type='image/x-icon']").href = "/favicon/special" + n + ".ico";
   }
 
   localStorage.setItem('favicon-palette', n);
