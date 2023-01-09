@@ -31,7 +31,7 @@ $(function(){
 <div class="homepagecontainer">
 
   <div class="homepageitem body">
-    <b>The Pit</b> 是 Hypixel Network 上一个基于 PVP，同时可使用独特的<a href="Perks">增益效果</a>，<a href="Killstreaks">连杀效果</a>，和特殊的装备及附魔来战斗的长期游戏。
+    <b>The Pit</b> 是 Hypixel Network 上一个基于 PVP，同时可使用独特的<a href="Perks">增益效果</a>，<a href="Killstreaks">连杀效果</a>，和特殊的<a href="Mystic_Pants">装备</a>及<a href="Mystic_Sword">附魔</a>来战斗的长期游戏。
     
   <br><br>加入 <span class="me">mc.hypixel.net</span> 并与 <span class="me" id="playercount"></span> 名玩家战斗吧！</span> 
   </div>
@@ -97,7 +97,7 @@ $(function(){
   <a href="Mystic_Repair_Kit">神秘修理包</a><br>
 </div>
 
-<div class="homepageitem body" style="background-color: rgba(76, 76, 76, 0.25)"><span style="background-color: #252525; outline: 10px solid #252525">— <b><a href="Minor_Event"><span class="md">小型乱斗</span></a></b> —</span><br><hr class="smallbreak">
+<div class="homepageitem body" style="background-color: rgba(76, 76, 76, 0.25)"><span style="background-color: #252525; outline: 10px solid #252525">— <b><a href="Minor_Event"><span class="md">小型乱斗事件</span></a></b> —</span><br><hr class="smallbreak">
 <a href="Dragon_Egg">打击龙蛋</a><br>
 <a href="King_of_the_Hill">山丘之王</a><br>
 <a href="King_of_the_Ladder">高梯之王</a><br>
@@ -109,7 +109,7 @@ $(function(){
 <a href="Everyone_Gets_a_Bounty">所有人都获得了赏金</a><br>
 </div>
 
-<div class="homepageitem body" style="background-color: rgba(76, 76, 76, 0.25)"><span style="background-color: #252525; outline: 10px solid #252525">— <b><a href="Major_Event"><span class="m5">大型乱斗</span></a></b> —</span><br><hr class="smallbreak">
+<div class="homepageitem body" style="background-color: rgba(76, 76, 76, 0.25)"><span style="background-color: #252525; outline: 10px solid #252525">— <b><a href="Major_Event"><span class="m5">大型乱斗事件</span></a></b> —</span><br><hr class="smallbreak">
   <a href="Pizza">披萨快递摊</a><br>
   <a href="Raffle">幸运奖券</a><br>
   <a href="Squads">结队争锋</a><br>
@@ -147,7 +147,7 @@ $(function(){
   </div>
 </div>
 <br>
-<p class="body center">找不到你感兴趣的？你可以使用搜索栏，或者<a href="Page_List">列表页面</a>，亦或者随机页面来探索天坑维基。</p><br>
+<p class="body center">找不到你感兴趣的？你可以使用搜索栏，或者<a href="Page_List">列表页面</a>，亦或者<a href="Random_Page">随机页面</a>来探索天坑维基。</p><br>
 <p class="body center"><b class="me">提示！</b>维基当前在测试版本中！<br><span id="content-error">如果你发现了内容错误，请在 Discord 上私信  <span class="supersecret" onclick="showFavicon()">adjective_noun#3215</span> 或者  <span class="supersecret" onclick="showFavicon()">Brooke#0843</span>。我们很乐意去查看你的反馈（且会在 credit 页面提及你）。</span></p>
 
 <span id="favicon-settings" style="display: none;">
@@ -297,7 +297,7 @@ $(function(){
   let currentTime = (Date.now() + offset);
   if (DoesStuffExist == true) {
     HasStuffLoaded = true;
-    document.getElementById('nextevent').innerHTML = (`<span><b>` + transformation[HiddenEventCount].event + `</b>  在 <span class="me">` + MakeFunTimestamps(transformation[HiddenEventCount].timestamp) + `</span>  (` + TimeOfDay(transformation[HiddenEventCount].timestamp) + ")</span>");
+    document.getElementById('nextevent').innerHTML = (`<span><b>` + transformation[HiddenEventCount].event + `</b>  在 <span class="me">` + MakeFunTimestamps(transformation[HiddenEventCount].timestamp) + `</span>（本地时间` + TimeOfDay(transformation[HiddenEventCount].timestamp) + ")</span>");
     if(((transformation[HiddenEventCount].timestamp - currentTime) < 0)) {
         speed = 999;
     } else if((transformation[HiddenEventCount].timestamp - currentTime) > 60000) {
