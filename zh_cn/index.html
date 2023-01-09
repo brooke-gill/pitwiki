@@ -25,7 +25,7 @@ $(function(){
 <center>
   <br>
 <p class="header funky" style="line-height: 1em"><b>这里是非官方的 Hypixel 天坑乱斗维基</b></p>
-<p class="body" style="font-size: 20px">欢迎访问 Hypixel <b class="ma">天坑乱斗维基！</b></p>
+<p class="body" style="font-size: 20px"><b class="ma">欢迎！</b>感谢访问 Hypixel 天坑乱斗维基！</p>
 <noscript><p class="body"><b class="mc">WARNING!</b> JavaScript is disabled in your browser! You will be unable to use the search, timers, header, or footer without <a href="https://www.enablejavascript.io/" target="_blank" rel="noopener noreferrer">enabling JavaScript</a>.</p></noscript>
 
 <div class="homepagecontainer">
@@ -38,9 +38,9 @@ $(function(){
 
   <div class="homepageitem body" style="background-size:cover; background-position: center; background-image: linear-gradient(rgba(54,54,54,.8), rgba(54,54,54,.8)), url('/images/map_genesis_palace.png');" id="mapbg">
     <span>当前<a href="Maps"><span style="color: inherit">地图</a>：<noscript>probably here, but we can't show it to you since JavaScript is disabled.</noscript><b id="currentmap"></b></span><br><br>
-    <span><b id="nextmap"></b> 在<br><span class="me" id="whenmap"></span></span><br>
+    <span><b id="nextmap"></b> 在 <span class="me" id="whenmap"></span></span><br>
     <br>
-    <span><b id="dayornight"></b> 还剩 <span class="me" id="whenday"></span></span>
+    <span><b id="dayornight"></b>还剩 <span class="me" id="whenday"></span></span>
     <br><br>
     <span id="events"><a href="https://brookeafk.com" target="_blank" rel="noreferrer noopener">下个事件</a>：<span id="nextevent">Connecting to brookeafk.com...</span><br><br></span>
     <span>距离<a href="The_Pit_1.0.6">上次 Pit 更新</a> <span id="lastupdate" class="m6">a while</span></span>
@@ -215,11 +215,11 @@ $(function(){
 
       if(secondsuntilday < secondsuntilnight) {
         time = "night"
-        document.getElementById('dayornight').innerText = "Night";
+        document.getElementById('dayornight').innerText = "夜晚";
         document.getElementById('whenday').innerText = TimestampIt(secondsuntilday);
       } else {
         time = "day"
-        document.getElementById('dayornight').innerText = "Day";
+        document.getElementById('dayornight').innerText = "白天";
         document.getElementById('whenday').innerText = TimestampIt(secondsuntilnight);
       }
 
