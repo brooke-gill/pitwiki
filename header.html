@@ -1,4 +1,4 @@
-<link rel="stylesheet" href="stylesheet.css">
+<link rel="stylesheet" href="/stylesheet.css">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <script src="pages.js"></script>
 <div class="headerbox" style="position:fixed; left: 50%; transform: translate(-50%, 0); z-index:3; background-size: 100%; outline: 2px solid #3f3f3f; top:-10px">
@@ -8,7 +8,7 @@
 </div>
 
 <span id="languagecontainer" style="display: none">
-  <span class="mf" style="list-style-type: square; background-color:#353545; border: 3px solid #252525; border-radius: 15px; padding: 20px 20px 20px 20px; margin: 30px 250px 0px 0px;right: 0px; width: 150px; z-index: 5; position:fixed;"><i>This article is also available in:</i><span id="languagelist"></span></span>
+  <span class="mf" style="list-style-type: square; background-color:#353545; border: 3px solid #252525; border-radius: 15px; padding: 20px 20px 20px 20px; margin: 30px 150px 0px 0px;right: 0px; width: 150px; z-index: 5; position:fixed;"><i>This article is also available in:</i><span id="languagelist"></span></span>
 </span>
 
 <span id="partofsearch" style="display: none">
@@ -31,9 +31,12 @@ var mylanguage = 0 // your language index (see var languages)
 var validlanguageurls = [];
 var validlanguagenames = [];
 var translatevisible = false;
-
+var origin = window.location.origin;
 thisurl = window.location.toString();
-botchedurl = (thisurl.substring(0, thisurl.length - 1)).replace(/[^\/]*\//g, '')
+
+var path = thisurl.replace(origin, "")
+
+//botchedurl = (thisurl.substring(0, thisurl.length - 1)).replace(/[^\/]*\//g, '')
 
 function checkURL(url) {
 var request;
@@ -51,12 +54,8 @@ if (request.status === 404) {
 }
 
 for(a = 0; a < languages.length; a++) {
-  var urlToTest = thisurl.replace(languages[mylanguage] + botchedurl, languages[a] + botchedurl)
-  if(a != mylanguage && (["https://pit.wiki","https://pit.wiki/","http://pit.wiki","http://pit.wiki/","pit.wiki","http://127.0.0.1:5500/","http://127.0.0.1:5500"].indexOf(thisurl) > -1)) { // homepage
-    otherlanguages++;
-    validlanguageurls.push(languages[a]);
-    validlanguagenames.push(languagenames[a]);
-  } else if(a != mylanguage && checkURL(urlToTest)) {
+  var urlToTest = path.replace(languages[mylanguage], languages[a])
+  if(a != mylanguage && checkURL(urlToTest)) {
     otherlanguages++;
     validlanguageurls.push(urlToTest);
     validlanguagenames.push(languagenames[a]);
@@ -249,7 +248,7 @@ ChangeHighlight()
 
 var favi = localStorage.getItem('favicon-palette');
 if(favi > 0) {
-  document.querySelector("link[type='image/x-icon']").href = "./favicon/special" + favi + ".ico";
+  document.querySelector("link[type='image/x-icon']").href = "/favicon/special" + favi + ".ico";
   console.log("wow, nice favicon!");
 }
 

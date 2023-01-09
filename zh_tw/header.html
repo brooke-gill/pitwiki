@@ -4,8 +4,12 @@
 <div class="headerbox" style="position:fixed; left: 50%; transform: translate(-50%, 0); z-index:3; background-size: 100%; outline: 2px solid #3f3f3f; top:-10px">
 <span class="body" style="text-align:center"><a href="./" style="color: white" id="thehypixelpitwiki">天坑維基 &mdash; 繁體中文版</a></span>
 
-<input type="text" autocomplete="off" id="myInput" onkeyup="Filter()" style="display: none; float: right; text-align: left;" placeholder="&#x1F50E;&#xFE0E; 搜尋...">
+<input type="text" autocomplete="off" id="myInput" onkeyup="Filter()" style="display: none; float: right; text-align: left;" placeholder="&#x1F50E;&#xFE0E; 搜尋..."><span style="float: right">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><img src="/images/translate.svg" height="24" class="hoverimage" style="float: right; display: none;" id="languageicon" onclick="translateClick()"><span id="languages">
 </div>
+
+<span id="languagecontainer" style="display: none">
+  <span class="mf" style="list-style-type: square; background-color:#353545; border: 3px solid #252525; border-radius: 15px; padding: 20px 20px 20px 20px; margin: 30px 150px 0px 0px;right: 0px; width: 150px; z-index: 5; position:fixed;"><i>This article is also available in:</i><span id="languagelist"></span></span>
+</span>
 
 <span id="partofsearch" style="display: none">
 <ul id="aUL" class="mf" style="display: none; list-style-type: square; background-color:#363636; border-radius: 15px; padding: 20px 20px 20px 50px; margin: 50px 100px 0px 0px;right: 0px; width: 250px; z-index: 4; position:fixed;"></ul>
@@ -18,15 +22,21 @@ var numberofvisibleitems = 0
 var numberofhiddenitemsbecauseof8itemlimit = 0
 var arrowcount = 1;
 var oldlength = 0;
+var otherlanguages = 0;
 var visibleIDs = []
 
 var languages = ["/", "/zh_tw/", "/zh_cn/"]
-var languagenames = ["English", "Chinese Traditional","Chinese Simplified"]
+var languagenames = ["English", "繁體中文","简体中文"]
 var mylanguage = 1 // your language index (see var languages)
-
+var validlanguageurls = [];
+var validlanguagenames = [];
+var translatevisible = false;
+var origin = window.location.origin;
 thisurl = window.location.toString();
-botchedurl = (thisurl.substring(0, thisurl.length - 1)).replace(/[^\/]*\//g, '')
 
+var path = thisurl.replace(origin, "")
+
+//botchedurl = (thisurl.substring(0, thisurl.length - 1)).replace(/[^\/]*\//g, '')
 
 function checkURL(url) {
 var request;
@@ -35,8 +45,7 @@ if(window.XMLHttpRequest)
 else
     request = new ActiveXObject("Microsoft.XMLHTTP");
 request.open('GET', url, false);
-request.send(); // there will be a 'pause' here until the response to come.
-// the object request will be actually modified
+request.send();
 if (request.status === 404) {
   return false;
 } else {
@@ -45,9 +54,17 @@ if (request.status === 404) {
 }
 
 for(a = 0; a < languages.length; a++) {
-  if(checkURL(thisurl.replace(languages[mylanguage] + botchedurl, languages[a] + botchedurl))) console.log(languagenames[a]);
+  var urlToTest = path.replace(languages[mylanguage], languages[a])
+  if(a != mylanguage && checkURL(urlToTest)) {
+    otherlanguages++;
+    validlanguageurls.push(urlToTest);
+    validlanguagenames.push(languagenames[a]);
+  }
 }
 
+if (otherlanguages > 0) {
+  document.getElementById('languageicon').style.display = "inline";
+}
 
 if(screen.width > 500) {
 document.getElementById('myInput').focus();
@@ -72,6 +89,21 @@ function mouseOver() {
 
 function mouseOut() {
   document.getElementById("search").style.color = "#FFF";
+}
+
+function translateClick() {
+  if(!translatevisible) {
+  completelanguagelist = "";
+  for(b = 0; b < validlanguageurls.length; b++) {
+    completelanguagelist += `<br><b><a href="` + validlanguageurls[b] + `">` + validlanguagenames[b] + "</a></b>"
+  }
+document.getElementById('languagelist').innerHTML = "<b>" + completelanguagelist + "<br>";
+  document.getElementById('languagecontainer').style.display = "block";
+  translatevisible = true;
+} else {
+  document.getElementById('languagecontainer').style.display = "none"
+  translatevisible = false;
+}
 }
 
 var lol = Math.floor(Math.random() * 10000)
