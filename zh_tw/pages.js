@@ -1,3 +1,3 @@
-var pages = ["Chunk of Vile","Everyone Gets a Bounty","Item Shop","King of the Hill","Mystic Sword",]
+var pages = ["Auction","Chunk of Vile","Everyone Gets a Bounty","Item Shop","King of the Hill","Mystic Sword",]
 
-var searchpages = [[`Chunk of Vile`,`Chunk_of_Vile`],[`Everyone Gets a Bounty`,`Everyone_Gets_a_Bounty`],[`Item Shop`,`Item_Shop`],[`King of the Hill`,`King_of_the_Hill`],[`Mystic Sword`,`Mystic_Sword`],[`秘術劍`,`Mystic_Sword`],[`高地之王KOTH`,`King_of_the_Hill`],[`大家通通有賞金`,`Everyone_Gets_a_Bounty`],[`闇能結晶`,`Chunk_of_Vile`],[`物品商店`,`Item_Shop`],]
+var searchpages = [[`2x Rewards`,`2x_Rewards`],[`Auction`,`Auction`],[`Chunk of Vile`,`Chunk_of_Vile`],[`Everyone Gets a Bounty`,`Everyone_Gets_a_Bounty`],[`Item Shop`,`Item_Shop`],[`King of the Hill`,`King_of_the_Hill`],[`Mystic Sword`,`Mystic_Sword`],[`大家通通有賞金`,`Everyone_Gets_a_Bounty`],[`拍賣`,`Auction`],[`物品商店`,`Item_Shop`],[`秘術劍`,`Mystic_Sword`],[`闇能結晶`,`Chunk_of_Vile`],[`雙倍獎勵`,`2x_Rewards`],[`高地之王KOTH`,`King_of_the_Hill`],]
