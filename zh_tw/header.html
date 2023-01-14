@@ -148,7 +148,7 @@ input.addEventListener("keydown", function(event) {
 
 var replace = {' ':'', "'":"", }
 function MakeBasic(string_to_become_basic) { //strips all punctuation and fun from the string
-  return string_to_become_basic.replace(/[^A-Za-z0-9]/g, '')
+  return string_to_become_basic.replace(/[ '?!,./"@#$%^&*\(\):;<>?]/g, '')
 }
 
 function Filter() {
