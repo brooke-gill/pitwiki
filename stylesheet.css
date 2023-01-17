@@ -23,6 +23,7 @@ body {
 .section {
   font-size: 24px;
   font-weight: bold;
+  line-height: 1em;
 }
 
 .small {
@@ -143,6 +144,16 @@ td {
   border-radius: 15px;
   position: relative;
   top: 50px;
+}
+
+.bigimage {
+  width: 600px;
+}
+
+@media only screen and (max-width: 800px) {
+  .bigimage {
+    width: 80%;
+  }
 }
 
 .m0 {
