@@ -389,7 +389,7 @@ background-color: #31313a;
 @media only screen and (max-width: 500px) {
   body {
     background-image: none;
-    background-color: #252525;
+    background-color: var(--bg);
   }
 }
 /* stylesheet not updating? */
