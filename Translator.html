@@ -15,22 +15,14 @@
 
 <p id="htmlpaste" style="width: 100%;">Press any key to update the HTML!</p>
 
+
 <div id="board" class="original" contenteditable="true"></div>
 <div id="dummy" class="original"></div>
-<br><br><br><br><br><br><br><br>
-<button onclick="convert()">Go!</button>
 
 <script>
 document.onkeyup=function(e){
 
-console.log("j")
-greytext = htmlraw.innerText;
-console.log("BEFORE: " + greytext);
-//greytext = greytext.replace(/(<[^>]*>?)/gm,'h$1h    ')
-
-console.log("AFTER: " + greytext)
-htmlraw.innerHTML = greytext;
-htmlpaste.innerHTML = htmlraw.innerText;
+htmlpaste.innerHTML = board.innerText;
 
 };
 
