@@ -3,12 +3,12 @@
 <head>
 <link rel="stylesheet" href="/stylesheet.css">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<title>Pit Markdown - 天坑維基</title>
+<title>Pit Markdown - 天坑乱斗维基</title>
 <meta name="description" content="">
 <meta name="author" content="BrookeAFK">
 <meta name="keywords" content="">
 
-<link rel="icon" type="image/x-icon" href="/favicon/favicon_zh_tw.ico">
+<link rel="icon" type="image/x-icon" href="/favicon/favicon_zh_cn.ico">
 <script src="https://cdnjs.cloudflare.com/ajax/libs/showdown/1.9.0/showdown.min.js"></script>
 
 <p style="text-align: center"><b>Hypixel Pit Markdown Editing &mdash; zh_tw</b><br>v0.3.3<br><br>
@@ -37,6 +37,7 @@ author: Me
 {<span style="font-weight:bold; color:#ff5">etable</span>|left column|right column{enchantment 1 name|enchantment 1 tier I|enchantment 1 tier II|enchantment 1 tier III}{enchantment 2 name|enchantment 2 tier I|enchantment 2 tier II|enchantment 2 tier III}{enchantment 3 name|enchantment 3 tier I|enchantment 3 tier II|enchantment 3 tier III}} ... <i>repeat as necessary</i>
 {<span style="font-weight:bold; color:#ff5">rtable</span>|left column|right column{left|right1|right2|right3}{left|right1|right2|right3|right4|right5|right6|right7|right8|right9|right10}{left|right1|right2|right3|right4|right5}{left|right1}} ... <i>repeat as necessary</i>
 
+
 [link text](link)
 
 --- creates a gray horizontal line
@@ -63,12 +64,12 @@ function updateIntro() {
 <head>
 <link rel="stylesheet" href="/stylesheet.css">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<title>` + title + ` - 天坑維基</title>
+<title>` + title + ` - 天坑乱斗维基</title>
 <meta name="description" content="">
 <meta name="author" content="` + author + `">
 <meta name="keywords" content="` + keywords + `">
 <link rel="apple-touch-icon" sizes="180x180" href="/favicon/apple-touch-icon.png">
-<link rel="icon" type="image/x-icon" href="/favicon/favicon_zh_tw.ico">
+<link rel="icon" type="image/x-icon" href="/favicon/favicon_zh_cn.ico">
 \u003cscript src="https://code.jquery.com/jquery-3.6.0.js" integrity="sha256-H+K7U5CnXl1h5ywQfKtSj8PCmoN9aaq30gDh27Xc0jk=" crossorigin="anonymous">\u003c/script>
 \u003cscript> 
 $(function(){
@@ -124,7 +125,6 @@ Tables are supported, too; they're just like regular Markdown.
 The Pit Wiki Markdown Editing is based on Showdown. Read more [here](http://demo.showdownjs.com/).`
 
 document.getElementById('htmlraw').value = example;
-
 function format() {
     showdown.setOption('tables', 'true');
     showdown.setOption('literalMidWordUnderscores', 'true')
