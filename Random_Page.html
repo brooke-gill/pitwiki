@@ -29,10 +29,10 @@
 <script>
   var replace = {' ':'_', "'":""}
   var rawitem = (pages[Math.floor(Math.random() * pages.length)])
-  var luckyitem = rawitem.replace(/[ ']/g, m => replace[m]);
+  var luckyitem = rawitem[1].replace(/[ ']/g, m => replace[m]);
   document.location = (luckyitem)
 
 
 
- document.getElementById('nojs').innerHTML = `Click <a href="` + luckyitem + `">here</a> to visit your random page, ` + rawitem + `!`
+ document.getElementById('nojs').innerHTML = `Click <a href="` + luckyitem + `">here</a> to visit your random page, ` + rawitem[0] + `!`
 </script>

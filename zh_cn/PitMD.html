@@ -82,7 +82,7 @@ $(function(){
 <div id="header"></div>
 <div class="box">
 <span class="body">` + topimage + `<span class="header">` + title + `</span><br>
-<span class="subheader">出自 <a href="./">天坑維基</a></span>`
+<span class="subheader">From the <a href="./">Hypixel Pit Wiki</a></span>`
 }
 
 var outro = `</span></div>
@@ -137,6 +137,7 @@ if(title !== undefined && title !== null) { // if title exists
     title = title[0].substring(7); // remove "title: "
     keywords = "Hypixel Pit Wiki, Pit " + title + ", Hypixel, " + title + ", Hypixel Pit " + title;
 } 
+if(author !== undefined && author !== null) author = author[0].substring(8);
 updateIntro();
 text = text.replace(/\[heart\]/gi,'♥&#xFE0E;')
 text = text.replace(/{([0123456789ABCDEF])\|([^}]+?)}/gi,`<span class="m$1">$2</span>`)
