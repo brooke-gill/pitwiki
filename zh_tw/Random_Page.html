@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html> 
+<head>
+<link rel="stylesheet" href="stylesheet.css">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Random Page - 天坑維基</title>
+<meta name="description" content="">
+<meta name="author" content="BrookeAFK">
+<link rel="apple-touch-icon" sizes="180x180" href="./favicon/apple-touch-icon.png">
+<link rel="icon" type="image/x-icon" href="./favicon/favicon_zh_cn.ico">
+<script src="pages.js"></script>
+</head>
+<body>
+
+<div id="header"></div>
+<div class="box">
+<span class="body">
+<span class="header">Random Page</span><br>
+<span class="subheader">出自<a href="./">天坑維基</a></span>
+<hr>
+<p id="nojs">If you're reading this, you likely have JavaScript disabled!</p>
+</span></div>
+<div id="footer"></div>
+
+</body>
+
+</html>
+<script>
+  var replace = {' ':'_', "'":""}
+  var rawitem = (pages[Math.floor(Math.random() * pages.length)])
+  var luckyitem = rawitem[1].replace(/[ ']/g, m => replace[m]);
+  document.location = (luckyitem)
+
+
+
+ document.getElementById('nojs').innerHTML = `Click <a href="` + luckyitem + `">here</a> to visit your random page, ` + rawitem[0] + `!`
+</script>

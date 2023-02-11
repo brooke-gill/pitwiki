@@ -1,3 +1,3 @@
-var pages = [[`Home Page`,`./`],[`真技之石`,`Totally_Legit_Gem`],[`神秘之裤`,`Mystic_Pants`],[`末日靴子`,`Armageddon_Boots`],[`天使之甲`,`Archangel_Chestplate`],]
+var pages = [[`Home Page`,`./`],[`天使之甲`,`Archangel_Chestplate`],[`末日靴子`,`Armageddon_Boots`],[`真技之石`,`Totally_Legit_Gem`],[`神秘之裤`,`Mystic_Pants`],[`天蓝色裤子`,`Aqua_Pants`],]
 
-var searchpages = [[`Archangel Chestplate`,`Archangel_Chestplate`],[`Armageddon Boots`,`Armageddon_Boots`],[`Home Page`,`./`],[`Mystic Pants`,`Mystic_Pants`],[`Totally Legit Gem`,`Totally_Legit_Gem`],[`真技之石`,`Totally_Legit_Gem`],[`神秘之裤`,`Mystic_Pants`],[`末日靴子`,`Armageddon_Boots`],[`天使之甲`,`Archangel_Chestplate`],]
+var searchpages = [[`Home Page`,`./`],[`Archangel Chestplate`,`Archangel_Chestplate`],[`Armageddon Boots`,`Armageddon_Boots`],[`Mystic Pants`,`Mystic_Pants`],[`Totally Legit Gem`,`Totally_Legit_Gem`],[`天使之甲`,`Archangel_Chestplate`],[`末日靴子`,`Armageddon_Boots`],[`真技之石`,`Totally_Legit_Gem`],[`神秘之裤`,`Mystic_Pants`],[`Aqua Pants`,`Aqua_Pants`],[`天蓝色裤子`,`Aqua_Pants`],]
