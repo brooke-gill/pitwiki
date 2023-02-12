@@ -42,7 +42,7 @@ $(function(){
 
 </html>
 <script>
-  losturl = window.location.toString()
+  losturl = window.location.toString();
   if (losturl.includes("pit.wiki/zh_tw/")) {
     document.getElementById('image1').src = `/images/howtogetback_zh_tw.png`;
     document.getElementById('text1').innerHTML = `Approximate location of the search bar.`;
@@ -52,9 +52,9 @@ $(function(){
   } 
   if (losturl.includes("pit.wiki/zh_cn/")) {
     document.getElementById('image1').src = `/images/howtogetback_zh_cn.png`;
-    document.getElementById('text1').innerHTML = `Approximate location of the search bar.`;
-    document.getElementById('text2').innerHTML = `This page doesn't exist!`;
-    document.getElementById('text3').innerHTML = `It seems you tried to go to a URL that doesn't exist on this site. You can check to see if the English version exists by clicking <a href="" id="englishlink">here</a>, return to the main page by clicking <a href = "index">here</a>, or use the search bar in the header to look for the page you were trying to find.`
+    document.getElementById('text1').innerHTML = `搜索栏大概在这儿吧。`;
+    document.getElementById('text2').innerHTML = ` 欸？找不到这个页面！`;
+    document.getElementById('text3').innerHTML = `你似乎在寻找一个不存在于我们网站的链接。如果存在英文版本点击<a href="" id="englishlink">这里</a>即可跳转，点击<a href = "index">这儿</a>可以回到主页面，或者使用搜索栏去找你想找的页面。`
     document.getElementById('englishlink').href = losturl.replace('/zh_cn',''); 
   } 
 </script>
