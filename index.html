@@ -44,7 +44,7 @@ $(function(){
     <span><b id="dayornight"></b> for <span class="me" id="whenday"></span></span>
     <br><br>
     <span id="events"><a href="https://brookeafk.com" target="_blank" rel="noreferrer noopener">Next event</a>: <span id="nextevent">Connecting to brookeafk.com...</span><br><br></span>
-    <span>The <a href="The_Pit_1.0.6">last Pit update</a> was <span id="lastupdate" class="m6">a while</span> ago.</span>
+    <span>The <a href="The_Pit_1.0.6">last Pit update</a> was <span id="lastupdate" class="m6">a while</span> ago. <span class="mb bold" id="anniversary" style="display: none;"><br>HAPPY BONKIVERSARY!</span></span>
   </div>
 
 
@@ -232,6 +232,13 @@ $(function(){
       document.getElementById('nextmap').innerText = maps[mod(mapid - 1, 5)]
 
       document.getElementById('lastupdate').innerText = TimestampIt(now - lastupdate);
+      if((now - lastupdate) > 31536000 && (now - lastupdate) < 31622400) {
+        document.getElementById('anniversary').style.display = "inline";
+        document.getElementById('lastupdate').classList.add("rainbow_text_animated")
+      } else {
+        document.getElementById('anniversary').style.display = "none";
+        document.getElementById('lastupdate').classList.remove("rainbow_text_animated")
+      }
 
       secondsuntilnextmap = mod((samplemaprotation - now), 604800)
       document.getElementById('whenmap').innerText = TimestampIt(secondsuntilnextmap)
@@ -256,7 +263,7 @@ $(function(){
   function MakeFunTimestamps(convertible) {
   let currentTime = (Date.now() + offset);
   if (convertible - currentTime <= 0) {
-    convertible = "Passed!"
+    convertible = "0.00s";
   }
   if (convertible - currentTime <= 60000) {
       convertible = (((Math.floor(((convertible - currentTime)*100))/100000).toFixed(2)) + "s");
@@ -278,7 +285,7 @@ $(function(){
     pp_url = ('https://events.mcpqndq.dev'); //stands for "Pit Panda"
   }
   data_backup = MakeAPIAndHTML();
-  setInterval(getPitPanda,40);
+  setInterval(getPitPanda, 40);
   
   async function MakeAPIAndHTML() {
     if(emergency == true) {
@@ -309,7 +316,8 @@ $(function(){
     }
     if(MakeFunTimestamps(transformation[HiddenEventCount].timestamp) == "Passed!" && !!document.getElementById('nextevent') == true) {
       window.HiddenEventCount = window.HiddenEventCount + 1; 
-    }}}
+    }}
+  }
   
   function getPitPanda() {
     if(speed == 0) {
