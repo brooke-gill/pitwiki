@@ -263,7 +263,7 @@ $(function(){
   function MakeFunTimestamps(convertible) {
   let currentTime = (Date.now() + offset);
   if (convertible - currentTime <= 0) {
-    convertible = "0.00s";
+    convertible = "Passed!";
   }
   if (convertible - currentTime <= 60000) {
       convertible = (((Math.floor(((convertible - currentTime)*100))/100000).toFixed(2)) + "s");
