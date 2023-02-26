@@ -1,4 +1,4 @@
-<link rel="stylesheet" href="/stylesheet.css">
+<link rel="stylesheet" href="/stylesheet.css?a=1">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <script src="pages.js"></script>
 <div class="headerbox" style="position:fixed; left: 50%; transform: translate(-50%, 0); z-index:3; background-size: 100%; outline: 2px solid #3f3f3f; top:-10px">
@@ -90,6 +90,36 @@ function mouseOver() {
 function mouseOut() {
   document.getElementById("search").style.color = "#FFF";
 }
+
+function TimestampIt(sec = 0) {
+      if(sec > 31536000) {
+        return Math.floor(sec / 31536000) + "y " + Math.floor((sec % 31536000) / 86400) + "d " + Math.floor((sec % 86400) / 3600) + "h " + Math.floor((sec % 3600) / 60) + "m " + Math.floor(sec % 60) + "s"
+      } else if(sec > 86400 /*1 day*/) {
+        return Math.floor(sec / 86400) + "d " + Math.floor((sec % 86400) / 3600) + "h " + Math.floor((sec % 3600) / 60) + "m " + Math.floor(sec % 60) + "s"
+      } else if(sec > 3600) {
+        return Math.floor((sec % 86400) / 3600) + "h " + Math.floor((sec % 3600) / 60) + "m " + Math.floor(sec % 60) + "s"
+      } else if(sec > 60) {
+        return Math.floor((sec % 3600) / 60) + "m " + Math.floor(sec % 60) + "s"
+      } else {
+        return Math.floor(sec % 60) + "s"
+      }
+}
+
+var isItPitDay = false;
+function pitDay() {
+  var now = (Date.now() / 1000);
+  var pitdaytimestamp = 1677387600;
+  console.log(pitdaytimestamp - now);
+if(now > pitdaytimestamp && now < (pitdaytimestamp + 86400)) {
+        document.getElementById('thehypixelpitwiki').innerHTML = `<span class="groovy"><b>HAPPY PIT DAY!</b></span> ` + TimestampIt(Math.round(pitdaytimestamp - now + 86400));
+        isItPitDay = true;
+      } else if(isItPitDay) {
+        document.getElementById('thehypixelpitwiki').innerHTML = "The Hypixel Pit Wiki";
+        isItPitDay = false;
+      }
+}
+pitDay();
+setInterval(pitDay, 1000);
 
 function translateClick() {
   if(!translatevisible) {
