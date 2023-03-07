@@ -1,5 +1,5 @@
 body {
-  font-family: Roboto, Manrope, sans-serif;
+  font-family: Roboto, Inter, sans-serif;
   background-attachment: fixed;
   background-image: url("images/background.png");
 }
@@ -30,6 +30,11 @@ body {
   font-size: 12px;
   font-style: italic;
   color: #aaa;
+}
+
+.tt {
+  display: inline-block;
+  line-height: 1.5em;
 }
 
 .little {
@@ -227,8 +232,7 @@ td {
 
 
 code {
-  font-family: "Roboto Mono", ui-monospace, Menlo, "Cascadia Mono",
-    "Segoe UI Mono", "Fira Mono", "Droid Sans Mono", monospace;
+  font-family: "Roboto Mono", ui-monospace, Menlo, "Cascadia Mono", "Segoe UI Mono", "Fira Mono", "Droid Sans Mono", monospace;
   color: #cac;
   background-color: #383838;
   padding: 2px;
@@ -266,6 +270,55 @@ a:active {
   text-decoration: underline;
 }
 
+.tip {
+  position: relative;
+  border-bottom: 1px dotted #ffffff88;
+  cursor: help;
+}
+
+.tip .tiptext {
+  visibility: hidden;
+  word-wrap: break-word;
+  width: 160px;
+  background-color: #000000cc;
+  text-align: center;
+  border-radius: 6px;
+  padding: 5px 0;
+  position: absolute;
+  z-index: 1;
+  bottom: 150%;
+  left: -85px;
+  padding: 10px;
+  font-weight: 400;
+  font-style: oblique;
+  color: #fff;
+  opacity: 0;
+  transition: opacity 0.4s;
+}
+
+.tip .tiptext::after {
+  content: "";
+  position: absolute;
+  top: 100%;
+  left: 50%;
+  margin-left: -5px;
+  border-width: 5px;
+  border-style: solid;
+  border-color: #00000088 transparent transparent transparent;
+}
+
+.icon {
+  font-family: Material;
+}
+
+.tip:hover .tiptext, .tip:active .tiptext {
+  visibility: visible;
+}
+
+.tip:hover .tiptext {
+  opacity: 1;
+}
+
 @font-face {
   font-family: Roboto;
   src: url("./font/Roboto-Regular.ttf");
@@ -280,6 +333,11 @@ a:active {
 @font-face {
   font-family: Material;
   src: url("./font/Material.ttf");
+}
+
+@font-face {
+  font-family: Inter;
+  src: url("./font/InterVariable.ttf");
 }
 
 :root {
