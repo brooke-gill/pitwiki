@@ -477,5 +477,10 @@ background-color: #31313a;
     background-image: none;
     background-color: var(--bg);
   }
+
+  .box {
+    width: auto;
+    padding: 20px 15px 20px;
+  }
 }
 /* stylesheet not updating? */
