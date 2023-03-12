@@ -4,7 +4,7 @@
 <div class="headerbox" style="position:fixed; left: 50%; transform: translate(-50%, 0); z-index:3; background-size: 100%; outline: 2px solid #3f3f3f; top:-10px">
 <span class="body" style="text-align:center"><a href="./" style="color: white" id="thehypixelpitwiki">The Hypixel Pit Wiki</a></span>
 
-<input type="text" autocomplete="off" id="myInput" onkeyup="Filter()" style="display: none; float: right; text-align: left;" placeholder="&#x1F50E;&#xFE0E; Search for articles..."><span style="float: right">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><img src="/images/translate.svg" height="24" class="hoverimage" style="float: right; display: none;" id="languageicon" onclick="translateClick()"><span id="languages">
+<input type="text" autocomplete="off" id="searchBar" onkeyup="Filter()" style="display: none; float: right; text-align: left;" placeholder="&#x1F50E;&#xFE0E; Search for articles..."><span style="float: right">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><img src="/images/translate.svg" height="24" class="hoverimage" style="float: right; display: none;" id="languageicon" onclick="translateClick()"><span id="languages">
 </div>
 
 <span id="languagecontainer" style="display: none">
@@ -12,7 +12,7 @@
 </span>
 
 <span id="partofsearch" style="display: none">
-<ul id="aUL" class="mf" style="display: none; list-style-type: square; background-color:#363636; border-radius: 15px; padding: 20px 20px 20px 50px; margin: 50px 100px 0px 0px;right: 0px; width: 250px; z-index: 4; position:fixed;"></ul>
+<ul id="aUL" class="mf"></ul>
 </span>
 <script>
 var searchclicked = 0;
@@ -67,8 +67,8 @@ if (otherlanguages > 0) {
 }
 
 if(screen.width > 500) {
-document.getElementById('myInput').focus();
-document.getElementById('myInput').select();
+document.getElementById('searchBar').focus();
+document.getElementById('searchBar').select();
 }
 for(var i = 0; i < window.searchpages.length * 2; i += 1) {
     //console.log("doing thing")
@@ -141,19 +141,19 @@ if(lol == 0) {
 }
 
 
-var input = document.getElementById("myInput");
+var input = document.getElementById("searchBar");
 input.addEventListener("keypress", function(event) {
   if (event.key === "Enter") {
     console.log("click")
     event.preventDefault();
     document.getElementById('link_' + topitem).click();
     ChangeHighlight()
-    document.getElementById("myInput").value = "";
+    document.getElementById("searchBar").value = "";
     document.getElementById('aUL').style.display = "none"
  }
 });
 
-var input = document.getElementById("myInput");
+var input = document.getElementById("searchBar");
 input.addEventListener("keydown", function(event) {
   if (event.key === "ArrowUp") {
     console.log("up arrow")
@@ -164,7 +164,7 @@ input.addEventListener("keydown", function(event) {
  }
 });
 
-var input = document.getElementById("myInput");
+var input = document.getElementById("searchBar");
 input.addEventListener("keydown", function(event) {
   if (event.key === "ArrowDown") {
     console.log("down arrow")
@@ -186,7 +186,7 @@ numberofhiddenitemsbecauseof8itemlimit = 0;
 visibleIDs = [];
   // Declare variables
   var input, filter, ul, li, a, i, txtValue;
-  input = document.getElementById('myInput');
+  input = document.getElementById('searchBar');
   filter = input.value.toUpperCase();
   ul = document.getElementById("aUL");
   li = ul.getElementsByTagName('li');
@@ -245,17 +245,17 @@ visibleIDs = [];
 
 function Search() {
     if(searchclicked == 0) {
-    document.getElementById('myInput').style.display = "block"
+    document.getElementById('searchBar').style.display = "block"
     document.getElementById('partofsearch').style.display = "block"
     searchclicked = 1;
     if(screen.width > 500) {
-    document.getElementById('myInput').focus();
-    document.getElementById('myInput').select();
+    document.getElementById('searchBar').focus();
+    document.getElementById('searchBar').select();
     }
     Filter()
     } else {
     document.getElementById('partofsearch').style.display = "none"
-    document.getElementById('myInput').style.display = "none"
+    document.getElementById('searchBar').style.display = "none"
     document.getElementById('aUL').style.display = "none"
     searchclicked = 0;
     }
@@ -282,28 +282,3 @@ if(favi > 0) {
 }
 
 </script>
-
-<!-- just here for redundancy -->
-<style> 
-  input[type="text"] {
-  font-size:17px;
-  font-family: Roboto, sans-serif;
-  text-align:center;
-  background-color: #313131;
-  color: white;
-  transition-duration: 0.5s;
-  position: relative;
-  width: 200px;
-right: 0px;
-border-radius: 5px;
-
-}
-
-input[type="text"]:focus {
-outline: none;
-box-shadow: 0 0 10px rgba(200, 200, 200, 0.2);
-position: relative;
-width: 250px;
-background-color: #31313a;
-}
-</style>

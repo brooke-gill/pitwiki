@@ -416,28 +416,24 @@ ul {
   color: transparent;
 }
 
-
-
-input[type="text"] {
+#searchBar {
   font-size:17px;
   font-family: Roboto, sans-serif;
-  text-align:center;
   background-color: #313131;
   color: white;
   transition-duration: 0.5s;
   position: relative;
   width: 200px;
-right: 0px;
-border-radius: 5px;
-
+  right: 0px;
+  border-radius: 5px;
 }
 
-input[type="text"]:focus {
-outline: none;
-box-shadow: 0 0 10px rgba(200, 200, 200, 0.2);
-position: relative;
-width: 250px;
-background-color: #31313a;
+#searchBar:focus {
+  outline: none;
+  box-shadow: 0 0 10px rgba(200, 200, 200, 0.2);
+  position: relative;
+  width: 250px;
+  background-color: #31313a;
 }
 
 /* thank you to Rahul for showing me the power of CSS Masonry: https://w3bits.com/css-masonry/ */
@@ -452,6 +448,19 @@ background-color: #31313a;
   padding: 1em;
   margin: 0 0 1.5em;
   break-inside: avoid-column;
+}
+
+#aUL {
+  display: none;
+  list-style-type: square;
+  background-color:#363636;
+  border-radius: 15px;
+  padding: 20px 20px 20px 50px;
+  margin: 50px 100px 0px 0px;
+  right: 0px;
+  width: 250px;
+  z-index: 4;
+  position:fixed;
 }
 
 @media only screen and (min-width: 1024px) {
@@ -481,6 +490,10 @@ background-color: #31313a;
   .box {
     width: auto;
     padding: 20px 15px 20px;
+  }
+
+  #aUL {
+    width: 175px;
   }
 }
 /* stylesheet not updating? */
