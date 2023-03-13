@@ -100,8 +100,8 @@ td {
 }
 
 .highlighted {
-  border: 2px solid #cc0000;
-  background: #880000;
+  border: 2px solid #cc0000aa;
+  background: #cc000055;
 }
 
 .invisible_fill {
