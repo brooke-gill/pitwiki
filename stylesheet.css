@@ -1,23 +1,23 @@
 body {
-  font-family: Roboto, Inter, sans-serif;
+  font-family: Georgia, 'Times New Roman', Times, serif;
   background-attachment: fixed;
   background-image: url("images/background.png");
 }
 
 .header {
   font-size: 30px;
-  color: wheat;
+  color: rgb(80, 80, 80);
 }
 
 .subheader {
   font-size: 16px;
-  color: white;
+  color: rgb(108, 108, 108);
   font-style: italic;
 }
 
 .body {
   font-size: 16px;
-  color: #fff;
+  color: #000;
 }
 
 .section {
@@ -29,7 +29,7 @@ body {
 .small {
   font-size: 12px;
   font-style: italic;
-  color: #aaa;
+  color: #616161;
 }
 
 .tt {
@@ -66,20 +66,20 @@ body {
 }
 
 .item {
-  outline: 1px solid white;
+  outline: 1px solid black;
   width: 200px;
   float: right;
   margin: 10px;
-  border: 1px solid white;
+  border: 1px solid black;
 }
 
 .item30 {
   /* 1.5× larger than item */
-  outline: 1px solid white;
+  outline: 1px solid black;
   width: 300px;
   float: right;
   margin: 10px;
-  border: 1px solid white;
+  border: 1px solid black;
 }
 
 .tableheader {
@@ -91,7 +91,7 @@ body {
 table,
 th,
 td {
-  border: 1px solid white;
+  border: 1px solid black;
   padding: 5px;
 }
 
@@ -110,13 +110,12 @@ td {
 
 .headerbox {
   background-color: var(--bgtp);
-  width: 80%;
+  width: 95%;
   padding: 20px 50px 20px;
   margin: 0px;
   margin-left: auto;
   margin-right: auto;
   line-height: 1.75;
-  border-radius: 15px;
 }
 
 .smallbreak {
@@ -140,13 +139,12 @@ td {
 
 .box {
   background-color: var(--bgtp);
-  width: 80%;
+  width: 95%;
   padding: 20px 50px 20px;
-  margin: 20px;
+  margin: 5px;
   margin-left: auto;
   margin-right: auto;
   line-height: 1.75;
-  border-radius: 15px;
   position: relative;
   top: 50px;
 }
@@ -183,34 +181,34 @@ td {
   color: #fa0;
 }
 .m7 {
-  color: #aaa;
+  color: #7d7d7d;
 }
 .m8 {
-  color: #555;
+  color: #3c3c3c;
 }
 .m9 {
-  color: #55f;
+  color: rgb(99, 99, 157);
 }
 .ma {
-  color: #5f5;
+  color: rgb(95, 182, 95);
 }
 .mb {
-  color: #5ff;
+  color: rgb(92, 174, 174);
 }
 .mc {
-  color: #f55;
+  color: rgb(162, 92, 92);
 }
 .md {
-  color: #f5f;
+  color: rgb(140, 77, 140);
 }
 .me {
-  color: #ff5;
+  color: rgb(141, 141, 87);
 }
 .mf {
-  color: #fff;
+  color: #c0c0c0;
 }
 .td {
-  color: #caa;
+  color: rgb(165, 151, 151);
 }
 
 .shadowf {
@@ -233,8 +231,8 @@ td {
 
 code {
   font-family: "Roboto Mono", ui-monospace, Menlo, "Cascadia Mono", "Segoe UI Mono", "Fira Mono", "Droid Sans Mono", monospace;
-  color: #cac;
-  background-color: #383838;
+  color: rgb(94, 42, 94);
+  background-color: #cfc7c7;
   padding: 2px;
 }
 
@@ -247,32 +245,32 @@ a {
 }
 
 a:link {
-  color: #5abbb7;
+  color: #413f38;
   background-color: transparent;
   text-decoration: none;
 }
 
 a:visited {
-  color: #4b9b98;
+  color: #615a4b;
   background-color: transparent;
   text-decoration: none;
 }
 
 a:hover {
-  color: #c2edee;
+  color: #737462;
   background-color: transparent;
   text-decoration: underline;
 }
 
 a:active {
-  color: #ddf0f0;
+  color: #aaa580;
   background-color: transparent;
   text-decoration: underline;
 }
 
 .tip {
   position: relative;
-  border-bottom: 1px dotted #ffffff88;
+  border-bottom: 1px dotted #35353588;
   cursor: help;
 }
 
@@ -280,7 +278,7 @@ a:active {
   visibility: hidden;
   word-wrap: break-word;
   width: 160px;
-  background-color: #000000cc;
+  background-color: #c4c4c4cc;
   text-align: center;
   border-radius: 6px;
   padding: 5px 0;
@@ -291,7 +289,7 @@ a:active {
   padding: 10px;
   font-weight: 400;
   font-style: oblique;
-  color: #fff;
+  color: #000000;
   opacity: 0;
   transition: opacity 0.4s;
 }
@@ -304,7 +302,7 @@ a:active {
   margin-left: -5px;
   border-width: 5px;
   border-style: solid;
-  border-color: #00000088 transparent transparent transparent;
+  border-color: #ffffff88 transparent transparent transparent;
 }
 
 .icon {
@@ -348,18 +346,18 @@ a:active {
   --mc4: #a00;
   --mc5: #a0a;
   --mc6: #fa0;
-  --mc7: #aaa;
+  --mc7: #727272;
   --mc8: #555;
   --mc9: #55f;
-  --mca: #5f5;
-  --mcb: #5ff;
-  --mcc: #f55;
-  --mcd: #f5f;
-  --mce: #ff5;
-  --mcf: #fff;
+  --mca: rgb(113, 177, 113);
+  --mcb: rgb(97, 181, 181);
+  --mcc: rgb(171, 88, 88);
+  --mcd: rgb(160, 93, 160);
+  --mce: rgb(202, 202, 90);
+  --mcf: #c5c5c5;
   --td: #caa;
-  --bg: #252525;
-  --bgtp: rgba(37, 37, 37, 0.95);
+  --bg: #e8d5be;
+  --bgtp: #eee7def2;
 }
 
 .rainbow_text_animated {
@@ -418,9 +416,9 @@ ul {
 
 #searchBar {
   font-size:17px;
-  font-family: Roboto, sans-serif;
-  background-color: #313131;
-  color: white;
+  font-family: Georgia, 'Times New Roman', Times, serif;
+  background-color: #dbdbdb;
+  color: rgb(0, 0, 0);
   transition-duration: 0.5s;
   position: relative;
   width: 200px;
@@ -433,7 +431,7 @@ ul {
   box-shadow: 0 0 10px rgba(200, 200, 200, 0.2);
   position: relative;
   width: 250px;
-  background-color: #31313a;
+  background-color: #cabc9f;
 }
 
 /* thank you to Rahul for showing me the power of CSS Masonry: https://w3bits.com/css-masonry/ */
@@ -453,7 +451,7 @@ ul {
 #aUL {
   display: none;
   list-style-type: square;
-  background-color:#363636;
+  background-color: var(--bg);
   border-radius: 15px;
   padding: 20px 20px 20px 50px;
   margin: 50px 100px 0px 0px;

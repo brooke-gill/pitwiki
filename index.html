@@ -14,7 +14,7 @@
 <link rel="manifest" href="./favicon/site.webmanifest">
 <script src="https://brookeafk.com/emergency.js?v=21"></script>
 <script src="https://brookeafk.com/control.js?v=0"></script>
-<script src="https://code.jquery.com/jquery-3.6.0.js" integrity="sha256-H+K7U5CnXl1h5ywQfKtSj8PCmoN9aaq30gDh27Xc0jk=" crossorigin="anonymous"></script>
+<script src="jquery-3.6.3.min.js"></script>
 <script>
 $(function(){
   $("#header").load("header.html"); 
@@ -27,14 +27,31 @@ $(function(){
 <div class="box">
 <center>
   <br>
-<p class="header funky" style="line-height: 1em"><b>The Unofficial Hypixel Pit Wiki</b></p>
-<p class="body" style="font-size: 20px"><b class="ma">WELCOME!</b> Thank you for visiting the Hypixel Pit Wiki!</p>
+<p class="header funky" style="line-height: 1em"><b>The Pits Wiki</b></p>
+<p class="body" style="font-size: 20px"><b class="ma">WELCOME!</b> Thank you for visiting the Pits Wiki, a wiki designed for YOU to find out the WONDERFUL nature of ALL pits!.....<br>Starting on April 1st, we will be branching out to OTHER styles of pits... so that we live up to our NAME as pit.wiki.<br>We hope you all of our new content... now go out there and start digging some PITS!</p>
+
+<p onclick="oops()" style="font-size: 20px; font-weight: bold; color: #af5d96; cursor: pointer;" id="revol">Click Here To Try Out Our New Revolutionary Interface</p>
+
+<marquee scrollamount="80"><p class="m2" style="font-size: 40px; line-height: 0.5em">&darr; &darr; &darr; &darr; NEW ARTICLES!!!!!! &darr; &darr; &darr; &darr;</p></marquee>
+<span style="font-size: 25px">
+<p style="line-height: 0.5em">&star; &starf; &star; <a href="Fast_Facts" style="color: red"><u>FAST FACTS ABOUT PITS: ALL YOU NEED TO KNOW</u></a> &star; &starf; &star;</p>
+<p style="font-size: 15px">Types of Pits <i>by</i> RESIDENT PIT LORE MASTER adjective noun</p>
+<p style="line-height: 0.5em">&starf; &star; &starf; <a href="Big_Lava_Pits" style="color: red"><u>Big Lava Pits</u></a> &starf; &star; &starf;</p>
+<p style="line-height: 0.5em">&starf; &star; &starf; <a href="Black_Goop_Pits" style="color: red"><u>Black Goop Pits</u></a> &starf; &star; &starf;</p>
+<p style="font-size: 15px">Other Important Information <i>by</i> PIT CEO brooke afk</p>
+
+<p style="line-height: 0.5em">&star; &starf; &star; <a href="Things_That_Are_Not_Pits" style="color: red"><u>Things That Are Not Pits</u></a> &star; &starf; &star;</p>
+<p style="line-height: 0.5em">&star; &starf; &star; <a href="How_to_Make_a_Pit_Soufflé" style="color: red"><u>How to Make a Pit Soufflé</u></a> &star; &starf; &star;</p>
+</span>
+
+<p>OLD, BORING ARTICLES BELOW &darr; &darr; &darr; &darr;</p>
+
 <noscript><p class="body"><b class="mc">WARNING!</b> JavaScript is disabled in your browser! You will be unable to use the search, timers, header, or footer without <a href="https://www.enablejavascript.io/" target="_blank" rel="noopener noreferrer">enabling JavaScript</a>.</p></noscript>
 
 <div class="homepagecontainer">
 
   <div class="homepageitem body">
-    <span><b>The Pit</b> is a persistent gamemode on the Hypixel network that heavily revolves around player-versus-player combat using unique <a href="Perks">perks</a>, <a href="Killstreaks">killstreaks</a>, <a href="Mystic_Pants">armor</a>, and <a href="Mystic_Sword">enchantments</a>. <br><br>Join and fight <span class="me" id="playercount"></span> players at <span class="me">mc.hypixel.net</span>!</span> 
+    <span><b>A pit</b> is a <span class="me">large depression</span> in the ground, either natural or man-made. Various types of pits exist, including <a href="Big_Lava_Pits">lava</a>, <a href="Black_Goop_Pits">goop</a>, and <a href="The_Hypixel_Pit">Hypixel</a>.<br><br>Join <span class="me" id="playercount"></span> people that are <span class="me">looking at pits outside</span>!</span> 
   </div>
 
   <div class="homepageitem body" style="background-size:cover; background-position: center; background-image: linear-gradient(rgba(54,54,54,.8), rgba(54,54,54,.8)), url('./images/map_genesis_palace.png');" id="mapbg">
@@ -171,8 +188,41 @@ $(function(){
 <br>
 </div>
 <div id="footer"></div>
+<style>
+      .flip {
+      animation: flip_ 5s;
+      animation-timing-function: ease-in-out;
+    }
 
+    @keyframes flip_ {
+      0%   { transform: rotate(0deg); }
+      50%   { transform: rotate(180deg); }
+      100% { transform: rotate(360deg); }
+    }</style>
 <script>
+  var clicked = false;
+  var TextElements = document.querySelectorAll('*');
+
+  function oops() {
+    if(clicked) { remove(); clicked = false; document.getElementById('revol').innerHTML = "Click Here To Try Our Our Revolutionary New Feature Again" }
+    else {
+      clicked = true;
+      document.getElementById('revol').innerHTML = "Click Here To Stop Trying Out Our Revolutionary New Feature"
+      for (var j = 0, max = TextElements.length; j < max; j++) {
+        TextElements[j].classList.add("flip");
+      }
+    }
+  }
+
+  function remove() {
+    for (var i = 0, max = TextElements.length; i < max; i++) {
+      TextElements[i].classList.remove("flip");
+      console.log("remove"  )
+    }
+  }
+
+  
+
   $.getJSON(('https://api.slothpixel.me/api/counts'), function(data) {
     let json5 = data;
     document.getElementById('playercount').innerText = (json5.games.PIT.players)
@@ -246,7 +296,7 @@ $(function(){
       if(time == "day") {
         document.getElementById('mapbg').style.backgroundImage = `linear-gradient(rgba(54,54,54,.7), rgba(54,54,54,.7)), url('` + mapbg[mapid] + `')`
       } else {
-        document.getElementById('mapbg').style.backgroundImage = `linear-gradient(rgba(54,54,54,.5), rgba(54,54,54,.5)), url('` + nmapbg[mapid] + `')`
+        document.getElementById('mapbg').style.backgroundImage = `linear-gradient(rgba(255,255,255,.5), rgba(255,255,255,.5)), url('` + nmapbg[mapid] + `')`
       }
     }
   
