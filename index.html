@@ -173,32 +173,6 @@ $(function(){
 <div id="footer"></div>
 
 <script>
-<<<<<<< HEAD
-  var clicked = false;
-  var TextElements = document.querySelectorAll('*');
-
-  function oops() {
-    if(clicked) { remove(); clicked = false; document.getElementById('revol').innerHTML = "Click Here To Try Our Revolutionary New Feature Again" }
-    else {
-      clicked = true;
-      document.getElementById('revol').innerHTML = "Click Here To Stop Trying Out Our Revolutionary New Feature"
-      for (var j = 0, max = TextElements.length; j < max; j++) {
-        TextElements[j].classList.add("flip");
-      }
-    }
-  }
-
-  function remove() {
-    for (var i = 0, max = TextElements.length; i < max; i++) {
-      TextElements[i].classList.remove("flip");
-      console.log("remove"  )
-    }
-  }
-
-  
-
-=======
->>>>>>> parent of 2a5daf9 (April Fools)
   $.getJSON(('https://api.slothpixel.me/api/counts'), function(data) {
     let json5 = data;
     document.getElementById('playercount').innerText = (json5.games.PIT.players)
