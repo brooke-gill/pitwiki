@@ -1,23 +1,23 @@
 body {
-  font-family: Georgia, 'Times New Roman', Times, serif;
+  font-family: Roboto, Inter, sans-serif;
   background-attachment: fixed;
   background-image: url("images/background.png");
 }
 
 .header {
   font-size: 30px;
-  color: rgb(80, 80, 80);
+  color: wheat;
 }
 
 .subheader {
   font-size: 16px;
-  color: rgb(108, 108, 108);
+  color: white;
   font-style: italic;
 }
 
 .body {
   font-size: 16px;
-  color: #000;
+  color: #fff;
 }
 
 .section {
@@ -29,7 +29,7 @@ body {
 .small {
   font-size: 12px;
   font-style: italic;
-  color: #616161;
+  color: #aaa;
 }
 
 .tt {
@@ -66,20 +66,20 @@ body {
 }
 
 .item {
-  outline: 1px solid black;
+  outline: 1px solid white;
   width: 200px;
   float: right;
   margin: 10px;
-  border: 1px solid black;
+  border: 1px solid white;
 }
 
 .item30 {
   /* 1.5× larger than item */
-  outline: 1px solid black;
+  outline: 1px solid white;
   width: 300px;
   float: right;
   margin: 10px;
-  border: 1px solid black;
+  border: 1px solid white;
 }
 
 .tableheader {
@@ -91,7 +91,7 @@ body {
 table,
 th,
 td {
-  border: 1px solid black;
+  border: 1px solid white;
   padding: 5px;
 }
 
@@ -110,12 +110,13 @@ td {
 
 .headerbox {
   background-color: var(--bgtp);
-  width: 95%;
+  width: 80%;
   padding: 20px 50px 20px;
   margin: 0px;
   margin-left: auto;
   margin-right: auto;
   line-height: 1.75;
+  border-radius: 15px;
 }
 
 .smallbreak {
@@ -139,12 +140,13 @@ td {
 
 .box {
   background-color: var(--bgtp);
-  width: 95%;
+  width: 80%;
   padding: 20px 50px 20px;
-  margin: 5px;
+  margin: 20px;
   margin-left: auto;
   margin-right: auto;
   line-height: 1.75;
+  border-radius: 15px;
   position: relative;
   top: 50px;
 }
@@ -181,34 +183,34 @@ td {
   color: #fa0;
 }
 .m7 {
-  color: #7d7d7d;
+  color: #aaa;
 }
 .m8 {
-  color: #3c3c3c;
+  color: #555;
 }
 .m9 {
-  color: rgb(99, 99, 157);
+  color: #55f;
 }
 .ma {
-  color: rgb(95, 182, 95);
+  color: #5f5;
 }
 .mb {
-  color: rgb(92, 174, 174);
+  color: #5ff;
 }
 .mc {
-  color: rgb(162, 92, 92);
+  color: #f55;
 }
 .md {
-  color: rgb(140, 77, 140);
+  color: #f5f;
 }
 .me {
-  color: rgb(141, 141, 87);
+  color: #ff5;
 }
 .mf {
-  color: #c0c0c0;
+  color: #fff;
 }
 .td {
-  color: rgb(165, 151, 151);
+  color: #caa;
 }
 
 .shadowf {
@@ -231,8 +233,8 @@ td {
 
 code {
   font-family: "Roboto Mono", ui-monospace, Menlo, "Cascadia Mono", "Segoe UI Mono", "Fira Mono", "Droid Sans Mono", monospace;
-  color: rgb(94, 42, 94);
-  background-color: #cfc7c7;
+  color: #cac;
+  background-color: #383838;
   padding: 2px;
 }
 
@@ -245,32 +247,32 @@ a {
 }
 
 a:link {
-  color: #413f38;
+  color: #5abbb7;
   background-color: transparent;
   text-decoration: none;
 }
 
 a:visited {
-  color: #615a4b;
+  color: #4b9b98;
   background-color: transparent;
   text-decoration: none;
 }
 
 a:hover {
-  color: #737462;
+  color: #c2edee;
   background-color: transparent;
   text-decoration: underline;
 }
 
 a:active {
-  color: #aaa580;
+  color: #ddf0f0;
   background-color: transparent;
   text-decoration: underline;
 }
 
 .tip {
   position: relative;
-  border-bottom: 1px dotted #35353588;
+  border-bottom: 1px dotted #ffffff88;
   cursor: help;
 }
 
@@ -278,7 +280,7 @@ a:active {
   visibility: hidden;
   word-wrap: break-word;
   width: 160px;
-  background-color: #c4c4c4cc;
+  background-color: #000000cc;
   text-align: center;
   border-radius: 6px;
   padding: 5px 0;
@@ -289,7 +291,7 @@ a:active {
   padding: 10px;
   font-weight: 400;
   font-style: oblique;
-  color: #000000;
+  color: #fff;
   opacity: 0;
   transition: opacity 0.4s;
 }
@@ -302,7 +304,7 @@ a:active {
   margin-left: -5px;
   border-width: 5px;
   border-style: solid;
-  border-color: #ffffff88 transparent transparent transparent;
+  border-color: #00000088 transparent transparent transparent;
 }
 
 .icon {
@@ -346,18 +348,18 @@ a:active {
   --mc4: #a00;
   --mc5: #a0a;
   --mc6: #fa0;
-  --mc7: #727272;
+  --mc7: #aaa;
   --mc8: #555;
   --mc9: #55f;
-  --mca: rgb(113, 177, 113);
-  --mcb: rgb(97, 181, 181);
-  --mcc: rgb(171, 88, 88);
-  --mcd: rgb(160, 93, 160);
-  --mce: rgb(202, 202, 90);
-  --mcf: #c5c5c5;
+  --mca: #5f5;
+  --mcb: #5ff;
+  --mcc: #f55;
+  --mcd: #f5f;
+  --mce: #ff5;
+  --mcf: #fff;
   --td: #caa;
-  --bg: #e8d5be;
-  --bgtp: #eee7def2;
+  --bg: #252525;
+  --bgtp: rgba(37, 37, 37, 0.95);
 }
 
 .rainbow_text_animated {
@@ -416,9 +418,9 @@ ul {
 
 #searchBar {
   font-size:17px;
-  font-family: Georgia, 'Times New Roman', Times, serif;
-  background-color: #dbdbdb;
-  color: rgb(0, 0, 0);
+  font-family: Roboto, sans-serif;
+  background-color: #313131;
+  color: white;
   transition-duration: 0.5s;
   position: relative;
   width: 200px;
@@ -431,7 +433,7 @@ ul {
   box-shadow: 0 0 10px rgba(200, 200, 200, 0.2);
   position: relative;
   width: 250px;
-  background-color: #cabc9f;
+  background-color: #31313a;
 }
 
 /* thank you to Rahul for showing me the power of CSS Masonry: https://w3bits.com/css-masonry/ */
@@ -451,7 +453,7 @@ ul {
 #aUL {
   display: none;
   list-style-type: square;
-  background-color: var(--bg);
+  background-color:#363636;
   border-radius: 15px;
   padding: 20px 20px 20px 50px;
   margin: 50px 100px 0px 0px;
