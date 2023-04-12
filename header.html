@@ -53,6 +53,21 @@ if (request.status === 404) {
 }
 }
 
+/*function ok(url) {
+var request;
+if(window.XMLHttpRequest)
+    request = new XMLHttpRequest();
+else
+    request = new ActiveXObject("Microsoft.XMLHTTP");
+request.open('GET', url, false);
+request.send();
+if (request.status === 404) {
+  return false;
+} else {
+  return request.responseText;
+}
+}*/
+
 for(a = 0; a < languages.length; a++) {
   var urlToTest = path.replace(languages[mylanguage], languages[a])
   if(a != mylanguage && checkURL(urlToTest)) {
