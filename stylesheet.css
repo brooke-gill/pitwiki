@@ -319,6 +319,11 @@ a:active {
   opacity: 1;
 }
 
+.searchresult {
+  background-color: rgb(59, 133, 160);
+  font-weight: bold;
+}
+
 @font-face {
   font-family: Roboto;
   src: url("./font/Roboto-Regular.ttf");
@@ -416,7 +421,7 @@ ul {
   color: transparent;
 }
 
-#searchBar {
+#searchBar, .searchbar {
   font-size:17px;
   font-family: Roboto, sans-serif;
   background-color: #313131;
@@ -428,7 +433,7 @@ ul {
   border-radius: 5px;
 }
 
-#searchBar:focus {
+#searchBar:focus, .searchbar:focus {
   outline: none;
   box-shadow: 0 0 10px rgba(200, 200, 200, 0.2);
   position: relative;
