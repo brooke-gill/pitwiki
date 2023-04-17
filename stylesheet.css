@@ -320,7 +320,7 @@ a:active {
 }
 
 .searchresult {
-  background-color: rgb(59, 133, 160);
+  background-color: #3b85a0;
   font-weight: bold;
 }
 
@@ -408,14 +408,14 @@ ul {
 }
 
 .funky {
-  background: linear-gradient(150deg, rgba(245,222,179,1) 0%, rgba(167,123,41,1) 100%);
+  background: linear-gradient(150deg, #f5deb3 0%, #a77b29 100%);
   background-clip: text;
   -webkit-background-clip: text;
   color: transparent;
 }
 
 .groovy {
-  background: linear-gradient(150deg, rgb(229, 27, 188) 0%, rgb(245, 210, 84) 100%);
+  background: linear-gradient(150deg, #e51bbc 0%, #f5d254 100%);
   background-clip: text;
   -webkit-background-clip: text;
   color: transparent;
@@ -449,10 +449,19 @@ ul {
 }
 
 .homepageitem {
-  background: rgba(76, 76, 76, 0.25);
+  background: #4c4c4c40;
   padding: 1em;
   margin: 0 0 1.5em;
   break-inside: avoid-column;
+}
+
+kbd {
+  border: 1px solid #ccc;
+  background-color: #454545;
+  border-radius: 4px;
+  font-family: Roboto;
+  font-size: 12px;
+  padding: 4px;
 }
 
 #aUL {
