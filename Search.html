@@ -21,10 +21,10 @@ $(function(){
 <body>
 <div id="header"></div>
 <div class="box">
-<span class="body"><span class="header">Search</span><br>
-<span class="subheader">From the <a href="./">Hypixel Pit Wiki</a></span>
+<span class="body">
+<span class="subheader"><span style="font-style: normal;">&#x1F50E;&#xFE0E; Search results</span></span>
 <hr>
-<input type="text" class="searchbar" onkeypress="search()" id="pagesearchbar">
+<input type="text" class="searchbar" onkeypress="search()" id="pagesearchbar" placeholder="&#x1F50E;&#xFE0E; Search for text...">
 <p id="guide">Search for text inside articles by typing in the box above. Press <kbd>Enter</kbd> to search.</p>
 <div id="result"></div>
 
@@ -64,36 +64,45 @@ $(function(){
             articletext[d] = strip(articletext[d].replace(/<\/td><td>|<\/tr><tr>| {2,}/g, " ")).replace(/\n/g, " ");
             articletextlowercase[d] = articletext[d].toLowerCase();
         }
+        let here = new URL(window.location.href);
+        if(here.searchParams.get('param') != null) {
+            document.getElementById("pagesearchbar").value = here.searchParams.get('param');
+            search(undefined,true);
+        }
     })
     .catch(error => console.log(error));
 
-    function search(keyword = document.getElementById("pagesearchbar").value) {
-        if(event.key == "Enter") {
-            truekeyword = keyword;
-            keyword = keyword.toLowerCase();
+    function search(keyword = document.getElementById("pagesearchbar").value, bypass = false) {
+        if(bypass || event.key == "Enter") {
             document.getElementById("result").innerHTML = "";
-            var results = [];
-            for(b = 0; b < articletext.length; b++) {
-                const matchregex = new RegExp(keyword, "g");
-                var matches = (articletextlowercase[b].match(matchregex)||[]).length;
-                if(matches > 0) results.push([articles[b], matches, b, articletextlowercase[b].indexOf(keyword)]);
+            if(keyword == "") {
+                document.getElementById("guide").innerHTML = "Search for text inside articles by typing in the box above. Press <kbd>Enter</kbd> to search.";
             }
-            results.sort(function(a,b) {
-                return b[1]-a[1]
-            });
+            else {
+                truekeyword = keyword;
+                keyword = keyword.toLowerCase();
+                var results = [];
+                for(b = 0; b < articletext.length; b++) {
+                    var matches = articletextlowercase[b].split(keyword).length - 1;
+                    if(matches > 0) results.push([articles[b], matches, b, articletextlowercase[b].indexOf(keyword)]);
+                }
+                results.sort(function(a,b) {
+                    return b[1]-a[1]
+                });
 
-            var resultcount = 0;
+                var resultcount = 0;
 
-            for(e = 0; e < results.length; e++) {
-                selection = results[e];
-                correctarticle = articletext[selection[2]];
-                resultcount += selection[1];
+                for(e = 0; e < results.length; e++) {
+                    selection = results[e];
+                    correctarticle = articletext[selection[2]];
+                    resultcount += selection[1];
 
-                document.getElementById("result").innerHTML += `<b><a href="` + selection[0] + `">` + (articletitles[selection[2]]) + "</a></b> (" + selection[1].toLocaleString() + (selection[1]==1?" result":" results") + ")<br>..." + (correctarticle.substring(selection[3] - 50, selection[3])) + `<span class="searchresult">` + correctarticle.substring(selection[3], selection[3] + keyword.length) + "</span>" + correctarticle.substring(selection[3] + keyword.length, selection[3] + 50) + "...<br><br>";
+                    document.getElementById("result").innerHTML += `<b><a href="` + selection[0] + `">` + (articletitles[selection[2]]) + "</a></b> (" + selection[1].toLocaleString() + (selection[1]==1?" result":" results") + ")<br>..." + (correctarticle.substring(selection[3] - 50, selection[3])) + `<span class="searchresult">` + correctarticle.substring(selection[3], selection[3] + keyword.length) + "</span>" + correctarticle.substring(selection[3] + keyword.length, selection[3] + 50) + "...<br><br>";
+                }
+                if(results.length == 0) document.getElementById("guide").innerText = `No results found for ` + truekeyword + " :(";
+                else document.getElementById("guide").innerHTML = "Found <b>" + resultcount.toLocaleString() + "</b> results" + (results.length == 1?".":" across " + results.length + " articles.");
+                return results;
             }
-            if(results.length == 0) document.getElementById("guide").innerText = `No results found for ` + truekeyword + " :(";
-            else document.getElementById("guide").innerHTML = "Found <b>" + resultcount.toLocaleString() + "</b> results across " + results.length + " articles.";
-            return results;
         }
     }
 

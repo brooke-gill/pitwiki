@@ -89,14 +89,15 @@ for(var i = 0; i < window.searchpages.length * 2; i += 1) {
     //console.log("doing thing")
     var fulllist = document.getElementById('aUL')
     var list = document.createElement("li")
-      var ahref = document.createElement("a");
-      ahref.textContent = (window.searchpages[i % searchpages.length][0]);
-      ahref.id = ("link_" + i);
-      ahref.setAttribute('href', window.searchpages[i  % searchpages.length][1]);
-      list.appendChild(ahref);
-      fulllist.appendChild(list);
-      //console.log(list)
-  }
+    var ahref = document.createElement("a");
+    ahref.textContent = (window.searchpages[i % searchpages.length][0]);
+    ahref.id = ("link_" + i);
+    ahref.setAttribute('href', window.searchpages[i  % searchpages.length][1]);
+    list.appendChild(ahref);
+    fulllist.appendChild(list);
+    //console.log(list)
+}
+document.getElementById("aUL").innerHTML += `</ul><span id="textsearch"></span>`;
 
 function mouseOver() {
   document.getElementById("search").style.color = "#a83994";
@@ -132,6 +133,7 @@ if(now > pitdaytimestamp && now < (pitdaytimestamp + 86400)) {
         isItPitDay = false;
       }
 }
+
 pitDay();
 setInterval(pitDay, 1000);
 
@@ -195,6 +197,13 @@ function MakeBasic(string_to_become_basic) { //strips all punctuation and fun fr
   return string_to_become_basic.replace(/[^A-Za-z0-9]/g, '')
 }
 
+function escapeString(text) {
+  var map = {
+    '&': '&amp;', '<': '&lt;', '>': '&gt;', '"': '&quot;', "'": '&#039;'
+  };
+  return text.replace(/[&<>"']/g, function(m) { return map[m]; });
+}
+
 function Filter() {
 numberofvisibleitems = 0;
 numberofhiddenitemsbecauseof8itemlimit = 0;
@@ -203,12 +212,13 @@ visibleIDs = [];
   var input, filter, ul, li, a, i, txtValue;
   input = document.getElementById('searchBar');
   filter = input.value.toUpperCase();
+  document.getElementById("textsearch").innerHTML = `<i><br><a href="Search?param=` + encodeURIComponent(input.value) + `" style="color: #D66EDA">Search article text for ` + escapeString(input.value) + `...</a></i>`;
   ul = document.getElementById("aUL");
   li = ul.getElementsByTagName('li');
   if(MakeBasic(filter).length > 0) {
-    document.getElementById('aUL').style.display = "block"
+    document.getElementById('aUL').style.display = "block";
   } else {
-    document.getElementById('aUL').style.display = "none"
+    document.getElementById('aUL').style.display = "none";
   }
   if(filter.length != oldlength) {
     arrowcount = 1;
