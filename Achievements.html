@@ -11,13 +11,15 @@
 <link rel="icon" type="image/png" sizes="32x32" href="./favicon/favicon-32x32.png">
 <link rel="icon" type="image/x-icon" href="./favicon/favicon.ico">
 <link rel="manifest" href="./favicon/site.webmanifest">
-<script type="text/javascript" src="/jquery-3.6.3.min.js"></script>
+<script src="headercode.js"></script>
+<script src="pages.js"></script>
 <script> 
-
-$(function(){
-  $("#header").load("header.html"); 
-  $("#footer").load("footer.html"); 
-});
+fetch('footer.html').then(e => e.text()).then(txt => {
+    document.getElementById("footer").innerHTML = txt;
+})
+fetch('header.html').then(e => e.text()).then(txt => {
+    document.getElementById("header").innerHTML = txt;
+})
 </script>
 </head>
 <body>
