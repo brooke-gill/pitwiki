@@ -12,7 +12,7 @@
 </span>
 
 <span id="partofsearch" style="display: none">
-<ul id="aUL" class="mf"></ul>
+<p id="aUL" class="mf"></p>
 </span>
 <script>
 var searchclicked = 0;
@@ -85,19 +85,14 @@ if(screen.width > 500) {
 document.getElementById('searchBar').focus();
 document.getElementById('searchBar').select();
 }
+
+var link_list = "";
 for(var i = 0; i < window.searchpages.length * 2; i += 1) {
-    //console.log("doing thing")
-    var fulllist = document.getElementById('aUL')
-    var list = document.createElement("li")
-    var ahref = document.createElement("a");
-    ahref.textContent = (window.searchpages[i % searchpages.length][0]);
-    ahref.id = ("link_" + i);
-    ahref.setAttribute('href', window.searchpages[i  % searchpages.length][1]);
-    list.appendChild(ahref);
-    fulllist.appendChild(list);
-    //console.log(list)
+    link_list += `<div><a href="` + window.searchpages[i  % searchpages.length][1] + `" id="link_` + i + `"><p class="searchitem">` + window.searchpages[i % searchpages.length][0] + `</p></a></div>`;
 }
-document.getElementById("aUL").innerHTML += `</ul><span id="textsearch"></span>`;
+document.getElementById("aUL").innerHTML = `<span id="links">` + link_list + "</span>";
+
+document.getElementById("aUL").innerHTML += `<span id="textsearch"></span>`;
 
 function mouseOver() {
   document.getElementById("search").style.color = "#a83994";
@@ -163,7 +158,8 @@ input.addEventListener("keypress", function(event) {
   if (event.key === "Enter") {
     console.log("click")
     event.preventDefault();
-    document.getElementById('link_' + topitem).click();
+    if(numberofvisibleitems != 0) document.getElementById('link_' + topitem).click();
+    else document.getElementById("textsearch-ad").click();
     ChangeHighlight()
     document.getElementById("searchBar").value = "";
     document.getElementById('aUL').style.display = "none"
@@ -212,9 +208,9 @@ visibleIDs = [];
   var input, filter, ul, li, a, i, txtValue;
   input = document.getElementById('searchBar');
   filter = input.value.toUpperCase();
-  document.getElementById("textsearch").innerHTML = `<i><br><a href="Search?param=` + encodeURIComponent(input.value) + `" style="color: #D66EDA">Search article text for ` + escapeString(input.value) + `...</a></i>`;
+  document.getElementById("textsearch").innerHTML = `<br><a href="Search?param=` + encodeURIComponent(input.value) + `" style="color: #D66EDA" id="textsearch-ad">Search for pages that contain <i>"` + escapeString(input.value) + `"...</a></i>`;
   ul = document.getElementById("aUL");
-  li = ul.getElementsByTagName('li');
+  li = ul.getElementsByTagName('div');
   if(MakeBasic(filter).length > 0) {
     document.getElementById('aUL').style.display = "block";
   } else {
@@ -265,6 +261,15 @@ visibleIDs = [];
         li[i].style.display = "none";
         numberofhiddenitemsbecauseof8itemlimit += 1;
     }
+  }
+  if(numberofvisibleitems == 0) {
+    document.getElementById("textsearch-ad").style.fontWeight = "bold";
+    document.getElementById("textsearch-ad").style.color = "rgb(255, 255, 153)";
+    document.getElementById("links").style.display = "none";
+  } else {
+    document.getElementById("textsearch-ad").style.fontWeight = "regular";
+    document.getElementById("textsearch-ad").style.color = "#D66EDA";
+    document.getElementById("links").style.display = "";
   }
 }
 

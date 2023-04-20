@@ -464,18 +464,31 @@ kbd {
   padding: 4px;
 }
 
+.searchitem {
+  border-top: 1px solid #3f3f3f;
+  border-bottom: 1px solid #3f3f3f;
+  margin: 0;
+  padding: 4px;
+}
+
+.searchitem:hover {
+  background-color: #4a6164;
+}
+
 #aUL {
   display: none;
   list-style-type: square;
   background-color:#363636;
   border-radius: 15px;
-  padding: 20px 20px 20px 50px;
+  padding: 20px 20px 20px 20px;
   margin: 50px 100px 0px 0px;
   right: 0px;
   width: 250px;
   z-index: 4;
   position:fixed;
 }
+
+
 
 @media only screen and (min-width: 1024px) {
   .homepagecontainer {
