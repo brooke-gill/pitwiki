@@ -501,7 +501,7 @@ kbd {
   left: 0px;
   width: 250px;
   z-index: 4;
-  position:fixed;
+  position: fixed;
   transform: translate(0px, -24px);
   opacity: 0;
   visibility: hidden;
@@ -548,11 +548,15 @@ kbd {
   }
 
   #searchBar {
-    width: 150px;
+    width: 50px;
   }
 
   #searchBar:focus {
-    width: 175px;
+    width: 100px;
+  }
+
+  .headerbox {
+    width: 90%;
   }
 }
 /* stylesheet not updating? */
