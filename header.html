@@ -2,18 +2,31 @@
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <script src="pages.js"></script>
 <div class="headerbox" style="position:fixed; left: 50%; transform: translate(-50%, 0); z-index:3; background-size: 100%; outline: 2px solid #3f3f3f; top:-10px">
-<span class="body" style="text-align:center"><a href="./" style="color: white" id="thehypixelpitwiki">The Hypixel Pit Wiki</a></span>
+<image id="menubutton" src="/images/menu.svg" height="20" class="hoverimage" style="position: relative; top: 4px"><span class="body" style="text-align:center">&nbsp;<a href="./" style="color: white" id="thehypixelpitwiki">The Hypixel Pit Wiki</a></span>
 
-<input type="text" autocomplete="off" id="searchBar" onkeyup="Filter()" style="display: none; float: right; text-align: left;" placeholder="&#x1F50E;&#xFE0E; Search for articles..."><span style="float: right">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><img src="/images/translate.svg" height="24" class="hoverimage" style="float: right; display: none;" id="languageicon" onclick="translateClick()"><span id="languages">
+<input type="text" autocomplete="off" id="searchBar" onkeyup="Filter()" style="display: none; float: right; text-align: left;" placeholder="&#x1F50E;&#xFE0E; Search for articles..."><span style="float: right">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span>
 </div>
 
 <span id="languagecontainer" style="display: none">
-  <span class="mf" style="list-style-type: square; background-color:#353545; border: 3px solid #252525; border-radius: 15px; padding: 20px 20px 20px 20px; margin: 30px 150px 0px 0px;right: 0px; width: 150px; z-index: 5; position:fixed;"><i>This article is also available in:</i><span id="languagelist"></span></span>
+  <span class="mf" style="list-style-type: square; background-color:#353545; border: 3px solid #252525; border-radius: 15px; padding: 20px 20px 20px 20px; margin: 30px 0px 0px 180px; left: 0px; width: 150px; z-index: 5; position:fixed;"><i>This article is also available in:</i><span id="languagelist"></span></span>
 </span>
 
 <span id="partofsearch" style="display: none">
 <p id="aUL" class="mf"></p>
 </span>
+
+<input type="checkbox" id="menuopened" style="display: none">
+
+<p class="headerlist">
+  <a href="./" style="text-decoration: none;"><span style="display: block" class="searchitem hamburger"><img src="/images/home.svg" height="20px" style="float: left;" class="hoverimage" id="homeicon">&nbsp;&nbsp;Home</span></a>
+  <a href="Random_Page" style="text-decoration: none;"><span style="display: block" class="searchitem hamburger"><img src="/images/random.svg" height="20px" style="float: left;" class="hoverimage" id="randomicon">&nbsp;&nbsp;Random</span></a>
+  <span style="display: none; cursor: pointer;" id="languageheaderbox" class="searchitem hamburger" onclick="translateClick()"><img src="/images/languages.svg" height="20px" style="float: left;" class="hoverimage" id="languagesicon">&nbsp;&nbsp;Languages</span>
+  <a href="Search" style="text-decoration: none;"><span style="display: block" class="searchitem hamburger"><img src="/images/search_pages.svg" height="20px" style="float: left;" class="hoverimage" id="searchpagesicon">&nbsp;&nbsp;Search pages</span></a>
+  <a href="Page_List" style="text-decoration: none;"><span style="display: block" class="searchitem hamburger"><img src="/images/page_list.svg" height="20px" style="float: left;" class="hoverimage" id="pagelisticon">&nbsp;&nbsp;Page list</span></a>
+  <a href="Credits" style="text-decoration: none;"><span style="display: block" class="searchitem hamburger"><img src="/images/credits.svg" height="20px" style="float: left;" class="hoverimage" id="creditsicon">&nbsp;&nbsp;Credits</span></a>
+
+</p>
+
 <script>
 var searchclicked = 0;
 var topitem = 0;
@@ -33,7 +46,7 @@ var validlanguagenames = [];
 var translatevisible = false;
 var origin = window.location.origin;
 thisurl = window.location.toString();
-
+var menu_opened = false;
 var path = thisurl.replace(origin, "")
 
 //botchedurl = (thisurl.substring(0, thisurl.length - 1)).replace(/[^\/]*\//g, '')
@@ -51,6 +64,19 @@ if (request.status === 404) {
 } else {
   return true;
 }
+}
+
+document.getElementById("menubutton").addEventListener("click", clickMenu); 
+
+function clickMenu() {
+  if(!menu_opened) {
+    menu_opened = true;
+    document.getElementById("menuopened").checked = true;
+  } else {
+    menu_opened = false;
+    document.getElementById("menuopened").checked = false;
+    if(translatevisible) translateClick();
+  }
 }
 
 /*function ok(url) {
@@ -78,7 +104,7 @@ for(a = 0; a < languages.length; a++) {
 }
 
 if (otherlanguages > 0) {
-  document.getElementById('languageicon').style.display = "inline";
+  document.getElementById('languageheaderbox').style.display = "block";
 }
 
 if(screen.width > 500) {
