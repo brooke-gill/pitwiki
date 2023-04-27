@@ -38,12 +38,12 @@ $(function(){
   </div>
 
   <div class="homepageitem body" style="background-size:cover; background-position: center; background-image: linear-gradient(rgba(54,54,54,.8), rgba(54,54,54,.8)), url('./images/map_genesis_palace.png');" id="mapbg">
-    <span>The current <a href="Maps"><span style="color: inherit">map</a> is <noscript>probably here, but we can't show it to you since JavaScript is disabled.</noscript><b id="currentmap"></b>.</span><br><br>
+    <span>The current <a href="Maps"><span style="color: inherit">map</a> is <noscript>probably here, but we can't show it to you since JavaScript is disabled.</noscript><b id="currentmap"></b>.</span><br><span id="mapnotice" class="m7" style="display: none"><i>Maps may take up to one hour to fully swap!</i></span><br>
     <span><b id="nextmap"></b> in<br><span class="me" id="whenmap"></span></span><br>
     <br>
     <span><b id="dayornight"></b> for <span class="me" id="whenday"></span></span>
     <br><br>
-    <span id="events"><a href="https://brookeafk.com" target="_blank" rel="noreferrer noopener">Next event</a>: <span id="nextevent">Connecting to brookeafk.com...</span><br><br></span>
+    <span id="events"><a href="https://brookeafk.com" target="_blank" rel="noreferrer noopener">Next event</a>: <span id="eventname"></span><span id="nextevent">Connecting to brookeafk.com...</span><br><br></span>
     <span>The <a href="The_Pit_1.0.6"><span class="tip">last Pit update<span class="tiptext">The Hypixel Pit Wiki defines an "update" as one that provides new content to the game.</span></a> was <span id="lastupdate" class="m6">a while</span> ago. <span class="mb bold" id="anniversary" style="display: none;"><br>HAPPY BONKIVERSARY!</span></span>
   </div>
 
@@ -208,7 +208,7 @@ $(function(){
       }
     }
 
-
+    var mapnoticevisible = false;
     var time = ""
     function Update() {
       now = (Date.now() / 1000);
@@ -227,9 +227,10 @@ $(function(){
 
       mapid = Math.floor(mod((samplemaprotation - now), 3024000) / 604800)
       
-      document.getElementById('currentmap').innerText = maps[mapid]
-    
-      document.getElementById('nextmap').innerText = maps[mod(mapid - 1, 5)]
+      if(document.getElementById('currentmap').innerText != maps[mapid]) {
+        document.getElementById('currentmap').innerHTML = `<a href="` + maps[mapid].replace(" ","_") + `">` + maps[mapid] + `</a>`
+        document.getElementById('nextmap').innerHTML = `<a href="` + maps[mod(mapid - 1, 5)].replace(" ","_") + `">` + maps[mod(mapid - 1, 5)] + `</a>`
+      }
 
       document.getElementById('lastupdate').innerText = TimestampIt(now - lastupdate);
       if((now - lastupdate) > 31536000 && (now - lastupdate) < 31622400) {
@@ -238,6 +239,14 @@ $(function(){
       } else {
         document.getElementById('anniversary').style.display = "none";
         document.getElementById('lastupdate').classList.remove("rainbow_text_animated")
+      }
+
+      if(secondsuntilnextmap >= 601200 && !mapnoticevisible) {
+        document.getElementById("mapnotice").style.display = "";
+        mapnoticevisible = true;
+      } else if(secondsuntilnextmap < 601200 && mapnoticevisible) {
+        document.getElementById("mapnotice").style.display = "none";
+        mapnoticevisible = false;
       }
 
       secondsuntilnextmap = mod((samplemaprotation - now), 604800)
@@ -259,6 +268,7 @@ $(function(){
   var offset = 0;
   var speed = 0; // Only exists on minimum. Used to determine how fast the function should be called.
   var counter = 0;
+  var nextEventName = "";
   
   function MakeFunTimestamps(convertible) {
   let currentTime = (Date.now() + offset);
@@ -301,12 +311,21 @@ $(function(){
     window.EventsToLoad = Object.keys(window.data).length;
     DoesStuffExist = true;
   }
+
+  var eventsList = ["Quick Maths","Dragon Egg","2x Rewards","Care Package","KOTL","KOTH","Auction","Giant Cake","All bounty","Squads","Beast","Pizza","Rage Pit","Spire","Robbery","Blockhead","Raffle","Team Deathmatch"];
+  var nicknamesen_CA = ["Quick Maths","Dragon Egg","2x Rewards","Care Package","King of the Ladder","King of the Hill","Auction","Giant Cake","Everyone Gets a Bounty","Squads","Beast","Pizza","Rage Pit","Spire","Robbery","Blockhead","Raffle","Team Deathmatch"]
+  var pit_wiki_links = ["Quick_Maths","Dragon_Egg","2x_Rewards","Care_Package","King_of_the_Ladder","King_of_the_Hill","Auction","Giant_Cake","Everyone_Gets_a_Bounty","Squads","Beast","Pizza","Rage_Pit","Spire","Robbery","Blockhead","Raffle","Team_Deathmatch"]
+  
+
+  function changeEventName(name) {
+    document.getElementById("eventname").innerHTML = "<a href=" + pit_wiki_links[eventsList.indexOf(name)] + "><b>" + nicknamesen_CA[eventsList.indexOf(name)] + "</b></a>"
+  }
   
   function RapidFirst(transformation) {
   let currentTime = (Date.now() + offset);
   if (DoesStuffExist == true) {
     HasStuffLoaded = true;
-    document.getElementById('nextevent').innerHTML = (`<span><b>` + transformation[HiddenEventCount].event + `</b> in <span class="me">` + MakeFunTimestamps(transformation[HiddenEventCount].timestamp) + `</span>  (` + TimeOfDay(transformation[HiddenEventCount].timestamp) + " local time)</span>");
+    document.getElementById('nextevent').innerHTML = (`<span> in <span class="me">` + MakeFunTimestamps(transformation[HiddenEventCount].timestamp) + `</span>  (` + TimeOfDay(transformation[HiddenEventCount].timestamp) + " local time)</span>");
     if(((transformation[HiddenEventCount].timestamp - currentTime) < 0)) {
         speed = 999;
     } else if((transformation[HiddenEventCount].timestamp - currentTime) > 60000) {
@@ -314,6 +333,8 @@ $(function(){
     } else {
         speed = 1;
     }
+    if(nextEventName != transformation[HiddenEventCount].event) changeEventName(transformation[HiddenEventCount].event);
+    nextEventName = transformation[HiddenEventCount].event;
     if(MakeFunTimestamps(transformation[HiddenEventCount].timestamp) == "Passed!" && !!document.getElementById('nextevent') == true) {
       window.HiddenEventCount = window.HiddenEventCount + 1; 
     }}
