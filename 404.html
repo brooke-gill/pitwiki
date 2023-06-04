@@ -46,7 +46,6 @@ $(function(){
   var language = "";
   thisurl = window.location.toString();
   var path404 = thisurl.replace(origin, "")
-  path404 = "ironaxe"
 
   if(path404.startsWith("/zh_tw")) language = "zh_tw";
   if(path404.startsWith("/zh_cn")) language = "zh_cn";
@@ -67,7 +66,7 @@ $(function(){
         if(!found) { 
           console.log("REDIRECTING TO " + /* language + "/" + */ searchpages[b][1]);
           found = true; 
-          window.location = language + "/" + searchpages[b][1];
+          //window.location = language + "/" + searchpages[b][1];
         }
       }
       
