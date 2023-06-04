@@ -67,8 +67,8 @@ $(function(){
         if(!found) { 
           console.log("REDIRECTING TO " + /* language + "/" + */ searchpages[b][1]);
           found = true; 
+          window.location = language + "/" + searchpages[b][1];
         }
-        //window.location = language + "/" + searchpages[b][1];
       }
       
     }
