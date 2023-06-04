@@ -12,6 +12,7 @@
 <link rel="icon" type="image/x-icon" href="./favicon/favicon.ico">
 <link rel="manifest" href="./favicon/site.webmanifest">
 <script type="text/javascript" src="/jquery-3.6.3.min.js"></script>
+<script src="/pages.js"></script>
 <script> 
 
 $(function(){
@@ -42,19 +43,55 @@ $(function(){
 
 </html>
 <script>
+  var language = "";
+  thisurl = window.location.toString();
+  var path404 = thisurl.replace(origin, "")
+  path404 = "ironaxe"
+
+  if(path404.startsWith("/zh_tw")) language = "zh_tw";
+  if(path404.startsWith("/zh_cn")) language = "zh_cn";
+  path404 = path404.replace(("/" + language), "")
+  if(path404.startsWith("/")) path404 = path404.replace("/", "")
+
+
+  path404 = MakeBasic(path404.toLowerCase());
+
+  console.log(path404)
+
+  if(language == "") { // only works with English since all of the sites use a variable called "searchpages". My bad
+    var found = false;
+    for(b = 1; b < searchpages.length; b++) {
+      searchedItem = MakeBasic(searchpages[b][0].toLowerCase());
+      if(!found) { console.log([path404, searchedItem]) }
+      if(searchedItem == path404) {
+        if(!found) { 
+          console.log("REDIRECTING TO " + /* language + "/" + */ searchpages[b][1]);
+          found = true; 
+        }
+        //window.location = language + "/" + searchpages[b][1];
+      }
+      
+    }
+  }
+
+
   losturl = window.location.toString();
-  if (losturl.includes("pit.wiki/zh_tw/")) {
+  if (language == "zh_tw") {
     document.getElementById('image1').src = `/images/howtogetback_zh_tw.png`;
     document.getElementById('text1').innerHTML = `Approximate location of the search bar.`;
     document.getElementById('text2').innerHTML = `This page doesn't exist!`;
     document.getElementById('text3').innerHTML = `It seems you tried to go to a URL that doesn't exist on this site. You can check to see if the English version exists by clicking <a href="" id="englishlink">here</a>, return to the main page by clicking <a href = "index">here</a>, or use the search bar in the header to look for the page you were trying to find.`
     document.getElementById('englishlink').href = losturl.replace('/zh_tw',''); 
   } 
-  if (losturl.includes("pit.wiki/zh_cn/")) {
+  if (language == "zh_cn") {
     document.getElementById('image1').src = `/images/howtogetback_zh_cn.png`;
     document.getElementById('text1').innerHTML = `搜索栏大概在这儿吧。`;
     document.getElementById('text2').innerHTML = ` 欸？找不到这个页面！`;
     document.getElementById('text3').innerHTML = `你似乎在寻找一个不存在于我们网站的链接。如果存在英文版本点击<a href="" id="englishlink">这里</a>即可跳转，点击<a href = "index">这儿</a>可以回到主页面，或者使用搜索栏去找你想找的页面。`
     document.getElementById('englishlink').href = losturl.replace('/zh_cn',''); 
   } 
+
+  function MakeBasic(string_to_become_basic) { //strips all punctuation and fun from the string
+    return string_to_become_basic.replace(/[ '?!,.\/"@#$%^&*()[\]\-_+{}:;<>?]/g, '')
+  }
 </script>
