@@ -13,6 +13,8 @@
 <link rel="manifest" href="./favicon/site.webmanifest">
 <script type="text/javascript" src="/jquery-3.6.3.min.js"></script>
 <script src="/pages.js"></script>
+<script src="/zh_cn/pages.js"></script>
+<script src="/zh_tw/pages.js"></script>
 <script> 
 
 $(function(){
@@ -57,19 +59,21 @@ $(function(){
 
   console.log(path404)
 
-  if(language == "") { // only works with English since all of the sites use a variable called "searchpages". My bad
-    var found = false;
-    for(b = 1; b < searchpages.length; b++) {
-      searchedItem = MakeBasic(searchpages[b][0].toLowerCase());
-      if(!found) { console.log([path404, searchedItem]) }
-      if(searchedItem == path404) {
-        if(!found) { 
-          console.log("REDIRECTING TO " + /* language + "/" + */ searchpages[b][1]);
-          found = true; 
-          window.location = language + "/" + searchpages[b][1];
-        }
+  searchPagesVariable = "searchpages"
+  if(language != "") {
+    console.log(language)
+    searchPagesVariable += "_" + language;
+  } // only works with English since all of the sites use a variable called "searchpages". My bad
+  var found = false;
+  for(b = 1; b < window[searchPagesVariable].length; b++) {
+    searchedItem = MakeBasic(window[searchPagesVariable][b][0].toLowerCase());
+    if(!found) { console.log([path404, searchedItem]) }
+    if(searchedItem == path404) {
+      if(!found) { 
+        console.log("REDIRECTING TO " + /* language + "/" + */ window[searchPagesVariable][b][1]);
+        found = true; 
+        //window.location = language + "/" + window[searchPagesVariable][b][1];
       }
-      
     }
   }
 

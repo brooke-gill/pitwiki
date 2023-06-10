@@ -37,6 +37,7 @@ thisurl = window.location.toString();
 var path = thisurl.replace(origin, "")
 
 //botchedurl = (thisurl.substring(0, thisurl.length - 1)).replace(/[^\/]*\//g, '')
+console.log("zh tw !!!!!!!")
 
 function checkURL(url) {
 var request;
@@ -70,14 +71,14 @@ if(screen.width > 500) {
 document.getElementById('searchBar').focus();
 document.getElementById('searchBar').select();
 }
-for(var i = 0; i < window.searchpages.length * 2; i += 1) {
+for(var i = 0; i < window.searchpages_zh_tw.length * 2; i += 1) {
     //console.log("doing thing")
     var fulllist = document.getElementById('aUL')
     var list = document.createElement("li")
       var ahref = document.createElement("a");
-      ahref.textContent = (window.searchpages[i % searchpages.length][0]);
+      ahref.textContent = (window.searchpages_zh_tw[i % searchpages_zh_tw.length][0]);
       ahref.id = ("link_" + i);
-      ahref.setAttribute('href', window.searchpages[i  % searchpages.length][1]);
+      ahref.setAttribute('href', window.searchpages_zh_tw[i  % searchpages_zh_tw.length][1]);
       list.appendChild(ahref);
       fulllist.appendChild(list);
       //console.log(list)
@@ -173,30 +174,30 @@ visibleIDs = [];
   oldlength = filter.length
   // Loop through all list items and hide those who don't match the search query
   for (i = 0; i < li.length; i++) {
-    if(i < window.searchpages.length * 2) {
+    if(i < window.searchpages_zh_tw.length * 2) {
       li[i].style.display = "none"; 
     }
     document.getElementById('link_' + i).style.color = ""
     a = li[i].getElementsByTagName("a")[0];
     txtValue = a.textContent || a.innerText;
 
-    if (MakeBasic(txtValue.toUpperCase()).startsWith(MakeBasic(filter)) && i < window.searchpages.length) {
+    if (MakeBasic(txtValue.toUpperCase()).startsWith(MakeBasic(filter)) && i < window.searchpages_zh_tw.length) {
       //console.log(txtValue.toUpperCase() + " is a possible word.") 
       li[i].style.display = "";
-      li[i + window.searchpages.length].style.display = "none";
+      li[i + window.searchpages_zh_tw.length].style.display = "none";
       //console.log("showing item " + i)
       numberofvisibleitems += 1;
-      visibleIDs.push(i + window.searchpages.length)
+      visibleIDs.push(i + window.searchpages_zh_tw.length)
       if(numberofvisibleitems == arrowcount) {
         topitem = i;
         document.getElementById('link_' + i).style.color = "#FFFF99"
         //console.log("Arrow is at position " + i)
       }
-    } else if (i < window.searchpages.length) {
+    } else if (i < window.searchpages_zh_tw.length) {
     li[i].style.display = "none";
     }
 
-    if (MakeBasic(txtValue.toUpperCase()).indexOf(MakeBasic(filter)) > -1 && i >= window.searchpages.length && !visibleIDs.includes(i)) {
+    if (MakeBasic(txtValue.toUpperCase()).indexOf(MakeBasic(filter)) > -1 && i >= window.searchpages_zh_tw.length && !visibleIDs.includes(i)) {
       li[i].style.display = "";
       numberofvisibleitems += 1;
       if(numberofvisibleitems == arrowcount) {

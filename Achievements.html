@@ -19,6 +19,7 @@ fetch('footer.html').then(e => e.text()).then(txt => {
 })
 fetch('header.html').then(e => e.text()).then(txt => {
     document.getElementById("header").innerHTML = txt;
+    doStuff();
 })
 </script>
 </head>

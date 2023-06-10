@@ -68,14 +68,14 @@ $(function(){
       }
 
 
-      for(var j = 1; j < window.searchpages.length; j += 1) {
+      for(var j = 1; j < window.searchpages_zh_cn.length; j += 1) {
         //console.log("doing thing")
         var fulllist = document.getElementById('listofeverything')
         var list = document.createElement("li")
           var ahref = document.createElement("a");
-          ahref.textContent = window.searchpages[j][0];
+          ahref.textContent = window.searchpages_zh_cn[j][0];
           ahref.id = ("magic_" + i);
-          ahref.setAttribute('href', window.searchpages[j][1]);
+          ahref.setAttribute('href', window.searchpages_zh_cn[j][1]);
           list.appendChild(ahref);
           fulllist.appendChild(list);
           //console.log(list)
