@@ -72,7 +72,7 @@ $(function(){
       if(!found) { 
         console.log("REDIRECTING TO " + /* language + "/" + */ window[searchPagesVariable][b][1]);
         found = true; 
-        window.location = language + "/" + window[searchPagesVariable][b][1];
+        window.location = window[searchPagesVariable][b][1];
       }
     }
   }
