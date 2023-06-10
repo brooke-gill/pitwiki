@@ -12,9 +12,9 @@
 <link rel="icon" type="image/x-icon" href="./favicon/favicon.ico">
 <link rel="manifest" href="./favicon/site.webmanifest">
 <script type="text/javascript" src="/jquery-3.6.3.min.js"></script>
-<script src="/pages.js"></script>
-<script src="/zh_cn/pages.js"></script>
-<script src="/zh_tw/pages.js"></script>
+<script src="/pages.js?v=202306101123"></script>
+<script src="/zh_cn/pages.js?v=202306101123"></script>
+<script src="/zh_tw/pages.js?v=202306101123"></script>
 <script> 
 
 $(function(){
@@ -72,7 +72,7 @@ $(function(){
       if(!found) { 
         console.log("REDIRECTING TO " + /* language + "/" + */ window[searchPagesVariable][b][1]);
         found = true; 
-        //window.location = language + "/" + window[searchPagesVariable][b][1];
+        window.location = language + "/" + window[searchPagesVariable][b][1];
       }
     }
   }
