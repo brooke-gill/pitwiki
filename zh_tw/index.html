@@ -31,114 +31,114 @@ $(function(){
 <div class="homepagecontainer">
 
   <div class="homepageitem body">
-    <span><b>The Pit</b> is a persistent gamemode on the Hypixel network that heavily revolves around player-versus-player combat using unique <a href="Perks">perks</a>, <a href="Killstreaks">killstreaks</a>, <a href="Mystic_Pants">armor</a>, and <a href="Mystic_Sword">enchantments</a>. <br><br>Join and fight <span class="me" id="playercount"></span> players at <span class="me">mc.hypixel.net</span>!</span> 
+    <span><strong>天坑亂鬥</strong>，是Hypixel伺服器上的一個養成型遊戲，使用不同於以往的<a href="Perks">增益</a>、<a href="Killstreaks">連殺技能</a>、<a href="Mystic_Pants">武裝</a>以及<a href="Mystic_Sword">附魔</a>，帶給玩家嶄新的PVP體驗。 <br><br>立刻連線到<span class="me">mc.hypixel.net</span>，與其他<span class="me" id="playercount"></span>位互相搏鬥廝殺！
   </div>
 
   <div class="homepageitem body" style="background-size:cover; background-position: center; background-image: linear-gradient(rgba(54,54,54,.8), rgba(54,54,54,.8)), url('/images/map_genesis_palace.png');" id="mapbg">
-    <span>The current <a href="Maps"><span style="color: inherit">map</a> is <noscript>probably here, but we can't show it to you since JavaScript is disabled.</noscript><b id="currentmap"></b>.</span><br><br>
-    <span><b id="nextmap"></b> in<br><span class="me" id="whenmap"></span></span><br>
+    <span>當前地圖：<noscript>JavaScript已被禁用!</noscript><b id="currentmap"></b></span><br><br>
+    <span>下次地圖輪換：<b id="nextmap"></b>，<br><span class="me" id="whenmap"></span>後</span><br>
     <br>
-    <span><b id="dayornight"></b> for <span class="me" id="whenday"></span></span>
+    <span><b id="dayornight"></b>尚餘：<span class="me" id="whenday"></span></span>
     <br><br>
-    <span id="events"><a href="https://brookeafk.com" target="_blank" rel="noreferrer noopener">Next event</a>: <span id="nextevent">Connecting to brookeafk.com...</span><br><br></span>
-    <span>The <a href="The_Pit_1.0.6">last Pit update</a> was <span id="lastupdate" class="m6">a while</span> ago.</span>
+    <span id="events"><a href="https://brookeafk.com" target="_blank" rel="noreferrer noopener">下項事件</a>：<span id="nextevent">我正在连接到brookeafk.com...</span><br><br></span>
+    <span><a href="The_Pit_1.0.6"><span class="tip">上次更新<span class="tiptext">*天坑維基對於"更新"的定義係指有新內容被加入時才視為更新</span></a>：<span id="lastupdate" class="m6">a while</span>前</span>
   </div>
 
 
-  <div class="homepageitem body" style="background-color: rgba(76, 76, 76, 0.25)"><span style="background-color: #252525; outline: 10px solid #252525">— <b><span class="m9">General</span></b> —</span><br><hr class="smallbreak">
-    <a href="The_Hypixel_Pit"><span class="mc">The Hypixel Pit</a><br>
-    <a href="Gold"><span class="mc">Gold</a><br>
-      <a href="XP"><span class="mc">XP</a><br>
-      <a href="Renown"><span class="mc">Renown</a><br>
-      <a href="Prestige"><span class="mc">Prestige</a><br>
-      <a href="Quests"><span class="mc">Quests</a><br>
-      <a href="Contracts"><span class="mc">Contracts</a><br>
-      <a href="Achievements"><span class="mc">Achievements</a><br>
-      <a href="Stats"><span class="mc">Stats</a><br>
-      <a href="Bounty"><span class="mc">Bounty</a><br>
-      <a href="NPCs"><span class="mc">NPCs</a><br>
-      <a href="Pit_Supporter"><span class="mc">Pit Supporter</a><br>
-      <a href="Fishing"><span class="mc">Fishing</a><br>
-      <a href="Commands"><span class="mc">Commands</a><br>
-      <a href="Stash"><span class="mc">Stash</a><br>
+  <div class="homepageitem body" style="background-color: rgba(76, 76, 76, 0.25)"><span style="background-color: #252525; outline: 10px solid #252525">— <b><span class="m9">總則</span></b> —</span><br><hr class="smallbreak">
+    <a href="The_Hypixel_Pit"><span class="mc">天坑亂鬥The Hypixel Pit</a><br>
+    <a href="Gold"><span class="mc">黃金</a><br>
+      <a href="XP"><span class="mc">經驗</a><br>
+      <a href="Renown"><span class="mc">聲望</a><br>
+      <a href="Prestige"><span class="mc">精通</a><br>
+      <a href="Quests"><span class="mc">任務</a><br>
+      <a href="Contracts"><span class="mc">契約</a><br>
+      <a href="Achievements"><span class="mc">成就</a><br>
+      <a href="Stats"><span class="mc">數據</a><br>
+      <a href="Bounty"><span class="mc">賞金</a><br>
+      <a href="NPCs"><span class="mc">非玩家角色NPC</a><br>
+      <a href="Pit_Supporter"><span class="mc">天坑贊助人</a><br>
+      <a href="Fishing"><span class="mc">釣魚</a><br>
+      <a href="Commands"><span class="mc">指令</a><br>
+      <a href="Stash"><span class="mc">庫存</a><br>
 
   </div>
 
-  <div class="homepageitem body" style="background-color: rgba(76, 76, 76, 0.25)"><span style="background-color: #252525; outline: 10px solid #252525">— <b><span class="mc">Combat</span></b> —</span><br><hr class="smallbreak">
-    <a href="Killstreaks"><span class="mc">Killstreaks</a><br>
-    <a href="Perks"><span class="mc">Perks</a><br>
-    <a href="Passives"><span class="mc">Passives</a><br>
-    <a href="Megastreaks"><span class="mc">Megastreaks</a><br>
-    <a href="Overdrive"><span class="mc">Overdrive</a><br>
-    <a href="Beastmode"><span class="mc">Beastmode</a><br>
-    <a href="Hermit"><span class="mc">Hermit</a><br>
-    <a href="Highlander"><span class="mc">Highlander</a><br>
-    <a href="Magnum_Opus"><span class="mc">Magnum Opus</a><br>
-    <a href="To_the_Moon"><span class="mc">To the Moon</a><br>
-    <a href="Uberstreak"><span class="mc">Uberstreak</a><br>      
+  <div class="homepageitem body" style="background-color: rgba(76, 76, 76, 0.25)"><span style="background-color: #252525; outline: 10px solid #252525">— <b><span class="mc">格鬥編</span></b> —</span><br><hr class="smallbreak">
+    <a href="Killstreaks"><span class="mc">連殺技能</a><br>
+    <a href="Perks"><span class="mc">增益</a><br>
+    <a href="Passives"><span class="mc">被動效果</a><br>
+    <a href="Megastreaks"><span class="mc">終極連殺</a><br>
+    <a href="Overdrive"><span class="mc">極限超載Overdrive</a><br>
+    <a href="Beastmode"><span class="mc">野獸模式Beastmode</a><br>
+    <a href="Hermit"><span class="mc">賢者之世Hermit</a><br>
+    <a href="Highlander"><span class="mc">高塔孤王Highlander</a><br>
+    <a href="Magnum_Opus"><span class="mc">曠世巨著Magnum Opus</a><br>
+    <a href="To_the_Moon"><span class="mc">奔月者To the Moon</a><br>
+    <a href="Uberstreak"><span class="mc">時髦連殺Uberstreak</a><br>      
   
 </div>
 
-<div class="homepageitem body" style="background-color: rgba(76, 76, 76, 0.25)"><span style="background-color: #252525; outline: 10px solid #252525">— <b><span class="md">Mystics</span></b> —</span><br><hr class="smallbreak">
-  <a href="Mystic_Well"><span class="mc">Mystic Well</a><br>
+<div class="homepageitem body" style="background-color: rgba(76, 76, 76, 0.25)"><span style="background-color: #252525; outline: 10px solid #252525">— <b><span class="md">秘術物品</span></b> —</span><br><hr class="smallbreak">
+  <a href="Mystic_Well"><span class="mc">神秘井(附魔台)</a><br>
   <a href="Mystic_Sword">秘術劍</a><br>
   <a href="Mystic_Bow">秘術弓</a><br>
   <a href="Mystic_Pants">秘術褲子<br>
-  <a href="Rage_Pants"><span class="mc">Rage Pants</a><br>
-  <a href="Dark_Pants"><span class="mc">Dark Pants</a><br>
+  <a href="Rage_Pants"><span class="mc">怒火褲子</a><br>
+  <a href="Dark_Pants"><span class="mc">闇黑褲子</a><br>
   <a href="Aqua_Pants">水色褲子</a><br>
   <a href="Sewer_Pants">溝渠褲子</a><br>
   <a href="Totally_Legit_Gem">完全合法寶石</a><br>
-  <a href="Golden_Helmet"><span class="mc">Golden Helmet</a><br>
-  <a href="Archangel_Chestplate"><span class="mc">Archangel Chestplate</a><br>
-  <a href="Armageddon_Boots"><span class="mc">Armageddon Boots</a><br>
-  <a href="Philosophers_Cactus"><span class="mc">Philosopher's Cactus</a><br>
-  <a href="Mystic_Repair_Kit"><span class="mc">Mystic Repair Kit</a><br>
+  <a href="Golden_Helmet"><span class="mc">黃金頭盔</a><br>
+  <a href="Archangel_Chestplate"><span class="mc">聖天使守護裝甲</a><br>
+  <a href="Armageddon_Boots"><span class="mc">末日戰靴</a><br>
+  <a href="Philosophers_Cactus"><span class="mc">哲學家的仙人掌</a><br>
+  <a href="Mystic_Repair_Kit"><span class="mc">秘術物品修復組件</a><br>
 </div>
 
-<div class="homepageitem body" style="background-color: rgba(76, 76, 76, 0.25)"><span style="background-color: #252525; outline: 10px solid #252525">— <b><a href="Minor_Event"><span class="md">Minor Events</span></a></b> —</span><br><hr class="smallbreak">
-<a href="Dragon_Egg"><span class="mc">Dragon Egg</a><br>
+<div class="homepageitem body" style="background-color: rgba(76, 76, 76, 0.25)"><span style="background-color: #252525; outline: 10px solid #252525">— <b><a href="Minor_Event"><span class="md">小型亂鬥事件</span></a></b> —</span><br><hr class="smallbreak">
+<a href="Dragon_Egg"><span class="mc">龍蛋</a><br>
 <a href="King_of_the_Hill">高地之王KOTH</a><br>
-<a href="King_of_the_Ladder"><span class="mc">King of the Ladder</a><br>
+<a href="King_of_the_Ladder"><span class="mc">高梯之王KOTL</a><br>
 <a href="2x_Rewards">雙倍獎勵</a><br>
-<a href="Care_Package"><span class="mc">Care Package</a><br>
+<a href="Care_Package"><span class="mc">空投物資</a><br>
 <a href="Auction">拍賣</a><br>
 <a href="Quick_Maths">數學隨堂考</a><br>
 <a href="Giant_Cake">巨型蛋糕</a><br>
 <a href="Everyone_Gets_a_Bounty">大家通通有賞金</a><br>
 </div>
 
-<div class="homepageitem body" style="background-color: rgba(76, 76, 76, 0.25)"><span style="background-color: #252525; outline: 10px solid #252525">— <b><a href="Major_Event"><span class="m5">Major Events</span></a></b> —</span><br><hr class="smallbreak">
-  <a href="Pizza"><span class="mc">Pizza</a><br>
-  <a href="Raffle"><span class="mc">Raffle</a><br>
+<div class="homepageitem body" style="background-color: rgba(76, 76, 76, 0.25)"><span style="background-color: #252525; outline: 10px solid #252525">— <b><a href="Major_Event"><span class="m5">大型亂鬥事件</span></a></b> —</span><br><hr class="smallbreak">
+  <a href="Pizza"><span class="mc">披薩</a><br>
+  <a href="Raffle"><span class="mc">摸彩</a><br>
   <a href="Squads">結隊爭鋒</a><br>
-  <a href="Blockhead"><span class="mc">Blockhead</a><br>
-  <a href="Spire"><span class="mc">Spire</a><br>
-  <a href="Robbery"><span class="mc">Robbery</a><br>
+  <a href="Blockhead"><span class="mc">方塊頭(斯普拉頓)</a><br>
+  <a href="Spire"><span class="mc">尖塔奪魁</a><br>
+  <a href="Robbery"><span class="mc">大劫案</a><br>
   <a href="Team_Deathmatch">團隊死鬥</a><br>
-  <a href="Rage_Pit"><span class="mc">Rage Pit</a><br>
-  <a href="Beast"><span class="mc">Beast</a><br>
+  <a href="Rage_Pit"><span class="mc">爆走天坑</a><br>
+  <a href="Beast">野獸</a><br>
   </div>
   
 
-<div class="homepageitem body" style="background-color: rgba(76, 76, 76, 0.25)"><span style="background-color: #252525; outline: 10px solid #252525">— <b><a href="Maps"><span class="me">Maps</span></a></b> —</span><br><hr class="smallbreak">
-    <a href="Castle"><span class="mc">Castle</a><br>
-    <a href="Corals"><span class="mc">Corals</a><br>
-    <a href="Elements"><span class="mc">Elements</a><br>
-    <a href="Four_Seasons"><span class="mc">Four Seasons</a><br>
-    <a href="Genesis"><span class="mc">Genesis</a><br>
-    <a href="Kings_Quest"><span class="mc">The King's Quest</a><br>
-    <a href="Sewers"><span class="mc">Sewers</a><br>
-    <a href="Factions"><span class="mc">Factions</a><br>    
+<div class="homepageitem body" style="background-color: rgba(76, 76, 76, 0.25)"><span style="background-color: #252525; outline: 10px solid #252525">— <b><a href="Maps"><span class="me">地圖編</span></a></b> —</span><br><hr class="smallbreak">
+    <a href="Castle"><span class="mc">王城朝貢</a><br>
+    <a href="Corals"><span class="mc">深淵之下</a><br>
+    <a href="Elements"><span class="mc">元素眾</a><br>
+    <a href="Four_Seasons"><span class="mc">四季之戰</a><br>
+    <a href="Genesis"><span class="mc">創世紀古戰場</a><br>
+    <a href="Kings_Quest"><span class="mc">國王任務</a><br>
+    <a href="Sewers"><span class="mc">下水道</a><br>
+    <a href="Factions"><span class="mc">派系</a><br>    
   
 </div>
 
-<div class="homepageitem body" style="background-color: rgba(76, 76, 76, 0.25)"><span style="background-color: #252525; outline: 10px solid #252525">— <b><span class="mf">Items</span></b> —</span><br><hr class="smallbreak">  
+<div class="homepageitem body" style="background-color: rgba(76, 76, 76, 0.25)"><span style="background-color: #252525; outline: 10px solid #252525">— <b><span class="mf">物品編</span></b> —</span><br><hr class="smallbreak">  
     <a href="Item_Shop">物品商店</a><br>
-    <a href="Mini_Cake"><span class="mc">Mini Cake</a><br>
+    <a href="Mini_Cake"><span class="mc">迷你蛋糕</a><br>
     <a href="Chunk_of_Vile">闇能結晶</a><br>
     <a href="Funky_Feather">貪生羽毛</a><br>
-    <a href="Mark_of_Recon_Essence"><span class="mc">Mark of Recon Essence</a><br>
+    <a href="Mark_of_Recon_Essence"><span class="mc">王道與權威的究極之證</a><br>
   </div>
 
   <div class="homepageitem body" style="background-color: rgba(76, 76, 76, 0.25); display: none;"><span style="background-color: #252525; outline: 10px solid #252525">— <b><span class="m7">Updates</span></b> —</span><br><hr class="smallbreak">  
@@ -146,27 +146,27 @@ $(function(){
   </div>
 </div>
 <br>
-<p class="body center">Can't find what you're looking for? Use the search bar, the <a href="Page_List">page list</a>, or visit a <a href="Random_Page">random page</a>.</p><br>
+<p class="body center">找不到要查的東西？您可使用搜尋欄，或著在<a href="Page_List">網頁條目</a>中查找，抑或是直接跳轉至一個<a href="Random_Page">隨機頁面</a>。</p><br>
 <p class="body center"><b class="me">提醒! </b>此維基目前仍在<span class="supersecret" onclick="showFavicon()">beta</span>版本！<br>
 <span id="content-error">若您發現內容錯誤，<a href="https://discord.gg/nuUms8r9Ke" target="_blank">請加入此 Discord 服務器</a>；<br>
-若您發現翻譯錯誤，請至Hypixel論壇<span class="supersecret"><a href="https://hypixel.net/members/yuchen9269.3626050/" target="_blank">yuchen9269</a></span>用戶下留言回報。
+  若您發現翻譯錯誤，請至Hypixel論壇<span class="supersecret"><a href="https://hypixel.net/members/yuchen9269.3626050/" target="_blank">yuchen9269</a></span>用戶下留言回報。
 <br>
   我們將樂意為您解惑(甚至加上您的名字於貢獻者名單)</span></p>
 
 <span id="favicon-settings" style="display: none;">
-<p class="body center"><b>You've found the super-secret favicon settings.</b></p>
+<p class="body center"><b>您找到了我們的超機密圖標設置！</b></p>
 
-<p class="body center">Click on an image to change the wiki's favicon to it!</p>
+<p class="body center">選取一張圖片來更換天坑維基的圖標！</p>
 
 <table class="invisible">
   <tr class="body">
     <td class="invisible clickme" onclick="favicon(0)"><img src="/favicon/favicon.ico"></td><td class="invisible clickme" onclick="favicon(1)"><img src="/favicon/special1.ico"></td><td class="invisible clickme" onclick="favicon(2)"><img src="/favicon/special2.ico"></td><td class="invisible clickme" onclick="favicon(3)"><img src="/favicon/special3.ico"></td><td class="invisible clickme" onclick="favicon(4)"><img src="/favicon/special4.ico"></td><td class="invisible clickme" onclick="favicon(5)"><img src="/favicon/special5.ico"></td><td class="invisible clickme" onclick="favicon(6)"><img src="/favicon/special6.ico"></td><td class="invisible clickme" onclick="favicon(7)"><img src="/favicon/special7.ico"></td>
   </tr>
   <tr class="body center">
-    <td class="invisible italic clickme" onclick="favicon(0)">Classic</td><td class="invisible italic clickme" onclick="favicon(1)">Crimson</td><td class="invisible italic clickme" onclick="favicon(2)">Autumnal</td><td class="invisible italic clickme" onclick="favicon(3)">Lemonade</td><td class="invisible italic clickme" onclick="favicon(4)">Cobalt</td><td class="invisible italic clickme" onclick="favicon(5)">Lavender</td><td class="invisible italic clickme" onclick="favicon(6)">Koala</td><td class="invisible italic clickme" onclick="favicon(7)">Artistic</td>
+    <td class="invisible italic clickme" onclick="favicon(0)">經典</td><td class="invisible italic clickme" onclick="favicon(1)">緋紅</td><td class="invisible italic clickme" onclick="favicon(2)">秋楓</td><td class="invisible italic clickme" onclick="favicon(3)">檸檬黃</td><td class="invisible italic clickme" onclick="favicon(4)">鈷藍</td><td class="invisible italic clickme" onclick="favicon(5)">薰衣紫</td><td class="invisible italic clickme" onclick="favicon(6)">無尾熊</td><td class="invisible italic clickme" onclick="favicon(7)">現代藝術</td>
 </table>
 
-<p class="body">*Note: May not work on old/mobile browsers.</p>
+<p class="body">*備註：可能無法在舊版/行動版瀏覽器生效</p>
 </span>
 
 <br>
@@ -190,22 +190,44 @@ $(function(){
     var secondsuntilday = 0
     var secondsuntilnight = 0
     var secondsuntilnextmap = 0
-    var maps = ["Genesis","Corals","Castle","Elements","Four Seasons"]
+    var maps = ["創世紀古戰場","深淵之下","王城朝貢","元素眾","四季之戰"]
     var mapid = 0;
     var mapbg = ["/images/map_genesis_palace.png","/images/map_abyss.png","/images/map_castle_castle.png","/images/map_elements_sky.png","/images/map_seasons_spring.png","/images/map_genesis_palace.png"]
     var nmapbg = ["/images/map_genesis_night.png","/images/map_abyss_night.png","/images/map_castle_night.png","/images/map_elements_night.png","/images/map_seasons_night.png","/images/map_genesis_night.png"]
+    var year, day, hour, minute, second;
 
     function TimestampIt(sec = 0) {
+      year = Math.floor(sec / 31536000);
+      day = Math.floor((sec % 31536000) / 86400);
+      hour = Math.floor((sec % 86400) / 3600);
+      minute = Math.floor((sec % 3600) / 60);
+      second = Math.floor(sec % 60);
+      timeData = ["年", "天", "小時", "分", "秒"];
+      timeAmounts = ["year", "day", "hour", "minute", "second"];
+
+      for(av = 0; av < timeAmounts.length; av++) {
+        console.log(window[timeAmounts[av]])
+        console.log(timeAmounts[av]);
+        if(window[timeAmounts[av]] == 0) {
+          window[timeAmounts[av]] = "";
+        } else window[timeAmounts[av]] = String(window[timeAmounts[av]] + timeData[av]);
+      }
+
+      return (year + day + hour + minute + second);
+
+      console.log(year + " / " + day + " / " + hour + " / " + minute + " / " + second)
+      return((y))
+
       if(sec > 31536000) {
-        return Math.floor(sec / 31536000) + "y " + Math.floor((sec % 31536000) / 86400) + "d " + Math.floor((sec % 86400) / 3600) + "h " + Math.floor((sec % 3600) / 60) + "m " + Math.floor(sec % 60) + "s"
+        return Math.floor(sec / 31536000) + "年" + Math.floor((sec % 31536000) / 86400) + "天" + Math.floor((sec % 86400) / 3600) + "小時" + Math.floor((sec % 3600) / 60) + "分" + Math.floor(sec % 60) + "秒"
       } else if(sec > 86400 /*1 day*/) {
-        return Math.floor(sec / 86400) + "d " + Math.floor((sec % 86400) / 3600) + "h " + Math.floor((sec % 3600) / 60) + "m " + Math.floor(sec % 60) + "s"
+        return Math.floor(sec / 86400) + "天" + Math.floor((sec % 86400) / 3600) + "小時" + Math.floor((sec % 3600) / 60) + "分" + Math.floor(sec % 60) + "秒"
       } else if(sec > 3600) {
-        return Math.floor((sec % 86400) / 3600) + "h " + Math.floor((sec % 3600) / 60) + "m " + Math.floor(sec % 60) + "s"
+        return Math.floor((sec % 86400) / 3600) + "小時" + Math.floor((sec % 3600) / 60) + "分" + Math.floor(sec % 60) + "秒"
       } else if(sec > 60) {
-        return Math.floor((sec % 3600) / 60) + "m " + Math.floor(sec % 60) + "s"
+        return Math.floor((sec % 3600) / 60) + "分" + Math.floor(sec % 60) + "秒"
       } else {
-        return Math.floor(sec % 60) + "s"
+        return Math.floor(sec % 60) + "秒"
       }
     }
 
@@ -218,11 +240,11 @@ $(function(){
 
       if(secondsuntilday < secondsuntilnight) {
         time = "night"
-        document.getElementById('dayornight').innerText = "Night";
+        document.getElementById('dayornight').innerText = "夜晚";
         document.getElementById('whenday').innerText = TimestampIt(secondsuntilday);
       } else {
         time = "day"
-        document.getElementById('dayornight').innerText = "Day";
+        document.getElementById('dayornight').innerText = "白天";
         document.getElementById('whenday').innerText = TimestampIt(secondsuntilnight);
       }
 
@@ -260,11 +282,11 @@ $(function(){
     convertible = "Passed!"
   }
   if (convertible - currentTime <= 60000) {
-      convertible = (((Math.floor(((convertible - currentTime)*100))/100000).toFixed(2)) + "s");
+      convertible = (((Math.floor(((convertible - currentTime)*100))/100000).toFixed(2)) + "秒");
   } else if (convertible - currentTime <= 3600000) {
-      convertible = ((Math.floor(((convertible - currentTime))/60000) + "m " + (Math.floor(((convertible - currentTime))/1000) % 60) + "s"));
+      convertible = ((Math.floor(((convertible - currentTime))/60000) + "分" + (Math.floor(((convertible - currentTime))/1000) % 60) + "秒"));
   } else if (convertible - currentTime > 1) {
-      convertible = ((Math.floor(((convertible - currentTime))/3600000) + "h " + (Math.floor(((convertible - currentTime))/60000) % 60) + "m"));
+      convertible = ((Math.floor(((convertible - currentTime))/3600000) + "小時" + (Math.floor(((convertible - currentTime))/60000) % 60) + "分"));
   }
   return convertible;
   }
@@ -300,7 +322,7 @@ $(function(){
   let currentTime = (Date.now() + offset);
   if (DoesStuffExist == true) {
     HasStuffLoaded = true;
-    document.getElementById('nextevent').innerHTML = (`<span><b>` + transformation[HiddenEventCount].event + `</b> in <span class="me">` + MakeFunTimestamps(transformation[HiddenEventCount].timestamp) + `</span>  (` + TimeOfDay(transformation[HiddenEventCount].timestamp) + " local time)</span>");
+    document.getElementById('nextevent').innerHTML = (`<span><b>` + transformation[HiddenEventCount].event + `</b>，<span class="me">` + MakeFunTimestamps(transformation[HiddenEventCount].timestamp) + `</span>後 (當地時間：` + TimeOfDay(transformation[HiddenEventCount].timestamp) + ")</span>");
     if(((transformation[HiddenEventCount].timestamp - currentTime) < 0)) {
         speed = 999;
     } else if((transformation[HiddenEventCount].timestamp - currentTime) > 60000) {
