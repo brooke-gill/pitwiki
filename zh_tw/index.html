@@ -40,7 +40,7 @@ $(function(){
     <br>
     <span><b id="dayornight"></b>尚餘：<span class="me" id="whenday"></span></span>
     <br><br>
-    <span id="events"><a href="https://brookeafk.com" target="_blank" rel="noreferrer noopener">下項事件</a>：<span id="nextevent">我正在连接到brookeafk.com...</span><br><br></span>
+    <span id="events"><a href="https://brookeafk.com" target="_blank" rel="noreferrer noopener">下項事件</a>：<span id="eventname"></span><span id="nextevent">我正在连接到brookeafk.com...</span><br><br></span>
     <span><a href="The_Pit_1.0.6"><span class="tip">上次更新<span class="tiptext">*天坑維基對於"更新"的定義係指有新內容被加入時才視為更新</span></a>：<span id="lastupdate" class="m6">a while</span>前</span>
   </div>
 
@@ -195,6 +195,12 @@ $(function(){
     var mapbg = ["/images/map_genesis_palace.png","/images/map_abyss.png","/images/map_castle_castle.png","/images/map_elements_sky.png","/images/map_seasons_spring.png","/images/map_genesis_palace.png"]
     var nmapbg = ["/images/map_genesis_night.png","/images/map_abyss_night.png","/images/map_castle_night.png","/images/map_elements_night.png","/images/map_seasons_night.png","/images/map_genesis_night.png"]
     var year, day, hour, minute, second;
+    var nextEventName = "";
+
+    var eventsList = ["Quick Maths","Dragon Egg","2x Rewards","Care Package","KOTL","KOTH","Auction","Giant Cake","All bounty","Squads","Beast","Pizza","Rage Pit","Spire","Robbery","Blockhead","Raffle","Team Deathmatch"];
+    var nicknamesLocalized = ["數學隨堂考","龍蛋","雙倍獎勵","空投物資","高梯之王KOTL","高地之王KOTH","拍賣","巨型蛋糕","大家通通有賞金","結隊爭鋒","野獸","披薩","爆走天坑","尖塔奪魁","大劫案","方塊頭","摸彩","團隊死鬥"]
+    var pit_wiki_links = ["Quick_Maths","Dragon_Egg","2x_Rewards","Care_Package","King_of_the_Ladder","King_of_the_Hill","Auction","Giant_Cake","Everyone_Gets_a_Bounty","Squads","Beast","Pizza","Rage_Pit","Spire","Robbery","Blockhead","Raffle","Team_Deathmatch"]
+  
 
     function TimestampIt(sec = 0) {
       year = Math.floor(sec / 31536000);
@@ -318,11 +324,15 @@ $(function(){
     DoesStuffExist = true;
   }
   
+  function changeEventName(name) {
+    document.getElementById("eventname").innerHTML = "<a href=" + pit_wiki_links[eventsList.indexOf(name)] + "><b>" + nicknamesLocalized[eventsList.indexOf(name)] + "</b></a>"
+  }
+  
   function RapidFirst(transformation) {
   let currentTime = (Date.now() + offset);
   if (DoesStuffExist == true) {
     HasStuffLoaded = true;
-    document.getElementById('nextevent').innerHTML = (`<span><b>` + transformation[HiddenEventCount].event + `</b>，<span class="me">` + MakeFunTimestamps(transformation[HiddenEventCount].timestamp) + `</span>後 (當地時間：` + TimeOfDay(transformation[HiddenEventCount].timestamp) + ")</span>");
+    document.getElementById('nextevent').innerHTML = (`<span>，<span class="me">` + MakeFunTimestamps(transformation[HiddenEventCount].timestamp) + `</span>  (當地時間：` + TimeOfDay(transformation[HiddenEventCount].timestamp) + ")</span>");
     if(((transformation[HiddenEventCount].timestamp - currentTime) < 0)) {
         speed = 999;
     } else if((transformation[HiddenEventCount].timestamp - currentTime) > 60000) {
@@ -330,9 +340,12 @@ $(function(){
     } else {
         speed = 1;
     }
+    if(nextEventName != transformation[HiddenEventCount].event) changeEventName(transformation[HiddenEventCount].event);
+    nextEventName = transformation[HiddenEventCount].event;
     if(MakeFunTimestamps(transformation[HiddenEventCount].timestamp) == "Passed!" && !!document.getElementById('nextevent') == true) {
       window.HiddenEventCount = window.HiddenEventCount + 1; 
-    }}}
+    }}
+  }
   
   function getPitPanda() {
     if(speed == 0) {

@@ -42,7 +42,7 @@ $(function(){
     <br>
     <span><b id="dayornight"></b>还剩 <span class="me" id="whenday"></span></span>
     <br><br>
-    <span id="events"><a href="https://brookeafk.com" target="_blank" rel="noreferrer noopener">下个事件</a>：<span id="nextevent">Connecting to brookeafk.com...</span><br><br></span>
+    <span id="events"><a href="https://brookeafk.com" target="_blank" rel="noreferrer noopener">下个事件</a>：<span id="eventname"></span><span id="nextevent">Connecting to brookeafk.com...</span><br><br></span>
     <span>距离<a href="The_Pit_1.0.6">上次 Pit 更新</a> <span id="lastupdate" class="m6">a while</span></span>
   </div>
 
@@ -192,7 +192,12 @@ $(function(){
     var mapid = 0;
     var mapbg = ["/images/map_genesis_palace.png","/images/map_abyss.png","/images/map_castle_castle.png","/images/map_elements_sky.png","/images/map_seasons_spring.png","/images/map_genesis_palace.png"]
     var nmapbg = ["/images/map_genesis_night.png","/images/map_abyss_night.png","/images/map_castle_night.png","/images/map_elements_night.png","/images/map_seasons_night.png","/images/map_genesis_night.png"]
+    var nextEventName = "";
 
+    var eventsList = ["Quick Maths","Dragon Egg","2x Rewards","Care Package","KOTL","KOTH","Auction","Giant Cake","All bounty","Squads","Beast","Pizza","Rage Pit","Spire","Robbery","Blockhead","Raffle","Team Deathmatch"];
+    var nicknamesLocalized = ["速算","打击龙蛋","双倍奖励","空投","高梯之王","山丘之王","拍卖","蛋糕大胃王","所有人都获得了赏金","结队争锋","野兽追袭","披萨快递摊","狂热天坑","尖塔夺魁","劫掠之战","方块划地战","幸运奖券","团队死斗"]
+    var pit_wiki_links = ["Quick_Maths","Dragon_Egg","2x_Rewards","Care_Package","King_of_the_Ladder","King_of_the_Hill","Auction","Giant_Cake","Everyone_Gets_a_Bounty","Squads","Beast","Pizza","Rage_Pit","Spire","Robbery","Blockhead","Raffle","Team_Deathmatch"]
+  
     function TimestampIt(sec = 0) {
       if(sec > 31536000) {
         return Math.floor(sec / 31536000) + "y " + Math.floor((sec % 31536000) / 86400) + "d " + Math.floor((sec % 86400) / 3600) + "h " + Math.floor((sec % 3600) / 60) + "m " + Math.floor(sec % 60) + "s"
@@ -293,12 +298,16 @@ $(function(){
     window.EventsToLoad = Object.keys(window.data).length;
     DoesStuffExist = true;
   }
+    
+  function changeEventName(name) {
+    document.getElementById("eventname").innerHTML = "<a href=" + pit_wiki_links[eventsList.indexOf(name)] + "><b>" + nicknamesLocalized[eventsList.indexOf(name)] + "</b></a>"
+  }
   
   function RapidFirst(transformation) {
   let currentTime = (Date.now() + offset);
   if (DoesStuffExist == true) {
     HasStuffLoaded = true;
-    document.getElementById('nextevent').innerHTML = (`<span><b>` + transformation[HiddenEventCount].event + `</b>  在 <span class="me">` + MakeFunTimestamps(transformation[HiddenEventCount].timestamp) + `</span>（本地时间` + TimeOfDay(transformation[HiddenEventCount].timestamp) + ")</span>");
+    document.getElementById('nextevent').innerHTML = (`<span>  在 <span class="me">` + MakeFunTimestamps(transformation[HiddenEventCount].timestamp) + `</span>（本地时间` + TimeOfDay(transformation[HiddenEventCount].timestamp) + ")</span>");
     if(((transformation[HiddenEventCount].timestamp - currentTime) < 0)) {
         speed = 999;
     } else if((transformation[HiddenEventCount].timestamp - currentTime) > 60000) {
@@ -306,10 +315,13 @@ $(function(){
     } else {
         speed = 1;
     }
+    if(nextEventName != transformation[HiddenEventCount].event) changeEventName(transformation[HiddenEventCount].event);
+    nextEventName = transformation[HiddenEventCount].event;
     if(MakeFunTimestamps(transformation[HiddenEventCount].timestamp) == "Passed!" && !!document.getElementById('nextevent') == true) {
       window.HiddenEventCount = window.HiddenEventCount + 1; 
-    }}}
-  
+    }}
+  }
+
   function getPitPanda() {
     if(speed == 0) {
         counter += 1;
