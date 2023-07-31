@@ -296,6 +296,16 @@ a:active {
   transition: opacity 0.4s;
 }
 
+.colorbox {
+  display:inline-block;
+  height:11px;
+  width:11px;
+}
+
+.colorboxborder {
+  border: 1px solid #fff;
+}
+
 .tip .tiptext::after {
   content: "";
   position: absolute;
