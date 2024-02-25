@@ -232,7 +232,7 @@ $(function(){
       }
 
       document.getElementById('lastupdate').innerText = TimestampIt(now - lastupdate);
-      if((now - lastupdate) > 31536000 && (now - lastupdate) < 31622400) {
+      if((now - lastupdate) > 63072000 && (now - lastupdate) < 63158400) {
         document.getElementById('anniversary').style.display = "inline";
         document.getElementById('lastupdate').classList.add("rainbow_text_animated")
       } else {

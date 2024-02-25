@@ -134,7 +134,7 @@ function TimestampIt(sec = 0) {
 var isItPitDay = false;
 function pitDay() {
   var now = (Date.now() / 1000);
-  var pitdaytimestamp = 1677387600;
+  var pitdaytimestamp = 1708923600;
 if(now > pitdaytimestamp && now < (pitdaytimestamp + 86400)) {
         document.getElementById('thehypixelpitwiki').innerHTML = `<span class="groovy"><b>HAPPY PIT DAY!</b></span> ` + TimestampIt(Math.round(pitdaytimestamp - now + 86400));
         isItPitDay = true;
