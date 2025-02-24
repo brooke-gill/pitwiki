@@ -68,7 +68,7 @@ if (request.status === 404) {
 }
 }
 
-document.getElementById("menubutton").addEventListener("click", clickMenu); 
+document.getElementById("menubutton").addEventListener("click", clickMenu);
 
 function clickMenu() {
   if(!menu_opened) {
@@ -118,18 +118,52 @@ function mouseOut() {
 }
 
 function TimestampIt(sec = 0) {
-      if(sec > 31536000) {
-        return Math.floor(sec / 31536000) + "y " + Math.floor((sec % 31536000) / 86400) + "d " + Math.floor((sec % 86400) / 3600) + "h " + Math.floor((sec % 3600) / 60) + "m " + Math.floor(sec % 60) + "s"
-      } else if(sec > 86400 /*1 day*/) {
-        return Math.floor(sec / 86400) + "d " + Math.floor((sec % 86400) / 3600) + "h " + Math.floor((sec % 3600) / 60) + "m " + Math.floor(sec % 60) + "s"
-      } else if(sec > 3600) {
-        return Math.floor((sec % 86400) / 3600) + "h " + Math.floor((sec % 3600) / 60) + "m " + Math.floor(sec % 60) + "s"
-      } else if(sec > 60) {
-        return Math.floor((sec % 3600) / 60) + "m " + Math.floor(sec % 60) + "s"
-      } else {
-        return Math.floor(sec % 60) + "s"
+      if (sec <= 0) return "0s";
+
+      const target = new Date();
+      const start = new Date(target.getTime() - (sec * 1000));
+      let current = new Date(target);
+
+      // Count years
+      let years = 0;
+      while (current > start) {
+        current.setUTCFullYear(current.getUTCFullYear() - 1);
+        if (current >= start) years++;
+        else {
+          current.setUTCFullYear(current.getUTCFullYear() + 1);
+          break;
+        }
       }
-}
+
+      // Count days
+      let days = 0;
+      while (current > start) {
+        current.setUTCDate(current.getUTCDate() - 1);
+        if (current >= start) days++;
+        else {
+          current.setUTCDate(current.getUTCDate() + 1);
+          break;
+        }
+      }
+
+      // Remaining hours, minutes, seconds
+      const remaining = current - start;
+      const hours = Math.floor(remaining / (1000 * 60 * 60));
+      const minutes = Math.floor((remaining % (1000 * 60 * 60)) / (1000 * 60));
+      const seconds = Math.floor((remaining % (1000 * 60)) / 1000);
+
+      if (years > 0) {
+        return `${years}y ${days}d ${hours}h ${minutes}m ${seconds}s`;
+      } else if (days > 0) {
+        return `${days}d ${hours}h ${minutes}m ${seconds}s`;
+      } else if (hours > 0) {
+        return `${hours}h ${minutes}m ${seconds}s`;
+      } else if (minutes > 0) {
+        return `${minutes}m ${seconds}s`;
+      } else {
+        return `${seconds}s`;
+      }
+    }
 
 var isItPitDay = false;
 function pitDay() {
@@ -239,14 +273,14 @@ visibleIDs = [];
   // Loop through all list items and hide those who don't match the search query
   for (i = 0; i < li.length; i++) {
     if(i < window.searchpages.length * 2) {
-      li[i].style.display = "none"; 
+      li[i].style.display = "none";
     }
     document.getElementById('link_' + i).style.color = ""
     a = li[i].getElementsByTagName("a")[0];
     txtValue = a.textContent || a.innerText;
 
     if (MakeBasic(txtValue.toUpperCase()).startsWith(MakeBasic(filter)) && i < window.searchpages.length) {
-      //console.log(txtValue.toUpperCase() + " is a possible word.") 
+      //console.log(txtValue.toUpperCase() + " is a possible word.")
       li[i].style.display = "";
       li[i + window.searchpages.length].style.display = "none";
       //console.log("showing item " + i)
@@ -309,7 +343,7 @@ function Search() {
 Search()
 
 function ChangeHighlight() {
-    Array.from(document.querySelectorAll('.highlighted')).forEach(function(el) { 
+    Array.from(document.querySelectorAll('.highlighted')).forEach(function(el) {
     el.classList.remove('highlighted');
     });
     var hash = location.hash.substring(1);

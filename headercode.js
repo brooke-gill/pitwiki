@@ -121,16 +121,50 @@ function mouseOut() {
 }
 
 function TimestampIt(sec = 0) {
-  if (sec > 31536000) {
-    return Math.floor(sec / 31536000) + "y " + Math.floor((sec % 31536000) / 86400) + "d " + Math.floor((sec % 86400) / 3600) + "h " + Math.floor((sec % 3600) / 60) + "m " + Math.floor(sec % 60) + "s"
-  } else if (sec > 86400 /*1 day*/) {
-    return Math.floor(sec / 86400) + "d " + Math.floor((sec % 86400) / 3600) + "h " + Math.floor((sec % 3600) / 60) + "m " + Math.floor(sec % 60) + "s"
-  } else if (sec > 3600) {
-    return Math.floor((sec % 86400) / 3600) + "h " + Math.floor((sec % 3600) / 60) + "m " + Math.floor(sec % 60) + "s"
-  } else if (sec > 60) {
-    return Math.floor((sec % 3600) / 60) + "m " + Math.floor(sec % 60) + "s"
+  if (sec <= 0) return "0s";
+
+  const target = new Date();
+  const start = new Date(target.getTime() - (sec * 1000));
+  let current = new Date(target);
+
+  // Count years
+  let years = 0;
+  while (current > start) {
+    current.setUTCFullYear(current.getUTCFullYear() - 1);
+    if (current >= start) years++;
+    else {
+      current.setUTCFullYear(current.getUTCFullYear() + 1);
+      break;
+    }
+  }
+
+  // Count days
+  let days = 0;
+  while (current > start) {
+    current.setUTCDate(current.getUTCDate() - 1);
+    if (current >= start) days++;
+    else {
+      current.setUTCDate(current.getUTCDate() + 1);
+      break;
+    }
+  }
+
+  // Remaining hours, minutes, seconds
+  const remaining = current - start;
+  const hours = Math.floor(remaining / (1000 * 60 * 60));
+  const minutes = Math.floor((remaining % (1000 * 60 * 60)) / (1000 * 60));
+  const seconds = Math.floor((remaining % (1000 * 60)) / 1000);
+
+  if (years > 0) {
+    return `${years}y ${days}d ${hours}h ${minutes}m ${seconds}s`;
+  } else if (days > 0) {
+    return `${days}d ${hours}h ${minutes}m ${seconds}s`;
+  } else if (hours > 0) {
+    return `${hours}h ${minutes}m ${seconds}s`;
+  } else if (minutes > 0) {
+    return `${minutes}m ${seconds}s`;
   } else {
-    return Math.floor(sec % 60) + "s"
+    return `${seconds}s`;
   }
 }
 
@@ -226,7 +260,7 @@ function Filter() {
     txtValue = a.textContent || a.innerText;
 
     if (MakeBasic(txtValue.toUpperCase()).startsWith(MakeBasic(filter)) && i < window.searchpages.length) {
-      //console.log(txtValue.toUpperCase() + " is a possible word.") 
+      //console.log(txtValue.toUpperCase() + " is a possible word.")
       li[i].style.display = "";
       li[i + window.searchpages.length].style.display = "none";
       //console.log("showing item " + i)
