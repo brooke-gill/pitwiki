@@ -199,7 +199,7 @@ $(function(){
       const target = new Date();
       const start = new Date(target.getTime() - (sec * 1000));
       let current = new Date(target);
-      
+
       // Count years
       let years = 0;
       while (current > start) {
@@ -210,7 +210,7 @@ $(function(){
           break;
         }
       }
-      
+
       // Count days
       let days = 0;
       while (current > start) {
@@ -221,7 +221,7 @@ $(function(){
           break;
         }
       }
-      
+
       // Remaining hours, minutes, seconds
       const remaining = current - start;
       const hours = Math.floor(remaining / (1000 * 60 * 60));
@@ -266,7 +266,9 @@ $(function(){
       }
 
       document.getElementById('lastupdate').innerText = TimestampIt(now - lastupdate);
-      if((now - lastupdate) > 63072000 && (now - lastupdate) < 63158400) {
+
+      const bonkiversary = 1740448817;
+      if(now >= bonkiversary && now <= bonkiversary + 86400) {
         document.getElementById('anniversary').style.display = "inline";
         document.getElementById('lastupdate').classList.add("rainbow_text_animated")
       } else {
