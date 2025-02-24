@@ -199,15 +199,14 @@ $(function(){
       const target = new Date();
       const start = new Date(target.getTime() - (sec * 1000));
       let current = new Date(target);
-
-      console.log(`!${current} is ${sec} seconds from ${target}`); 
+      
       // Count years
       let years = 0;
       while (current > start) {
-        current.setFullYear(current.getFullYear() - 1);
+        current.setUTCFullYear(current.getUTCFullYear() - 1);
         if (current >= start) years++;
         else {
-          current.setFullYear(current.getFullYear() + 1);
+          current.setUTCFullYear(current.getUTCFullYear() + 1);
           break;
         }
       }
@@ -215,10 +214,10 @@ $(function(){
       // Count days
       let days = 0;
       while (current > start) {
-        current.setDate(current.getDate() - 1);
+        current.setUTCDate(current.getUTCDate() - 1);
         if (current >= start) days++;
         else {
-          current.setDate(current.getDate() + 1);
+          current.setUTCDate(current.getUTCDate() + 1);
           break;
         }
       }
