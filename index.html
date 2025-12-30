@@ -143,7 +143,7 @@ $(function(){
     <a href="Mark_of_Recon_Essence">Mark of Recon Essence</a><br>
   </div>
 
-  <div class="homepageitem body" style="background-color: rgba(76, 76, 76, 0.25); display: none;"><span style="background-color: #252525; outline: 10px solid #252525">— <b><span class="m7">Updates</span></b> —</span><br><hr class="smallbreak">
+  <div class="homepageitem body" style="background-color: rgba(76, 76, 76, 0.25); "><span style="background-color: #252525; outline: 10px solid #252525">— <b><span class="m7">Updates</span></b> —</span><br><hr class="smallbreak">
     <a href="The_Pit_0.1">0.1</a> • <a href="The_Pit_0.2">0.2</a> • <a href="The_Pit_0.3">0.3</a> • <a href="The_Pit_0.3.1">0.3.1</a> • <a href="The_Pit_0.3.5">0.3.5</a> • <a href="The_Pit_0.3.6">Fishing Club</a> • <a href="The_Pit_0.3.7">Pizza</a> • <a href="The_Pit_0.3.8">0.3.8</a> • <a href="The_Pit_0.3.9">0.3.9</a> • <a href="The_Pit_0.4">Events Extravaganza</a> • <a href="The_Pit_0.4.1">0.4.1</a> • <a href="The_Pit_0.4.2">0.4.2</a> • <a href="The_Pit_1.0">Release</a> • <a href="The_Pit_1.0.1">1.0.1</a> • <a href="The_Pit_1.0.3">No-Rage</a> • <a href="The_Pit_1.0.5">Tryhard</a> • <a href="The_Pit_1.0.6">Bonk</a>
   </div>
 </div>
@@ -184,7 +184,9 @@ $(function(){
     var samplenight = 1660849185;
     var sampleday = 1660849925;
     var lastupdate = 1645754417;
-    var samplemaprotation = 1661835600 + (86400 * 7 * 2);
+    //Update to 1 between March and November.
+    var daylightsavings = 0;
+    var samplemaprotation = 1661835600 + (86400 * 7 * 2) + (daylightsavings * 3600);
     var secondsuntilday = 0
     var secondsuntilnight = 0
     var secondsuntilnextmap = 0
